@@ -128,10 +128,108 @@ table {
 // ------------
 
 .wrapper {
-  padding: 20px;
+  padding: 0 50px;
+  @media only screen and (max-width: 900px) {
+    padding: 0 30px;
+  }
+  @media only screen and (max-width: 700px) {
+    padding: 0 20px;
+  }
 }
 
 body {
   // font-family: "Palanquin", sans-serif;
   font-family: "Roboto", sans-serif;
+
+  color: #242424;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 179.688%;
+  /* 32.344px */
+  text-transform: capitalize;
+}
+.nav-item {
+  color: #293241;
+  font-family: Palanquin;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 18px */
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+.text-bold {
+  color: #293241;
+  font-family: Palanquin;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 18px */
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  &:hover {
+    color: #ee6c4d;
+    cursor: pointer;
+  }
+}
+.big-title {
+  color: #293241;
+  text-align: center;
+  font-family: Palanquin;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 60px */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  @media only screen and (max-width: 600px) {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 36px */
+    letter-spacing: 1.8px;
+  }
+}
+.text {
+  color: #242424;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 179.688%; /* 32.344px */
+  text-transform: capitalize;
+  @media only screen and (max-width: 600px) {
+    font-size: 16px;
+  }
+}
+
+.btn {
+  border-radius: 5px;
+  box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-family: Palanquin;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  border: none;
+  padding: 8px 70px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
+.orange {
+  color: #ee6c4d;
+}
+.orange-bg {
+  background-color: #ee6c4d;
 }

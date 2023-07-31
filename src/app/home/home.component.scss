@@ -1,0 +1,100 @@
+.home {
+  margin-top: 80px;
+
+  min-height: 90vh;
+  background: url("../../assets/images/abstract-bg.jpeg") no-repeat top center;
+  background-size: cover;
+
+  .home-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding-top: 30vh;
+    .home-title {
+      @media only screen and (max-width: 1000px) {
+        max-width: 600px;
+      }
+    }
+    .home-text {
+      text-align: center;
+      max-width: 727px;
+    }
+
+    .icon-scroll,
+    .icon-scroll:before {
+      position: absolute;
+      left: 50%;
+      //   bottom: 0;
+    }
+
+    .icon-scroll {
+      position: relative;
+      left: 1%;
+      //   bottom: -100px;
+      width: 40px;
+      height: 70px;
+      margin-left: -20px;
+      margin-top: 20vh;
+      margin-bottom: 40px;
+      box-shadow: inset 0 0 0 1px black;
+      border-radius: 25px;
+    }
+
+    .icon-scroll:before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: black;
+      margin-left: -4px;
+      top: 8px;
+      border-radius: 4px;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-name: scroll;
+    }
+
+    @keyframes scroll {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(46px);
+      }
+    }
+
+    .links {
+      position: absolute;
+      left: -50px;
+      @media only screen and (max-width: 900px) {
+        display: none;
+      }
+      top: 30vh;
+      border-radius: 0px 5px 5px 0px;
+      background: #fff;
+      box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+      padding: 15px 10px;
+      .link-item {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        // background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+
+        &:hover {
+          background: #e2e2e2;
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}

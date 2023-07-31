@@ -194,6 +194,35 @@ body {
     letter-spacing: 1.8px;
   }
 }
+
+.section-title {
+  color: #293241;
+  text-align: center;
+  font-family: Palanquin;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 36px */
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+}
+.paragraph-title {
+  color: #293241;
+  font-family: Palanquin;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 30px */
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+.title-underline {
+  border-radius: 5px;
+  background: #ee6c4d;
+  width: 50px;
+  height: 5px;
+}
 .text {
   color: #242424;
   font-family: Roboto;

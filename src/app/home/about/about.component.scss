@@ -1,0 +1,48 @@
+.about {
+  .about-body {
+    padding: 100px 0;
+    .about-header {
+      margin-bottom: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 30px;
+      .about-text {
+        max-width: 763px;
+      }
+    }
+    .about-text-block {
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+      @media only screen and (max-width: 900px) {
+        flex-direction: column;
+      }
+      .about-left-side {
+        flex: 0 47%; /*lower the % to get more columns*/
+        flex-grow: 1;
+      }
+      .about-right-side {
+        flex: 0 47%; /*lower the % to get more columns*/
+        flex-grow: 1;
+        .skills {
+          display: flex;
+          gap: 15px;
+          flex-wrap: wrap;
+          .skill-box {
+            border-radius: 5px;
+            background: #e2e2e2;
+            padding: 8px 28px;
+            transition: all 0.5s ease;
+
+            &:hover {
+              background-color: #ee6c4d;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

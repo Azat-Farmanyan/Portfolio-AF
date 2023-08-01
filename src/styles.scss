@@ -148,7 +148,7 @@ body {
   font-weight: 300;
   line-height: 179.688%;
   /* 32.344px */
-  text-transform: capitalize;
+  // text-transform: capitalize;
 }
 .nav-item {
   color: #293241;
@@ -230,7 +230,7 @@ body {
   font-style: normal;
   font-weight: 300;
   line-height: 179.688%; /* 32.344px */
-  text-transform: capitalize;
+  // text-transform: capitalize;
   @media only screen and (max-width: 600px) {
     font-size: 16px;
   }
@@ -247,12 +247,12 @@ body {
   line-height: normal;
   text-transform: uppercase;
   border: none;
-  padding: 8px 70px;
+  padding: 5px 70px;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   &:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 }
 
@@ -260,5 +260,6 @@ body {
   color: #ee6c4d;
 }
 .orange-bg {
-  background-color: #ee6c4d;
+  background-color: #ee6c4d !important;
+  color: #fff !important;
 }

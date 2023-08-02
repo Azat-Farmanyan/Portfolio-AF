@@ -9,6 +9,7 @@ export class AboutComponent implements OnInit {
   randomSkillNumber = 0;
 
   ngOnInit(): void {
+    const randomNums = [];
     setInterval(() => {
       this.randomSkillNumber = this.getRandomNumber(this.skills.length);
     }, 2000);

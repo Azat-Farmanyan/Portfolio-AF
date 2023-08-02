@@ -2,28 +2,40 @@
   <div class="wrapper">
     <div class="header-body">
       <div class="left-side">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
           <circle cx="20" cy="20" r="20" fill="#EE6C4D" />
         </svg>
         <h4 class="text-bold">azat farmanyan</h4>
       </div>
       <div class="right-side">
         <nav class="nav">
-          <div class="nav-item text-bold">HOME</div>
+          <div class="nav-item text-bold">Home</div>
           <div class="nav-item text-bold">About</div>
-          <div class="nav-item text-bold">projects</div>
-          <div class="nav-item text-bold">contact</div>
+          <div class="nav-item text-bold">Projects</div>
+          <div class="nav-item text-bold">Contact</div>
         </nav>
-        <div class="burger">
-          <img src="../../../assets/icons/burger.svg" alt="BurgerMenu" />
+        <div (click)="menuToggle()" class="burger">
+          <img [@toggleAnimation] *ngIf="!showMenu" src="../../../assets/icons/burger.svg" alt="Open Menu" />
+          <img [@toggleAnimation] *ngIf="showMenu" src="../../../assets/icons/close-cross.svg" alt="Close Menu" />
         </div>
       </div>
+
+    </div>
+  </div>
+  <div [@dropDownMenu] *ngIf="showMenu" class="menu">
+    <div class='menu-body'>
+      <a class='menu-item text-bold' href="">
+        <span class='wrapper'>Home</span>
+      </a>
+      <a class='menu-item text-bold' href="">
+        <span class='wrapper'>About</span>
+      </a>
+      <a class='menu-item text-bold' href="">
+        <span class='wrapper'>Projects</span>
+      </a>
+      <a class='menu-item text-bold' href="">
+        <span class='wrapper'>Contact</span>
+      </a>
     </div>
   </div>
 </header>

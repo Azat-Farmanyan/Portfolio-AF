@@ -6,8 +6,16 @@ import {
   query,
   sequence,
   stagger,
+  state,
 } from '@angular/animations';
-import { Component, HostListener } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -57,10 +65,29 @@ import { Component, HostListener } from '@angular/core';
         ]),
       ]),
     ]),
+
+    trigger('crossFade', [
+      state('false', style({ opacity: 0 })),
+      state('true', style({ opacity: 1 })),
+      transition('false <=> true', animate('1000ms')),
+      transition(':leave', [animate('1000ms', style({ opacity: 0 }))]), //<--animate to get opacity 0 in 1000ms
+    ]),
   ],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnChanges {
+  @Input() scrollTop: boolean = false;
   showMenu = false;
+
+  public getScreenWidth!: number;
+  public getScreenHeight!: number;
+
+  ngOnInit() {
+    this.getScreenWidth = window.innerWidth;
+    this.getScreenHeight = window.innerHeight;
+  }
+  ngOnChanges(): void {
+    // console.log(this.scrollTop);
+  }
 
   menuToggle() {
     this.showMenu = !this.showMenu;

@@ -17,6 +17,7 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

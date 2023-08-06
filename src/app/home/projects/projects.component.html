@@ -1,1 +1,22 @@
-<p>projects works!</p>
+<section class="projects">
+  <div class="wrapper">
+    <div class="projects-body">
+      <div class="projects-header">
+        <h2 class="section-title">PROJECTS</h2>
+        <div class="title-underline"></div>
+        <p class="text projects-text">
+          Here you will find some of the personal and clients projects that I
+          created with each project containing its own case study
+        </p>
+      </div>
+      <div class="projects-block">
+        <div
+          *ngFor="let project of projectsService.projects"
+          class="project-card"
+        >
+          <app-project-card [project]="project"></app-project-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

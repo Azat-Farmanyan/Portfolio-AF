@@ -1,5 +1,9 @@
 .projects {
   background-color: #fff;
+
+  min-height: 90vh;
+  background: url("../../../assets/images/abstract-bg.jpeg") no-repeat top center;
+  background-size: cover;
   .projects-body {
     padding: 100px 0;
     .projects-header {
@@ -11,6 +15,20 @@
       gap: 30px;
       .projects-text {
         max-width: 763px;
+      }
+    }
+
+    .projects-block {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      @media only screen and (max-width: 600px) {
+        gap: 40px;
+      }
+      @media only screen and (max-width: 600px) {
+        gap: 30px;
+      }
+      .project-card {
       }
     }
   }

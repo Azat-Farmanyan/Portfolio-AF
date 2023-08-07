@@ -1,0 +1,139 @@
+.about {
+  background-color: #fafafa;
+}
+
+.about .about-body {
+  padding: 100px 0;
+}
+
+.about .about-body .about-header {
+  margin-bottom: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.about .about-body .about-header .about-text {
+  max-width: 763px;
+}
+
+.about .about-body .about-text-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 100px;
+  margin-bottom: 60px;
+}
+
+@media only screen and (max-width: 900px) {
+  .about .about-body .about-text-block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.about .about-body .about-text-block .about-left-side {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 47%;
+          flex: 0 47%;
+  /*lower the % to get more columns*/
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.about .about-body .about-text-block .about-right-side {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 47%;
+          flex: 0 47%;
+  /*lower the % to get more columns*/
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.about .about-body .about-text-block .about-right-side .skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.about .about-body .about-text-block .about-right-side .skills .skill-box {
+  border-radius: 5px;
+  background: #e2e2e2;
+  padding: 8px 28px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.about .about-body .about-text-block .about-right-side .skills .skill-box:hover {
+  background-color: #ee6c4d;
+  color: #fff;
+}
+
+.about .about-body .worked-with .worked-title {
+  text-align: center;
+}
+
+.about .about-body .worked-with .companies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+}
+
+.about .about-body .worked-with .company-logo {
+  max-height: 60px;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  -webkit-filter: opacity(0.8);
+          filter: opacity(0.8);
+}
+
+.about .about-body .worked-with .company-logo:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+@media only screen and (max-width: 900px) {
+  .about .about-body .worked-with .company-logo {
+    max-height: 50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about .about-body .worked-with .company-logo {
+    max-height: 40px;
+  }
+}
+
+.about-title {
+  margin-bottom: 40px;
+}

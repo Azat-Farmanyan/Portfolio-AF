@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("./null.scss");
+.disable-text-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.wrapper {
+  padding: 0 50px;
+}
+
+@media only screen and (max-width: 900px) {
+  .wrapper {
+    padding: 0 30px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #242424;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 179.688%;
+  /* 32.344px */
+}
+
+.nav-item {
+  color: #293241;
+  font-family: Palanquin;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  /* 18px */
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+.text-bold {
+  color: #293241;
+  font-family: Palanquin;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  /* 18px */
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.text-bold:hover {
+  color: #ee6c4d;
+  cursor: pointer;
+}
+
+.big-title {
+  color: #293241;
+  text-align: center;
+  font-family: Palanquin;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  /* 60px */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 600px) {
+  .big-title {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    /* 36px */
+    letter-spacing: 1.8px;
+  }
+}
+
+.section-title {
+  color: #293241;
+  text-align: center;
+  font-family: Palanquin;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  /* 36px */
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+}
+
+.paragraph-title {
+  color: #293241;
+  font-family: Palanquin;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  /* 30px */
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+}
+
+@media only screen and (max-width: 600px) {
+  .paragraph-title {
+    font-size: 24px;
+    letter-spacing: 1.2px;
+  }
+}
+
+.title-underline {
+  border-radius: 5px;
+  background: #ee6c4d;
+  width: 50px;
+  height: 5px;
+}
+
+.text {
+  color: #242424;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 179.688%;
+  /* 32.344px */
+}
+
+@media only screen and (max-width: 600px) {
+  .text {
+    font-size: 16px;
+  }
+}
+
+.btn {
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-family: Palanquin;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  border: none;
+  padding: 5px 70px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.btn a {
+  color: #fff;
+}
+
+.btn-medium-small {
+  border-radius: 5px;
+  background: #ee6c4d;
+  -webkit-box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+  padding: 5px 47px;
+  color: #fff;
+  font-family: Palanquin;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn-medium-small:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+@media only screen and (max-width: 600px) {
+  .btn-medium-small {
+    border-radius: 5px;
+    background: #ee6c4d;
+    -webkit-box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+    padding: 5px 30px;
+    color: #fff;
+    font-family: Palanquin;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+}
+
+.orange {
+  color: #ee6c4d;
+}
+
+.orange-bg {
+  background-color: #ee6c4d !important;
+  color: #fff !important;
+}

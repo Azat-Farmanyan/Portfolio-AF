@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { Project } from 'src/app/services/projects.service';
 
 @Component({
@@ -6,6 +6,12 @@ import { Project } from 'src/app/services/projects.service';
   templateUrl: './project-card.component.html',
   styleUrls: ['./project-card.component.scss'],
 })
-export class ProjectCardComponent {
+export class ProjectCardComponent implements OnInit {
   @Input() project: Project;
+
+  constructor() {}
+
+  ngOnInit(): void {
+    // this.activeSlideImg = this.project.screenshots[activeSlide];
+  }
 }

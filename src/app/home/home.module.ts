@@ -9,7 +9,12 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectCardComponent } from './projects/project-card/project-card.component';
 
 @NgModule({
-  declarations: [HomeComponent, AboutComponent, ProjectsComponent, ProjectCardComponent],
+  declarations: [
+    HomeComponent,
+    AboutComponent,
+    ProjectsComponent,
+    ProjectCardComponent,
+  ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
 })
 export class HomeModule {}

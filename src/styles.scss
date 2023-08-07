@@ -98,7 +98,10 @@ body {
   line-height: 100%; /* 30px */
   letter-spacing: 1.5px;
   text-transform: capitalize;
-  margin-bottom: 40px;
+  @media only screen and (max-width: 600px) {
+    font-size: 24px;
+    letter-spacing: 1.2px;
+  }
 }
 .title-underline {
   border-radius: 5px;
@@ -137,33 +140,43 @@ body {
   &:hover {
     transform: translateY(-5px);
   }
+  & a {
+    color: #fff;
+  }
 }
 
-.btn-medium {
+.btn-medium-small {
   border-radius: 5px;
   background: #ee6c4d;
   box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
   padding: 5px 47px;
   color: #fff;
   font-family: Palanquin;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
-}
-.btn-small {
-  border-radius: 5px;
-  background: #ee6c4d;
-  box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
-  padding: 5px 30px;
-  color: #fff;
-  font-family: Palanquin;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  &:hover {
+    transform: translateY(-5px);
+  }
+  @media only screen and (max-width: 600px) {
+    border-radius: 5px;
+    background: #ee6c4d;
+    box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+    padding: 5px 30px;
+    color: #fff;
+    font-family: Palanquin;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+  }
 }
 
 .orange {

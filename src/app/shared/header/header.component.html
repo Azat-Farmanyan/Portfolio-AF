@@ -31,16 +31,16 @@
   </div>
   <div [@dropDownMenu] *ngIf="showMenu" class="menu">
     <div class="menu-body">
-      <a class="menu-item text-bold" href="">
+      <a (click)="closeMenu()" class="menu-item text-bold" href="home#home">
         <span class="wrapper">Home</span>
       </a>
-      <a class="menu-item text-bold" href="">
+      <a (click)="closeMenu()" class="menu-item text-bold" href="home#about">
         <span class="wrapper">About</span>
       </a>
-      <a class="menu-item text-bold" href="">
+      <a (click)="closeMenu()" class="menu-item text-bold" href="home#projects">
         <span class="wrapper">Projects</span>
       </a>
-      <a class="menu-item text-bold" href="">
+      <a (click)="closeMenu()" class="menu-item text-bold" href="home#contact">
         <span class="wrapper">Contact</span>
       </a>
     </div>

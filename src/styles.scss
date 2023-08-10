@@ -33,6 +33,59 @@ body {
   /* 32.344px */
   // text-transform: capitalize;
 }
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #a9a9a9;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #a9a9a9;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #a9a9a9;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #a9a9a9;
+}
+input,
+textarea {
+  border-radius: 5px;
+  background: #f4f4f4;
+  color: #a9a9a9;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 179.688%; /* 28.75px */
+  max-width: 100%;
+  min-width: 100%;
+  padding: 15px 20px;
+  min-height: 60px;
+  &:focus-within,
+  &:focus,
+  &:hover,
+  &:focus-within,
+  &:focus,
+  &:hover {
+    color: #242424;
+    outline: 1px solid #3d5a80;
+  }
+}
+.error-message {
+  color: #ff4141;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 179.688%; /* 25.156px */
+  text-transform: capitalize;
+  margin-left: 20px;
+}
+.invalid-input {
+  border: 1px solid #ff4141;
+}
 .nav-item {
   color: #293241;
   font-family: Palanquin;
@@ -121,6 +174,15 @@ body {
     font-size: 16px;
   }
 }
+.label-text {
+  color: #242424;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 179.688%; /* 28.75px */
+  text-transform: capitalize;
+}
 
 .btn {
   border-radius: 5px;
@@ -161,6 +223,12 @@ body {
   position: relative;
   &:hover {
     transform: translateY(-5px);
+  }
+  &:disabled,
+  &[disabled] {
+    background: #e2e2e2;
+    cursor: not-allowed;
+    pointer-events: all !important;
   }
   @media only screen and (max-width: 600px) {
     border-radius: 5px;

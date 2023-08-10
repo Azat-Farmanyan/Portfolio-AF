@@ -72,6 +72,11 @@ textarea {
     color: #242424;
     outline: 1px solid #3d5a80;
   }
+  @media only screen and (max-width: 600px) {
+    padding: 8px 20px;
+    min-height: 40px;
+    font-size: 14px;
+  }
 }
 .error-message {
   color: #ff4141;
@@ -253,4 +258,13 @@ textarea {
 .orange-bg {
   background-color: #ee6c4d !important;
   color: #fff !important;
+}
+.black-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.527);
+  z-index: 999;
 }

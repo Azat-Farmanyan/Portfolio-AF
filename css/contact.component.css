@@ -65,6 +65,12 @@
   margin-bottom: 15px;
 }
 
+@media only screen and (max-width: 600px) {
+  .contact .contact-body .contact-form .input-item label {
+    margin-bottom: 10px;
+  }
+}
+
 .contact .contact-body .contact-form .btns {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -1,5 +1,5 @@
 # PortfolioAF
-# https://effervescent-froyo-6ead73.netlify.app/home
+# Follow LINK:  https://azatfarmanyan.netlify.app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
 

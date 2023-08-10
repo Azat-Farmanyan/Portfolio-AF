@@ -8,22 +8,37 @@
           Feel free to Contact me by submitting the form below and I will get back to you as soon as possible
         </p>
       </div>
-      <form class="contact-form">
+      <form class="contact-form" [formGroup]="messageForm" (ngSubmit)="submit()">
+        {{ messageForm.get('name')?.errors | json }}
+
         <div class="input-item">
           <label class='label-text' for="name">Name</label>
-          <input id='name' type="text" placeholder='Enter your name' class='error-input'>
-          <small class='error-message'>Error message</small>
+          <input formControlName='name' id='name' type="text" placeholder='Enter your name' class='error-input'>
+          <div class='error-block' *ngIf="messageForm.get('name')?.invalid && messageForm.get('name')?.touched">
+            <small *ngIf="messageForm.get('name')!.hasError('required')" class='error-message'>Name is required</small>
+          </div>
         </div>
         <div class="input-item">
           <label class='label-text' for="email">Email</label>
-          <input id='email' type="text" placeholder='Enter your email'>
+          <input formControlName='email' id='email' type="text" placeholder='Enter your email'>
+          <div class='error-block' *ngIf="messageForm.get('email')?.invalid && messageForm.get('email')?.touched">
+            <small *ngIf="messageForm.get('email')!.hasError('required')" class='error-message'>Email is
+              required</small>
+            <small *ngIf="messageForm.get('email')!.hasError('email')" class='error-message'>Email is invalid</small>
+          </div>
         </div>
         <div class="input-item">
           <label class='label-text' for="message">Message</label>
-          <textarea class='input-message' id='message' type="text" placeholder='Enter your message'></textarea>
+          <textarea formControlName='message' class='input-message' id='message' type="text"
+            placeholder='Enter your message'></textarea>
+          <div class='error-block' *ngIf="messageForm.get('message')?.invalid && messageForm.get('message')?.touched">
+            <small *ngIf="messageForm.get('message')!.hasError('required')" class='error-message'>Message is
+              required</small>
+          </div>
         </div>
         <div class="btns">
-          <button disabled class='btn-medium-small contact-submit-btn'>Submit</button>
+          <button [disabled]="messageForm.invalid" type='submit'
+            class='btn-medium-small contact-submit-btn'>Submit</button>
         </div>
       </form>
     </div>

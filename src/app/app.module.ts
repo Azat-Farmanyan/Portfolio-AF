@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +19,6 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
-    SlickCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

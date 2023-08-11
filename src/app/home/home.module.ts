@@ -7,6 +7,8 @@ import { SharedModule } from '../shared/shared.module';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectCardComponent } from './projects/project-card/project-card.component';
+import { ContactComponent } from './contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,14 @@ import { ProjectCardComponent } from './projects/project-card/project-card.compo
     AboutComponent,
     ProjectsComponent,
     ProjectCardComponent,
+    ContactComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class HomeModule {}

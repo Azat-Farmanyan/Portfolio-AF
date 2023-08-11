@@ -72,6 +72,18 @@ import {
       transition('false <=> true', animate('1000ms')),
       transition(':leave', [animate('1000ms', style({ opacity: 0 }))]), //<--animate to get opacity 0 in 1000ms
     ]),
+
+    trigger('fadeInOut', [
+      transition(':enter', [
+        // :enter is alias to 'void => *'
+        style({ opacity: 0 }),
+        animate(500, style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        // :leave is alias to '* => void'
+        animate(500, style({ opacity: 0 })),
+      ]),
+    ]),
   ],
 })
 export class HeaderComponent implements OnInit, OnChanges {

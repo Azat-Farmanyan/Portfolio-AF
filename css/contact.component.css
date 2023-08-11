@@ -1,0 +1,94 @@
+.contact {
+  background-color: #fff;
+  min-height: 90vh;
+}
+
+.contact .contact-body {
+  padding: 100px 0;
+}
+
+.contact .contact-body .contact-header {
+  margin-bottom: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.contact .contact-body .contact-header .contact-text {
+  max-width: 763px;
+}
+
+.contact .contact-body .contact-form {
+  border-radius: 5px;
+  background: #fff;
+  -webkit-box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.contact .contact-body .contact-form .input-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact .contact-body .contact-form .input-item .input-message {
+  min-height: 243px;
+}
+
+.contact .contact-body .contact-form .input-item label {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .contact .contact-body .contact-form .input-item label {
+    margin-bottom: 10px;
+  }
+}
+
+.contact .contact-body .contact-form .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  width: 100%;
+}
+
+.contact .contact-body .contact-form .btns .contact-submit-btn {
+  text-align: right;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .contact .contact-body .contact-form .btns .contact-submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

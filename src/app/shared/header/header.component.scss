@@ -18,11 +18,13 @@
     align-items: center;
     padding-top: 20px;
     .left-side {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      @media only screen and (max-width: 900px) {
-        gap: 10px;
+      & a {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        @media only screen and (max-width: 900px) {
+          gap: 10px;
+        }
       }
     }
     .right-side {

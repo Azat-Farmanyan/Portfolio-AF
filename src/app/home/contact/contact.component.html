@@ -9,29 +9,27 @@
         </p>
       </div>
       <form class="contact-form" [formGroup]="messageForm" (ngSubmit)="submit()">
-        {{ messageForm.get('name')?.errors | json }}
-
         <div class="input-item">
-          <label class='label-text' for="name">Name</label>
+          <label class='label-text' for="name"><span *ngIf="nameHasError">{{'* '}}</span>Name</label>
           <input formControlName='name' id='name' type="text" placeholder='Enter your name' class='error-input'>
-          <div class='error-block' *ngIf="messageForm.get('name')?.invalid && messageForm.get('name')?.touched">
+          <div class='error-block' *ngIf="nameHasError">
             <small *ngIf="messageForm.get('name')!.hasError('required')" class='error-message'>Name is required</small>
           </div>
         </div>
         <div class="input-item">
-          <label class='label-text' for="email">Email</label>
+          <label class='label-text' for="email"><span *ngIf="emailHasError">{{'* '}}</span>Email</label>
           <input formControlName='email' id='email' type="text" placeholder='Enter your email'>
-          <div class='error-block' *ngIf="messageForm.get('email')?.invalid && messageForm.get('email')?.touched">
+          <div class='error-block' *ngIf="emailHasError">
             <small *ngIf="messageForm.get('email')!.hasError('required')" class='error-message'>Email is
               required</small>
             <small *ngIf="messageForm.get('email')!.hasError('email')" class='error-message'>Email is invalid</small>
           </div>
         </div>
         <div class="input-item">
-          <label class='label-text' for="message">Message</label>
+          <label class='label-text' for="message"><span *ngIf="messageHasError">{{'* '}}</span>Message</label>
           <textarea formControlName='message' class='input-message' id='message' type="text"
             placeholder='Enter your message'></textarea>
-          <div class='error-block' *ngIf="messageForm.get('message')?.invalid && messageForm.get('message')?.touched">
+          <div class='error-block' *ngIf="messageHasError">
             <small *ngIf="messageForm.get('message')!.hasError('required')" class='error-message'>Message is
               required</small>
           </div>

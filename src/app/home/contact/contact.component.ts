@@ -21,4 +21,32 @@ export class ContactComponent implements OnInit {
     console.log(this.messageForm.value);
     this.messageForm.reset();
   }
+
+  checkFormControlValid(controlName: string) {
+    return (
+      this.messageForm.get(controlName)?.invalid &&
+      this.messageForm.get(controlName)?.touched
+    );
+  }
+
+  get nameHasError() {
+    return (
+      this.messageForm.get('name')?.invalid &&
+      this.messageForm.get('name')?.touched
+    );
+  }
+
+  get emailHasError() {
+    return (
+      this.messageForm.get('email')?.invalid &&
+      this.messageForm.get('email')?.touched
+    );
+  }
+
+  get messageHasError() {
+    return (
+      this.messageForm.get('message')?.invalid &&
+      this.messageForm.get('message')?.touched
+    );
+  }
 }

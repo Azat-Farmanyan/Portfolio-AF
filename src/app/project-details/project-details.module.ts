@@ -8,4 +8,6 @@ import { ProjectDetailsComponent } from './project-details.component';
   declarations: [ProjectDetailsComponent],
   imports: [CommonModule, ProjectDetailsRoutingModule],
 })
-export class ProjectDetailsModule {}
+export class ProjectDetailsModule {
+  a = 'test';
+}

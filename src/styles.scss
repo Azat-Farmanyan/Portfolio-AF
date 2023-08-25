@@ -103,6 +103,7 @@ textarea {
   line-height: 100%; /* 18px */
   letter-spacing: 0.9px;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .text-bold {
@@ -115,6 +116,7 @@ textarea {
   letter-spacing: 0.9px;
   text-transform: uppercase;
   transition: all 0.2s ease;
+  text-decoration: none !important;
   &:hover {
     color: #ee6c4d;
     cursor: pointer;
@@ -193,25 +195,26 @@ textarea {
 }
 
 .btn {
-  border-radius: 5px;
-  box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  font-family: Palanquin;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-transform: uppercase;
-  border: none;
-  padding: 5px 70px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
+  border-radius: 5px !important ;
+  box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1) !important ;
+  color: #fff !important ;
+  font-family: Palanquin !important ;
+  font-size: 24px !important ;
+  font-style: normal !important ;
+  font-weight: 700 !important ;
+  line-height: normal !important ;
+  text-transform: uppercase !important ;
+  border: none !important ;
+  padding: 5px 70px !important ;
+  cursor: pointer !important ;
+  transition: all 0.3s ease !important ;
+  position: relative !important ;
   &:hover {
     transform: translateY(-5px);
   }
   & a {
     color: #fff;
+    text-decoration: none;
   }
 }
 
@@ -271,3 +274,6 @@ textarea {
   background-color: rgba(0, 0, 0, 0.527);
   z-index: 999;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";

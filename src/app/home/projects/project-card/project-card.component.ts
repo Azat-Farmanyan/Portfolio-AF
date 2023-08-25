@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { Project } from 'src/app/services/projects.service';
 
 @Component({
@@ -9,9 +10,13 @@ import { Project } from 'src/app/services/projects.service';
 export class ProjectCardComponent implements OnInit {
   @Input() project: Project;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     // this.activeSlideImg = this.project.screenshots[activeSlide];
+  }
+
+  openDetails(id: number) {
+    this.router.navigate([`details/${id}`]);
   }
 }

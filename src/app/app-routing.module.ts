@@ -7,6 +7,14 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
+  {
+    path: 'details',
+    loadChildren: () =>
+      import('./project-details/project-details.module').then(
+        (m) => m.ProjectDetailsModule
+      ),
+  },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

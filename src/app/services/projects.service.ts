@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 
 export interface Project {
+  id: number;
   title: string;
   description: string;
   img: string;
   screenshots?: string[];
-  tools?: any[];
+  tools: string[];
   seeLive: string;
   sourceCodeUrl: string;
 }
@@ -18,6 +19,7 @@ export class ProjectsService {
 
   projects: Project[] = [
     {
+      id: 1,
       title: 'Project Management App',
       description:
         'Project management system is an application that helps an individual in a team or group of developers achieve their goals. There are many competitors on the market for my application. The main competitors are the following: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projects.',
@@ -28,47 +30,7 @@ export class ProjectsService {
         '../../../../assets/screenshots/pms3.png',
         '../../../../assets/screenshots/pms4.png',
       ],
-      // tools: [
-      //   this.skill('Angular'),
-      //   this.skill('html'),
-      //   this.skill('CSS'),
-      //   this.skill('JavaScript'),
-      //   this.skill('Sass'),
-      //   this.skill('TypeScript'),
-
-      //   this.instrument('vscode'),
-      //   this.instrument('Adobe Photoshop'),
-      //   this.instrument('illustrator'),
-      //   this.instrument('Figma'),
-      // ],
-      seeLive: 'https://fascinating-douhua-c23dc0.netlify.app/',
-      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/rs-front-azat',
-    },
-    {
-      title: 'Project Management App',
-      description:
-        'Png: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projects.Png: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projects.Png: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projectsPng: Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, Github projects',
-      img: 'proj-man-system.jpg',
-      // tools: [
-      //   this.skill('Angular'),
-      //   this.skill('html'),
-      //   this.skill('CSS'),
-      //   this.skill('JavaScript'),
-      //   this.skill('Sass'),
-      //   this.skill('TypeScript'),
-
-      //   this.instrument('vscode'),
-      //   this.instrument('Adobe Photoshop'),
-      //   this.instrument('illustrator'),
-      //   this.instrument('Figma'),
-      // ],
-      seeLive: 'https://fascinating-douhua-c23dc0.netlify.app/',
-      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/rs-front-azat',
-    },
-    {
-      title: 'Project Management App',
-      description: 'Project management syst',
-      img: 'proj-man-system.jpg',
+      tools: [],
       // tools: [
       //   this.skill('Angular'),
       //   this.skill('html'),
@@ -86,4 +48,20 @@ export class ProjectsService {
       sourceCodeUrl: 'https://github.com/Azat-Farmanyan/rs-front-azat',
     },
   ];
+
+  getProjectById(id: number): Project | null {
+    const emptyProject = {
+      id: 0,
+      title: '',
+      description: '',
+      img: '',
+      screenshots: [],
+      tools: [],
+      seeLive: '',
+      sourceCodeUrl: '',
+    };
+    const gotProject = this.projects.find((project) => project.id === id);
+
+    return gotProject ?? null;
+  }
 }

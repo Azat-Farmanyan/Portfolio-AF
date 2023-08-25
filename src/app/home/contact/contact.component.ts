@@ -1,5 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 import { fadeInOut } from 'src/app/shared/animations';
 
@@ -10,7 +21,13 @@ import { fadeInOut } from 'src/app/shared/animations';
   animations: [fadeInOut],
 })
 export class ContactComponent implements OnInit {
+  @ViewChild('nameInput') nameInput!: ElementRef;
+  @ViewChild('emailInput') emailInput!: ElementRef;
+  @ViewChild('messageInput') messageInput!: ElementRef;
+
   messageForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder, private renderer: Renderer2) {}
 
   ngOnInit(): void {
     this.messageForm = new FormGroup({
@@ -21,15 +38,19 @@ export class ContactComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.messageForm.value);
-    this.messageForm.reset();
+    this.focusNextInput();
+    if (this.messageForm.valid) {
+      // console.log(this.messageForm.value);
+      this.messageForm.reset();
+    }
   }
 
-  checkFormControlValid(controlName: string) {
-    return (
-      this.messageForm.get(controlName)?.invalid &&
-      this.messageForm.get(controlName)?.touched
-    );
+  focusNextInput() {
+    if (document.activeElement === this.nameInput.nativeElement) {
+      this.renderer.selectRootElement(this.emailInput.nativeElement).focus();
+    } else if (document.activeElement === this.emailInput.nativeElement) {
+      this.renderer.selectRootElement(this.messageInput.nativeElement).focus();
+    }
   }
 
   get nameHasError() {

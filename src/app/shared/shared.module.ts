@@ -8,6 +8,11 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, CarouselComponent],
   imports: [CommonModule, NgbCarouselModule],
-  exports: [HeaderComponent, FooterComponent],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    NgbCarouselModule,
+    CarouselComponent,
+  ],
 })
 export class SharedModule {}

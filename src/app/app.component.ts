@@ -1,8 +1,20 @@
 import { RouteService } from './services/route.service';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
+import {
+  Router,
+  ActivatedRoute,
+  RoutesRecognized,
+  RouterOutlet,
+} from '@angular/router';
 import { Subscription, filter, pairwise } from 'rxjs';
 import { ProjectsService } from './services/projects.service';
+import {
+  trigger,
+  transition,
+  useAnimation,
+  animate,
+  style,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-root',

@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
-import { ToastModule } from 'primeng/toast';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +19,7 @@ import { ToastModule } from 'primeng/toast';
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

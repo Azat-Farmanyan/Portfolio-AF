@@ -18,11 +18,14 @@
     align-items: center;
     padding-top: 20px;
     .left-side {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      @media only screen and (max-width: 900px) {
-        gap: 10px;
+      & a {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-decoration: none;
+        @media only screen and (max-width: 900px) {
+          gap: 10px;
+        }
       }
     }
     .right-side {
@@ -73,8 +76,11 @@
         height: 80px;
         border-top: 1px solid #e2e2e2;
         background: #fff;
-        // width: 100%;
         transition: all 0.3s ease;
+        // width: 100%;
+        & a {
+          text-decoration: none !important;
+        }
         &:active,
         &:hover {
           background-color: #ee6c4d;

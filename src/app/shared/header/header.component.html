@@ -3,24 +3,26 @@
   <div class="wrapper">
     <div class="header-body">
       <div class="left-side">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <circle cx="20" cy="20" r="20" fill="#EE6C4D" />
-        </svg>
-        <h4 class="text-bold">azat farmanyan</h4>
+        <a href="home#home">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="20" fill="#EE6C4D" />
+          </svg>
+          <h4 class="text-bold">azat farmanyan</h4>
+        </a>
       </div>
       <div class="right-side">
         <nav class="nav">
-          <div class="nav-item ">
-            <a class='text-bold' href="home#home">Home</a>
+          <div class="nav-item" (click)="navigateTo('home','home')">
+            <a class='text-bold'>Home</a>
           </div>
-          <div class="nav-item ">
-            <a class='text-bold' href="home#about">About</a>
+          <div class="nav-item" (click)="navigateTo('home','about')">
+            <a class='text-bold'>About</a>
           </div>
-          <div class="nav-item ">
-            <a class='text-bold' href="home#projects">Projects</a>
+          <div class="nav-item" (click)="navigateTo('home','projects')">
+            <a class='text-bold'>Projects</a>
           </div>
-          <div class="nav-item ">
-            <a class='text-bold' href="home#contact">Contact</a>
+          <div class="nav-item" (click)="navigateTo('home','contact')">
+            <a class='text-bold'>Contact</a>
           </div>
         </nav>
         <div (click)="menuToggle()" class="burger">
@@ -32,16 +34,16 @@
   </div>
   <div [@dropDownMenu] *ngIf="showMenu" class="menu">
     <div class="menu-body">
-      <a (click)="closeMenu()" class="menu-item text-bold" href="home#home">
+      <a (click)="navigateTo('home','home')" class="menu-item text-bold" href="home#home">
         <span class="wrapper">Home</span>
       </a>
-      <a (click)="closeMenu()" class="menu-item text-bold" href="home#about">
+      <a (click)="navigateTo('home','about')" class="menu-item text-bold" href="home#about">
         <span class="wrapper">About</span>
       </a>
-      <a (click)="closeMenu()" class="menu-item text-bold" href="home#projects">
+      <a (click)="navigateTo('home','projects')" class="menu-item text-bold" href="home#projects">
         <span class="wrapper">Projects</span>
       </a>
-      <a (click)="closeMenu()" class="menu-item text-bold" href="home#contact">
+      <a (click)="navigateTo('home','contact')" class="menu-item text-bold" href="home#contact">
         <span class="wrapper">Contact</span>
       </a>
     </div>

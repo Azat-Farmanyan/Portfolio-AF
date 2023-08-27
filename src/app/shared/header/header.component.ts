@@ -16,6 +16,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -93,10 +94,13 @@ export class HeaderComponent implements OnInit, OnChanges {
   public getScreenWidth!: number;
   public getScreenHeight!: number;
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     this.getScreenWidth = window.innerWidth;
     this.getScreenHeight = window.innerHeight;
   }
+
   ngOnChanges(): void {
     // console.log(this.scrollTop);
   }
@@ -112,5 +116,11 @@ export class HeaderComponent implements OnInit, OnChanges {
     if (event.target.innerWidth > 600) {
       this.closeMenu();
     }
+  }
+
+  navigateTo(path: string, fragment: string) {
+    console.log('navigate', path, fragment);
+    this.router.navigate([`/${path}`], { fragment: `${fragment}` });
+    if (this.showMenu) this.closeMenu();
   }
 }

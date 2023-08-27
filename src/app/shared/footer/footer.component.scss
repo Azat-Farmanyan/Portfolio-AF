@@ -1,0 +1,100 @@
+.footer {
+  background: #0f0f0f;
+  padding: 100px 0 40px;
+  .footer-body {
+    max-width: 1114px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    // gap: 100px;
+    // margin-bottom: 60px;
+    @media only screen and (max-width: 600px) {
+      // flex-direction: column;
+      flex-wrap: wrap-reverse;
+    }
+    .footer-info {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .footer-title {
+        color: #fff;
+        font-family: Palanquin;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%; /* 18px */
+        letter-spacing: 0.9px;
+        text-transform: uppercase;
+      }
+      .footer-text {
+        color: #fff;
+        font-family: Roboto;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 100%; /* 14px */
+        letter-spacing: 0.7px;
+      }
+    }
+    .footer-social {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 20px;
+      .social-title {
+        color: #fff;
+        text-align: left;
+        font-family: Palanquin;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%; /* 18px */
+        letter-spacing: 0.9px;
+        text-transform: uppercase;
+      }
+      .social-links {
+        display: flex;
+        gap: 20px;
+        .social-link {
+          transition: all 0.3s ease;
+
+          position: relative;
+          &:hover {
+            // background: #e2e2e2;
+            transform: translateY(-7px);
+          }
+        }
+      }
+    }
+  }
+  .footer-copiright {
+    padding-top: 67px;
+    max-width: 1114px;
+    margin: 0 auto;
+    .line {
+      width: 100%;
+      height: 2px;
+      opacity: 0.2;
+      background: #e2e2e2;
+    }
+    .copyright-text {
+      text-align: center;
+      margin-top: 40px;
+      color: #fff;
+      font-family: Roboto;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%; /* 12px */
+      letter-spacing: 0.6px;
+      & a {
+        text-decoration-line: underline;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<section class='details'>
+  <div class="wrapper">
+    <div class="details-block">
+      <div class="details-header">
+        <div *ngIf="project">
+          <app-carousel [images]='project.screenshots'></app-carousel>
+        </div>
+      </div>
+      <div class="details-body"></div>
+    </div>
+  </div>
+</section>
+
+
+<div *ngIf="project">
+  <h1>
+    {{project.title}}
+    {{project.description}}
+    {{project.id}}
+  </h1>
+
+</div>
+
+<h1>details</h1>
+<button (click)="back()" class='btn orange-bg'>Back</button>

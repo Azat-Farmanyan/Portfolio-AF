@@ -17,7 +17,6 @@ import { Component, Input } from '@angular/core';
           <img
             style="
               width: 100%;
-              height: 70vh;
               object-fit: contain;"
             [src]="image"
             alt="Random first slide"

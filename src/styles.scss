@@ -79,6 +79,15 @@ textarea {
     font-size: 14px;
   }
 }
+
+.unselectable {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  // color: #cc0000;
+}
 .error-message {
   color: #ff4141;
   font-family: Roboto;
@@ -272,21 +281,3 @@ textarea {
   background-color: rgba(0, 0, 0, 0.527);
   z-index: 999;
 }
-
-/* Importing Bootstrap SCSS file. */
-// @import "bootstrap/scss/bootstrap";
-
-// html,
-// body {
-//   height: 100%;
-// }
-// body {
-//   margin: 0;
-//   font-family: Roboto, "Helvetica Neue", sans-serif;
-// }
-
-/* Importing Bootstrap SCSS file. */
-// @import "bootstrap/scss/bootstrap";
-
-/* Importing Bootstrap SCSS file. */
-@import "bootstrap/scss/bootstrap";

@@ -8,10 +8,11 @@
     .right-click {
       // background-color: rgb(121, 206, 52);
 
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      padding: 0 27px;
+      // position: absolute;
+      // top: 0;
+      // bottom: 0;
+
+      padding: 50px 27px;
       cursor: pointer;
 
       display: flex;
@@ -23,16 +24,7 @@
         }
       }
       @media (max-width: 600px) {
-        padding: 0 15px;
-
-        img {
-          width: 17px;
-        }
-      }
-      @media (max-width: 400px) {
-        img {
-          width: 15px;
-        }
+        display: none;
       }
     }
     .left-click {
@@ -60,37 +52,63 @@
       }
     }
   }
-  .carousel-nav {
+  .carousel-nav-block {
     margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 22px;
-    height: 17px;
-    .carousel-dot {
-      width: 13px;
-      height: 13px;
-      border-radius: 14px;
-      background: #c7c7c7;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    gap: 20px;
+    @media (max-width: 400px) {
+      gap: 0px;
     }
-    .active-dot {
-      width: 17px;
+    .left-click,
+    .right-click {
+      display: none;
+      padding: 0 30px;
+      img {
+        width: 20px;
+        cursor: pointer;
+      }
+      @media (max-width: 600px) {
+        display: block;
+      }
+      @media (max-width: 400px) {
+        img {
+          width: 15px;
+        }
+      }
+    }
+    .carousel-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
       height: 17px;
-      border-radius: 16px;
-      border: 2px solid #ee6c4d;
-      background: rgba(156, 160, 165, 0);
-    }
-    @media (max-width: 600px) {
-      gap: 10px;
       .carousel-dot {
-        width: 11px;
-        height: 11px;
+        width: 13px;
+        height: 13px;
+        border-radius: 14px;
+        background: #c7c7c7;
+        cursor: pointer;
+        transition: all 0.3s ease;
       }
       .active-dot {
-        width: 15px;
-        height: 15px;
+        width: 17px;
+        height: 17px;
+        border-radius: 16px;
+        border: 2px solid #ee6c4d;
+        background: rgba(156, 160, 165, 0);
+      }
+      @media (max-width: 600px) {
+        gap: 10px;
+        .carousel-dot {
+          width: 11px;
+          height: 11px;
+        }
+        .active-dot {
+          width: 15px;
+          height: 15px;
+        }
       }
     }
   }

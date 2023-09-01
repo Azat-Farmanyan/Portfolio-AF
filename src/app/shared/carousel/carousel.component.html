@@ -1,23 +1,41 @@
 <div class="carousel">
-  <div class="carousel-body">
-    <div (click)="clickLeft()" class="left-click unselectable">
-      <img src="../../../assets/icons/left-arrow.svg" alt="left">
-    </div>
-    <div class="images-block">
-      <img [src]="defaultImg" alt="" class="carousel-image" [@fadeInOut]="showImage ? 'show' : 'hide'">
-    </div>
-    <div (click)="clickRight()" class="right-click unselectable">
-      <img src="../../../assets/icons/right-arrow.svg" alt="left">
-    </div>
-  </div>
-  <div class="carousel-nav">
+  <p *ngIf="isLoading;else carouselBox" class='text-bold'>
+    Loading ...
+  </p>
+  <ng-template #carouselBox>
 
-    <div (click)='setActiveDot(i)' *ngFor="let length of images; let i = index" class="carousel-dot"
-      [ngClass]="{'active-dot':i===activeDot}">
+    <div class="carousel-body">
+
+      <div (click)="clickLeft()" class="left-click unselectable">
+        <img src="../../../assets/icons/left-arrow.svg" alt="LEFT">
+      </div>
+
+      <div class="images-block">
+        <img [src]="defaultImg" alt="" class="carousel-image" [@fadeInOut]="showImage ? 'show' : 'hide'">
+      </div>
+
+      <div (click)="clickRight()" class="right-click unselectable">
+        <img src="../../../assets/icons/right-arrow.svg" alt="RIGHT">
+      </div>
+
     </div>
-    <!-- <div class="carousel-dot"></div>
-    <div class="carousel-dot avtive-dot"></div>
-    <div class="carousel-dot"></div>
-    <div class="carousel-dot"></div> -->
-  </div>
+
+
+    <div class="carousel-nav-block">
+
+      <div (click)="clickLeft()" class="left-click unselectable">
+        <img src="../../../assets/icons/left-arrow.svg" alt="LEFT">
+      </div>
+
+      <div class="carousel-nav">
+        <div (click)='setActiveDot(i)' *ngFor="let length of images; let i = index" class="carousel-dot"
+          [ngClass]="{'active-dot':i===activeDot}">
+        </div>
+      </div>
+      <div (click)="clickRight()" class="right-click unselectable">
+        <img src="../../../assets/icons/right-arrow.svg" alt="RIGHT">
+      </div>
+
+    </div>
+  </ng-template>
 </div>

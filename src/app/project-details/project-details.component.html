@@ -4,7 +4,11 @@
   <div class="wrappera">
     <div class="details-block">
       <div class="details-header">
+
         <div *ngIf="project">
+          <h2 class='section-title project-title'>
+            {{project.title}}
+          </h2>
           <app-carousel [images]='project.screenshots'></app-carousel>
         </div>
       </div>

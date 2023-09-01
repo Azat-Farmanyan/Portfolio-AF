@@ -39,9 +39,12 @@ export class CarouselComponent implements OnChanges {
   showImage: boolean = true;
   animationTime = 0;
 
+  isLoading = true;
+
   ngOnChanges(): void {
     this.setActiveImg();
     this.setImgsLength();
+    this.isLoading = false;
   }
 
   toggleImage() {
@@ -78,15 +81,11 @@ export class CarouselComponent implements OnChanges {
     this.setActiveImg();
   }
 
-  checkLengthOfImages() {
-    if (this.images) {
-    }
-  }
-
   setActiveDot(dotIndex: number) {
-    this.activeDot = dotIndex;
-    this.toggleImage();
-
-    this.setActiveImg();
+    if (dotIndex !== this.activeDot) {
+      this.activeDot = dotIndex;
+      this.toggleImage();
+      this.setActiveImg();
+    }
   }
 }

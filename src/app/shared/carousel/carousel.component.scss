@@ -47,12 +47,50 @@
       @media (max-width: 768px) {
         padding: 0 10px;
       }
+
       .carousel-image {
-        max-height: 100%;
+        // max-height: 100%;
+        // max-height: 420px;
+        // height: 100%;
         max-width: 100%;
         width: auto;
         display: block;
         margin: 0 auto;
+        object-fit: contain;
+      }
+    }
+  }
+  .carousel-nav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    height: 17px;
+    .carousel-dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 14px;
+      background: #c7c7c7;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .active-dot {
+      width: 17px;
+      height: 17px;
+      border-radius: 16px;
+      border: 2px solid #ee6c4d;
+      background: rgba(156, 160, 165, 0);
+    }
+    @media (max-width: 600px) {
+      gap: 10px;
+      .carousel-dot {
+        width: 11px;
+        height: 11px;
+      }
+      .active-dot {
+        width: 15px;
+        height: 15px;
       }
     }
   }

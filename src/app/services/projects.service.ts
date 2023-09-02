@@ -30,7 +30,7 @@ export class ProjectsService {
         '../../../../assets/screenshots/pms3.png',
         '../../../../assets/screenshots/pms4.png',
       ],
-      tools: [],
+      tools: ['Angular', 'html', 'CSS', 'JavaScript'],
       // tools: [
       //   this.skill('Angular'),
       //   this.skill('html'),

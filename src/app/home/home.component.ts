@@ -30,16 +30,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    // this.routerSubs = this.router.events
-    //   .pipe(
-    //     filter((e: any) => e instanceof RoutesRecognized),
-    //     pairwise()
-    //   )
-    //   .subscribe((event: any[]) => {
-    //     const previuosPath = event[0].urlAfterRedirects;
-    //     console.log(event[0].urlAfterRedirects);
-    //   });
-
     this.prevPathSubs = this.routeService.previousPath.subscribe((prevPath) => {
       this.prevPath = prevPath;
     });
@@ -64,16 +54,4 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     if (this.prevPathSubs) this.prevPathSubs.unsubscribe();
   }
-  // @HostListener('window:scroll', ['$event'])
-  // onWindowsScroll(event: Event) {
-  //   const scrollTop =
-  //     window.pageYOffset ||
-  //     document.documentElement.scrollTop ||
-  //     document.body.scrollTop;
-  //   if (scrollTop === 0) {
-  //     this.scrollTop = true;
-  //   } else {
-  //     this.scrollTop = false;
-  //   }
-  // }
 }

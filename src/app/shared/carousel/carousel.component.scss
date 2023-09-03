@@ -4,20 +4,13 @@
     justify-content: space-around;
     align-items: center;
     position: relative;
+    height: inherit;
     .left-click,
     .right-click {
-      // background-color: rgb(121, 206, 52);
-
-      // position: absolute;
-      // top: 0;
-      // bottom: 0;
-
       padding: 50px 27px;
       cursor: pointer;
-
       display: flex;
       align-items: center;
-
       @media (max-width: 768px) {
         img {
           width: 20px;
@@ -49,6 +42,7 @@
         display: block;
         margin: 0 auto;
         object-fit: contain;
+        // display: none;
       }
     }
   }
@@ -96,7 +90,7 @@
         width: 17px;
         height: 17px;
         border-radius: 16px;
-        border: 2px solid #ee6c4d;
+        outline: 2px solid #ee6c4d;
         background: rgba(156, 160, 165, 0);
       }
       @media (max-width: 600px) {

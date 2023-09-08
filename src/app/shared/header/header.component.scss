@@ -18,10 +18,10 @@
     align-items: center;
     padding-top: 20px;
     .left-side {
+      display: flex;
+      align-items: center;
+      gap: 15px;
       & a {
-        display: flex;
-        align-items: center;
-        gap: 15px;
         text-decoration: none;
         @media only screen and (max-width: 900px) {
           gap: 10px;

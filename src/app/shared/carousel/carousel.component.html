@@ -7,12 +7,8 @@
       </div>
 
       <div class="images-block">
-        <img
-          [src]="defaultImg"
-          alt=""
-          class="carousel-image"
-          [@fadeInOut]="showImage ? 'show' : 'hide'"
-        />
+        <img [src]="defaultImg" alt="" class="carousel-image" [@fadeInOut]="showImage ? 'show' : 'hide'"
+          (load)="imageLoaded()" />
       </div>
 
       <div (click)="clickRight()" class="right-click unselectable">
@@ -26,12 +22,8 @@
       </div>
 
       <div class="carousel-nav">
-        <div
-          (click)="setActiveDot(i)"
-          *ngFor="let length of images; let i = index"
-          class="carousel-dot"
-          [ngClass]="{ 'active-dot': i === activeDot }"
-        ></div>
+        <div (click)="setActiveDot(i)" *ngFor="let length of images; let i = index" class="carousel-dot"
+          [ngClass]="{ 'active-dot': i === activeDot }"></div>
       </div>
       <div (click)="clickRight()" class="right-click unselectable">
         <img src="../../../assets/icons/right-arrow.svg" alt="RIGHT" />

@@ -6,6 +6,7 @@ import {
   state,
 } from '@angular/animations';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-carousel',
@@ -25,8 +26,13 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
           opacity: 0,
         })
       ),
-      transition('show => hide', animate('300ms ease-out')),
-      transition('hide => show', animate('300ms ease-in')),
+      transition('show <=> hide', [
+        animate('300ms ease-in-out', style({ opacity: 0 })),
+        // Add a delay of 500ms in between hiding and showing
+        animate('1000ms 300ms ease-in-out', style({ opacity: 1 })),
+      ]),
+      // transition('show => hide', animate('300ms ease-out')),
+      // transition('hide => show', animate('300ms ease-in')),
     ]),
   ],
 })
@@ -46,13 +52,15 @@ export class CarouselComponent implements OnChanges {
     this.setImgsLength();
     this.isLoading = false;
   }
-
+  imageLoaded() {
+    console.log('image is loaded');
+  }
   toggleImage() {
     this.showImage = !this.showImage;
 
     setTimeout(() => {
       this.showImage = !this.showImage;
-    }, 300);
+    }, this.animationTime);
   }
 
   setActiveImg() {

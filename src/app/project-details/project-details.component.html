@@ -3,7 +3,8 @@
 <section class="details">
   <div class="details-block">
     <div class="wrapper">
-      <button (click)="back()" class="btn orange-bg">Return to projects</button>
+      <button style='padding: 5px 45px !important; background-color: #98C1D9;' (click)="back()"
+        class="btn orange-bg">Return to projects</button>
     </div>
 
     <div class="details-header">
@@ -15,6 +16,7 @@
       </div>
     </div>
   </div>
+
   <div class="wrapper">
     <div class="details-body">
       <div class="overview">
@@ -33,12 +35,7 @@
         <h4 class="paragraph-title">See live</h4>
         <div class="see-live-btns">
           <a class="btn" [href]="project.seeLive" target="_blank"> SEE DEMO </a>
-          <a
-            class="btn white-btn"
-            [href]="project.sourceCodeUrl"
-            target="_blank"
-            >Source code</a
-          >
+          <a class="btn white-btn" [href]="project.sourceCodeUrl" target="_blank">Source code</a>
         </div>
       </div>
     </div>

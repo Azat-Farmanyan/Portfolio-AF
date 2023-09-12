@@ -12,6 +12,10 @@
       justify-content: center;
       .btn {
         margin: 40px auto 0;
+        @media only screen and (max-width: 600px) {
+          font-size: 16px !important;
+          margin: 40px auto 10px;
+        }
       }
     }
     .details-header {
@@ -28,6 +32,13 @@
       .project-title {
         margin-bottom: 40px;
         font-size: 34px;
+        padding: 10px;
+        @media only screen and (max-width: 600px) {
+          font-size: 24px;
+        }
+        @media only screen and (max-width: 350px) {
+          padding: 0px;
+        }
       }
     }
   }
@@ -69,12 +80,18 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: 30px;
+        @media only screen and (max-width: 600px) {
+          gap: 20px;
+        }
         .btn {
           border-radius: 5px;
           background: #ee6c4d;
           box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
 
           padding: 5px 45px !important;
+          @media only screen and (max-width: 600px) {
+            font-size: 16px !important;
+          }
         }
         .white-btn {
           border-radius: 5px;

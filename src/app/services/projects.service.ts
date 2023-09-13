@@ -21,7 +21,103 @@ export class ProjectsService {
 
   projects: Project[] = [
     {
-      id: 3,
+      id: 9,
+      title: 'Speed Typing App',
+      description: [
+        'Welcome to the Speed Typing App, your ultimate tool for enhancing your typing proficiency. Whether you are a professional looking to boost productivity or a learner aiming to improve your keyboard prowess, our application is designed to help you achieve your typing goals with precision and efficiency.',
+        'Our Speed Typing App offers a range of customizable features, allowing you to tailor your typing practice to your specific needs. You can choose your preferred timer, set word goals, and select difficulty levels to create a personalized typing experience. Whether you have just a few minutes to spare or want to embark on a more extensive typing session, our app adapts to your schedule.',
+        'As you type, the Speed Typing App provides real-time feedback, tracking your speed, accuracy, and word count. It offers a library of words and phrases to challenge and engage your typing skills continually. With each session, you will find yourself typing faster, more accurately, and with greater confidence.',
+        'Join the growing community of typists who have improved their skills with our Speed Typing App. Whether you are preparing for a job that requires lightning-fast typing or simply want to be more efficient with your daily tasks, our app is your ideal companion. Download it today and watch your typing abilities soar to new heights!',
+      ],
+      banner: `banner`,
+      screenshots: [
+        `${this.screenshotsFolderPath}speen-typing-1${'.png'}`,
+        `${this.screenshotsFolderPath}speen-typing-2${'.png'}`,
+      ],
+      tools: ['HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Angular', 'Figma'],
+      seeLive: 'https://chic-cat-2246b2.netlify.app/home',
+      sourceCodeUrl:
+        'https://github.com/Azat-Farmanyan/speed-typing-Angular-app',
+    },
+    {
+      id: 8,
+      title: 'Blot card game',
+      description: [
+        'Welcome to the Note Card Game Blots Score, your ultimate scoring companion for this classic and exciting card game. Whether youre a seasoned Blot player or just starting your journey, our application is designed to make keeping score a breeze and add a touch of elegance to your gaming experience.',
+        'With our user-friendly and intuitive interface, you can focus on the game while effortlessly tracking your scores. No more fumbling with pen and paper or trying to remember whos winning; our app takes care of all the math for you. Simply input the scores, and let the Note Card Game Blots Score do the rest.',
+        'But we dont stop at functionality; we believe in adding a touch of style to your gaming. Our app offers customizable themes and visually appealing scorecards to enhance your Blot gaming experience. Whether you prefer classic elegance or a more modern look, you can choose a theme that suits your taste.',
+        'Join the Blot gaming community and elevate your card-playing sessions with our Note Card Game Blots Score app. Its not just about keeping score; its about enhancing your gaming moments with ease and sophistication. Download our app today and score your way to victory in style!',
+      ],
+      banner: `banner`,
+      screenshots: [
+        `${this.screenshotsFolderPath}blot-app-1${'.png'}`,
+        `${this.screenshotsFolderPath}blot-app-2${'.png'}`,
+      ],
+      tools: ['HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Angular', 'Figma'],
+      seeLive: 'https://steady-biscotti-58c415.netlify.app/blot',
+      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/blot-app',
+    },
+    {
+      id: 7,
+      title: 'Weather app',
+      description: [
+        'Welcome to the Weather App, your reliable companion for staying informed about the ever-changing skies. With our user-friendly and intuitive application, you will have the power to access up-to-the-minute weather forecasts and stay one step ahead of Mother Nature.',
+        'Our Weather App offers a seamless experience, providing you with accurate and detailed weather information at your fingertips. Whether you are planning a weekend getaway, scheduling outdoor activities, or simply want to know what to expect on your daily commute, our app has you covered',
+        'Stay informed with real-time weather updates, temperature trends, precipitation forecasts, and more. With an easy-to-navigate interface and customizable features, you can tailor your weather experience to suit your needs. Whether you are a weather enthusiast or just want to know if you will need an umbrella, our Weather App is here to make your day brighter and more predictable.',
+        'Join the millions of users who rely on our app for their daily weather updates. Embrace the convenience of knowing the forecast wherever you go, and be prepared for whatever the weather may bring. Download our Weather App today and stay ahead of the elements!',
+      ],
+      banner: `banner`,
+      screenshots: [
+        `${this.screenshotsFolderPath}weather-app-1${'.png'}`,
+        `${this.screenshotsFolderPath}weather-app-2${'.png'}`,
+        `${this.screenshotsFolderPath}weather-app-3${'.png'}`,
+      ],
+      tools: ['HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Angular', 'Figma'],
+      seeLive: 'https://deft-liger-7c9069.netlify.app/home',
+      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/weather-app',
+    },
+    {
+      id: 6,
+      title: 'English for kids',
+      description: [
+        'Introducing "English for Kids," an engaging and educational application specially crafted for children eager to embark on a journey of English language discovery. Designed with young learners in mind, our app offers two exciting modes that make language acquisition a joyful adventure.',
+        'In the "Training Mode," children can dive into a world of knowledge and explore new words with interactive lessons and colorful visuals. Learning becomes a playful experience as kids absorb vocabulary, pronunciation, and basic language skills at their own pace. With our user-friendly interface and engaging content, young minds can build a solid foundation in English, setting them on a path to success.',
+        'For those moments of delightful exploration, the "Game Mode" awaits. Here, children can put their newfound knowledge to the test in a thrilling game of picture guessing. Imagination and language skills come together as kids identify objects, animals, and more, all while reinforcing their English vocabulary in a fun and interactive way.',
+        'English for Kids is more than an app; it is an educational companion that fosters a love for language and learning. Join us in this exciting journey, where children can expand their horizons, boost their confidence, and embark on a lifelong adventure of language and discovery. Give your child the gift of English education wrapped in fun and excitement today!',
+      ],
+      banner: `banner`,
+      screenshots: [
+        `${this.screenshotsFolderPath}english-2${'.png'}`,
+        `${this.screenshotsFolderPath}english-1${'.png'}`,
+        `${this.screenshotsFolderPath}english-3${'.png'}`,
+        `${this.screenshotsFolderPath}english-4${'.png'}`,
+        `${this.screenshotsFolderPath}english-5${'.png'}`,
+      ],
+      tools: ['HTML', 'SCSS', 'JavaScript', 'Figma'],
+      seeLive:
+        'https://azat-farmanyan.github.io/English-for-kids/English-for-kids/pages/main/#',
+      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/English-for-kids',
+    },
+    {
+      id: 5,
+      title: 'Project Management System',
+      description: [
+        'Welcome to our Project Management System, a powerful application designed to assist individuals, teams, or groups of developers in achieving their goals efficiently and effectively. In todays fast-paced world, where collaboration and organization are key, our system offers a comprehensive solution to streamline your project management needs.',
+        'In a highly competitive market, we understand that choices abound. Notable competitors like Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, and Github projects have all made their mark. However, our Project Management System stands out as a robust and user-friendly option, tailored to meet the specific needs of modern teams. With an array of features, intuitive interface, and customizable functionality, we aim to empower you to take control of your projects and drive success.',
+        'Join the ranks of satisfied users who have discovered the benefits of our Project Management System. Explore the tools, enhance your productivity, and experience the difference for yourself. Whether you are a seasoned project manager or just embarking on your journey, we are here to help you reach your goals efficiently and with confidence. Welcome to the future of project management!',
+      ],
+      banner: `banner`,
+      screenshots: [
+        `${this.screenshotsFolderPath}proj-man-sys-1${'.png'}`,
+        `${this.screenshotsFolderPath}proj-man-sys-2${'.png'}`,
+        `${this.screenshotsFolderPath}proj-man-sys-3${'.png'}`,
+      ],
+      tools: ['HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Angular', 'Figma'],
+      seeLive: 'https://fascinating-douhua-c23dc0.netlify.app/',
+      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/rs-front-azat',
+    },
+    {
+      id: 4,
       title: 'Shelter Dogs and Cats',
       description: [
         'Welcome to Shelter Dogs and Cats, a heartwarming online platform dedicated to our furry friends in need. Our mission is simple yet profound: to connect deserving shelter dogs and cats with loving forever homes.',

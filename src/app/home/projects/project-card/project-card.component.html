@@ -4,13 +4,14 @@
     <div class="proj-card-text-block">
       <div class="paragraph-title proj-title">{{project!.title}}</div>
       <div class="text proj-description">
-        {{project.description}}
+        {{project.description[0] | textCut: 30}}
       </div>
       <button (click)="openDetails(project.id)" class="btn-medium-small">See More</button>
     </div>
     <div class="project-galeria">
 
-      <img class='project-img' src="../../../../assets/screenshots/pms8.png" alt="Project-Management-System">
+      <img *ngIf="project.screenshots" class='project-img' [src]="project.screenshots[0]"
+        alt="Project-Management-System">
 
     </div>
   </div>

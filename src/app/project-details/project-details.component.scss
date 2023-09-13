@@ -20,7 +20,8 @@
     }
     .details-header {
       padding: 60px 0;
-
+      max-width: 1200px;
+      margin: 0 auto;
       // height: 90vh;
       // display: flex;
       // align-items: center;
@@ -46,7 +47,11 @@
     display: flex;
     flex-direction: column;
     gap: 60px;
-    margin: 100px 0;
+    margin: 100px auto;
+    max-width: 1200px;
+    @media only screen and (max-width: 600px) {
+      margin: 40px auto;
+    }
     .overview {
       display: flex;
       flex-direction: column;

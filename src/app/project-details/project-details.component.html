@@ -3,11 +3,8 @@
 <section class="details">
   <div class="details-block">
     <div class="wrapper">
-      <button
-        style="padding: 5px 45px !important; background-color: #98c1d9"
-        (click)="back()"
-        class="btn orange-bg"
-      >
+      <button style="padding: 5px 45px !important; background-color: #98c1d9; font-size: 16px !important;"
+        (click)="back()" class="btn orange-bg">
         Return to projects
       </button>
     </div>
@@ -26,7 +23,7 @@
     <div class="details-body">
       <div class="overview">
         <h4 class="paragraph-title">Project overview</h4>
-        <p class="text">{{ project?.description }}</p>
+        <p *ngFor="let des of project?.description" class="text">{{ des }}</p>
       </div>
       <div class="tools">
         <h4 class="paragraph-title">Tools used</h4>
@@ -40,12 +37,7 @@
         <h4 class="paragraph-title">See live</h4>
         <div class="see-live-btns">
           <a class="btn" [href]="project.seeLive" target="_blank"> SEE DEMO </a>
-          <a
-            class="btn white-btn"
-            [href]="project.sourceCodeUrl"
-            target="_blank"
-            >Source code</a
-          >
+          <a class="btn white-btn" [href]="project.sourceCodeUrl" target="_blank">Source code</a>
         </div>
       </div>
     </div>

@@ -281,3 +281,25 @@ textarea {
   background-color: rgba(0, 0, 0, 0.527);
   z-index: 999;
 }
+
+.custom-scrollable-div {
+  height: 300px; /* Set the desired height for your div */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  // border: 1px solid #ccc; /* Optional: Add a border for visual clarity */
+  scrollbar-width: thin; /* Enable custom scrollbar for Firefox */
+  scrollbar-color: #ee6c4d #ddd; /* Change scrollbar track and thumb colors for Firefox */
+}
+
+/* Custom scrollbar for WebKit-based browsers (Chrome, Safari) */
+.custom-scrollable-div::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+.custom-scrollable-div::-webkit-scrollbar-thumb {
+  background-color: #ee6c4d; /* Set the color of the scrollbar thumb */
+  border-radius: 5px; /* Set the border radius of the thumb */
+}
+
+.custom-scrollable-div::-webkit-scrollbar-track {
+  background-color: #ddd; /* Set the color of the scrollbar track */
+}

@@ -53,7 +53,7 @@ export class CarouselComponent implements OnChanges {
     this.isLoading = false;
   }
   imageLoaded() {
-    console.log('image is loaded');
+    // console.log('image is loaded');
   }
   toggleImage() {
     this.showImage = !this.showImage;
@@ -67,7 +67,7 @@ export class CarouselComponent implements OnChanges {
     setTimeout(() => {
       if (!!this.images) this.defaultImg = this.images[this.activeDot];
 
-      console.log(this.activeDot);
+      // console.log(this.activeDot);
     }, this.animationTime);
   }
 

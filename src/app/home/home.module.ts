@@ -9,6 +9,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectCardComponent } from './projects/project-card/project-card.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TextCutPipe } from '../pipes/text-cut.pipe';
 
 @NgModule({
   declarations: [

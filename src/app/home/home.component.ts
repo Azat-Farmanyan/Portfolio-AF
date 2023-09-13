@@ -9,6 +9,7 @@ import {
   Renderer2,
 } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
+import { isNumber } from '@ng-bootstrap/ng-bootstrap/util/util';
 import { Subscription } from 'rxjs';
 import { filter, pairwise } from 'rxjs/operators';
 
@@ -22,6 +23,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   prevPath: string = '';
   prevPathSubs: Subscription;
 
+  clickedCard: number;
+
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
@@ -32,6 +35,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit(): void {
     this.prevPathSubs = this.routeService.previousPath.subscribe((prevPath) => {
       this.prevPath = prevPath;
+
+      console.log(this.prevPath);
+
+      if (this.prevPath.includes('details')) {
+        const cardId = +this.prevPath.split('/')[2];
+        if (cardId) {
+          this.clickedCard = cardId;
+        }
+      }
     });
   }
 
@@ -41,6 +53,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   scrollToProjects() {
     if (this.prevPath.includes('details')) {
+      // `#${this.openedCardId}`
       const projectsElement = this.el.nativeElement.querySelector('#projects');
       if (projectsElement) {
         this.renderer.setProperty(

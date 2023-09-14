@@ -21,6 +21,61 @@ export class ProjectsService {
 
   projects: Project[] = [
     {
+      id: 12,
+      title: 'Posts App',
+      description: [
+        'Welcome to the Posts App, your personal portal to a world of stories, shared experiences, and connections. Whether you are a seasoned blogger, an avid reader, or someone looking to connect with like-minded individuals, our application is designed to bring the world of posts and stories to your fingertips.',
+        'With the Posts App, users can create accounts, log in, and embark on a journey of exploration. Once logged in, you will have access to a vast array of posts, each telling a unique tale or sharing valuable insights. Whether you are into travel stories, lifestyle blogs, or tech reviews, you will find a diverse range of content to engage with.',
+        'But the Posts App is not just about reading; it is about connecting. Explore user profiles and about cards to learn more about the writers behind the posts. Discover shared interests, connect with fellow enthusiasts, and engage in meaningful discussions with those who share your passion.',
+        'Join the growing community of readers and writers who have made the Posts App their go-to platform for storytelling and connecting. Whether you are here to share your own posts or discover new perspectives, our app is your doorway to a world of stories and connections. Download the Posts App today and start sharing, discovering, and connecting in a new and exciting way!',
+      ],
+      banner: `banner`,
+      screenshots: [
+        `${this.screenshotsFolderPath}posts-app-1${'.png'}`,
+        `${this.screenshotsFolderPath}posts-app-2${'.png'}`,
+        `${this.screenshotsFolderPath}posts-app-3${'.png'}`,
+      ],
+      tools: ['Angular', 'HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Figma'],
+      seeLive: 'https://mypostsapp.netlify.app/login',
+      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/postsApp',
+    },
+    {
+      id: 11,
+      title: 'Users App',
+      description: [
+        'Welcome to the Users App, your one-stop solution for seamless user management. Whether you are an administrator, a community organizer, or simply need an efficient way to manage user profiles, our application is designed to simplify the process and put you in control.',
+        'With the Users App, you can effortlessly create and display user profiles complete with portraits. Each profile is customizable, allowing you to add and edit user details, including their portrait, name, contact information, and more. Gone are the days of sifting through paperwork or multiple spreadsheets; our app streamlines user management into a user-friendly interface.',
+        'Need to update a users information or portrait? No problem. The Users App makes it easy to make changes in real-time, ensuring your records are always up-to-date. And if it is time to bid farewell to a user, our app offers a simple deletion feature, allowing you to remove profiles with ease while maintaining data integrity.',
+        'Join the growing community of users who rely on the Users App for efficient and organized user management. Whether you are running a small organization or managing a large user database, our app has you covered. It is time to take control of your user profiles and make user management a breeze. Download the Users App today and experience the convenience of streamlined user management firsthand!',
+      ],
+      banner: `banner`,
+      screenshots: [
+        `${this.screenshotsFolderPath}card-app-1.png${'.png'}`,
+        `${this.screenshotsFolderPath}card-app-2${'.png'}`,
+      ],
+      tools: ['Angular', 'HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Figma'],
+      seeLive: 'https://majestic-melomakarona-c93ab4.netlify.app/users-page',
+      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/UsersApp_Angular',
+    },
+    {
+      id: 10,
+      title: 'World Putting League',
+      description: [
+        'Welcome to the World Putting League, the epicenter of precision and passion in the world of golf. Dive into a unique golfing experience where putting prowess takes center stage and players from around the globe come together to showcase their skills.',
+        'Our league is more than just a competition; it is a celebration of the art and science of putting. Whether you are a seasoned pro or a newcomer to the green, the World Putting League offers a platform for everyone to participate and compete. Our inclusive environment fosters camaraderie and sportsmanship while pushing the boundaries of what is possible on the putting green.',
+        'Stay updated with the latest scores, rankings, and events as you immerse yourself in the thrilling world of putting. With a community of passionate golfers and enthusiasts, the World Putting League is where dreams are made, records are shattered, and lifelong friendships are forged.',
+        'Join us on this journey where every putt counts, and the pursuit of perfection knows no bounds. Whether you are a golfer by heart or just intrigued by the allure of precision, the World Putting League welcomes you to experience golf in a whole new way. Get ready to roll with us and discover the magic of putting like never before.',
+      ],
+      banner: `banner`,
+      screenshots: [
+        `${this.screenshotsFolderPath}wpl-1${'.png'}`,
+        `${this.screenshotsFolderPath}wpl-2${'.png'}`,
+      ],
+      tools: ['Angular', 'HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Figma'],
+      seeLive: 'https://unrivaled-duckanoo-78dd09.netlify.app/home',
+      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/world-putting-league',
+    },
+    {
       id: 9,
       title: 'Speed Typing App',
       description: [
@@ -34,7 +89,8 @@ export class ProjectsService {
         `${this.screenshotsFolderPath}speen-typing-1${'.png'}`,
         `${this.screenshotsFolderPath}speen-typing-2${'.png'}`,
       ],
-      tools: ['HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Angular', 'Figma'],
+      tools: ['Angular', 'HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Figma'],
+
       seeLive: 'https://chic-cat-2246b2.netlify.app/home',
       sourceCodeUrl:
         'https://github.com/Azat-Farmanyan/speed-typing-Angular-app',
@@ -53,7 +109,8 @@ export class ProjectsService {
         `${this.screenshotsFolderPath}blot-app-1${'.png'}`,
         `${this.screenshotsFolderPath}blot-app-2${'.png'}`,
       ],
-      tools: ['HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Angular', 'Figma'],
+      tools: ['Angular', 'HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Figma'],
+
       seeLive: 'https://steady-biscotti-58c415.netlify.app/blot',
       sourceCodeUrl: 'https://github.com/Azat-Farmanyan/blot-app',
     },

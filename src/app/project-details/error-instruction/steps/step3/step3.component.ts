@@ -1,0 +1,10 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-step3',
+  templateUrl: './step3.component.html',
+  styleUrls: ['./step3.component.scss', '../steps.component.scss'],
+})
+export class Step3Component {
+  @Input() stepNum: number = 1;
+}

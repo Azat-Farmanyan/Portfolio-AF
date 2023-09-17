@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProjectDetailsComponent implements OnInit {
   project: Project | null;
+  showInstruction: boolean = false;
 
   routeSub: Subscription;
   projectID: number;

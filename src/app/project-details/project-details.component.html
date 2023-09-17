@@ -3,8 +3,15 @@
 <section class="details">
   <div class="details-block">
     <div class="wrapper">
-      <button style="padding: 5px 45px !important; background-color: #98c1d9; font-size: 18px !important;"
-        (click)="back()" class="btn orange-bg">
+      <button
+        style="
+          padding: 5px 45px !important;
+          background-color: #98c1d9;
+          font-size: 18px !important;
+        "
+        (click)="back()"
+        class="btn orange-bg"
+      >
         Return to projects
       </button>
     </div>
@@ -37,20 +44,17 @@
         <h4 class="paragraph-title">See live</h4>
         <div class="see-live-btns">
           <a class="btn" [href]="project.seeLive" target="_blank"> SEE DEMO </a>
-          <a class="btn white-btn" [href]="project.sourceCodeUrl" target="_blank">Source code</a>
+          <a
+            class="btn white-btn"
+            [href]="project.sourceCodeUrl"
+            target="_blank"
+            >Source code</a
+          >
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- <div *ngIf="project">
-  <h1>
-    {{project.title}}
-    {{project.description}}
-    {{project.id}}
-  </h1>
-
-</div> -->
+<!-- <app-error-instruction></app-error-instruction> -->
 
 <app-footer></app-footer>

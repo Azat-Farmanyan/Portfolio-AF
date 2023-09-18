@@ -43,7 +43,7 @@
       <div *ngIf="project" class="see-live">
         <h4 class="paragraph-title">See live</h4>
         <div class="see-live-btns">
-          <a class="btn" [href]="project.seeLive" target="_blank"> SEE DEMO </a>
+          <a class="btn" (click)="showInstruction = true"> SEE DEMO </a>
           <a
             class="btn white-btn"
             [href]="project.sourceCodeUrl"
@@ -55,6 +55,12 @@
     </div>
   </div>
 </section>
-<!-- <app-error-instruction></app-error-instruction> -->
+<div *ngIf="showInstruction">
+  <app-error-instruction
+    *ngIf="project"
+    [projectUrl]="project.seeLive"
+    (onClose)="showInstruction = false"
+  ></app-error-instruction>
+</div>
 
 <app-footer></app-footer>

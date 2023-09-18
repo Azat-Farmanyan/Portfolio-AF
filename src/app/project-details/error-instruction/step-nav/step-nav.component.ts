@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-step-nav',
@@ -7,4 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class StepNavComponent {
   @Input() activeStep: number = 1;
+
+  @Output() setActiveStep = new EventEmitter();
 }

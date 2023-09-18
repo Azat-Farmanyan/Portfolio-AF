@@ -1,12 +1,24 @@
 <div class="step-nav">
   <div class="step-nav-body">
-    <div class="step-num" [ngClass]="{ orange: activeStep >= 1 }">
+    <div
+      (click)="setActiveStep.emit(1)"
+      class="step-num"
+      [ngClass]="{ orange: activeStep >= 1 }"
+    >
       <span>1</span>
     </div>
-    <div class="step-num" [ngClass]="{ orange: activeStep >= 2 }">
+    <div
+      (click)="setActiveStep.emit(2)"
+      class="step-num"
+      [ngClass]="{ orange: activeStep >= 2 }"
+    >
       <span>2</span>
     </div>
-    <div class="step-num" [ngClass]="{ orange: activeStep >= 3 }">
+    <div
+      (click)="setActiveStep.emit(3)"
+      class="step-num"
+      [ngClass]="{ orange: activeStep >= 3 }"
+    >
       <span>3</span>
     </div>
 

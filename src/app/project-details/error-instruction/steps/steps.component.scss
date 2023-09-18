@@ -1,15 +1,14 @@
 .modal-card {
   background-color: #fff;
   position: fixed;
-  top: 50%;
+  top: 80px; /* Adjust the top position to 80px */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%); /* Center horizontally */
   max-width: 800px;
   width: 100%;
   border-radius: 10px;
   overflow-y: auto;
-  // max-height: 90vh;
-
+  max-height: calc(90vh - 80px);
   .modal-body {
     padding: 70px 30px 30px;
     display: flex;
@@ -21,4 +20,9 @@
     right: 30px;
     top: 30px;
   }
+}
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

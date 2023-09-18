@@ -1,0 +1,19 @@
+<div class="modal-card custom-scrollable-div">
+  <div class="close">
+    <img
+      src="../../../../../assets/icons/close-cross.svg"
+      alt="close"
+      (click)="onClose.emit()"
+    />
+  </div>
+  <div class="modal-body">
+    <app-step-nav
+      [activeStep]="stepNum"
+      (setActiveStep)="setStepNum($event)"
+    ></app-step-nav>
+
+    <app-step1 *ngIf="stepNum === 1" (onNext)="step2()"></app-step1>
+    <app-step2 *ngIf="stepNum === 2" (onNext)="step3()"></app-step2>
+    <app-step3 *ngIf="stepNum === 3" [projectUrl]="projectUrl"></app-step3>
+  </div>
+</div>

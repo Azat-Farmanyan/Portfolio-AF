@@ -1,9 +1,7 @@
 <div class="modal-container">
-  <app-step1 *ngIf="stepNum === 1" [stepNum]="stepNum"></app-step1>
-  <app-step2 *ngIf="stepNum === 2" [stepNum]="stepNum"></app-step2>
-  <app-step3 *ngIf="stepNum === 3" [stepNum]="stepNum"></app-step3>
+  <app-step (onClose)="onClose.emit()" [projectUrl]="projectUrl"></app-step>
 </div>
-<div style="position: fixed; top: 20px; left: 20px; z-index: 1500">
+<!-- <div style="position: fixed; top: 20px; left: 20px; z-index: 1500">
   <button (click)="prev()" class="btn">prev</button>
   <button (click)="next()" class="btn">next</button>
-</div>
+</div> -->

@@ -283,7 +283,7 @@ textarea {
 }
 
 .custom-scrollable-div {
-  height: 300px; /* Set the desired height for your div */
+  // height: 300px; /* Set the desired height for your div */
   overflow-y: scroll; /* Enable vertical scrolling */
   // border: 1px solid #ccc; /* Optional: Add a border for visual clarity */
   scrollbar-width: thin; /* Enable custom scrollbar for Firefox */
@@ -302,4 +302,5 @@ textarea {
 
 .custom-scrollable-div::-webkit-scrollbar-track {
   background-color: #ddd; /* Set the color of the scrollbar track */
+  border-radius: 10px;
 }

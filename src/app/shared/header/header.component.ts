@@ -119,7 +119,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   }
 
   navigateTo(path: string, fragment: string) {
-    console.log('navigate', path, fragment);
+    // console.log('navigate', path, fragment);
     this.router.navigate([`/${path}`], { fragment: `${fragment}` });
     if (this.showMenu) this.closeMenu();
   }

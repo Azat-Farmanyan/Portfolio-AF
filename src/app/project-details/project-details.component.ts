@@ -26,10 +26,10 @@ export class ProjectDetailsComponent implements OnInit {
   getPostIdFromRoute() {
     this.routeSub = this.route.params.subscribe((params) => {
       this.projectID = +params['id'];
-      console.log(this.projectID);
+      // console.log(this.projectID);
       this.project = this.projectsService.getProjectById(this.projectID);
       if (this.project === null) this.back();
-      console.log(this.project);
+      // console.log(this.project);
     });
   }
   back() {

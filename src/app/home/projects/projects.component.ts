@@ -27,7 +27,7 @@ export class ProjectsComponent implements OnInit, OnChanges, AfterViewInit {
   ngOnInit(): void {}
 
   ngOnChanges(): void {
-    console.log(this.openedCardId);
+    // console.log(this.openedCardId);
   }
 
   ngAfterViewInit() {

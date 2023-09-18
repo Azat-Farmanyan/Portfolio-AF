@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.prevPathSubs = this.routeService.previousPath.subscribe((prevPath) => {
       this.prevPath = prevPath;
 
-      console.log(this.prevPath);
+      // console.log(this.prevPath);
 
       if (this.prevPath.includes('details')) {
         const cardId = +this.prevPath.split('/')[2];

@@ -3,11 +3,7 @@
   <div class="wrapper">
     <div class="header-body">
       <div (click)="navigateTo('home', 'home')" class="left-side">
-        <img
-          src="../../../assets/logos/azat-favicon.png"
-          style="width: 40px; height: 40px"
-          alt=""
-        />
+        <img src="../../../assets/logos/azat-favicon.png" style="width: 40px; height: 40px" alt="" />
         <a>
           <h4 class="text-bold header-title">azat farmanyan</h4>
         </a>
@@ -15,63 +11,41 @@
       <div class="right-side">
         <nav class="nav">
           <div class="nav-item" (click)="navigateTo('home', 'home')">
-            <a class="text-bold">Home</a>
+            <a class="text-bold" [ngClass]="{'active' : activeSection==='home'}">Home</a>
           </div>
           <div class="nav-item" (click)="navigateTo('home', 'about')">
-            <a class="text-bold">About</a>
+            <a class="text-bold" [ngClass]="{'active' : activeSection==='about'}">About</a>
           </div>
           <div class="nav-item" (click)="navigateTo('home', 'projects')">
-            <a class="text-bold">Projects</a>
+            <a class="text-bold" [ngClass]="{'active' : activeSection==='projects'}">Projects</a>
           </div>
           <div class="nav-item" (click)="navigateTo('home', 'contact')">
-            <a class="text-bold">Contact</a>
+            <a class="text-bold" [ngClass]="{'active' : activeSection==='contact'}">Contact</a>
           </div>
         </nav>
         <div (click)="menuToggle()" class="burger">
-          <img
-            [@toggleAnimation]
-            *ngIf="!showMenu"
-            src="../../../assets/icons/burger.svg"
-            alt="Open Menu"
-          />
-          <img
-            [@toggleAnimation]
-            *ngIf="showMenu"
-            src="../../../assets/icons/close-cross.svg"
-            alt="Close Menu"
-          />
+          <img [@toggleAnimation] *ngIf="!showMenu" src="../../../assets/icons/burger.svg" alt="Open Menu" />
+          <img [@toggleAnimation] *ngIf="showMenu" src="../../../assets/icons/close-cross.svg" alt="Close Menu" />
         </div>
       </div>
     </div>
   </div>
   <div [@dropDownMenu] *ngIf="showMenu" class="menu">
     <div class="menu-body">
-      <a
-        (click)="navigateTo('home', 'home')"
-        class="menu-item text-bold"
-        href="home#home"
-      >
+      <a (click)="navigateTo('home', 'home')" class="menu-item text-bold"
+        [ngClass]="{'active-mobile' : activeSection==='home'}" href="home#home">
         <span class="wrapper">Home</span>
       </a>
-      <a
-        (click)="navigateTo('home', 'about')"
-        class="menu-item text-bold"
-        href="home#about"
-      >
+      <a (click)="navigateTo('home', 'about')" class="menu-item text-bold" href="home#about"
+        [ngClass]="{'active-mobile' : activeSection==='about'}">
         <span class="wrapper">About</span>
       </a>
-      <a
-        (click)="navigateTo('home', 'projects')"
-        class="menu-item text-bold"
-        href="home#projects"
-      >
+      <a (click)="navigateTo('home', 'projects')" class="menu-item text-bold" href="home#projects"
+        [ngClass]="{'active-mobile' : activeSection==='projects'}">
         <span class="wrapper">Projects</span>
       </a>
-      <a
-        (click)="navigateTo('home', 'contact')"
-        class="menu-item text-bold"
-        href="home#contact"
-      >
+      <a (click)="navigateTo('home', 'contact')" class="menu-item text-bold" href="home#contact"
+        [ngClass]="{'active-mobile' : activeSection==='contact'}">
         <span class="wrapper">Contact</span>
       </a>
     </div>

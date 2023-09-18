@@ -25,6 +25,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   clickedCard: number;
 
+  currentSection: string = 'home';
+
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
@@ -36,8 +38,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.prevPathSubs = this.routeService.previousPath.subscribe((prevPath) => {
       this.prevPath = prevPath;
 
-      // console.log(this.prevPath);
-
       if (this.prevPath.includes('details')) {
         const cardId = +this.prevPath.split('/')[2];
         if (cardId) {
@@ -45,6 +45,27 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         }
       }
     });
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event): void {
+    this.detectActiveSection();
+  }
+  detectActiveSection(): void {
+    const sections = this.el.nativeElement.querySelectorAll('section');
+
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = sections[i];
+      const rect = section.getBoundingClientRect();
+
+      if (
+        rect.top <= window.innerHeight / 2 &&
+        rect.bottom >= window.innerHeight / 2
+      ) {
+        this.currentSection = section.id;
+        break;
+      }
+    }
   }
 
   ngAfterViewInit() {

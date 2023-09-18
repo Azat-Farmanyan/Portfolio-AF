@@ -304,3 +304,11 @@ textarea {
   background-color: #ddd; /* Set the color of the scrollbar track */
   border-radius: 10px;
 }
+
+.active {
+  color: #ee6c4d;
+}
+.active-mobile {
+  background-color: #ee6c4d !important;
+  color: #fff !important;
+}

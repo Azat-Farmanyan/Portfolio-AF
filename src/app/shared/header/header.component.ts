@@ -89,6 +89,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit, OnChanges {
   @Input() scrollTop: boolean = false;
+  @Input() activeSection: string = '';
   showMenu = false;
 
   public getScreenWidth!: number;
@@ -102,7 +103,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    // console.log(this.scrollTop);
+    // console.log('active-section', this.activeSection);
   }
 
   menuToggle() {

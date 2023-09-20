@@ -97,6 +97,14 @@
         align-items: center;
         justify-content: space-around;
         background: #fff;
+        &:hover {
+          background-color: #fff;
+        }
+        .link-item {
+          & img {
+            width: 40px;
+          }
+        }
       }
     }
   }

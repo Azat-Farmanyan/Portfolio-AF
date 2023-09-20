@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-step3',
@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class Step3Component {
   @Input() projectUrl: string = '';
+  @Output() onClose = new EventEmitter();
 }

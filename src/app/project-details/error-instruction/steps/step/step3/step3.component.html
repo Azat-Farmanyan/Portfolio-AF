@@ -16,6 +16,12 @@
     we look forward to providing you with an excellent experience.
   </p>
   <div class="btns">
-    <a class="btn orange-bg" [href]="projectUrl" target="_blank">See Demo</a>
+    <a
+      (click)="onClose.emit()"
+      class="btn orange-bg"
+      [href]="projectUrl"
+      target="_blank"
+      >See Demo</a
+    >
   </div>
 </div>

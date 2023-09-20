@@ -14,6 +14,10 @@
 
     <app-step1 *ngIf="stepNum === 1" (onNext)="step2()"></app-step1>
     <app-step2 *ngIf="stepNum === 2" (onNext)="step3()"></app-step2>
-    <app-step3 *ngIf="stepNum === 3" [projectUrl]="projectUrl"></app-step3>
+    <app-step3
+      (onClose)="onClose.emit()"
+      *ngIf="stepNum === 3"
+      [projectUrl]="projectUrl"
+    ></app-step3>
   </div>
 </div>

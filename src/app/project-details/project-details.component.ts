@@ -23,6 +23,20 @@ export class ProjectDetailsComponent implements OnInit {
     this.getPostIdFromRoute();
   }
 
+  showInstructionModal() {
+    if (this.project) {
+      if (this.project.seeLive.includes('netlify')) {
+        this.showInstruction = true;
+      } else {
+        console.log(this.project.seeLive);
+
+        window.open(this.project.seeLive, '_blank');
+      }
+    }
+
+    // project.seeLive
+  }
+
   getPostIdFromRoute() {
     this.routeSub = this.route.params.subscribe((params) => {
       this.projectID = +params['id'];
@@ -35,6 +49,7 @@ export class ProjectDetailsComponent implements OnInit {
   back() {
     this.router.navigate(['/home'], { fragment: 'projects' });
   }
+
   ngOnDestroy(): void {
     if (this.routeSub) this.routeSub.unsubscribe();
   }

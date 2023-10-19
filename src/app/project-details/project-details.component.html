@@ -2,20 +2,6 @@
 
 <section class="details">
   <div class="details-block">
-    <div class="wrapper">
-      <button
-        style="
-          padding: 5px 45px !important;
-          background-color: #98c1d9;
-          font-size: 18px !important;
-        "
-        (click)="back()"
-        class="btn orange-bg"
-      >
-        Return to projects
-      </button>
-    </div>
-
     <div class="details-header">
       <div *ngIf="project">
         <h2 class="section-title project-title">
@@ -43,7 +29,7 @@
       <div *ngIf="project" class="see-live">
         <h4 class="paragraph-title">See live</h4>
         <div class="see-live-btns">
-          <a class="btn" (click)="showInstruction = true"> SEE DEMO </a>
+          <a class="btn" (click)="showInstructionModal()"> SEE DEMO </a>
           <a
             class="btn white-btn"
             [href]="project.sourceCodeUrl"
@@ -54,6 +40,17 @@
       </div>
     </div>
   </div>
+  <button
+    style="
+      padding: 5px 45px !important;
+      background-color: #98c1d9;
+      font-size: 18px !important;
+    "
+    (click)="back()"
+    class="btn orange-bg return-btn"
+  >
+    Return to projects
+  </button>
 </section>
 <div *ngIf="showInstruction">
   <app-error-instruction

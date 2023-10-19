@@ -5,7 +5,13 @@ import {
   animate,
   state,
 } from '@angular/animations';
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -36,7 +42,7 @@ import { BehaviorSubject } from 'rxjs';
     ]),
   ],
 })
-export class CarouselComponent implements OnChanges {
+export class CarouselComponent implements OnInit, OnChanges {
   @Input() images: string[] | undefined;
 
   defaultImg = '';
@@ -47,14 +53,14 @@ export class CarouselComponent implements OnChanges {
 
   isLoading = true;
 
+  ngOnInit(): void {}
+
   ngOnChanges(): void {
     this.setActiveImg();
     this.setImgsLength();
     this.isLoading = false;
   }
-  imageLoaded() {
-    // console.log('image is loaded');
-  }
+
   toggleImage() {
     this.showImage = !this.showImage;
 

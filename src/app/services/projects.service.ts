@@ -22,6 +22,21 @@ export class ProjectsService {
   projects: Project[] = [
     {
       id: 12,
+      title: 'Pizza Cheff',
+      description: [
+        'Pizza Cheff is a mouthwatering culinary project designed to celebrate the art of pizza-making. This visually enticing webpage offers a tantalizing glimpse into the world of cheesy, saucy, and delicious pizzas. From classic Margheritas to adventurous flavor combinations, Pizza Cheff showcases an extensive array of delectable options, sure to satisfy every pizza lovers cravings.',
+        'Our webpage provides a feast for the eyes with high-quality images of meticulously crafted pizzas that will make your taste buds tingle. Pizza Cheff also offers easy-to-follow recipes and step-by-step guides, making it a go-to resource for aspiring home chefs looking to replicate the magic of pizzerias right in their own kitchens.', 'At Pizza Cheff, we are not just about pizza; we are about sharing a passion for the culinary arts. Whether you are a seasoned pro or a novice, this page is your gateway to a world of savory satisfaction. Join us on this delightful pizza journey and discover the secrets to crafting pizza perfection.', 'With its delectable visuals and comprehensive guides, Pizza Cheff is a testament to the delicious and creative world of pizza-making. Dive into our page, and you will soon be on your way to mastering the art of pizza.'
+      ],
+      banner: `banner`,
+      screenshots: [
+        `${this.screenshotsFolderPath}pizza-cheff${'.png'}`,
+      ],
+      tools: ['Angular', 'HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Figma'],
+      seeLive: 'https://papaya-praline-2e765d.netlify.app/',
+      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/pizzaCheff',
+    },
+    {
+      id: 12,
       title: 'Posts App',
       description: [
         'Welcome to the Posts App, your personal portal to a world of stories, shared experiences, and connections. Whether you are a seasoned blogger, an avid reader, or someone looking to connect with like-minded individuals, our application is designed to bring the world of posts and stories to your fingertips.',

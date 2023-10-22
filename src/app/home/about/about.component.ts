@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Skill, SkillsService } from 'src/app/services/skills.service';
 
 @Component({
   selector: 'app-about',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
+  skills: Skill[] = [];
   randomSkillNumber = 0;
+
+  constructor(private skillsService: SkillsService) {
+    this.skills = this.skillsService.getSkills();
+  }
 
   ngOnInit(): void {
     const randomNums = [];
@@ -14,24 +20,6 @@ export class AboutComponent implements OnInit {
       this.randomSkillNumber = this.getRandomNumber(this.skills.length);
     }, 2000);
   }
-  skills: String[] = [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'TypeScript',
-    'Angular',
-    'VS Code',
-    'VisualStudio',
-    'Sublime',
-    'Chrome DevTools',
-    'Figma',
-    'Photoshop',
-    'Illustrator',
-    'GIT',
-    'GITHUB',
-    'DevExtreme',
-    'DevExpress',
-  ];
 
   getRandomNumber(max: number) {
     // Generate a random floating-point number between 0 (inclusive) and 1 (exclusive)

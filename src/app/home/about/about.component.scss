@@ -40,7 +40,13 @@
             background: #e2e2e2;
             padding: 8px 28px;
             transition: all 0.5s ease;
-
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            .skill-img {
+              width: 30px;
+            }
             &:hover {
               background-color: #ee6c4d;
               color: #fff;

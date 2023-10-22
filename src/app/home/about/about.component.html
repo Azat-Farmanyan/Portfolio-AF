@@ -28,31 +28,65 @@
         </div>
         <div class="about-right-side">
           <h4 class="paragraph-title about-title">My Skills</h4>
-          <div class="skills ">
-            <div [ngClass]="{'orange-bg': randomSkillNumber === i}" class="skill-box text "
-              *ngFor="let skill of skills; let i = index">
-              <span>{{ skill }}</span>
+          <div class="skills">
+            <div
+              [ngClass]="{ 'orange-bg': randomSkillNumber === i }"
+              class="skill-box text"
+              *ngFor="let skill of skills; let i = index"
+            >
+              <img
+                class="skill-img"
+                [src]="'../../../assets/icons/skills/' + skill.img"
+              />
+              <span>{{ skill.name }}</span>
             </div>
           </div>
         </div>
       </div>
       <div class="worked-with">
-        <h4 class="paragraph-title worked-title about-title">I’ve worked with</h4>
+        <h4 class="paragraph-title worked-title about-title">
+          I’ve worked with
+        </h4>
         <div class="companies">
-          <a target='_blank' href="https://www.epam.com/">
-            <img loading="lazy" class='company-logo' src="../../../assets/logos/epam.png" alt="Epam">
+          <a target="_blank" href="https://www.epam.com/">
+            <img
+              loading="lazy"
+              class="company-logo"
+              src="../../../assets/logos/epam.png"
+              alt="Epam"
+            />
           </a>
-          <a target='_blank' href="https://cyberiasoft.com/">
-            <img loading="lazy" class='company-logo' src="../../../assets/logos/CyberiaSoft.png" alt="CyberiaSoft">
+          <a target="_blank" href="https://cyberiasoft.com/">
+            <img
+              loading="lazy"
+              class="company-logo"
+              src="../../../assets/logos/CyberiaSoft.png"
+              alt="CyberiaSoft"
+            />
           </a>
-          <a target='_blank' href="https://bet888win.net/">
-            <img loading="lazy" class='company-logo' src="../../../assets/logos/bet 888.png" alt="BET 888">
+          <a target="_blank" href="https://bet888win.net/">
+            <img
+              loading="lazy"
+              class="company-logo"
+              src="../../../assets/logos/bet 888.png"
+              alt="BET 888"
+            />
           </a>
-          <a target='_blank' href="https://www.apacer.com/">
-            <img loading="lazy" class='company-logo' src="../../../assets/logos/apacer.png" alt="Apacer">
+          <a target="_blank" href="https://www.apacer.com/">
+            <img
+              loading="lazy"
+              class="company-logo"
+              src="../../../assets/logos/apacer.png"
+              alt="Apacer"
+            />
           </a>
-          <a target='_blank' href="https://www.geoalphasolutions.com/">
-            <img loading="lazy" class='company-logo' src="../../../assets/logos/geoAlpha.png" alt="geoAlphaSolution">
+          <a target="_blank" href="https://www.geoalphasolutions.com/">
+            <img
+              loading="lazy"
+              class="company-logo"
+              src="../../../assets/logos/geoAlpha.png"
+              alt="geoAlphaSolution"
+            />
           </a>
         </div>
       </div>

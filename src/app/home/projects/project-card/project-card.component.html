@@ -1,18 +1,22 @@
 <div class="project-card">
   <div class="project-card-body">
-
     <div class="proj-card-text-block">
-      <div class="paragraph-title proj-title">{{project!.title}}</div>
+      <div class="paragraph-title proj-title">{{ project!.title }}</div>
       <div class="text proj-description">
-        {{project.description[0] | textCut: 30}}
+        {{ project.description[0] | textCut : 30 }}
       </div>
-      <button (click)="openDetails(project.id)" class="btn-medium-small">See More</button>
+      <button (click)="openDetails(project.id)" class="btn-medium-small">
+        See More
+      </button>
     </div>
     <div class="project-galeria">
-
-      <img *ngIf="project.screenshots" class='project-img' [src]="project.screenshots[0]"
-        alt="Project-Management-System">
-
+      <img
+        (click)="openDetails(project.id)"
+        *ngIf="project.screenshots"
+        class="project-img"
+        [src]="project.screenshots[0]"
+        alt="Project-Management-System"
+      />
     </div>
   </div>
 </div>

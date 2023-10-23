@@ -9,14 +9,34 @@
           back to you as soon as possible
         </p>
       </div>
-      <form data-netlify="true" method="POST" class="contact-form" [formGroup]="messageForm" (ngSubmit)="submit()">
+      <form
+        data-netlify="true"
+        method="POST"
+        class="contact-form"
+        [formGroup]="messageForm"
+        (ngSubmit)="submit($event)"
+      >
         <!-- Name Input -->
         <div class="input-item">
-          <label class="label-text" for="name"><span [@fadeInOut] *ngIf="nameHasError">{{ "* " }}</span>Name</label>
-          <input #nameInput formControlName="name" id="name" type="text" placeholder="Enter your name"
-            class="error-input" />
+          <label class="label-text" for="name"
+            ><span [@fadeInOut] *ngIf="nameHasError">{{ "* " }}</span
+            >Name</label
+          >
+          <input
+            #nameInput
+            formControlName="name"
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Enter your name"
+            class="error-input"
+          />
           <div [@fadeInOut] class="error-block" *ngIf="nameHasError">
-            <small *ngIf="messageForm.get('name')!.hasError('required')" class="error-message">Name is required</small>
+            <small
+              *ngIf="messageForm.get('name')!.hasError('required')"
+              class="error-message"
+              >Name is required</small
+            >
           </div>
         </div>
 
@@ -26,25 +46,52 @@
             <span [@fadeInOut] *ngIf="emailHasError">{{ "* " }}</span>
             Email
           </label>
-          <input #emailInput formControlName="email" id="email" type="text" placeholder="Enter your email" />
+          <input
+            #emailInput
+            formControlName="email"
+            id="email"
+            name="email"
+            type="text"
+            placeholder="Enter your email"
+          />
           <div [@fadeInOut] class="error-block" *ngIf="emailHasError">
-            <small *ngIf="messageForm.get('email')!.hasError('required')" class="error-message">Email is
-              required</small>
-            <small *ngIf="messageForm.get('email')!.hasError('email')" class="error-message">Email is invalid</small>
+            <small
+              *ngIf="messageForm.get('email')!.hasError('required')"
+              class="error-message"
+              >Email is required</small
+            >
+            <small
+              *ngIf="messageForm.get('email')!.hasError('email')"
+              class="error-message"
+              >Email is invalid</small
+            >
           </div>
         </div>
 
         <!-- Message Input -->
         <div class="input-item">
-          <label class="label-text" for="message"><span [@fadeInOut] *ngIf="messageHasError">{{
+          <label class="label-text" for="message"
+            ><span [@fadeInOut] *ngIf="messageHasError">{{
               "*
               "
-              }}</span>Message</label>
-          <textarea #messageInput formControlName="message" class="input-message" id="message" type="text"
-            placeholder="Enter your message"></textarea>
+            }}</span
+            >Message</label
+          >
+          <textarea
+            #messageInput
+            formControlName="message"
+            class="input-message"
+            id="message"
+            type="text"
+            name="message"
+            placeholder="Enter your message"
+          ></textarea>
           <div [@fadeInOut] class="error-block" *ngIf="messageHasError">
-            <small *ngIf="messageForm.get('message')!.hasError('required')" class="error-message">Message is
-              required</small>
+            <small
+              *ngIf="messageForm.get('message')!.hasError('required')"
+              class="error-message"
+              >Message is required</small
+            >
           </div>
         </div>
 

@@ -14,6 +14,9 @@ import {
 
 import { fadeInOut } from 'src/app/shared/animations';
 
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -27,7 +30,11 @@ export class ContactComponent implements OnInit {
 
   messageForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private renderer: Renderer2) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private renderer: Renderer2,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.messageForm = new FormGroup({
@@ -37,10 +44,35 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  submit() {
+  submit(e: Event) {
     this.focusNextInput();
     if (this.messageForm.valid) {
-      // console.log(this.messageForm.value);
+      // Service ID: service_3cxa21c
+      // Template ID: template_jawmbjg
+      // Public Key: rOMe2slLxXTWyfjfQ
+
+      emailjs
+        .sendForm(
+          'service_3cxa21c',
+          'template_jawmbjg',
+          e.target as HTMLFormElement,
+          'rOMe2slLxXTWyfjfQ'
+        )
+        .then(
+          (result: EmailJSResponseStatus) => {
+            this.toastr.success(
+              'Thank you for getting in touch. Your message has been received, and I will get back to you as soon as possible.',
+              'Message Sent Successfully!'
+            );
+          },
+          (error) => {
+            this.toastr.error(
+              'Oops, something went wrong while sending your message. Please double-check your internet connection and try again. If the issue persists, you can also reach out to me via email at azat.farmanyan905@gmail.com.',
+              'Message Delivery Failed!'
+            );
+          }
+        );
+
       this.messageForm.reset();
     }
   }

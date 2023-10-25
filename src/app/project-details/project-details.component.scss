@@ -1,10 +1,26 @@
 .details {
   // height: 90vh;
   .return-btn {
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%);
+    // position: fixed !important;
+    // top: 150px;
+    // right: 0;
+    // left: 50%;
+    // transform: translate(-50%);
+    // top: 0;
+
     margin-bottom: 30px;
+    padding: 5px 20px !important;
+    background-color: #98c1d9;
+    background-color: #293241 !important;
+    font-size: 18px !important;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin: 0 auto 30px;
+    & img {
+      height: 30px;
+    }
   }
   // .wrapper {
   //   display: flex;

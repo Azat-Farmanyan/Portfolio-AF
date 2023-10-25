@@ -1,6 +1,7 @@
 <app-header></app-header>
 
 <section class="details">
+
   <div class="details-block">
     <div class="details-header">
       <div *ngIf="project">
@@ -30,34 +31,24 @@
         <h4 class="paragraph-title">See live</h4>
         <div class="see-live-btns">
           <a class="btn" (click)="showInstructionModal()"> SEE DEMO </a>
-          <a
-            class="btn white-btn"
-            [href]="project.sourceCodeUrl"
-            target="_blank"
-            >Source code</a
-          >
+          <a class="btn white-btn" [href]="project.sourceCodeUrl" target="_blank">Source code</a>
         </div>
       </div>
     </div>
   </div>
-  <button
-    style="
-      padding: 5px 45px !important;
-      background-color: #98c1d9;
-      font-size: 18px !important;
-    "
-    (click)="back()"
-    class="btn orange-bg return-btn"
-  >
-    Return to projects
-  </button>
+  <div class="wrapper">
+
+    <button (click)="back()" class="btn orange-bg return-btn ">
+      <img src="../../assets/icons/go-back.png" alt="go back">
+      <span>
+        Return to projects
+      </span>
+    </button>
+  </div>
 </section>
 <div *ngIf="showInstruction">
-  <app-error-instruction
-    *ngIf="project"
-    [projectUrl]="project.seeLive"
-    (onClose)="showInstruction = false"
-  ></app-error-instruction>
+  <app-error-instruction *ngIf="project" [projectUrl]="project.seeLive"
+    (onClose)="showInstruction = false"></app-error-instruction>
 </div>
 
 <app-footer></app-footer>

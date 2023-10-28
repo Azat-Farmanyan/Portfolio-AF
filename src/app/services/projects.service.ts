@@ -21,6 +21,25 @@ export class ProjectsService {
 
   projects: Project[] = [
     {
+      id: 14,
+      title: 'MP3 Player',
+      description: [
+        'Angular MP3 Player: Explore the Rhythm of Music Step into the world of harmony with our Angular MP3 Player, a seamless gateway to your favorite tunes. This simple yet elegant application offers a captivating experience for music enthusiasts.',
+
+        'With a collection of diverse tracks at your fingertips, you are free to immerse yourself in a world of melodies. Our user-friendly interface provides effortless navigation, making it a breeze to play, pause, skip forward, or go back, all with a single click.',
+
+        'Experience the pure joy of music without the clutter. Whether you are relishing the soothing tunes of a classic or grooving to the rhythms of modern beats, our Angular MP3 Player ensures that you are always in control of your musical journey.',
+
+        'So, why wait? Dive into the music, let the notes carry you away, and rediscover the joy of simple yet delightful soundscapes. It is more than an application; it is a portal to the symphony of life.',
+      ],
+
+      banner: `banner`,
+      screenshots: [`${this.screenshotsFolderPath}player-1${'.png'}`],
+      tools: ['Angular', 'HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Figma'],
+      seeLive: 'https://loquacious-unicorn-9da2c9.netlify.app/player',
+      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/music-player',
+    },
+    {
       id: 13,
       title: 'Pizza Cheff',
       description: [

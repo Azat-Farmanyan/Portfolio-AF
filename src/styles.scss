@@ -1,5 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("./null.scss");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .disable-text-select {
   -webkit-user-select: none;
@@ -10,9 +14,11 @@
 
 .wrapper {
   padding: 0 50px;
+
   @media only screen and (max-width: 900px) {
     padding: 0 30px;
   }
+
   @media only screen and (max-width: 700px) {
     padding: 0 20px;
   }
@@ -20,33 +26,37 @@
 
 body {
   // font-family: "Palanquin", sans-serif;
-  font-family: "Roboto", sans-serif;
+  // font-family: "Roboto", sans-serif;
+
+  font-family: "Open Sans", sans-serif;
 
   color: #242424;
-  font-family: Roboto;
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
   line-height: 179.688%;
-  /* 32.344px */
-  // text-transform: capitalize;
 }
+
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #a9a9a9;
 }
+
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #a9a9a9;
 }
+
 :-ms-input-placeholder {
   /* IE 10+ */
   color: #a9a9a9;
 }
+
 :-moz-placeholder {
   /* Firefox 18- */
   color: #a9a9a9;
 }
+
 input,
 textarea {
   border-radius: 5px;
@@ -56,11 +66,13 @@ textarea {
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
-  line-height: 179.688%; /* 28.75px */
+  line-height: 179.688%;
+  /* 28.75px */
   max-width: 100%;
   min-width: 100%;
   padding: 15px 20px;
   min-height: 60px;
+
   &:focus-within,
   &:focus,
   &:hover,
@@ -70,9 +82,11 @@ textarea {
     color: #242424;
     outline: 1px solid #3d5a80;
   }
+
   &.ng-invalid.ng-touched {
     // outline: 1px solid #ff7b7b;
   }
+
   @media only screen and (max-width: 600px) {
     padding: 8px 20px;
     min-height: 40px;
@@ -88,26 +102,31 @@ textarea {
   user-select: none;
   // color: #cc0000;
 }
+
 .error-message {
   color: #ff4141;
   font-family: Roboto;
   font-size: 12px;
   font-style: normal;
   font-weight: 300;
-  line-height: 179.688%; /* 25.156px */
+  line-height: 179.688%;
+  /* 25.156px */
   text-transform: capitalize;
   margin-left: 20px;
 }
+
 .invalid-input {
   border: 1px solid #ff4141;
 }
+
 .nav-item {
   color: #293241;
   font-family: Palanquin;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
-  line-height: 100%; /* 18px */
+  line-height: 100%;
+  /* 18px */
   letter-spacing: 0.9px;
   text-transform: uppercase;
   text-decoration: none;
@@ -119,16 +138,19 @@ textarea {
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
-  line-height: 100%; /* 18px */
+  line-height: 100%;
+  /* 18px */
   letter-spacing: 0.9px;
   text-transform: uppercase;
   transition: all 0.2s ease;
   text-decoration: none !important;
+
   &:hover {
     color: #ee6c4d;
     cursor: pointer;
   }
 }
+
 .big-title {
   color: #293241;
   text-align: center;
@@ -136,14 +158,17 @@ textarea {
   font-size: 60px;
   font-style: normal;
   font-weight: 700;
-  line-height: 100%; /* 60px */
+  line-height: 100%;
+  /* 60px */
   letter-spacing: 3px;
   text-transform: uppercase;
+
   @media only screen and (max-width: 600px) {
     font-size: 36px;
     font-style: normal;
     font-weight: 700;
-    line-height: 100%; /* 36px */
+    line-height: 100%;
+    /* 36px */
     letter-spacing: 1.8px;
   }
 }
@@ -155,70 +180,82 @@ textarea {
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
-  line-height: 100%; /* 36px */
+  line-height: 100%;
+  /* 36px */
   letter-spacing: 3.6px;
   text-transform: uppercase;
 }
+
 .paragraph-title {
   color: #293241;
   font-family: Palanquin;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
-  line-height: 100%; /* 30px */
+  line-height: 100%;
+  /* 30px */
   letter-spacing: 1.5px;
   text-transform: capitalize;
+
   @media only screen and (max-width: 600px) {
     font-size: 24px;
     letter-spacing: 1.2px;
   }
 }
+
 .title-underline {
   border-radius: 5px;
   background: #ee6c4d;
   width: 50px;
   height: 5px;
 }
+
 .text {
   color: #242424;
   font-family: Roboto;
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
-  line-height: 179.688%; /* 32.344px */
+  line-height: 179.688%;
+
+  /* 32.344px */
   // text-transform: capitalize;
   @media only screen and (max-width: 600px) {
     font-size: 16px;
   }
 }
+
 .label-text {
   color: #242424;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
-  line-height: 179.688%; /* 28.75px */
+  line-height: 179.688%;
+  /* 28.75px */
   text-transform: capitalize;
 }
 
 .btn {
-  border-radius: 5px !important ;
-  box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1) !important ;
-  color: #fff !important ;
-  font-family: Palanquin !important ;
-  font-size: 24px !important ;
-  font-style: normal !important ;
-  font-weight: 700 !important ;
-  line-height: normal !important ;
-  text-transform: uppercase !important ;
-  border: none !important ;
-  padding: 5px 70px !important ;
-  cursor: pointer !important ;
-  transition: all 0.3s ease !important ;
-  position: relative !important ;
+  border-radius: 5px !important;
+  box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1) !important;
+  color: #fff !important;
+  font-family: Palanquin !important;
+  font-size: 24px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: normal !important;
+  text-transform: uppercase !important;
+  border: none !important;
+  padding: 5px 70px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+
   &:hover {
     transform: translateY(-5px);
   }
+
   & a {
     color: #fff;
     text-decoration: none;
@@ -239,15 +276,18 @@ textarea {
   text-transform: uppercase;
   transition: all 0.3s ease;
   position: relative;
+
   &:hover {
     transform: translateY(-5px);
   }
+
   &:disabled,
   &[disabled] {
     // background: #e2e2e2;
     cursor: not-allowed;
     pointer-events: all !important;
   }
+
   @media only screen and (max-width: 600px) {
     border-radius: 5px;
     background: #ee6c4d;
@@ -268,10 +308,12 @@ textarea {
 .orange {
   color: #ee6c4d;
 }
+
 .orange-bg {
   background-color: #ee6c4d !important;
   color: #fff !important;
 }
+
 .black-bg {
   position: fixed;
   top: 0;
@@ -284,30 +326,38 @@ textarea {
 
 .custom-scrollable-div {
   // height: 300px; /* Set the desired height for your div */
-  overflow-y: scroll; /* Enable vertical scrolling */
+  overflow-y: scroll;
+  /* Enable vertical scrolling */
   // border: 1px solid #ccc; /* Optional: Add a border for visual clarity */
-  scrollbar-width: thin; /* Enable custom scrollbar for Firefox */
-  scrollbar-color: #ee6c4d #ddd; /* Change scrollbar track and thumb colors for Firefox */
+  scrollbar-width: thin;
+  /* Enable custom scrollbar for Firefox */
+  scrollbar-color: #ee6c4d #ddd;
+  /* Change scrollbar track and thumb colors for Firefox */
 }
 
 /* Custom scrollbar for WebKit-based browsers (Chrome, Safari) */
 .custom-scrollable-div::-webkit-scrollbar {
-  width: 10px; /* Set the width of the scrollbar */
+  width: 10px;
+  /* Set the width of the scrollbar */
 }
 
 .custom-scrollable-div::-webkit-scrollbar-thumb {
-  background-color: #ee6c4d; /* Set the color of the scrollbar thumb */
-  border-radius: 5px; /* Set the border radius of the thumb */
+  background-color: #ee6c4d;
+  /* Set the color of the scrollbar thumb */
+  border-radius: 5px;
+  /* Set the border radius of the thumb */
 }
 
 .custom-scrollable-div::-webkit-scrollbar-track {
-  background-color: #ddd; /* Set the color of the scrollbar track */
+  background-color: #ddd;
+  /* Set the color of the scrollbar track */
   border-radius: 10px;
 }
 
 .active {
   color: #ee6c4d;
 }
+
 .active-mobile {
   background-color: #ee6c4d !important;
   color: #fff !important;
@@ -315,3 +365,46 @@ textarea {
 
 // regular style toast
 @import "ngx-toastr/toastr";
+
+
+.btn-orange-v2 {
+  color: #FFF;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+
+  background: radial-gradient(192.86% 128.3% at 12.17% 6.95%, #FF9379 0%, #EE6C4D 100%);
+  box-shadow: 4px 4px 70px 0px rgba(0, 0, 0, 0.10);
+
+  padding: 16px 56px;
+}
+
+.btn-white-v2 {
+  color: #EE6C4D;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+
+  background: #fff;
+  border: 1px solid #EE6C4D;
+
+  padding: 16px 56px;
+
+}
+
+.btn-orange-v2,
+.btn-white-v2 {
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}

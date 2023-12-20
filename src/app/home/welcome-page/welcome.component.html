@@ -1,0 +1,38 @@
+<div class="welcome">
+  <div class="wrapper">
+    <div class="welcome-body">
+      <div class="left-side">
+        <h1 class="owner-name">azat farmanyan</h1>
+        <p class="owner-profession">Frontend Developer</p>
+        <div class="social-block">
+          <div class="social-items">
+            <img class="social-item" [src]="linkedinImageSrc" alt="linkedin" (mouseenter)="onMouseEnter('linkedin')"
+              (mouseleave)="onMouseLeave('linkedin')">
+
+            <img class="social-item" [src]="githubImageSrc" alt="github" (mouseenter)="onMouseEnter('github')"
+              (mouseleave)="onMouseLeave('github')">
+
+            <img class="social-item" [src]="telegramImageSrc" alt="telegram" (mouseenter)="onMouseEnter('telegram')"
+              (mouseleave)="onMouseLeave('telegram')">
+
+            <img class="social-item" [src]="discordImageSrc" alt="discord" (mouseenter)="onMouseEnter('discord')"
+              (mouseleave)="onMouseLeave('discord')">
+
+            <img class="social-item" [src]="instagramImageSrc" alt="instagram" (mouseenter)="onMouseEnter('instagram')"
+              (mouseleave)="onMouseLeave('instagram')">
+
+            <img class="social-item" [src]="facebookImageSrc" alt="facebook" (mouseenter)="onMouseEnter('facebook')"
+              (mouseleave)="onMouseLeave('facebook')">
+          </div>
+        </div>
+        <div class="btns">
+          <button class="btn-orange-v2" (click)="navigateTo('home', 'about')"> About me </button>
+          <button class="btn-white-v2"> Resume </button>
+        </div>
+      </div>
+      <div class="right-side">
+        <img src="../../../assets/images/azat-f.svg" alt="Azat Farmanyan">
+      </div>
+    </div>
+  </div>
+</div>

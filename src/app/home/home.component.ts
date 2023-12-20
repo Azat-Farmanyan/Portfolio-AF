@@ -8,10 +8,8 @@ import {
   OnInit,
   Renderer2,
 } from '@angular/core';
-import { Router, RoutesRecognized } from '@angular/router';
-import { isNumber } from '@ng-bootstrap/ng-bootstrap/util/util';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { filter, pairwise } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',

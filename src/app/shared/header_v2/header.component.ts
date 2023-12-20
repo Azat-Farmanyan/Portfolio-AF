@@ -10,16 +10,18 @@ import {
 } from '@angular/animations';
 import {
   Component,
+  ElementRef,
   HostListener,
   Input,
   OnChanges,
   OnInit,
+  Renderer2,
   SimpleChanges,
 } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-header-v2',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   animations: [
@@ -85,25 +87,60 @@ import { Router } from '@angular/router';
         animate(500, style({ opacity: 0 })),
       ]),
     ]),
+
+    trigger('fadeOutUpAndFadeInDown', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-80px)' }),
+        animate('400ms', style({ opacity: 1, transform: 'translateY(0)' })),
+      ]),
+      transition(':leave', [
+        animate('400ms', style({ opacity: 0, transform: 'translateY(-80px)' })),
+      ]),
+    ]),
   ],
 })
-export class HeaderComponent implements OnInit, OnChanges {
+export class HeaderComponentV2 implements OnInit {
   @Input() scrollTop: boolean = false;
   @Input() activeSection: string = '';
   showMenu = false;
+  isMouseNearTop = true;
+  scrolled = false;
+  mobileView = false;
 
   public getScreenWidth!: number;
   public getScreenHeight!: number;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.scrolled = window.pageYOffset < 80;
+  }
 
   ngOnInit() {
     this.getScreenWidth = window.innerWidth;
     this.getScreenHeight = window.innerHeight;
   }
 
-  ngOnChanges(): void {
-    // console.log('active-section', this.activeSection);
+  @HostListener('window:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent): void {
+    const mouseY = event.clientY;
+
+    mouseY <= 120
+      ? (this.isMouseNearTop = true)
+      : (this.isMouseNearTop = false);
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.scrolled = window.pageYOffset < 80;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    if (event.target.innerWidth > 600) {
+      this.closeMenu();
+      this.mobileView = false;
+    } else {
+      this.mobileView = true;
+    }
   }
 
   menuToggle() {
@@ -112,15 +149,8 @@ export class HeaderComponent implements OnInit, OnChanges {
   closeMenu() {
     this.showMenu = false;
   }
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    if (event.target.innerWidth > 600) {
-      this.closeMenu();
-    }
-  }
 
   navigateTo(path: string, fragment: string) {
-    // console.log('navigate', path, fragment);
     this.router.navigate([`/${path}`], { fragment: `${fragment}` });
     if (this.showMenu) this.closeMenu();
   }

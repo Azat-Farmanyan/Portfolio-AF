@@ -10,6 +10,7 @@ import { ProjectCardComponent } from './projects/project-card/project-card.compo
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextCutPipe } from '../pipes/text-cut.pipe';
+import { WelcomePageComponent } from './welcome-page/welcome.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TextCutPipe } from '../pipes/text-cut.pipe';
     ProjectsComponent,
     ProjectCardComponent,
     ContactComponent,
+    WelcomePageComponent,
   ],
   imports: [
     CommonModule,

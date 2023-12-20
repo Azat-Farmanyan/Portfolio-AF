@@ -1,0 +1,69 @@
+<div (click)="closeMenu()" [@fadeInOut] *ngIf="showMenu" class="black-bg"></div>
+
+<header class="header" [@fadeOutUpAndFadeInDown]
+  [ngClass]="{ 'goDown': isMouseNearTop || scrolled, 'goUp': !(isMouseNearTop || scrolled) }">
+  <!-- *ngIf="isMouseNearTop || scrolled" -->
+  <div class="wrapper">
+    <div class="header-body">
+      <div class="logo-char-block" (click)="navigateTo('home', 'home')">
+        <p class="logo-char char-a">A</p>
+        <p class="logo-char char-f">F</p>
+      </div>
+
+      <nav class="nav" *ngIf="!mobileView">
+        <a class="nav-item" (click)="navigateTo('home', 'home')" [ngClass]="{ active: activeSection === 'home' }">
+          HOME
+        </a>
+        <a class="nav-item" (click)="navigateTo('home', 'about')" [ngClass]="{ active: activeSection === 'about' }">
+          About
+        </a>
+        <a class="nav-item" (click)="navigateTo('home', 'experience')"
+          [ngClass]="{ active: activeSection === 'experience' }">
+          experience
+        </a>
+        <a class="nav-item" (click)="navigateTo('home', 'projects')"
+          [ngClass]="{ active: activeSection === 'projects' }">
+          Portfolio
+        </a>
+        <a class="nav-item" (click)="navigateTo('home', 'contact')" [ngClass]="{ active: activeSection === 'contact' }">
+          contact
+        </a>
+
+      </nav>
+      <div (click)="menuToggle()" class="burger">
+        <img [@toggleAnimation] *ngIf="!showMenu" src="../../../assets/icons/burger.svg" alt="Open Menu" />
+        <img [@toggleAnimation] *ngIf="showMenu" src="../../../assets/icons/close-cross.svg" alt="Close Menu" />
+      </div>
+    </div>
+  </div>
+
+  <div class="header-underline-btn"></div>
+
+  <div class="menu" [@fadeInOut] *ngIf="showMenu">
+    <div class="wrapper">
+      <div class="menu-body">
+        <a class="nav-item" (click)="navigateTo('home', 'home')" [ngClass]="{ active: activeSection === 'home' }">
+          HOME
+        </a>
+        <a class="nav-item" (click)="navigateTo('home', 'about')" [ngClass]="{ active: activeSection === 'about' }">
+          About
+        </a>
+        <a class="nav-item" (click)="navigateTo('home', 'experience')"
+          [ngClass]="{ active: activeSection === 'experience' }">
+          experience
+        </a>
+        <a class="nav-item" (click)="navigateTo('home', 'projects')"
+          [ngClass]="{ active: activeSection === 'projects' }">
+          Portfolio
+        </a>
+        <a class="nav-item" (click)="navigateTo('home', 'contact')" [ngClass]="{ active: activeSection === 'contact' }">
+          contact
+        </a>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<!-- <div class="header-underline-btn " [ngClass]="{ goDown: isMouseNearTop || scrolled }"> 
+</div>-->

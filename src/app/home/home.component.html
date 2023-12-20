@@ -1,56 +1,8 @@
-<app-header [activeSection]="currentSection" [scrollTop]="scrollTop"></app-header>
+<!-- <app-header [activeSection]="currentSection" [scrollTop]="scrollTop"></app-header> -->
+<app-header-v2 [activeSection]="currentSection"></app-header-v2>
 
 <section id="home">
-  <div class="home">
-    <div class="wrapper">
-      <div class="home-body">
-        <h1 class="big-title home-title">hey, i’m azat farmanyan</h1>
-        <p class="text home-text">
-          A Frontend focused Web Developer building the Frontend of Websites and
-          Web Applications that leads to the success of the overall product
-        </p>
-        <a class="btn orange-bg projects-btn" href="home#projects">projects</a>
-
-        <div class="icon-scroll"></div>
-
-        <!-- <img class='gif-wave' src="../../assets/light-unscreen.gif" alt=""> -->
-
-
-        <ul class="links">
-          <li class="link-item">
-            <a target='_blank' href="https://www.linkedin.com/in/azat-farmanyan/">
-              <img src="../../assets/icons/bi_linkedin.svg" alt="linkedin" />
-            </a>
-          </li>
-          <li class="link-item">
-            <a target='_blank' href="https://github.com/Azat-Farmanyan">
-              <img src="../../assets/icons/mdi_github.svg" alt="GitHub" />
-            </a>
-          </li>
-          <li class="link-item">
-            <a target='_blank' href="https://www.instagram.com/azat_09.5/">
-              <img src="../../assets/icons/ri_instagram-fill.svg" alt="Instagram" />
-            </a>
-          </li>
-          <li class="link-item">
-            <a target='_blank' href="https://t.me/AzatFarmanyan">
-              <img src="../../assets/icons/ic_baseline-telegram.svg" alt="Telegram" />
-            </a>
-          </li>
-          <li class="link-item">
-            <a target='_blank' href="https://discordapp.com/users/908978735020146719/">
-              <img src="../../assets/icons/ic_baseline-discord.svg" alt="Discord" />
-            </a>
-          </li>
-          <li class="link-item">
-            <a target='_blank' href="https://www.facebook.com/profile.php?id=100007929288834">
-              <img src="../../assets/icons/uiw_facebook.svg" alt="Facebook" />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <app-welcome></app-welcome>
 </section>
 
 <section id="about">
@@ -61,7 +13,7 @@
   <app-projects [openedCardId]="clickedCard"></app-projects>
 </section>
 
-<section id='contact'>
+<section id="contact">
   <app-contact></app-contact>
   <app-footer></app-footer>
 </section>

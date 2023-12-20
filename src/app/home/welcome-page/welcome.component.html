@@ -1,7 +1,7 @@
 <div class="welcome">
   <div class="wrapper">
     <div class="welcome-body">
-      <div class="left-side">
+      <div class="left-side animated-uprise">
         <h1 class="owner-name">azat farmanyan</h1>
         <p class="owner-profession">Frontend Developer</p>
         <div class="social-block">
@@ -34,10 +34,11 @@
         </div>
         <div class="btns">
           <button class="btn-orange-v2" (click)="navigateTo('home', 'about')"> About me </button>
-          <button class="btn-white-v2"> Resume </button>
+          <button class="btn-white-v2" (click)="downloadCV()">Get Resume </button>
         </div>
+        <a href="../../../assets/cv/Angular Developer - Azat Farmanyan - ENG.pdf"></a>
       </div>
-      <div class="right-side">
+      <div class="right-side animated-uprise">
         <img src="../../../assets/images/azat-f.svg" alt="Azat Farmanyan">
       </div>
     </div>

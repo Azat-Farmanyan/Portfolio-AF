@@ -66,4 +66,28 @@ export class WelcomePageComponent {
   navigateTo(path: string, fragment: string) {
     this.router.navigate([`/${path}`], { fragment: `${fragment}` });
   }
+
+  downloadCV(): void {
+    // Replace 'your_file_url' with the actual URL or file path
+    const fileUrl =
+      '../../../assets/cv/Angular Developer - Azat Farmanyan - ENG.pdf';
+
+    // Create a new anchor element
+    const link = document.createElement('a');
+
+    // Set the href attribute to the file URL
+    link.href = fileUrl;
+
+    // Specify the download attribute with the desired file name
+    link.download = 'Angular Developer - Azat Farmanyan';
+
+    // Append the anchor element to the document
+    document.body.appendChild(link);
+
+    // Trigger a click event on the anchor element
+    link.click();
+
+    // Remove the anchor element from the document
+    document.body.removeChild(link);
+  }
 }

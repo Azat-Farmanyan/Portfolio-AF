@@ -1,4 +1,5 @@
 .details {
+
   // height: 90vh;
   .return-btn {
     // position: fixed !important;
@@ -18,10 +19,12 @@
     gap: 15px;
 
     margin: 0 auto 30px;
+
     & img {
       height: 30px;
     }
   }
+
   // .wrapper {
   //   display: flex;
   //   align-items: center;
@@ -34,15 +37,21 @@
   //     }
   //   }
 }
+
 .details-block {
   background: url("../../assets/images/abstract-bg.jpeg") no-repeat top center;
   background-size: cover;
   margin-top: 80px;
 
+  @media only screen and (max-width: 600px) {
+    margin-top: 50px;
+  }
+
   .details-header {
     padding: 60px 0;
     max-width: 1200px;
     margin: 0 auto;
+
     // height: 90vh;
     // display: flex;
     // align-items: center;
@@ -55,37 +64,45 @@
       margin-bottom: 40px;
       font-size: 34px;
       padding: 10px;
+
       @media only screen and (max-width: 600px) {
         font-size: 24px;
       }
+
       @media only screen and (max-width: 350px) {
         padding: 0px;
       }
     }
   }
 }
+
 .details-body {
   display: flex;
   flex-direction: column;
   gap: 60px;
   margin: 100px auto;
   max-width: 1200px;
+
   @media only screen and (max-width: 600px) {
     margin: 40px auto;
   }
+
   .overview {
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
+
   .tools {
     display: flex;
     flex-direction: column;
     gap: 40px;
+
     .tools-blocks {
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
+
       .skill-box {
         border-radius: 5px;
         background: #e2e2e2;
@@ -99,6 +116,7 @@
       }
     }
   }
+
   .see-live {
     .see-live-btns {
       margin-top: 40px;
@@ -106,19 +124,23 @@
       flex-direction: row;
       flex-wrap: wrap;
       gap: 30px;
+
       @media only screen and (max-width: 600px) {
         gap: 20px;
       }
+
       .btn {
         border-radius: 5px;
         background: #ee6c4d;
         box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
 
         padding: 5px 45px !important;
+
         @media only screen and (max-width: 600px) {
           font-size: 16px !important;
         }
       }
+
       .white-btn {
         border-radius: 5px;
         border: 2px solid #ee6c4d !important;

@@ -18,20 +18,7 @@
       transform: translateY(-50%);
       padding-left: 57px;
 
-      opacity: 0;
-      transition: transform 1s ease-in-out;
-      /* Set the transition property for 'transform' */
-      animation: moveRight 1.5s ease-in-out 1.5s forwards;
-      /* Start the animation after 2 seconds */
 
-
-      @keyframes moveRight {
-        to {
-          opacity: 1;
-          // transform: translateX(200px);
-          /* Move the block 200 pixels to the right */
-        }
-      }
 
       @media only screen and (max-width: 1150px) {
         padding-left: 0;
@@ -153,10 +140,30 @@
         }
 
         @media only screen and (max-width: 600px) {
-          right: -400px;
-          bottom: 70px;
+          right: -350px;
+          // bottom: 70px;
         }
       }
+    }
+  }
+}
+
+
+
+
+.animated-uprise {
+  opacity: 0;
+  transition: transform 1s ease-in-out;
+  /* Set the transition property for 'transform' */
+  animation: moveRight 1s ease-in-out 1.5s forwards;
+  /* Start the animation after 2 seconds */
+
+
+  @keyframes moveRight {
+    to {
+      opacity: 1;
+      // transform: translateX(200px);
+      /* Move the block 200 pixels to the right */
     }
   }
 }

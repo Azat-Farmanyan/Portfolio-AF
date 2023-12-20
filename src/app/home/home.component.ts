@@ -22,8 +22,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   prevPathSubs: Subscription;
 
   clickedCard: number;
-
   currentSection: string = 'home';
+  currentSectionId: number = 0;
+
+  sections: string[] = ['home', 'about', 'experience', 'projects', 'contact'];
 
   constructor(
     private renderer: Renderer2,
@@ -61,11 +63,17 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         rect.bottom >= window.innerHeight / 2
       ) {
         this.currentSection = section.id;
+        this.getIndexOfActiveSection();
         break;
       }
     }
   }
 
+  getIndexOfActiveSection() {
+    if (this.sections.includes(this.currentSection)) {
+      this.currentSectionId = this.sections.indexOf(this.currentSection);
+    }
+  }
   ngAfterViewInit() {
     this.scrollToProjects();
   }

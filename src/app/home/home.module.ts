@@ -9,8 +9,9 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectCardComponent } from './projects/project-card/project-card.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TextCutPipe } from '../pipes/text-cut.pipe';
 import { WelcomePageComponent } from './welcome-page/welcome.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { ExperienceItemComponent } from './experience/experience-item/experience-item.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,8 @@ import { WelcomePageComponent } from './welcome-page/welcome.component';
     ProjectCardComponent,
     ContactComponent,
     WelcomePageComponent,
+    ExperienceComponent,
+    ExperienceItemComponent,
   ],
   imports: [
     CommonModule,

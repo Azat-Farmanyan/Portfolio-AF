@@ -1,0 +1,17 @@
+<div class="experience">
+  <div class="wrapper">
+    <div class="projects-header">
+      <h2 class="section-title">Work experience</h2>
+      <div class="title-underline"></div>
+      <!-- <p class="text projects-text">
+        Here you will find some of the personal and clients projects that I
+        created with each project containing its own case study
+      </p> -->
+    </div>
+    <div class="experience-body">
+      <app-experience-item *ngFor="let experienceItem of experience; let i = index" [experience]="experienceItem"
+        [isLast]="i === experience.length - 1">
+      </app-experience-item>
+    </div>
+  </div>
+</div>

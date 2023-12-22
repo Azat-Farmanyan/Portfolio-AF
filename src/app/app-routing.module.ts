@@ -23,7 +23,7 @@ const routes: Routes = [
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled',
       onSameUrlNavigation: 'reload',
-      scrollOffset: [0, 50],
+      scrollOffset: [0, 0],
     }),
   ],
   exports: [RouterModule],

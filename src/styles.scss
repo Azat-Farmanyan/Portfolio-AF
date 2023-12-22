@@ -28,7 +28,8 @@ body {
   // font-family: "Palanquin", sans-serif;
   // font-family: "Roboto", sans-serif;
 
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif !important;
+  ;
 
   color: #242424;
   font-size: 18px;
@@ -408,3 +409,20 @@ textarea {
     filter: brightness(1.2);
   }
 }
+
+// scroll bar design
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: linear-gradient(284deg, #EAEAEA -10.73%, rgba(234, 234, 234, 0.00) 118.83%);
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #EE6C4D;
+  border-radius: 20px;
+}
+
+// end of scroll bar design

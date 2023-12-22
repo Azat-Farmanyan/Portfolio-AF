@@ -1,0 +1,127 @@
+.experience-item {
+    .experience-item-body {
+        color: #fff;
+        display: flex;
+        color: #FFF;
+        font-family: "Roboto";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 135%;
+        /* 21.6px */
+        letter-spacing: 0.8px;
+
+        .left-side {
+            flex: 0 0 15%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            // background-color: red;
+
+            .date-txt {
+                color: #FFF;
+                font-family: Roboto;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 135%;
+                /* 21.6px */
+                letter-spacing: 0.8px;
+            }
+
+            .duration-txt {
+                color: #B0B0B0;
+                font-family: Roboto;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 135%;
+                /* 21.6px */
+                letter-spacing: 0.8px;
+            }
+        }
+
+        .centerline {
+            width: 25px;
+            flex: 0 0 10%;
+            // background-color: green;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+
+            .circle {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background-color: #EE6C4D;
+                border: 3px solid #fff;
+                margin: 0 auto;
+            }
+
+            .active-circle {
+                fill: #EE6C4D;
+            }
+
+            .circle-line {
+                width: 3px;
+                background-color: #fff;
+                height: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        .experience-descreption {
+            flex: 0 0 75%;
+            // background-color: blue;
+
+            .experience-title {
+                color: #FFF;
+                font-family: Roboto;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 135%;
+                /* 32.4px */
+                letter-spacing: 1.2px;
+                margin-bottom: 10px;
+            }
+
+            .experience-subtitle,
+            .experience-subtitle a {
+                color: #B0B0B0;
+                font-family: Roboto;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 135%;
+                /* 21.6px */
+                letter-spacing: 0.8px;
+                margin-bottom: 20px;
+
+            }
+
+            .experience-subtitle a {
+                text-decoration-line: underline;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            .experience-txt {
+                color: #FFF;
+                font-family: Roboto;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 135%;
+                /* 21.6px */
+                letter-spacing: 0.8px;
+                padding-right: 30px;
+                // padding-bottom: 100px;
+            }
+        }
+    }
+}

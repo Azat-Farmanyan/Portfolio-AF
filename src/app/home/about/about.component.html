@@ -29,21 +29,15 @@
         <div class="about-right-side">
           <h4 class="paragraph-title about-title">My Skills</h4>
           <div class="skills">
-            <div
-              [ngClass]="{ 'orange-bg': randomSkillNumber === i }"
-              class="skill-box text"
-              *ngFor="let skill of skills; let i = index"
-            >
-              <img
-                class="skill-img"
-                [src]="'../../../assets/icons/skills/' + skill.img"
-              />
+            <div [ngClass]="{ 'orange-bg': randomSkillNumber === i }" class="skill-box text"
+              *ngFor="let skill of skills; let i = index">
+              <img class="skill-img" [src]="'../../../assets/icons/skills/' + skill.img" />
               <span>{{ skill.name }}</span>
             </div>
           </div>
         </div>
       </div>
-      <div class="worked-with">
+      <!-- <div class="worked-with">
         <h4 class="paragraph-title worked-title about-title">
           I’ve worked with
         </h4>
@@ -89,7 +83,7 @@
             />
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

@@ -8,6 +8,15 @@
     font-family: "Playfair Display", serif;
     position: relative;
 
+    .scroll-icon {
+      position: absolute;
+      left: 50%;
+      bottom: 15px;
+      transform: translateX(-50%);
+
+      filter: opacity(0.5);
+    }
+
     .left-side {
       max-width: 660px;
       width: 100%;
@@ -166,4 +175,20 @@
       /* Move the block 200 pixels to the right */
     }
   }
+}
+
+
+// Stuff that matters.
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(100px);
+  }
+}
+
+svg #wheel {
+  animation: scroll ease 1.5s infinite;
 }

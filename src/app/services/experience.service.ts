@@ -67,7 +67,7 @@ export class ExperienceService {
       },
       title: 'Graphic Designer',
       company: 'Apacer Technology Inc.',
-      page: 'https://www.apacer.com',
+      page: 'https://www.apacer.com/',
       description:
         '- Specialized in creating eyecatching advertising banners tailored specifically for social media platforms. - Collaborated closely with marketing teams to ensure effective product messaging through visually appealing content. - Adapted designs to meet the unique requirements of various social media platforms, optimizing their visual impact and ensuring a seamless user experience. - Conducted A/B testing and made adjustments based on data, continually improving engagement levels and click-through rates, thereby enhancing the overall effectiveness of advertising campaigns. - Made a significant contribution to the companys marketing efforts by crafting visually appealing and conversion-focused advertising materials for social media campaigns, utilizing design software such as Adobe Photoshop, Adobe Illustrator, and Figma.',
       companyLogo: '',
@@ -80,7 +80,7 @@ export class ExperienceService {
       },
       title: 'Graphic Designer',
       company: 'Bet888win',
-      page: 'https://bet888win.net',
+      page: 'https://bet888win.net/',
       description:
         '- Created dynamic footballthemed advertising banners specifically tailored for social media platforms to promote matches and events. - Collaborated closely with marketing teams to ensure the timely creation of compelling content that resonated with the target audience. - Utilized design skills with tools such as Adobe Photoshop, Adobe Illustrator, and Figma to craft visually appealing banners that encouraged higher user engagement. - Adapted and optimized designs to meet the specific requirements of various social media platforms, ensuring effective reach and engagement with the target audience.',
       companyLogo: '',

@@ -144,3 +144,10 @@
         display: none !important;
     }
 }
+
+
+
+.slide-right {
+    -webkit-animation: slide-right .5s cubic-bezier(.25, .46, .45, .94) both;
+    animation: slide-right .5s cubic-bezier(.25, .46, .45, .94) both
+}

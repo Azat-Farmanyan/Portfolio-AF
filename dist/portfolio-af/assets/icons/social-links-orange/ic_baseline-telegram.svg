@@ -1,0 +1,26 @@
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_32_276)">
+<g filter="url(#filter0_d_32_276)">
+<path d="M16.5862 2.76416C8.95669 2.76416 2.76465 8.9562 2.76465 16.5857C2.76465 24.2152 8.95669 30.4072 16.5862 30.4072C24.2156 30.4072 30.4077 24.2152 30.4077 16.5857C30.4077 8.9562 24.2156 2.76416 16.5862 2.76416ZM22.9993 12.1628C22.792 14.3466 21.8936 19.6541 21.4375 22.1005C21.244 23.1371 20.857 23.4826 20.4977 23.5241C19.696 23.5932 19.0879 22.9989 18.3139 22.4875C17.0976 21.6858 16.4065 21.1882 15.2317 20.4142C13.8633 19.5158 14.7479 19.0183 15.5357 18.2166C15.7431 18.0093 19.2814 14.7889 19.3505 14.4986C19.3601 14.4547 19.3588 14.409 19.3467 14.3657C19.3347 14.3223 19.3123 14.2826 19.2814 14.2498C19.1984 14.1807 19.0879 14.2084 18.9911 14.2222C18.8667 14.2498 16.9317 15.5352 13.1584 18.0784C12.6056 18.4516 12.108 18.6451 11.6657 18.6313C11.1681 18.6174 10.2283 18.3548 9.52337 18.1199C8.65261 17.8434 7.97536 17.6914 8.03065 17.2076C8.05829 16.9589 8.40383 16.7101 9.05344 16.4475C13.0893 14.6921 15.7707 13.5311 17.1114 12.9783C20.9538 11.375 21.7416 11.0985 22.2668 11.0985C22.3774 11.0985 22.64 11.1262 22.8058 11.2644C22.9441 11.375 22.9855 11.527 22.9993 11.6376C22.9855 11.7205 23.0132 11.9693 22.9993 12.1628Z" fill="url(#paint0_radial_32_276)"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_32_276" x="-63.2354" y="-63.2358" width="167.643" height="167.643" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4" dy="4"/>
+<feGaussianBlur stdDeviation="35"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_32_276"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_32_276" result="shape"/>
+</filter>
+<radialGradient id="paint0_radial_32_276" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.12775 4.6867) rotate(26.6348) scale(35.467 52.6144)">
+<stop stop-color="#FF9379"/>
+<stop offset="1" stop-color="#EE6C4D"/>
+</radialGradient>
+<clipPath id="clip0_32_276">
+<rect width="33.1716" height="33.1716" fill="white"/>
+</clipPath>
+</defs>
+</svg>

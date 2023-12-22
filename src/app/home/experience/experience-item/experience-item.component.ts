@@ -35,9 +35,12 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
   }
 
   getCompanyPage() {
-    const shortLinkOfPage = this.experience.page.split('https://').join('');
+    if (this.experience.page.includes('https://')) {
+      const shortLinkOfPage = this.experience.page.split('https://').join('');
 
-    if (shortLinkOfPage.endsWith('/'))
-      this.companyPage = shortLinkOfPage.slice(0, -1);
+      if (shortLinkOfPage.endsWith('/')) {
+        this.companyPage = shortLinkOfPage.slice(0, -1);
+      }
+    }
   }
 }

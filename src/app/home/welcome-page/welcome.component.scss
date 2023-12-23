@@ -10,11 +10,16 @@
 
     .scroll-icon {
       position: absolute;
+      z-index: 15;
       left: 50%;
       bottom: 15px;
       transform: translateX(-50%);
 
       filter: opacity(0.5);
+
+      @media only screen and (max-width: 500px) {
+        display: none;
+      }
     }
 
     .left-side {
@@ -49,6 +54,7 @@
         text-transform: uppercase;
         margin-bottom: 20px;
 
+
       }
 
       .owner-profession {
@@ -76,12 +82,13 @@
         }
       }
 
-
-
-      @media only screen and (max-width: 320px) {
+      @media only screen and (max-width: 400px) {
         .owner-name {
           font-size: 36px;
         }
+      }
+
+      @media only screen and (max-width: 320px) {
 
         .owner-profession {
           font-size: 16px;
@@ -121,58 +128,72 @@
     }
 
     .right-side {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      object-fit: cover;
+      height: 65vh;
+      max-width: 738px;
+      width: 100%;
 
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      & img {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: 1;
-        object-fit: cover;
-        height: 100vh;
-
-
-        @media only screen and (max-width: 1350px) {
-          right: -150px;
-        }
-
-        @media only screen and (max-width: 1250px) {
-          right: -200px;
-        }
-
-        @media only screen and (max-width: 1100px) {
-          right: -250px;
-        }
-
-        @media only screen and (max-width: 1000px) {
-          right: -320px;
-        }
-
-        @media only screen and (max-width: 600px) {
-          right: -350px;
-          // bottom: 70px;
-        }
+      @media only screen and (max-width: 1350px) {
+        right: -150px;
       }
-    }
-  }
-}
 
+      @media only screen and (max-width: 1250px) {
+        right: -200px;
+      }
 
+      @media only screen and (max-width: 1100px) {
+        // right: -250px;
+      }
 
+      @media only screen and (max-width: 1000px) {
+        // right: -320px;
+      }
 
-.animated-uprise {
-  opacity: 0;
-  transition: transform 1s ease-in-out;
-  /* Set the transition property for 'transform' */
-  animation: moveRight 1s ease-in-out 1.5s forwards;
-  /* Start the animation after 2 seconds */
+      @media only screen and (max-width: 600px) {
+        right: -150px;
+        // bottom: 70px;
+      }
 
+      .avatar,
+      .ellipse-1,
+      .ellipse-2,
+      .ellipse-3 {
+        position: absolute;
+      }
 
-  @keyframes moveRight {
-    to {
-      opacity: 1;
-      // transform: translateX(200px);
-      /* Move the block 200 pixels to the right */
+      .ellipse-1,
+      .ellipse-2,
+      .ellipse-3 {
+        bottom: 0;
+      }
+
+      .avatar {
+        z-index: 10;
+      }
+
+      .ellipse-1 {
+        z-index: 9;
+        bottom: -10px;
+      }
+
+      .ellipse-2 {
+        z-index: 8;
+        bottom: -85px;
+      }
+
+      .ellipse-3 {
+        z-index: 7;
+        bottom: -100px;
+      }
+
     }
   }
 }

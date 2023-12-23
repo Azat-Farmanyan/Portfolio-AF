@@ -13,10 +13,12 @@
       align-items: center;
       text-align: center;
       gap: 30px;
+
       .contact-text {
         max-width: 763px;
       }
     }
+
     .contact-form {
       border-radius: 5px;
       background: #fff;
@@ -29,31 +31,38 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+
       .input-item {
         display: flex;
         flex-direction: column;
+
         // gap: 15px;
         // margin-bottom: 20px;
         .input-message {
           min-height: 243px;
         }
+
         label {
           // margin-left: 20px;
           margin-bottom: 15px;
+
           @media only screen and (max-width: 600px) {
             margin-bottom: 10px;
           }
         }
-        input {
-        }
+
+        input {}
       }
+
       .btns {
         display: flex;
         justify-content: right;
         width: 100%;
+
         .contact-submit-btn {
           text-align: right;
           margin-top: 10px;
+
           @media only screen and (max-width: 600px) {
             width: 100%;
             text-align: center;

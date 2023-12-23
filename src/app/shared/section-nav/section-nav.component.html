@@ -1,7 +1,12 @@
 <div class="sections-nav-block">
-  <div class="section" (click)="navigateTo('home', 'home')" [ngClass]="{ active: activeSectionId === 0 }"></div>
-  <div class="section" (click)="navigateTo('home', 'about')" [ngClass]="{ active: activeSectionId === 1 }"></div>
-  <div class="section" (click)="navigateTo('home', 'experience')" [ngClass]="{ active: activeSectionId === 2 }"></div>
-  <div class="section" (click)="navigateTo('home', 'projects')" [ngClass]="{ active: activeSectionId === 3 }"></div>
-  <div class="section" (click)="navigateTo('home', 'contact')" [ngClass]="{ active: activeSectionId === 4 }"></div>
+  <div class="section" [style.border]="activeSectionId===0 ? '2px solid #FFF' : ' 1px solid #EE6C4D'"
+    (click)="navigateTo('home', 'home')" [ngClass]="{ active: activeSectionId === 0}"></div>
+  <div class="section" (click)="navigateTo('home', 'about')"
+    [ngClass]="{ active: activeSectionId === 1, whitenotactive:  activeSectionId===0  }"></div>
+  <div class="section" (click)="navigateTo('home', 'experience')"
+    [ngClass]="{ active: activeSectionId === 2, whitenotactive:  activeSectionId===0}"></div>
+  <div class="section" (click)="navigateTo('home', 'projects')"
+    [ngClass]="{ active: activeSectionId === 3, whitenotactive:  activeSectionId===0 }"></div>
+  <div class="section" (click)="navigateTo('home', 'contact')"
+    [ngClass]="{ active: activeSectionId === 4, whitenotactive:  activeSectionId===0 }"></div>
 </div>

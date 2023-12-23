@@ -9,29 +9,53 @@
           current skills mostly in terms of programming and technology
         </p>
       </div>
-      <div class="about-text-block">
+      <div class="about-text-block ">
         <div class="about-left-side">
           <h4 class="paragraph-title about-title">Get to know me!</h4>
           <p class="text">
-            I'm a Frontend Web Developer building the Front-end of Websites and
-            Web Applications that leads to the success of the overall product.
-            Check out some of my work in the Projects section. <br /><br />
-            I also like sharing content related to the stuff that I have learned
-            over the years in Web Development so it can help other people of the
-            Dev Community. Feel free to Connect or Follow me on my Linkedin
-            where I post useful content related to Web Development and
-            Programming. <br /><br />
-            I'm open to Job opportunities where I can contribute, learn and
-            grow. If you have a good opportunity that matches my skills and
-            experience then don't hesitate to contact me.
+            I have extensive knowledge and a passionate interest in continually exploring innovations in stimulating
+            fields. My
+            professional experience spans over three years in front-end development, with a primary focus on Angular,
+            including
+            JavaScript and TypeScript. Additionally, I have over five years of experience in graphic design.
+            <br /><br />
+            My skills encompass deciphering complex code bases, where I excel in understanding existing processes and
+            efficiently
+            solving related tasks. My ability to quickly adapt to new technologies and methodologies, such as Node.js,
+            Sass, SCSS,
+            REST API, and ES6, allows me to integrate them effectively. I am characterized by critical thinking, a
+            strong work ethic
+            underscored by flexibility, a willingness to take on new responsibilities, a commitment to learning
+            opportunities, and
+            the ability to interact with new systems. <br /><br />
           </p>
+          <p class="text" *ngIf="readMore">
+            These traits are supported by my interpersonal communication skills, enabling me to collaborate seamlessly
+            with
+            cross-functional teams. I am proficient in version control tools such as Git and GitHub, and I have a solid
+            foundation
+            in web design using HTML, CSS, HTML5, and CSS3. My experience with REST API, JavaScript frameworks, and
+            libraries such
+            as RxJS and JSON API complements my qualifications in front-end development. Additionally, my design skills
+            extend to
+            Adobe Photoshop, Adobe Illustrator, and Figma, enhancing my ability to create visually appealing and
+            user-friendly
+            interfaces.<br /><br />In conclusion, my versatile skill set, including but not limited to JavaScript,
+            TypeScript, Angular, Git, and Adobe
+            Creative Suite, positions me as a versatile and adaptive professional with a strong commitment to delivering
+            high-quality work in front-end development and graphic design.<br /><br />
+          </p>
+
+          <button class="btn-white-v2" (click)="readMore=!readMore" style="margin-top: 0px;">
+            {{readMore? "Read Less" : "Read More"}}</button>
+
         </div>
         <div class="about-right-side">
           <h4 class="paragraph-title about-title">My Skills</h4>
           <div class="skills">
             <div [ngClass]="{ 'orange-bg': randomSkillNumber === i }" class="skill-box text"
               *ngFor="let skill of skills; let i = index">
-              <img class="skill-img" [src]="'../../../assets/icons/skills/' + skill.img" />
+              <img class="skill-img" loading="lazy" [src]="'../../../assets/icons/skills/' + skill.img" />
               <span>{{ skill.name }}</span>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Skill, SkillsService } from 'src/app/services/skills.service';
 
 @Component({
@@ -7,8 +7,10 @@ import { Skill, SkillsService } from 'src/app/services/skills.service';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
+  @Input() activeSection: string = '';
   skills: Skill[] = [];
   randomSkillNumber = 0;
+  readMore = false;
 
   constructor(private skillsService: SkillsService) {
     this.skills = this.skillsService.getSkills();

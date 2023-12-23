@@ -5,18 +5,13 @@
       <div class="text proj-description">
         {{ project.description[0] | textCut : 30 }}
       </div>
-      <button (click)="openDetails(project.id)" class="btn-medium-small">
+      <button (click)="openDetails(project.id)" class="btn-orange-v2">
         See More
       </button>
     </div>
     <div class="project-galeria">
-      <img
-        (click)="openDetails(project.id)"
-        *ngIf="project.screenshots"
-        class="project-img"
-        [src]="project.screenshots[0]"
-        alt="Project-Management-System"
-      />
+      <img (click)="openDetails(project.id)" *ngIf="project.screenshots" class="project-img"
+        [src]="project.screenshots[0]" alt="Project-Management-System" loading="lazy" />
     </div>
   </div>
 </div>

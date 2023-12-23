@@ -23,8 +23,8 @@
 
         <!-- Email Input -->
         <div class="input-item">
-          <label class="label-text" for="email">
-            <span [@fadeInOut] *ngIf="emailHasError">{{ "* " }}</span>
+          <label class="label-text" for="email" [@fadeInOut]>
+            <span *ngIf="emailHasError">{{ "* " }}</span>
             Email
           </label>
           <input #emailInput formControlName="email" id="email" name="email" type="text"
@@ -38,10 +38,8 @@
 
         <!-- Message Input -->
         <div class="input-item">
-          <label class="label-text" for="message"><span [@fadeInOut] *ngIf="messageHasError">{{
-              "*
-              "
-              }}</span>Message</label>
+          <label class="label-text" for="message"><span [@fadeInOut] *ngIf="messageHasError">
+              {{ "* " }}</span>Message</label>
           <textarea #messageInput formControlName="message" class="input-message" id="message" type="text"
             name="message" placeholder="Enter your message"></textarea>
           <div [@fadeInOut] class="error-block" *ngIf="messageHasError">

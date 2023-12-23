@@ -28,11 +28,11 @@
         .centerline {
             width: 25px;
             flex: 0 0 10%;
-            // background-color: green;
-            // display: flex;
-            // flex-direction: column;
-            // justify-content: center;
-            // align-items: center;
+
+            @media only screen and (max-width: 600px) {
+                flex: 0 0 5%;
+                margin-right: 20px;
+            }
 
             .circle {
                 width: 25px;
@@ -42,6 +42,7 @@
                 border: 3px solid #fff;
                 margin: 0 auto;
                 transition: all 0.5s ease;
+
             }
 
             // .active-circle {
@@ -58,7 +59,10 @@
 
         .experience-descreption {
             flex: 0 0 75%;
-            // background-color: blue;
+
+            @media only screen and (max-width: 600px) {
+                flex: 0 0 85%;
+            }
 
             .experience-title {
                 color: #FFF;
@@ -70,6 +74,7 @@
                 /* 32.4px */
                 letter-spacing: 1.2px;
                 margin-bottom: 10px;
+
             }
 
             .experience-subtitle,
@@ -106,6 +111,10 @@
                 letter-spacing: 0.8px;
                 padding-right: 30px;
                 // padding-bottom: 100px;
+
+                @media only screen and (max-width: 600px) {
+                    padding-right: 0;
+                }
             }
         }
     }
@@ -120,6 +129,7 @@
     line-height: 135%;
     /* 21.6px */
     letter-spacing: 0.8px;
+
 }
 
 .duration-txt {
@@ -131,6 +141,7 @@
     line-height: 135%;
     /* 21.6px */
     letter-spacing: 0.8px;
+
 }
 
 .hide-min600 {

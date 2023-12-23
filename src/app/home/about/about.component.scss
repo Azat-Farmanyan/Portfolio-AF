@@ -46,7 +46,9 @@
           flex-wrap: wrap;
 
           .skill-box {
-            border-radius: 5px;
+            // border-radius: 5px;
+            flex-grow: 1;
+
             background: #e2e2e2;
             padding: 8px 28px;
             transition: all 0.5s ease;

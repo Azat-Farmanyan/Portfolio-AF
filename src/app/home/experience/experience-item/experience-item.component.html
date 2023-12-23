@@ -6,8 +6,7 @@
         </div>
 
         <div class="centerline">
-            <div class="circle active-circle">
-            </div>
+            <div class="circle active-circle"></div>
             <div class="circle-line"></div>
         </div>
 
@@ -22,8 +21,7 @@
                 <p class="duration-txt">{{ experience.date.duration }}</p>
             </div>
 
-            <div class="experience-txt slide-right" [innerHTML]="experienceTxt"
-                [ngStyle]="{'margin-bottom.px':isLast ? 0 : 120}">
+            <div class="experience-txt" [innerHTML]="experienceTxt" [ngStyle]="{'margin-bottom.px':isLast ? 0 : 120}">
             </div>
         </div>
     </div>

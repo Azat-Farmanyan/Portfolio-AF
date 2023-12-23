@@ -17,9 +17,11 @@ export class SkillsService {
     { name: 'JavaScript', img: 'javascript.png' },
     { name: 'TypeScript', img: 'typescript.png' },
     { name: 'Angular', img: 'angular.png' },
+    { name: 'RxJs', img: 'rxjs.png' },
+    { name: 'Ionic', img: 'ionic.png' },
+    { name: 'DevExtreme', img: 'devextreme.png' },
     { name: 'GIT', img: 'git.png' },
     { name: 'GITHUB', img: 'github.png' },
-    { name: 'Ionic', img: 'ionic.png' },
     { name: 'VS Code', img: 'vscode.png' },
     { name: 'VisualStudio', img: 'visualstudio.png' },
     { name: 'Sublime', img: 'sublime.png' },
@@ -27,7 +29,6 @@ export class SkillsService {
     { name: 'Figma', img: 'figma.png' },
     { name: 'Photoshop', img: 'photoshop.png' },
     { name: 'Illustrator', img: 'illustrator.png' },
-    { name: 'DevExtreme', img: 'devextreme.png' },
   ];
 
   getSkills() {

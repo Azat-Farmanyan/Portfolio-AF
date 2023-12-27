@@ -102,6 +102,9 @@ import { Router } from '@angular/router';
 export class HeaderComponentV2 implements OnInit {
   @Input() scrollTop: boolean = false;
   @Input() activeSection: string = '';
+  @Input() opacity: number = 0.9;
+  @Input() closeFromTopPx: number = 80;
+
   showMenu = false;
   isMouseNearTop = true;
   scrolled = false;
@@ -130,7 +133,7 @@ export class HeaderComponentV2 implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.scrolled = window.pageYOffset < 80;
+    this.scrolled = window.pageYOffset < this.closeFromTopPx;
   }
 
   @HostListener('window:resize', ['$event'])

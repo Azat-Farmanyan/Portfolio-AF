@@ -7,9 +7,11 @@ import {
 } from '@angular/animations';
 import {
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
 } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
@@ -44,6 +46,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CarouselComponent implements OnInit, OnChanges {
   @Input() images: string[] | undefined;
+  @Output() onActiveImage = new EventEmitter<string>();
 
   defaultImg = '';
   activeDot = 0;
@@ -71,7 +74,10 @@ export class CarouselComponent implements OnInit, OnChanges {
 
   setActiveImg() {
     setTimeout(() => {
-      if (!!this.images) this.defaultImg = this.images[this.activeDot];
+      if (!!this.images) {
+        this.defaultImg = this.images[this.activeDot];
+        this.onActiveImage.emit(this.defaultImg);
+      }
 
       // console.log(this.activeDot);
     }, this.animationTime);

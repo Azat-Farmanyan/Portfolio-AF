@@ -45,6 +45,7 @@
           gap: 15px;
           flex-wrap: wrap;
 
+
           .skill-box {
             // border-radius: 5px;
             flex-grow: 1;
@@ -57,12 +58,16 @@
             justify-content: center;
             gap: 5px;
 
+            &:hover {
+              padding: 8px 35px;
+            }
+
             .skill-img {
               width: 30px;
             }
 
             &:hover {
-              background-color: #ee6c4d;
+              background: radial-gradient(192.86% 128.3% at 12.17% 6.95%, #FF9379 0%, #EE6C4D 100%);
               color: #fff;
             }
           }

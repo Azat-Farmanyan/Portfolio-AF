@@ -2,28 +2,16 @@
   <p *ngIf="isLoading; else carouselBox" class="text-bold">Loading ...</p>
   <ng-template #carouselBox>
     <div class="carousel-body">
-      <div
-        *ngIf="imgLength > 1"
-        (click)="clickLeft()"
-        class="left-click unselectable"
-      >
+      <div *ngIf="imgLength > 1" (click)="clickLeft()" class="left-click unselectable">
         <img src="../../../assets/icons/left-arrow.svg" alt="LEFT" />
       </div>
 
       <div class="images-block custom-scrollable-div">
-        <img
-          [src]="defaultImg"
-          alt=""
-          class="carousel-image"
-          [@fadeInOut]="showImage ? 'show' : 'hide'"
-        />
+        <img [src]="defaultImg" alt="" class="carousel-image uprise-step-one" />
+        <!-- [@fadeInOut]="showImage ? 'show' : 'hide'" -->
       </div>
 
-      <div
-        *ngIf="imgLength > 1"
-        (click)="clickRight()"
-        class="right-click unselectable"
-      >
+      <div *ngIf="imgLength > 1" (click)="clickRight()" class="right-click unselectable">
         <img src="../../../assets/icons/right-arrow.svg" alt="RIGHT" />
       </div>
     </div>
@@ -32,12 +20,8 @@
         <img src="../../../assets/icons/left-arrow.svg" alt="LEFT" />
       </div>
       <div class="carousel-nav">
-        <div
-          (click)="setActiveDot(i)"
-          *ngFor="let length of images; let i = index"
-          class="carousel-dot"
-          [ngClass]="{ 'active-dot': i === activeDot }"
-        ></div>
+        <div (click)="setActiveDot(i)" *ngFor="let length of images; let i = index" class="carousel-dot"
+          [ngClass]="{ 'active-dot': i === activeDot }"></div>
       </div>
       <div (click)="clickRight()" class="right-click unselectable">
         <img src="../../../assets/icons/right-arrow.svg" alt="RIGHT" />

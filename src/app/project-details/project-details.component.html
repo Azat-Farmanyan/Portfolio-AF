@@ -1,14 +1,18 @@
-<app-header-v2></app-header-v2>
+<app-header-v2 [opacity]="0.99" [closeFromTopPx]="40"></app-header-v2>
+<!-- <button class="btn-orange-v2 return-btn">Return to projects</button> -->
 
 <section class="details">
-
-  <div class="details-block">
+  <div class="details-block" [style.background]="'rgba(255, 255, 255, 0.5) url(' + imagePath + ') no-repeat top center'"
+    [style.backgroundSize]="'cover'">
+    <div class="details-dark-filder"></div>
     <div class="details-header">
       <div *ngIf="project">
-        <h2 class="section-title project-title">
-          {{ project.title }}
-        </h2>
-        <app-carousel [images]="project.screenshots"></app-carousel>
+        <div class="title-block">
+          <h2 class="section-title project-title">
+            {{ project.title }}
+          </h2>
+        </div>
+        <app-carousel [images]="screenshots"></app-carousel>
       </div>
     </div>
   </div>
@@ -38,7 +42,7 @@
   </div>
   <div class="wrapper">
 
-    <button (click)="back()" class="btn orange-bg return-btn ">
+    <button (click)="back()" class="btn-orange-v2 return-btn ">
       <img src="../../assets/icons/go-back.png" alt="go back">
       <span>
         Return to projects

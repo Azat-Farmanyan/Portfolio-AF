@@ -19,4 +19,8 @@ export class ProjectCardComponent implements OnInit {
   openDetails(id: number) {
     this.router.navigate([`details/${id}`]);
   }
+
+  log() {
+    console.log('pic is loaded');
+  }
 }

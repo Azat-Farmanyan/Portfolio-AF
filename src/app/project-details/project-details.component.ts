@@ -14,6 +14,9 @@ export class ProjectDetailsComponent implements OnInit {
 
   routeSub: Subscription;
   projectID: number;
+  screenshots: string[] = [];
+
+  imagePath = '../../assets/images/';
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -42,12 +45,28 @@ export class ProjectDetailsComponent implements OnInit {
       this.projectID = +params['id'];
       // console.log(this.projectID);
       this.project = this.projectsService.getProjectById(this.projectID);
+      if (this.project?.screenshots) {
+        const banner = this.project.banner;
+        this.setActiveImage(banner);
+        this.screenshots = this.project.screenshots;
+        console.log(banner);
+
+        if (banner.length === 0) {
+          this.setActiveImage(this.screenshots[0]);
+        }
+      }
+
       if (this.project === null) this.back();
       // console.log(this.project);
     });
   }
   back() {
     this.router.navigate(['/home'], { fragment: 'projects' });
+  }
+
+  setActiveImage(imageName: string) {
+    this.imagePath = '../../assets/images/';
+    this.imagePath += imageName;
   }
 
   ngOnDestroy(): void {

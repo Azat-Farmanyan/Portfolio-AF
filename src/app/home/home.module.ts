@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WelcomePageComponent } from './welcome-page/welcome.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ExperienceItemComponent } from './experience/experience-item/experience-item.component';
+import { ProjectCardComponentV2 } from './projects/project-card-v2/project-card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ExperienceItemComponent } from './experience/experience-item/experience
     AboutComponent,
     ProjectsComponent,
     ProjectCardComponent,
+    ProjectCardComponentV2,
     ContactComponent,
     WelcomePageComponent,
     ExperienceComponent,

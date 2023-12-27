@@ -34,4 +34,8 @@ export class SkillsService {
   getSkills() {
     return this.skills;
   }
+
+  getSkillByName(skillName: string): Skill | undefined {
+    return this.skills.find((skill) => skill.name === skillName);
+  }
 }

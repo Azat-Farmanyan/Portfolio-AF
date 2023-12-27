@@ -2,11 +2,13 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostListener,
   Input,
   OnChanges,
   OnInit,
   Renderer2,
   SimpleChanges,
+  ViewChild,
 } from '@angular/core';
 import { ProjectsService } from 'src/app/services/projects.service';
 

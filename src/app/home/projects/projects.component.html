@@ -9,11 +9,10 @@
           created with each project containing its own case study
         </p>
       </div>
-      <div class="projects-block">
-
-
+      <div class="projects-block" #projectsBlock>
         <div *ngFor="let project of projectsService.projects" class="project-card">
           <app-project-card [id]="project.id" [project]="project"></app-project-card>
+          <!-- <app-project-card-v2 [id]="project.id" [project]="project"></app-project-card-v2> -->
         </div>
       </div>
     </div>

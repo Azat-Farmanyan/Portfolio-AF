@@ -3,10 +3,12 @@
     .project-img {
       transform: scale(1.1);
     }
+
     *button {
       transform: translateY(-3px);
     }
   }
+
   .project-card-body {
     display: flex;
     flex-wrap: wrap;
@@ -24,6 +26,7 @@
     &:hover {
       box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
     }
+
     @media only screen and (max-width: 900px) {
       flex-direction: row;
       flex-wrap: wrap-reverse;
@@ -31,7 +34,8 @@
     }
 
     .proj-card-text-block {
-      flex: 0 47%; /*lower the % to get more columns*/
+      flex: 0 47%;
+      /*lower the % to get more columns*/
       flex-grow: 1;
 
       display: flex;
@@ -42,27 +46,52 @@
       padding: 50px 30px;
 
       @media only screen and (max-width: 900px) {
-        flex: 0 100%; /* Make each box take up the full width */
+        flex: 0 100%;
+        /* Make each box take up the full width */
       }
+
       @media only screen and (max-width: 600px) {
         padding: 40px 20px;
         gap: 20px;
       }
+
       @media only screen and (max-width: 320px) {
         padding: 30px 10px;
       }
+
       .proj-title {
+        color: #293241;
+        font-family: Roboto;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 135%;
+        /* 32.4px */
+        letter-spacing: 1.2px;
+        margin-bottom: 10px;
       }
+
       .proj-description {
+        font-family: Roboto;
+        font-size: 16px;
+        color: #293241;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 160%;
+        /* 21.6px */
+        letter-spacing: 0.8px;
       }
     }
+
     .project-galeria {
-      flex: 0 47%; /*lower the % to get more columns*/
+      flex: 0 47%;
+      /*lower the % to get more columns*/
       flex-grow: 1;
 
       display: flex;
       align-items: center;
       overflow: hidden;
+
       .project-img {
         // border-radius: 0 5px 5px 0;
         width: 100%;

@@ -31,6 +31,8 @@
         </a>
 
       </nav>
+
+
       <div (click)="menuToggle()" class="burger">
         <img [@toggleAnimation] *ngIf="!showMenu" src="../../../assets/icons/burger.svg" alt="Open Menu" />
         <img [@toggleAnimation] *ngIf="showMenu" src="../../../assets/icons/close-cross.svg" alt="Close Menu" />
@@ -60,6 +62,36 @@
         <a class="nav-item" (click)="navigateTo('home', 'contact')" [ngClass]="{ active: activeSection === 'contact' }">
           contact
         </a>
+        <button class="btn-orange-v2" style="max-width: 300px; margin: 0 auto;" (click)="downloadCV()">Get Resume
+        </button>
+        <div class="social-block" style="margin: 0 auto; width: 100%;">
+          <div class="social-items">
+            <a href="https://www.linkedin.com/in/azat-farmanyan/" target="_blank">
+              <img class="social-item" [src]="linkedinImageSrc" alt="linkedin" (mouseenter)="onMouseEnter('linkedin')"
+                (mouseleave)="onMouseLeave('linkedin')">
+            </a>
+            <a href="https://github.com/Azat-Farmanyan" target="_blank">
+              <img class="social-item" [src]="githubImageSrc" alt="github" (mouseenter)="onMouseEnter('github')"
+                (mouseleave)="onMouseLeave('github')">
+            </a>
+            <a href="https://t.me/AzatFarmanyan" target="_blank">
+              <img class="social-item" [src]="telegramImageSrc" alt="telegram" (mouseenter)="onMouseEnter('telegram')"
+                (mouseleave)="onMouseLeave('telegram')">
+            </a>
+            <a href="https://discordapp.com/users/908978735020146719/" target="_blank">
+              <img class="social-item" [src]="discordImageSrc" alt="discord" (mouseenter)="onMouseEnter('discord')"
+                (mouseleave)="onMouseLeave('discord')">
+            </a>
+            <a href="https://www.instagram.com/azat_09.5/" target="_blank">
+              <img class="social-item" [src]="instagramImageSrc" alt="instagram"
+                (mouseenter)="onMouseEnter('instagram')" (mouseleave)="onMouseLeave('instagram')">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100007929288834" target="_blank">
+              <img class="social-item" [src]="facebookImageSrc" alt="facebook" (mouseenter)="onMouseEnter('facebook')"
+                (mouseleave)="onMouseLeave('facebook')">
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

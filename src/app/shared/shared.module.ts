@@ -6,6 +6,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { TextCutPipe } from '../pipes/text-cut.pipe';
 import { HeaderComponentV2 } from './header_v2/header.component';
 import { SectionNavComponent } from './section-nav/section-nav.component';
+import { AdvancedImageComponent } from './advanced-image/advanced-image.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SectionNavComponent } from './section-nav/section-nav.component';
     TextCutPipe,
     HeaderComponentV2,
     SectionNavComponent,
+    AdvancedImageComponent,
   ],
   imports: [CommonModule, NgbCarouselModule],
   exports: [
@@ -23,6 +25,7 @@ import { SectionNavComponent } from './section-nav/section-nav.component';
     TextCutPipe,
     HeaderComponentV2,
     SectionNavComponent,
+    AdvancedImageComponent,
   ],
 })
 export class SharedModule {}

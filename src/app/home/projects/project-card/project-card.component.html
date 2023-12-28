@@ -10,9 +10,14 @@
       </button>
     </div>
     <div class="project-galeria">
+
+      <!-- <app-advanced-image *ngIf="project.screenshots"
+        [imageUrl]="project.banner ? project.banner : project.screenshots[0]"
+        [imageUrlSmall]="!!project.bannerSmall ? project.bannerSmall : project.screenshots[0]"
+        (click)="openDetails(project.id)" class="project-img"></app-advanced-image> -->
+
       <img (click)="openDetails(project.id)" *ngIf="project.screenshots" class="project-img"
-        [src]="project.banner ? project.banner:  project.screenshots[0]" alt="Project-Management-System"
-        loading="lazy" />
+        [src]="project.banner ? project.banner:  project.screenshots[0]" [alt]="project.title" loading="lazy" />
     </div>
   </div>
 </div>

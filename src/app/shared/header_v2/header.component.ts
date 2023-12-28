@@ -157,4 +157,54 @@ export class HeaderComponentV2 implements OnInit {
     this.router.navigate([`/${path}`], { fragment: `${fragment}` });
     if (this.showMenu) this.closeMenu();
   }
+
+  downloadCV(): void {
+    const fileUrl =
+      '../../../assets/cv/Angular Developer - Azat Farmanyan - ENG.pdf';
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = 'Angular Developer - Azat Farmanyan';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  socialLinksFolder = 'social-links-gray';
+
+  linkedinImageSrc = `../../../assets/icons/${this.socialLinksFolder}/basil_linkedin-solid.svg`;
+  githubImageSrc = `../../../assets/icons/${this.socialLinksFolder}/mdi_github.svg`;
+  telegramImageSrc = `../../../assets/icons/${this.socialLinksFolder}/ic_baseline-telegram.svg`;
+  discordImageSrc = `../../../assets/icons/${this.socialLinksFolder}/ic_baseline-discord.svg`;
+  instagramImageSrc = `../../../assets/icons/${this.socialLinksFolder}/ri_instagram-fill.svg`;
+  facebookImageSrc = `../../../assets/icons/${this.socialLinksFolder}/gg_facebook.svg`;
+
+  onMouseEnter(platform: string) {
+    this.updateImageSrc(platform, 'social-links-orange');
+  }
+
+  onMouseLeave(platform: string) {
+    this.updateImageSrc(platform, 'social-links-gray');
+  }
+  private updateImageSrc(platform: string, folder: string) {
+    switch (platform) {
+      case 'linkedin':
+        this.linkedinImageSrc = `../../../assets/icons/${folder}/basil_linkedin-solid.svg`;
+        break;
+      case 'github':
+        this.githubImageSrc = `../../../assets/icons/${folder}/mdi_github.svg`;
+        break;
+      case 'telegram':
+        this.telegramImageSrc = `../../../assets/icons/${folder}/ic_baseline-telegram.svg`;
+        break;
+      case 'discord':
+        this.discordImageSrc = `../../../assets/icons/${folder}/ic_baseline-discord.svg`;
+        break;
+      case 'instagram':
+        this.instagramImageSrc = `../../../assets/icons/${folder}/ri_instagram-fill.svg`;
+        break;
+      case 'facebook':
+        this.facebookImageSrc = `../../../assets/icons/${folder}/gg_facebook.svg`;
+        break;
+    }
+  }
 }

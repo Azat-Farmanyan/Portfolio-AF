@@ -5,6 +5,7 @@ export interface Project {
   title: string;
   description: string[];
   banner: string;
+  bannerSmall?: string;
   screenshots?: string[];
   tools: string[];
   seeLive: string;
@@ -34,6 +35,9 @@ export class ProjectsService {
       ],
 
       banner: `${this.screenshotsFolderPath}mp3-player-banner${'.jpg'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }mp3-player-banner-small${'.jpg'}`,
       screenshots: [`${this.screenshotsFolderPath}player-1${'.png'}`],
       tools: ['Angular', 'HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Figma'],
       seeLive: 'https://loquacious-unicorn-9da2c9.netlify.app/player',

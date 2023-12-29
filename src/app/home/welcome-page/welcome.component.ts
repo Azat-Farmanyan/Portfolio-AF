@@ -22,6 +22,7 @@ import { Router } from '@angular/router';
   ],
 })
 export class WelcomePageComponent {
+  avatarIsLoaded = false;
   socialLinksFolder = 'social-links-gray';
 
   linkedinImageSrc = `../../../assets/icons/${this.socialLinksFolder}/basil_linkedin-solid.svg`;

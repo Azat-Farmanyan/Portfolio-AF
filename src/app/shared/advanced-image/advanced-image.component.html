@@ -1,5 +1,11 @@
-<div [ngStyle]="{ 'background-image': 'url(' + imageUrlSmall + ')' }"
+<div [ngStyle]="{'image-block': true, 'background-image': 'url(' + imageUrlSmall + ')', 'background-position': 'center', 'background-size': 'cover'}"
+    [ngClass]="{ 'placeholder': true, 'placeholder-loaded': isLoaded }" [style.height.px]="imageHeight">
+    <img [src]="imageUrl" [ngClass]="{ 'image': true, 'image-loaded': isLoaded }" [style.height.px]="imageHeight"
+        loading="lazy" (load)="OnImageLoad()" />
+</div>
+
+<!-- <div [ngStyle]="{ 'background-image': 'url(' + imageUrlSmall + ')' }"
     [ngClass]="{ placeholder: true, 'placeholder-loaded': isLoaded }">
     <img [ngClass]="{ image: true, 'image-loaded': isLoaded }" ] [src]="imageUrl" loading="lazy"
         (load)="OnImageLoad()" />
-</div>
+</div> -->

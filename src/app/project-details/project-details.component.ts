@@ -31,7 +31,7 @@ export class ProjectDetailsComponent implements OnInit {
       if (this.project.seeLive.includes('netlify')) {
         this.showInstruction = true;
       } else {
-        console.log(this.project.seeLive);
+        // console.log(this.project.seeLive);
 
         window.open(this.project.seeLive, '_blank');
       }
@@ -49,7 +49,7 @@ export class ProjectDetailsComponent implements OnInit {
         const banner = this.project.banner;
         this.setActiveImage(banner);
         this.screenshots = this.project.screenshots;
-        console.log(banner);
+        // console.log(banner);
 
         if (banner.length === 0) {
           this.setActiveImage(this.screenshots[0]);

@@ -403,12 +403,11 @@ textarea {
   border: 1px solid #EE6C4D;
 
   padding: 16px 56px;
-
 }
 
 .btn-orange-v2,
 .btn-white-v2 {
-  transition: all 0.3s ease-in;
+  transition: all 0.1s ease-in;
 
   &:hover {
     filter: brightness(1.2);

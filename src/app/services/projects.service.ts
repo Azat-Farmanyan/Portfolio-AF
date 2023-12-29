@@ -53,6 +53,9 @@ export class ProjectsService {
         'With its delectable visuals and comprehensive guides, Pizza Cheff is a testament to the delicious and creative world of pizza-making. Dive into our page, and you will soon be on your way to mastering the art of pizza.',
       ],
       banner: `${this.screenshotsFolderPath}pizza-cheff-banner${'.jpg'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }pizza-cheff-banner-small${'.jpg'}`,
       screenshots: [`${this.screenshotsFolderPath}pizza-cheff${'.png'}`],
       tools: ['Angular', 'HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Figma'],
       seeLive: 'https://papaya-praline-2e765d.netlify.app/',
@@ -68,6 +71,9 @@ export class ProjectsService {
         'Join the growing community of readers and writers who have made the Posts App their go-to platform for storytelling and connecting. Whether you are here to share your own posts or discover new perspectives, our app is your doorway to a world of stories and connections. Download the Posts App today and start sharing, discovering, and connecting in a new and exciting way!',
       ],
       banner: `${this.screenshotsFolderPath}posts-app-banner${'.jpg'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }posts-app-banner-small${'.jpg'}`,
       screenshots: [
         `${this.screenshotsFolderPath}posts-app-1${'.png'}`,
         `${this.screenshotsFolderPath}posts-app-2${'.png'}`,
@@ -87,6 +93,9 @@ export class ProjectsService {
         'Join the growing community of users who rely on the Users App for efficient and organized user management. Whether you are running a small organization or managing a large user database, our app has you covered. It is time to take control of your user profiles and make user management a breeze. Download the Users App today and experience the convenience of streamlined user management firsthand!',
       ],
       banner: `${this.screenshotsFolderPath}card-app-banner${'.jpg'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }card-app-banner-small${'.jpg'}`,
       screenshots: [
         `${this.screenshotsFolderPath}card-app-1.png${'.png'}`,
         `${this.screenshotsFolderPath}card-app-2${'.png'}`,
@@ -105,6 +114,7 @@ export class ProjectsService {
         'Join us on this journey where every putt counts, and the pursuit of perfection knows no bounds. Whether you are a golfer by heart or just intrigued by the allure of precision, the World Putting League welcomes you to experience golf in a whole new way. Get ready to roll with us and discover the magic of putting like never before.',
       ],
       banner: `${this.screenshotsFolderPath}wpl-banner${'.jpg'}`,
+      bannerSmall: `${this.screenshotsFolderPath}wpl-banner-small${'.jpg'}`,
       screenshots: [
         `${this.screenshotsFolderPath}wpl-1${'.png'}`,
         `${this.screenshotsFolderPath}wpl-2${'.png'}`,
@@ -123,6 +133,9 @@ export class ProjectsService {
         'Join the growing community of typists who have improved their skills with our Speed Typing App. Whether you are preparing for a job that requires lightning-fast typing or simply want to be more efficient with your daily tasks, our app is your ideal companion. Download it today and watch your typing abilities soar to new heights!',
       ],
       banner: `${this.screenshotsFolderPath}speen-typing-banner${'.jpg'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }speen-typing-banner-small${'.jpg'}`,
       screenshots: [
         `${this.screenshotsFolderPath}speen-typing-1${'.png'}`,
         `${this.screenshotsFolderPath}speen-typing-2${'.png'}`,
@@ -143,6 +156,9 @@ export class ProjectsService {
         'Join the Blot gaming community and elevate your card-playing sessions with our Note Card Game Blots Score app. Its not just about keeping score; its about enhancing your gaming moments with ease and sophistication. Download our app today and score your way to victory in style!',
       ],
       banner: `${this.screenshotsFolderPath}blot-app-banner${'.png'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }blot-app-banner-small${'.png'}`,
       screenshots: [
         `${this.screenshotsFolderPath}blot-app-1${'.png'}`,
         `${this.screenshotsFolderPath}blot-app-2${'.png'}`,
@@ -162,6 +178,9 @@ export class ProjectsService {
         'Join the millions of users who rely on our app for their daily weather updates. Embrace the convenience of knowing the forecast wherever you go, and be prepared for whatever the weather may bring. Download our Weather App today and stay ahead of the elements!',
       ],
       banner: `${this.screenshotsFolderPath}weather-app-banner${'.jpg'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }weather-app-banner-small${'.jpg'}`,
       screenshots: [
         `${this.screenshotsFolderPath}weather-app-1${'.png'}`,
         `${this.screenshotsFolderPath}weather-app-2${'.png'}`,
@@ -181,6 +200,7 @@ export class ProjectsService {
         'English for Kids is more than an app; it is an educational companion that fosters a love for language and learning. Join us in this exciting journey, where children can expand their horizons, boost their confidence, and embark on a lifelong adventure of language and discovery. Give your child the gift of English education wrapped in fun and excitement today!',
       ],
       banner: `${this.screenshotsFolderPath}english-banner${'.jpg'}`,
+      bannerSmall: `${this.screenshotsFolderPath}english-banner-small${'.jpg'}`,
       screenshots: [
         `${this.screenshotsFolderPath}english-2${'.png'}`,
         `${this.screenshotsFolderPath}english-1${'.png'}`,
@@ -202,6 +222,9 @@ export class ProjectsService {
         'Join the ranks of satisfied users who have discovered the benefits of our Project Management System. Explore the tools, enhance your productivity, and experience the difference for yourself. Whether you are a seasoned project manager or just embarking on your journey, we are here to help you reach your goals efficiently and with confidence. Welcome to the future of project management!',
       ],
       banner: `${this.screenshotsFolderPath}proj-man-sys-banner${'.jpg'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }proj-man-sys-banner-small${'.jpg'}`,
       screenshots: [
         `${this.screenshotsFolderPath}proj-man-sys-1${'.png'}`,
         `${this.screenshotsFolderPath}proj-man-sys-2${'.png'}`,
@@ -219,7 +242,8 @@ export class ProjectsService {
         'On our website, youll find a wealth of detailed information about the wonderful animals residing in shelters, eagerly waiting for their future owners. Each profile tells a unique story, showcasing the personality, history, and individual needs of these lovable companions. Whether youre seeking a loyal canine companion or a charming feline friend, you can explore our comprehensive listings to discover the perfect match for your home and heart.',
         'We believe that every paw deserves a place to call home, and were here to make that happen. Join us in this heartwarming journey of compassion and adoption, where together, we can transform the lives of shelter dogs and cats, and bring joy and love into your home. Explore our website, meet our furry residents, and start the beautiful journey of pet adoption today.',
       ],
-      banner: ``,
+      banner: `${this.screenshotsFolderPath}shelter-banner${'.jpg'}`,
+      bannerSmall: `${this.screenshotsFolderPath}shelter-banner-small${'.jpg'}`,
       screenshots: [
         `${this.screenshotsFolderPath}shelter-1${'.png'}`,
         `${this.screenshotsFolderPath}shelter-2${'.png'}`,
@@ -237,7 +261,10 @@ export class ProjectsService {
         'But this is no ordinary Tic Tac Toe; its the Ultimate version. Multiple boards, dynamic play, and strategic depth await. Every move you make influences the game at large, adding layers of complexity and excitement. Will you seize the opportunity to win on the grand board, or will your opponent outmaneuver you? Only the most skilled players will emerge victorious.',
         'Ultimate Tic Tac Toe is more than just a game; its an invitation to challenge your mind, test your strategy, and share moments of triumph with friends and rivals alike. Join us in this ultimate gaming adventure and see if you have what it takes to conquer the board!',
       ],
-      banner: ``,
+      banner: `${this.screenshotsFolderPath}tic-tac-toe-1${'.png'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }tic-tac-toe-banner-small${'.jpg'}`,
       screenshots: [
         `${this.screenshotsFolderPath}tic-tac-toe-1${'.png'}`,
         `${this.screenshotsFolderPath}tic-tac-toe-2${'.png'}`,
@@ -254,7 +281,8 @@ export class ProjectsService {
         'Introducing the Ultimate Calculator, your versatile and responsive companion for all your mathematical needs, whether you are on your computer or your mobile device. We have taken the humble calculator and transformed it into a sleek, user-friendly tool that adapts to your every calculation, no matter where you are. On your computer or laptop, our web-based calculator offers a seamless and intuitive experience. Whether it is simple arithmetic or complex equations, our calculators responsive design ensures that you have a powerful calculation tool at your fingertips.',
         'But we did not stop there. The Ultimate Calculator is also your trusted ally on mobile devices. Need to make quick calculations while on the go? No problem! Our mobile-friendly interface adapts effortlessly to your smartphone or tablet, delivering the same precision and ease of use you expect. From basic addition to advanced trigonometry, the Ultimate Calculator is your go-to tool for all your mathematical adventures. It is not just a calculator; it is a flexible and responsive mathematical companion that is ready to assist you anytime, anywhere. Join us and simplify your calculations with style and convenience.',
       ],
-      banner: ``,
+      banner: `${this.screenshotsFolderPath}calc${'.png'}`,
+      bannerSmall: `${this.screenshotsFolderPath}calc-banner-small${'.jpg'}`,
       screenshots: [`${this.screenshotsFolderPath}calc${'.png'}`],
       tools: ['HTML', 'CSS', 'JavaScript', 'Figma'],
       seeLive: 'https://azat-farmanyan.github.io/calculator/',
@@ -266,7 +294,10 @@ export class ProjectsService {
       description: [
         'Welcome to Bookshop, a digital haven for bibliophiles and bookworms. Immerse yourself in a world where the written word reigns supreme. This virtual bookshop is more than just an online store; it is a sanctuary for all things literary. Explore an extensive collection of books spanning genres, eras, and cultures. Craft your own literary journey by curating your personal library with a simple click. And for those moments when you are on the hunt for a specific title, our search feature serves as your trusty guide. Bookshop transcends mere e-commerce; it is a celebration of the enduring magic of the written word. Join us in this literary adventure and let your love for books flourish.',
       ],
-      banner: ``,
+      banner: `${this.screenshotsFolderPath}bookshop-banner${'.jpg'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }bookshop-banner-small${'.jpg'}`,
       screenshots: [
         `${this.screenshotsFolderPath}bookshop-1${'.png'}`,
         `${this.screenshotsFolderPath}bookshop-2${'.png'}`,
@@ -287,7 +318,10 @@ export class ProjectsService {
       tools: [],
       seeLive: '',
       sourceCodeUrl: '',
+      banner: '',
+      bannerSmall: '',
     };
+
     const gotProject = this.projects.find((project) => project.id === id);
 
     return gotProject ?? null;

@@ -211,3 +211,12 @@
 svg #wheel {
   animation: scroll ease 1.5s infinite;
 }
+
+
+.opacity-none {
+  opacity: 0;
+}
+
+.opacity-full {
+  opacity: 1 !important;
+}

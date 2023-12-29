@@ -28,6 +28,11 @@
   animation: uprise 1s ease-in-out 3.3s forwards;
 }
 
+.uprise-step-six {
+  opacity: 0;
+  transition: transform 1s ease-in-out;
+  animation: uprise 1s ease-in-out 4s forwards;
+}
 
 @keyframes uprise {
   to {

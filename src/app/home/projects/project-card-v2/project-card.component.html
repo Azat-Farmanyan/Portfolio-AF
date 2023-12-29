@@ -8,7 +8,7 @@
       <app-advanced-image *ngIf="project.screenshots"
         [imageUrl]="project.banner ? project.banner : project.screenshots[0]"
         [imageUrlSmall]="!!project.bannerSmall ? project.bannerSmall : project.screenshots[0]"
-        [imageHeight]="imageHeight" (click)="openDetails(project.id)" class="project-img"></app-advanced-image>
+        [imageHeight]="imageHeight" class="project-img"></app-advanced-image>
     </div>
     <div class="proj-card-text-block" [ngClass]="{ 'card-hovered': cardHovered}">
       <p class="proj-title">{{ project!.title }}</p>

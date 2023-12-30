@@ -10,11 +10,24 @@
         [imageUrlSmall]="!!project.bannerSmall ? project.bannerSmall : project.screenshots[0]"
         [imageHeight]="imageHeight" class="project-img"></app-advanced-image>
     </div>
-    <div class="proj-card-text-block" [ngClass]="{ 'card-hovered': cardHovered}">
+
+    <div class="proj-card-text-hovered-block proj-card-text-block" *ngIf="cardHovered">
       <p class="proj-title">{{ project!.title }}</p>
-      <p class="proj-description" *ngIf="cardHovered">
+      <p class="proj-description">
         {{ project.description[0] | textCut : descriptionLength }}
       </p>
+      <div class="tools-block">
+        <div class="tool-item" *ngFor="let tool of tools">
+          <img [src]="'../../../../assets/icons/skills/' + tool.img " alt="">
+        </div>
+      </div>
+      <button (click)="openDetails(project.id)" class="btn-orange-v2" *ngIf="cardHovered">
+        See More
+      </button>
+    </div>
+
+    <div class="proj-card-text-block" *ngIf="!cardHovered">
+      <p class="proj-title">{{ project!.title }}</p>
       <div class="tools-block">
         <div class="tool-item" *ngFor="let tool of tools">
           <img [src]="'../../../../assets/icons/skills/' + tool.img " alt="">

@@ -46,8 +46,8 @@ export class ProjectCardComponentV2 implements OnInit, OnChanges {
 
   onMouseEnter() {
     this.cardHovered = true;
-    this.imageHeight = 500;
-    this.descriptionLength = 40;
+    this.imageHeight = 298;
+    this.descriptionLength = 50;
   }
   onMouseLeave() {
     this.cardHovered = false;

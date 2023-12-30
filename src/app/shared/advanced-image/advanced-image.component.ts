@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class AdvancedImageComponent {
   @Input({ required: true }) imageUrl!: string;
-  @Input({ required: true }) imageUrlSmall: string = '';
+  @Input({ required: true }) imageUrlSmall: string = '298';
   @Input({ required: true }) imageHeight: number;
 
   isLoaded = false;

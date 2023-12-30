@@ -39,7 +39,15 @@ export class ProjectsService {
         this.screenshotsFolderPath
       }mp3-player-banner-small${'.jpg'}`,
       screenshots: [`${this.screenshotsFolderPath}player-1${'.png'}`],
-      tools: ['Angular', 'HTML', 'SCSS', 'JavaScript', 'TypeScript', 'Figma'],
+      tools: [
+        'Angular',
+        'HTML',
+        'SCSS',
+        'JavaScript',
+        'TypeScript',
+        'VS Code',
+        'Figma',
+      ],
       seeLive: 'https://loquacious-unicorn-9da2c9.netlify.app/player',
       sourceCodeUrl: 'https://github.com/Azat-Farmanyan/music-player',
     },

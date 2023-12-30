@@ -14,6 +14,7 @@ export class SkillsService {
   private skills: Skill[] = [
     { name: 'HTML', img: 'html.png' },
     { name: 'CSS', img: 'css.png' },
+    { name: 'SCSS', img: 'SCSS.png' },
     { name: 'JavaScript', img: 'javascript.png' },
     { name: 'TypeScript', img: 'typescript.png' },
     { name: 'Angular', img: 'angular.png' },

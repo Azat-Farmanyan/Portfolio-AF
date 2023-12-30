@@ -1,5 +1,6 @@
 <div [ngStyle]="{'image-block': true, 'background-image': 'url(' + imageUrlSmall + ')', 'background-position': 'center', 'background-size': 'cover'}"
-    [ngClass]="{ 'placeholder': true, 'placeholder-loaded': isLoaded }" [style.height.px]="imageHeight">
+    [ngClass]="{ 'placeholder': true, 'placeholder-loaded': isLoaded }" [style.height.px]="imageHeight"
+    [@skeletonAnimation]="isLoaded ? 'loaded' : 'loading'">
     <img [src]="imageUrl" [ngClass]="{ 'image': true, 'image-loaded': isLoaded }" [style.height.px]="imageHeight"
         loading="lazy" (load)="OnImageLoad()" />
 </div>

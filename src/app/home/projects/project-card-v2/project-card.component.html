@@ -19,6 +19,8 @@
       <div class="tools-block">
         <div class="tool-item" *ngFor="let tool of tools">
           <img [src]="'../../../../assets/icons/skills/' + tool.img " alt="">
+
+
         </div>
       </div>
       <button (click)="openDetails(project.id)" class="btn-orange-v2" *ngIf="cardHovered">

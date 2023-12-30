@@ -78,11 +78,29 @@
         justify-content: space-around;
         // gap: 15px;
         margin-top: auto;
+        flex-wrap: wrap;
+
+
 
         .tool-item img {
           max-height: 30px;
           height: 100%;
+          cursor: pointer;
+          transition: all 0.5s ease;
+
+          &:hover {
+            transform: scale(1.2);
+          }
         }
+
+
+
+        .tool-item:hover .tool-title {
+          display: block;
+        }
+
+
+
       }
     }
 

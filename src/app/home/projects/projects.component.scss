@@ -10,7 +10,7 @@
 
   .projects-body {
     padding: 100px 0;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 
     .projects-header {
@@ -40,12 +40,12 @@
       grid-template-columns: repeat(3, 1fr); // Create three equal columns
       gap: 32px;
 
-      @media only screen and (max-width: 900px) {
+      @media only screen and (max-width: 1000px) {
         grid-template-columns: repeat(2, 1fr); // Create two equal columns
         // gap: 16px;
       }
 
-      @media only screen and (max-width: 500px) {
+      @media only screen and (max-width: 650px) {
         grid-template-columns: repeat(1, 1fr); // Create one equal columns
       }
 

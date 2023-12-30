@@ -2,6 +2,7 @@ import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { Project, ProjectsService } from '../services/projects.service';
 import { Subscription } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Skill, SkillsService } from '../services/skills.service';
 
 @Component({
   selector: 'app-project-details',
@@ -16,11 +17,14 @@ export class ProjectDetailsComponent implements OnInit {
   projectID: number;
   screenshots: string[] = [];
 
+  tools: Skill[] = [];
+
   imagePath = '../../assets/images/';
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private projectsService: ProjectsService
+    private projectsService: ProjectsService,
+    private skillsService: SkillsService
   ) {}
   ngOnInit(): void {
     this.getPostIdFromRoute();
@@ -46,6 +50,11 @@ export class ProjectDetailsComponent implements OnInit {
       // console.log(this.projectID);
       this.project = this.projectsService.getProjectById(this.projectID);
       if (this.project?.screenshots) {
+        console.log(this.project.tools);
+        this.project.tools.forEach((tool) => {
+          const toolRes = this.skillsService.getSkillByName(tool);
+          if (toolRes) this.tools.push(toolRes);
+        });
         const banner = this.project.banner;
         this.setActiveImage(banner);
         this.screenshots = this.project.screenshots;

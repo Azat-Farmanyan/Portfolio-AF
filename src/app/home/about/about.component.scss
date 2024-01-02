@@ -58,7 +58,7 @@
             justify-content: center;
             gap: 5px;
 
-            &:hover {
+            .orange-bg {
               padding: 8px 35px;
             }
 
@@ -68,6 +68,7 @@
 
             &:hover {
               background: radial-gradient(192.86% 128.3% at 12.17% 6.95%, #FF9379 0%, #EE6C4D 100%);
+              padding: 8px 35px;
               color: #fff;
             }
           }

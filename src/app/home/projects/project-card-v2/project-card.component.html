@@ -17,11 +17,12 @@
         {{ project.description[0] | textCut : descriptionLength }}
       </p>
       <div class="tools-block">
-        <div class="tool-item" *ngFor="let tool of tools">
-          <img [src]="'../../../../assets/icons/skills/' + tool.img " alt="">
-
-
-        </div>
+        <a [href]="tool.website" target="_blank" class="tool-item" *ngFor="let tool of tools">
+          <div>
+            <div class="tool-title">{{tool.name}}</div>
+            <img [src]="'../../../../assets/icons/skills/' + tool.img " alt="">
+          </div>
+        </a>
       </div>
       <button (click)="openDetails(project.id)" class="btn-orange-v2" *ngIf="cardHovered">
         See More

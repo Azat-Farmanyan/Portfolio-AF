@@ -53,11 +53,11 @@
         <div class="about-right-side">
           <h4 class="paragraph-title about-title">My Skills</h4>
           <div class="skills">
-            <div [ngClass]="{ 'orange-bg': randomSkillNumber === i }" class="skill-box text"
-              *ngFor="let skill of skills; let i = index">
+            <a [href]="skill.website" target="_blank" [ngClass]="{ 'orange-bg': randomSkillNumber === i }"
+              class="skill-box text" *ngFor="let skill of skills; let i = index">
               <img class="skill-img" loading="lazy" [src]="'../../../assets/icons/skills/' + skill.img" />
               <span>{{ skill.name }}</span>
-            </div>
+            </a>
           </div>
         </div>
       </div>

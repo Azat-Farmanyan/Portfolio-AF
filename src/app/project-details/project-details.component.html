@@ -26,10 +26,10 @@
       <div class="tools">
         <h4 class="paragraph-title">Tools used</h4>
         <div class="tools-blocks">
-          <div *ngFor="let tool of tools" class="skill-box">
+          <a [href]="tool.website" target="_blank" *ngFor="let tool of tools" class="skill-box">
             <img [src]="'../../assets/icons/skills/' + tool.img" [alt]="tool.name">
             <span>{{ tool.name }}</span>
-          </div>
+          </a>
         </div>
       </div>
       <div *ngIf="project" class="see-live">

@@ -81,6 +81,29 @@
         flex-wrap: wrap;
 
 
+        .tool-item {
+          position: relative;
+
+          .tool-title {
+            background-color: #fff;
+            box-shadow: 4px 4px 25.4px 0px rgba(0, 0, 0, 0.20);
+            padding: 5px 8px;
+            border: 2px;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            z-index: 2;
+            transition: opacity 0.3s ease;
+          }
+
+          &:hover {
+            .tool-title {
+              opacity: 1;
+            }
+          }
+        }
 
         .tool-item img {
           max-height: 30px;

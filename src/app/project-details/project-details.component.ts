@@ -50,7 +50,6 @@ export class ProjectDetailsComponent implements OnInit {
       // console.log(this.projectID);
       this.project = this.projectsService.getProjectById(this.projectID);
       if (this.project?.screenshots) {
-        console.log(this.project.tools);
         this.project.tools.forEach((tool) => {
           const toolRes = this.skillsService.getSkillByName(tool);
           if (toolRes) this.tools.push(toolRes);

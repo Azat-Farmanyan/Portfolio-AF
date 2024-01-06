@@ -19,8 +19,34 @@ export class ProjectsService {
   screenshotsFolderPath = '../../../../assets/screenshots/';
 
   constructor() {}
-
   projects: Project[] = [
+    {
+      id: 15,
+      title: 'Crypto World',
+      description: [
+        'Embark on a captivating journey into the cryptocurrency realm with Crypto World, a sophisticated web application developed using Angular. This project showcases my expertise in front-end development, offering users a seamlessly integrated experience across various features.',
+        'At the heart of Crypto World is a user-friendly dashboard providing real-time insights into portfolios, transactions, and market trends. Explore the extensive market section, engage in live trading on popular exchanges, and stay ahead of trends with the trending module. With responsive design and enhanced security features, Crypto World is a dynamic ecosystem designed to cater to both seasoned cryptocurrency enthusiasts and newcomers, emphasizing a commitment to delivering an exceptional user experience.',
+      ],
+
+      banner: `${this.screenshotsFolderPath}crypto-world-banner${'.png'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }crypto-world-banner-small${'.png'}`,
+      screenshots: [
+        `${this.screenshotsFolderPath}crypto-world-banner${'.png'}`,
+      ],
+      tools: [
+        'Angular',
+        'HTML',
+        'SCSS',
+        'TypeScript',
+        'VS Code',
+        'Figma',
+        'Photoshop',
+      ],
+      seeLive: '',
+      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/CryptoWORLD',
+    },
     {
       id: 14,
       title: 'MP3 Player',

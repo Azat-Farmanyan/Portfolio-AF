@@ -34,6 +34,9 @@ export class ProjectsService {
       }crypto-world-banner-small${'.png'}`,
       screenshots: [
         `${this.screenshotsFolderPath}crypto-world-banner${'.png'}`,
+        `${this.screenshotsFolderPath}crypto-world-banner-2${'.png'}`,
+        `${this.screenshotsFolderPath}crypto-world-banner-3${'.png'}`,
+        `${this.screenshotsFolderPath}crypto-world-banner-4${'.png'}`,
       ],
       tools: [
         'Angular',
@@ -44,7 +47,7 @@ export class ProjectsService {
         'Figma',
         'Photoshop',
       ],
-      seeLive: '',
+      seeLive: 'https://chipper-maamoul-e7653e.netlify.app/dashboard',
       sourceCodeUrl: 'https://github.com/Azat-Farmanyan/CryptoWORLD',
     },
     {

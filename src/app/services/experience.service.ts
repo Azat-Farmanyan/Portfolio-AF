@@ -24,7 +24,7 @@ export class ExperienceService {
       date: {
         from: 'January 2023',
         to: 'Till now',
-        duration: '1 year',
+        duration: '1 year 2 months',
       },
       title: 'Angular Developer',
       company: 'CyberiaSoft',

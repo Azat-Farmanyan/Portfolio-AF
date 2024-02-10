@@ -31,7 +31,7 @@ export class ProjectsService {
       banner: `${this.screenshotsFolderPath}interactive_table-banner${'.jpg'}`,
       bannerSmall: `${
         this.screenshotsFolderPath
-      }crypto-world-banner-small${'.png'}`,
+      }interactive_table-banner_small${'.png'}`,
       screenshots: [
         `${this.screenshotsFolderPath}interactive_table-banner_1${'.png'}`,
         `${this.screenshotsFolderPath}interactive_table-banner_2${'.png'}`,

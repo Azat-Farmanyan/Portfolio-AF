@@ -21,6 +21,28 @@ export class ProjectsService {
   constructor() {}
   projects: Project[] = [
     {
+      id: 16,
+      title: 'Interactive Table',
+      description: [
+        'The Angular project entails the development of a functional table offering an array of features. This includes sorting, filtering, pagination, and customizable column visibility. Leveraging Angular"s event binding mechanism, users can sort rows with a simple click on column headers. Additionally, a search input field facilitates quick data filtering and retrieval. Users have the flexibility to define the number of records per page and navigate seamlessly through pages via pagination. To enhance user experience, the interface allows for the hiding or showing of specific columns, ensuring tailored data presentation. The project prioritizes high-quality code standards and user accessibility across various devices through the implementation of responsive design techniques. ',
+        'In summary, the Angular project delivers a comprehensive solution for efficient data management within a table format. Its advanced functionalities cater to diverse user needs, from sorting and filtering to customizable views, all while upholding superior code quality and ensuring a seamless user experience across different platforms.',
+      ],
+
+      banner: `${this.screenshotsFolderPath}interactive_table-banner${'.jpg'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }crypto-world-banner-small${'.png'}`,
+      screenshots: [
+        `${this.screenshotsFolderPath}interactive_table-banner_1${'.png'}`,
+        `${this.screenshotsFolderPath}interactive_table-banner_2${'.png'}`,
+        `${this.screenshotsFolderPath}interactive_table-banner_3${'.png'}`,
+      ],
+      tools: ['Angular', 'HTML', 'SCSS', 'TypeScript', 'VS Code', 'Figma'],
+      seeLive: 'https://funny-pixie-42e682.netlify.app/dataTable',
+      sourceCodeUrl:
+        'https://github.com/Azat-Farmanyan/AngularInteractiveTable',
+    },
+    {
       id: 15,
       title: 'Crypto World',
       description: [

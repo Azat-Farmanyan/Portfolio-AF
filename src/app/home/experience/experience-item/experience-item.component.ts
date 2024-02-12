@@ -19,12 +19,17 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
 
   experienceTxt = '';
   companyPage = '';
+  experienceDuration = '';
 
   ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
     this.getexperienceDescription();
     this.getCompanyPage();
+    this.experienceDuration = this.calculateDuration(
+      this.experience.date.from,
+      this.experience.date.to
+    );
   }
 
   getexperienceDescription() {
@@ -42,5 +47,42 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
         this.companyPage = shortLinkOfPage.slice(0, -1);
       }
     }
+  }
+
+  calculateDuration(from: string, to: string): string {
+    const fromDate = new Date(from);
+    let toDate: Date;
+
+    if (to.toLowerCase() === 'till now') {
+      toDate = new Date(); // Use current date if "till now" is provided
+    } else {
+      toDate = new Date(to);
+    }
+
+    const fromYear = fromDate.getFullYear();
+    const fromMonth = fromDate.getMonth();
+    const toYear = toDate.getFullYear();
+    const toMonth = toDate.getMonth();
+
+    let yearsDiff = toYear - fromYear;
+    let monthsDiff = toMonth - fromMonth;
+
+    if (monthsDiff < 0) {
+      yearsDiff--;
+      monthsDiff += 12;
+    }
+
+    // Construct the duration string
+    let duration = '';
+    if (yearsDiff > 0) {
+      duration += `${yearsDiff} year${yearsDiff > 1 ? 's' : ''}`;
+    }
+    if (monthsDiff > 0) {
+      duration += `${duration.length > 0 ? ', ' : ''}${monthsDiff} month${
+        monthsDiff > 1 ? 's' : ''
+      }`;
+    }
+
+    return duration;
   }
 }

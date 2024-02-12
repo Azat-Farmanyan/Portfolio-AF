@@ -36,7 +36,7 @@ export class ExperienceService {
     {
       date: {
         from: 'June 2022',
-        to: 'may 2023',
+        to: 'May 2023',
         duration: '1 year',
       },
       title: 'Angular Developer',
@@ -49,7 +49,7 @@ export class ExperienceService {
     {
       date: {
         from: 'February 2022',
-        to: 'october 2022',
+        to: 'October 2022',
         duration: '9 months',
       },
       title: 'Angular Developer',
@@ -62,7 +62,7 @@ export class ExperienceService {
     {
       date: {
         from: 'June 2019',
-        to: 'may 2021',
+        to: 'May 2021',
         duration: '2 years',
       },
       title: 'Graphic Designer',
@@ -75,7 +75,7 @@ export class ExperienceService {
     {
       date: {
         from: 'May 2018',
-        to: 'august 2019',
+        to: 'August 2019',
         duration: '1 year 4 months',
       },
       title: 'Graphic Designer',

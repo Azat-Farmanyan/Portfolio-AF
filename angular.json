@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/azat-favicon-v2.ico",
+              "src/azat-favicon-v3.ico",
               "src/assets",
               "src/_redirects"
             ],

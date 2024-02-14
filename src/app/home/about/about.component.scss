@@ -25,9 +25,15 @@
       gap: 100px;
       margin-bottom: 60px;
 
+      // & span {
+      //   font-weight: 600;
+      // }
+
       @media only screen and (max-width: 900px) {
         flex-direction: column;
       }
+
+
 
       .about-left-side {
         flex: 0 47%;

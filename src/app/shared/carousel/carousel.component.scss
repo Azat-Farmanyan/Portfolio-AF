@@ -5,27 +5,33 @@
     align-items: center;
     position: relative;
     height: inherit;
+
     .left-click,
     .right-click {
       padding: 50px 27px;
       cursor: pointer;
       display: flex;
       align-items: center;
+
       @media (max-width: 768px) {
         img {
           width: 20px;
         }
       }
+
       @media (max-width: 600px) {
         display: none;
       }
     }
+
     .left-click {
       left: 0;
     }
+
     .right-click {
       right: 0;
     }
+
     .images-block {
       // padding: 0 81px;
       flex: 1;
@@ -35,16 +41,20 @@
       max-height: calc(100vh - 200px);
 
       height: 100%;
+
       // height: 100%;
       @media (max-width: 768px) {
         padding: 0 10px;
       }
+
       @media (max-width: 600px) {
         max-height: 40vh;
       }
+
       transition: all 0.5s ease;
+
       &:hover {
-        box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1) !important ;
+        box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1) !important;
       }
 
       .carousel-image {
@@ -62,38 +72,46 @@
       }
     }
   }
+
   .carousel-nav-block {
     margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
+
     @media (max-width: 400px) {
       gap: 0px;
     }
+
     .left-click,
     .right-click {
       display: none;
       padding: 0 30px;
+
       img {
         width: 20px;
         cursor: pointer;
       }
+
       @media (max-width: 600px) {
         display: block;
       }
+
       @media (max-width: 400px) {
         img {
           width: 15px;
         }
       }
     }
+
     .carousel-nav {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 22px;
       height: 17px;
+
       .carousel-dot {
         width: 13px;
         height: 13px;
@@ -102,6 +120,7 @@
         cursor: pointer;
         transition: all 0.3s ease;
       }
+
       .active-dot {
         width: 17px;
         height: 17px;
@@ -109,12 +128,15 @@
         outline: 2px solid #ee6c4d;
         background: rgba(156, 160, 165, 0);
       }
+
       @media (max-width: 600px) {
         gap: 10px;
+
         .carousel-dot {
           width: 11px;
           height: 11px;
         }
+
         .active-dot {
           width: 15px;
           height: 15px;
@@ -122,4 +144,15 @@
       }
     }
   }
+}
+
+
+.show-img {
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.hide-img {
+  opacity: 0 !important;
+  display: none !important;
 }

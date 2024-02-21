@@ -7,8 +7,8 @@
       </div>
 
       <div class="images-block custom-scrollable-div">
-        <img [src]="defaultImg" alt="" class="carousel-image uprise-step-one" />
-        <!-- [@fadeInOut]="showImage ? 'show' : 'hide'" -->
+        <img *ngFor="let imagesPath of images; let i = index" [src]="imagesPath" alt=""
+          class="carousel-image uprise-step-one" [ngClass]="{'show-img': i===activeDot,'hide-img': i!==activeDot}" />
       </div>
 
       <div *ngIf="imgLength > 1" (click)="clickRight()" class="right-click unselectable">

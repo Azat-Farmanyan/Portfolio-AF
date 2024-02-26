@@ -22,7 +22,7 @@ import { Router } from '@angular/router';
   ],
 })
 export class WelcomePageComponent {
-  avatarIsLoaded = false;
+  avatarIsLoaded: boolean = false;
   socialLinksFolder = 'social-links-gray';
 
   linkedinImageSrc = `../../../assets/icons/${this.socialLinksFolder}/basil_linkedin-solid.svg`;
@@ -40,7 +40,6 @@ export class WelcomePageComponent {
   onMouseLeave(platform: string) {
     this.updateImageSrc(platform, 'social-links-gray');
   }
-
   private updateImageSrc(platform: string, folder: string) {
     switch (platform) {
       case 'linkedin':
@@ -77,5 +76,11 @@ export class WelcomePageComponent {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  }
+
+  imageLoaded(e: Event) {
+    setTimeout(() => {
+      this.avatarIsLoaded = true;
+    }, 3000);
   }
 }

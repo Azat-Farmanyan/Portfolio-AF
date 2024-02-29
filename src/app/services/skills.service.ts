@@ -13,6 +13,7 @@ export class SkillsService {
   constructor() {}
 
   private skills: Skill[] = [
+    { name: 'Angular', img: 'angular.png', website: 'https://angular.dev/' },
     {
       name: 'HTML',
       img: 'html.png',
@@ -30,8 +31,8 @@ export class SkillsService {
       img: 'typescript.png',
       website: 'https://www.typescriptlang.org/',
     },
-    { name: 'Angular', img: 'angular.png', website: 'https://angular.dev/' },
     { name: 'RxJs', img: 'rxjs.png', website: 'https://rxjs.dev/' },
+    { name: 'NgRx', img: 'ngrx.png', website: 'https://ngrx.io/docs' },
     { name: 'Ionic', img: 'ionic.png', website: 'https://ionicframework.com/' },
     {
       name: 'DevExtreme',

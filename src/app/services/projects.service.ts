@@ -10,6 +10,7 @@ export interface Project {
   tools: string[];
   seeLive: string;
   sourceCodeUrl: string;
+  isNewProject?: boolean;
 }
 
 @Injectable({
@@ -20,6 +21,37 @@ export class ProjectsService {
 
   constructor() {}
   projects: Project[] = [
+    {
+      id: 17,
+      title: 'Currency Converter',
+      description: [
+        'Our project is a simple web application built on Angular for convenient currency conversion. It allows users to quickly convert amounts between different currencies, ensuring accuracy at each step of the process.',
+        'List of main features: Currency selection and conversion; Currency switching; Input of amount to convert; Validation of entered data; Display of accurate results considering the current exchange rate.',
+        'We fetch currency exchange rate data using the API from App.FreeCurrencyApi.com, which enables us to provide up-to-date and real-time results. The goal of the project is to offer a simple yet effective tool for quick currency conversion. We utilize Angular 17, HTML/SCSS, TypeScript, RxJs, REST API, and input data validation to ensure result accuracy.',
+      ],
+
+      banner: `${
+        this.screenshotsFolderPath
+      }currency-converter-app-banner${'.png'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }currency-converter-app-banner-small${'.png'}`,
+      screenshots: [
+        `${this.screenshotsFolderPath}currency-converter-app-banner${'.png'}`,
+      ],
+      tools: [
+        'Angular',
+        'HTML',
+        'SCSS',
+        'TypeScript',
+        'RxJs',
+        'VS Code',
+        'Figma',
+      ],
+      seeLive: 'https://currency-converter-ng17.netlify.app/home',
+      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/currency-converter-app',
+      isNewProject: true,
+    },
     {
       id: 16,
       title: 'Interactive Table',

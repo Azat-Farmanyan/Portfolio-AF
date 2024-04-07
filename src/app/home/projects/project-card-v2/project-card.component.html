@@ -1,5 +1,8 @@
 <div class="project-card" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()"
   [ngStyle]="{'box-shadow': cardHovered ? '4px 4px 25.4px 0px rgba(0, 0, 0, 0.20)' : '4px 4px 30px 0px rgba(0, 0, 0, 0.10)'}">
+
+  <img *ngIf="project.isNewProject && !cardHovered" src="../../../../assets/icons/new-icon.png" alt="NEW" class="new">
+
   <div class="project-card-body">
     <div class="project-galeria">
       <!-- <img (click)="openDetails(project.id)" *ngIf="project.screenshots" class="project-img"

@@ -8,6 +8,16 @@
 
   transition: all 0.5s ease;
 
+  .new {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 100;
+
+    width: 65px;
+    height: 65px;
+  }
+
   .project-card-body {
     .project-galeria {
       overflow: hidden;

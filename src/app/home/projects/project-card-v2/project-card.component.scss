@@ -16,6 +16,12 @@
 
     width: 65px;
     height: 65px;
+    transition: all 0.5s ease;
+  }
+
+  &:hover .new {
+    width: 70px;
+    height: 70px;
   }
 
   .project-card-body {
@@ -35,16 +41,6 @@
       }
     }
 
-    .card-hovered {
-      // position: absolute;
-      // // top: 0;
-      // bottom: 0;
-      // left: 0;
-      // right: 0;
-      // height: 100% !important;
-      // background: linear-gradient(343deg, rgba(255, 255, 255, 0.96) -10.26%, rgba(255, 255, 255, 0.88) 105.65%) !important;
-      // box-shadow: 4px 4px 25.4px 0px rgba(0, 0, 0, 0.20);
-    }
 
     .proj-card-text-block {
       transition: all 0.2s ease;

@@ -37,6 +37,8 @@
         <div class="see-live-btns">
           <a class="btn-orange-v2" (click)="showInstructionModal()" *ngIf="project.seeLive"> SEE DEMO </a>
           <a class="btn-white-v2" [href]="project.sourceCodeUrl" target="_blank">Source code</a>
+          <a class="btn-white-v2" *ngIf="project!.designTemplate" [href]="project.designTemplate" target="_blank">See
+            design</a>
         </div>
       </div>
     </div>

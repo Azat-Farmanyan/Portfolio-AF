@@ -11,6 +11,7 @@ export interface Project {
   seeLive: string;
   sourceCodeUrl: string;
   isNewProject?: boolean;
+  designTemplate?: string;
 }
 
 @Injectable({
@@ -22,7 +23,7 @@ export class ProjectsService {
   constructor() {}
   projects: Project[] = [
     {
-      id: 17,
+      id: 18,
       title: 'Currency Converter',
       description: [
         'Our project is a simple web application built on Angular for convenient currency conversion. It allows users to quickly convert amounts between different currencies, ensuring accuracy at each step of the process.',
@@ -51,6 +52,29 @@ export class ProjectsService {
       seeLive: 'https://currency-converter-ng17.netlify.app/home',
       sourceCodeUrl: 'https://github.com/Azat-Farmanyan/currency-converter-app',
       isNewProject: true,
+    },
+    {
+      id: 17,
+      title: 'Product Page',
+      description: [
+        'My work on the product page layout in Angular 17 goes beyond the basic "Add to Cart" button. I have implemented several other engaging elements to enhance user experience. Specifically, I have created a convenient search input field with the ability to clear entered text and a search button for user convenience.',
+        'In addition to this, the page features buttons for toggling notifications and adding the product to favorites, complete with eye-catching animations. Each button dynamically responds to hover, focus, and active states, adding an extra layer of interactivity and user-friendliness to the page.',
+        'Finally, I have also implemented a slider scroll functionality on the product page, allowing users to easily browse through additional images and information about the product. All the markup is done using Angular 17.2, with the page divided into small components for easy management and project maintainability.',
+      ],
+
+      banner: `${this.screenshotsFolderPath}compoProductPage-banner${'.png'}`,
+      bannerSmall: `${
+        this.screenshotsFolderPath
+      }compoProductPage-small-banner${'.png'}`,
+      screenshots: [
+        `${this.screenshotsFolderPath}compoProductPage-banner${'.png'}`,
+      ],
+      tools: ['Angular', 'HTML', 'SCSS', 'TypeScript', 'VS Code', 'Figma'],
+      seeLive: 'https://dancing-rolypoly-6860d4.netlify.app/',
+      sourceCodeUrl: 'https://github.com/Azat-Farmanyan/compo-product-page',
+      isNewProject: true,
+      designTemplate:
+        'https://www.figma.com/file/QIdMZetqc6405W0CUam7Fa/Product-Page?type=design&node-id=0%3A1&mode=design&t=fehYwRXnmepOBg3k-1',
     },
     {
       id: 16,

@@ -84,7 +84,9 @@ export class ProjectsService {
         'In summary, the Angular project delivers a comprehensive solution for efficient data management within a table format. Its advanced functionalities cater to diverse user needs, from sorting and filtering to customizable views, all while upholding superior code quality and ensuring a seamless user experience across different platforms.',
       ],
 
-      banner: `${this.screenshotsFolderPath}interactive_table-banner${'.jpg'}`,
+      banner: `${
+        this.screenshotsFolderPath
+      }interactive_table-banner_1${'.png'}`,
       bannerSmall: `${
         this.screenshotsFolderPath
       }interactive_table-banner_small${'.png'}`,
@@ -141,10 +143,10 @@ export class ProjectsService {
         'So, why wait? Dive into the music, let the notes carry you away, and rediscover the joy of simple yet delightful soundscapes. It is more than an application; it is a portal to the symphony of life.',
       ],
 
-      banner: `${this.screenshotsFolderPath}mp3-player-banner${'.jpg'}`,
+      banner: `${this.screenshotsFolderPath}player-1${'.png'}`,
       bannerSmall: `${
         this.screenshotsFolderPath
-      }mp3-player-banner-small${'.jpg'}`,
+      }mp3-player-banner-small${'.png'}`,
       screenshots: [`${this.screenshotsFolderPath}player-1${'.png'}`],
       tools: [
         'Angular',
@@ -167,7 +169,7 @@ export class ProjectsService {
         'At Pizza Cheff, we are not just about pizza; we are about sharing a passion for the culinary arts. Whether you are a seasoned pro or a novice, this page is your gateway to a world of savory satisfaction. Join us on this delightful pizza journey and discover the secrets to crafting pizza perfection.',
         'With its delectable visuals and comprehensive guides, Pizza Cheff is a testament to the delicious and creative world of pizza-making. Dive into our page, and you will soon be on your way to mastering the art of pizza.',
       ],
-      banner: `${this.screenshotsFolderPath}pizza-cheff-banner${'.jpg'}`,
+      banner: `${this.screenshotsFolderPath}pizza-cheff${'.png'}`,
       bannerSmall: `${
         this.screenshotsFolderPath
       }pizza-cheff-banner-small${'.jpg'}`,
@@ -185,7 +187,7 @@ export class ProjectsService {
         'But the Posts App is not just about reading; it is about connecting. Explore user profiles and about cards to learn more about the writers behind the posts. Discover shared interests, connect with fellow enthusiasts, and engage in meaningful discussions with those who share your passion.',
         'Join the growing community of readers and writers who have made the Posts App their go-to platform for storytelling and connecting. Whether you are here to share your own posts or discover new perspectives, our app is your doorway to a world of stories and connections. Download the Posts App today and start sharing, discovering, and connecting in a new and exciting way!',
       ],
-      banner: `${this.screenshotsFolderPath}posts-app-banner${'.jpg'}`,
+      banner: `${this.screenshotsFolderPath}posts-app-2${'.png'}`,
       bannerSmall: `${
         this.screenshotsFolderPath
       }posts-app-banner-small${'.jpg'}`,
@@ -207,7 +209,7 @@ export class ProjectsService {
         'Need to update a users information or portrait? No problem. The Users App makes it easy to make changes in real-time, ensuring your records are always up-to-date. And if it is time to bid farewell to a user, our app offers a simple deletion feature, allowing you to remove profiles with ease while maintaining data integrity.',
         'Join the growing community of users who rely on the Users App for efficient and organized user management. Whether you are running a small organization or managing a large user database, our app has you covered. It is time to take control of your user profiles and make user management a breeze. Download the Users App today and experience the convenience of streamlined user management firsthand!',
       ],
-      banner: `${this.screenshotsFolderPath}card-app-banner${'.jpg'}`,
+      banner: `${this.screenshotsFolderPath}card-app-1.png${'.png'}`,
       bannerSmall: `${
         this.screenshotsFolderPath
       }card-app-banner-small${'.jpg'}`,

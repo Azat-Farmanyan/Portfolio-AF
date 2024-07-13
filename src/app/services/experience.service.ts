@@ -22,9 +22,22 @@ export class ExperienceService {
   private experience: Experience[] = [
     {
       date: {
-        from: 'January 2023',
+        from: 'March 2024',
         to: 'Till now',
-        duration: '1 year 2 months',
+        duration: '',
+      },
+      title: 'Full Stack Engineer',
+      company: 'Background Digital',
+      page: 'https://background.digital/',
+      description:
+        ' - Developed web applications using Angular 2+ for construction project websites, such as https://river-house.ru/, https://malahovkahouse.ru/, and https://3-red.com. - Utilized HTML-5, CSS-3, SCSS, Jade, Swig, ES-5/6, and jQuery to create efficient and user-friendly interfaces. - Worked with major Git commands for version control. - Additionally applied knowledge of Angular 2, Vue, Node.js, Express, Jest/Karma/Jasmine for testing and ensuring code quality. - Maintained high performance levels using modern tools and development methodologies. - Operated under official employment terms as per the Russian Federation Labor Code, with a flexible schedule and remote work options. ',
+      companyLogo: '',
+    },
+    {
+      date: {
+        from: 'January 2023',
+        to: 'March 2024',
+        duration: '1 year 3 months',
       },
       title: 'Angular Developer',
       company: 'CyberiaSoft',

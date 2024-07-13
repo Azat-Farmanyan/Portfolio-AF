@@ -33,7 +33,11 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
   }
 
   getexperienceDescription() {
-    this.experienceTxt = this.experience.description.split('- ').join('</br>');
+    this.experienceTxt = this.experience.description.split('- ').join('</br>- ');
+
+     // Добавляем конвертацию URL в теги <a>
+    //  this.experienceTxt = this.experienceTxt.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+     this.experienceTxt = this.experienceTxt.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="text-decoration: underline;"> <b><u>$1</u></b>  </a>');
 
     // return this.experience.description.split('- ').join('</br>' + '-');
     // this.experience.description.split('');

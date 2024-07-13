@@ -51,7 +51,6 @@
           gap: 15px;
           flex-wrap: wrap;
 
-
           .skill-box {
             // border-radius: 5px;
             flex-grow: 1;
@@ -63,6 +62,10 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
+
+            .skill-txt {
+              white-space: nowrap
+            }
 
             .orange-bg {
               padding: 8px 35px;

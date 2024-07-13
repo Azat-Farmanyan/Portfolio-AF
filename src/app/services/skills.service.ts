@@ -32,8 +32,12 @@ export class SkillsService {
       website: 'https://www.typescriptlang.org/',
     },
     { name: 'RxJs', img: 'rxjs.png', website: 'https://rxjs.dev/' },
+
+    { name: 'nodeJS', img: 'node-js.svg', website: 'https://nodejs.org/en' },
+
     { name: 'NgRx', img: 'ngrx.png', website: 'https://ngrx.io/docs' },
     { name: 'Ionic', img: 'ionic.png', website: 'https://ionicframework.com/' },
+    { name: 'Docker', img: 'docker.png', website: 'https://www.docker.com/' },
     {
       name: 'DevExtreme',
       img: 'devextreme.png',
@@ -61,6 +65,9 @@ export class SkillsService {
       img: 'chrome.png',
       website: 'https://developer.chrome.com/docs/devtools',
     },
+
+    { name: 'Linux', img: 'lunux.png', website: 'https://ubuntu.com/' },
+
     { name: 'Figma', img: 'figma.png', website: 'https://www.figma.com/' },
     {
       name: 'Photoshop',

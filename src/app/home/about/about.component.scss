@@ -39,6 +39,9 @@
         flex: 0 47%;
         /*lower the % to get more columns*/
         flex-grow: 1;
+        .paragraph{
+          margin-bottom: 20px;
+        }
       }
 
       .about-right-side {

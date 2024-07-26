@@ -30,7 +30,7 @@ export class ExperienceService {
       company: 'Background Digital',
       page: 'https://background.digital/',
       description:
-        ' - Developed web applications using Angular 2+ for construction project websites, such as https://river-house.ru/, https://malahovkahouse.ru/, and https://3-red.com. - Utilized HTML-5, CSS-3, SCSS, Jade, Swig, ES-5/6, and jQuery to create efficient and user-friendly interfaces. - Worked with major Git commands for version control. - Additionally applied knowledge of Angular 2, Vue, Node.js, Express, Jest/Karma/Jasmine for testing and ensuring code quality. - Maintained high performance levels using modern tools and development methodologies. - Operated under official employment terms as per the Russian Federation Labor Code, with a flexible schedule and remote work options. ',
+        ' - Developed web applications using Angular 2+ for construction project websites, such as https://river-house.ru/, https://malahovkahouse.ru/, and https://3-red.com. - Utilized HTML-5, CSS-3, SCSS, Jade, Swig, ES-5/6 to create efficient and user-friendly interfaces. - Worked with major Git commands for version control. - Additionally applied knowledge of Angular 2, Node.js, Express, Jest/Karma/Jasmine for testing and ensuring code quality. - Maintained high performance levels using modern tools and development methodologies. - Operated under official employment terms as per the Russian Federation Labor Code, with a flexible schedule and remote work options. ',
       companyLogo: '',
     },
     {
@@ -54,7 +54,7 @@ export class ExperienceService {
       },
       title: 'Angular Developer',
       company: 'GeoAlphaSolution',
-      page: 'https://www.geoalphasolutions.com/',
+      page: 'https://geoalphasolutions.com/',
       description:
         '- Contributed significantly to the development of two distinct projects: 1) FairContent.media: Played a key role in creating the online marketplace FairContent.media, enabling users to buy and sell various goods, including books, videos, music, and documents. [Website: https://www.faircontent.media/home] 2) Swiftness: Led efforts in developing Swiftness, a digital platform revolutionizing the pension savings market. [Website: http://www.swiftness.co.il/] - Utilized skills in HTML, CSS, SCSS, JavaScript, TypeScript, and Angular to create user-friendly and responsive interfaces for both projects, significantly enhancing the overall user experience. - Collaborated closely with interdisciplinary teams, ensuring alignment with project goals and business requirements. Used GitHub for version control and REST API integration for efficient data exchange, harnessing the power of RxJS and JSON for seamless data processing. - Demonstrated adaptability, successfully working on diverse projects in various industries, showcasing a flexible skill set and the ability to learn and adapt quickly to changing conditions. - Maintained a high level of innovation and efficiency, staying abreast of the latest trends in Angular development. Used development tools such as VS Code for smooth and productive workflows. Applied object-oriented programming (OOP) principles and ES6 functionality to create robust and maintainable code. - Additionally, used Figma for collaborative design work and integrated VisualStudio and VS Code into the development process to ensure code quality and consistency ',
       companyLogo: '',

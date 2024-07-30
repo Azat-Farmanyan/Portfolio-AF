@@ -87,8 +87,20 @@
 
 
     }
+    .language-switcher {
+      cursor: pointer;
+      margin-left: auto;
+      padding: 22px 10px;
+      transition: all 0.5s ease;
 
-
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
+      &:hover{
+        background-color: #ee6c4d;
+        color: white;
+      }
+    }
 
     .burger {
       display: none;
@@ -119,9 +131,23 @@
     flex-direction: column;
     gap: 40px;
 
+    .language-switcher {
+      cursor: pointer;
+      max-width: 100px;
+      margin: 0 auto;
+      // margin-left: auto;
+      padding: 22px;
+      transition: all 0.5s ease;
+      &:hover{
+        background-color: #ee6c4d;
+        color: white;
+      }
+    }
+
     .social-block {
       margin-bottom: 46px;
       max-width: 300px;
+      align-self: flex-end;
 
       .social-items {
         display: flex;

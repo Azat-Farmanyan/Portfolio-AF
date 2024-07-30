@@ -13,6 +13,7 @@ import { WelcomePageComponent } from './welcome-page/welcome.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ExperienceItemComponent } from './experience/experience-item/experience-item.component';
 import { ProjectCardComponentV2 } from './projects/project-card-v2/project-card.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ProjectCardComponentV2 } from './projects/project-card-v2/project-card.
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
+    TranslateModule
   ],
 })
 export class HomeModule {}

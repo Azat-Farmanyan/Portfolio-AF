@@ -1,44 +1,43 @@
 <div class="welcome">
   <div class="wrapper">
-    <div class="welcome-body ">
-      <div class="left-side ">
+    <div class="welcome-body">
+      <div class="left-side">
 
-        <h1 class="owner-name uprise-step-one">azat farmanyan</h1>
-        <p class="owner-profession uprise-step-two">Software Engineer</p>
-        <div class="social-block  uprise-step-three">
+        <h1 class="owner-name uprise-step-one">{{ 'welcome.owner_name' | translate }}</h1>
+        <p class="owner-profession uprise-step-two">{{ 'welcome.owner_profession' | translate }}</p>
+        <div class="social-block uprise-step-three">
           <div class="social-items">
             <a href="https://www.linkedin.com/in/azat-farmanyan/" target="_blank">
-              <img class="social-item" [src]="linkedinImageSrc" alt="linkedin" (mouseenter)="onMouseEnter('linkedin')"
+              <img class="social-item" [src]="linkedinImageSrc" alt="{{ 'welcome.linkedin_alt' | translate }}" (mouseenter)="onMouseEnter('linkedin')"
                 (mouseleave)="onMouseLeave('linkedin')" loading="lazy">
             </a>
             <a href="https://github.com/Azat-Farmanyan" target="_blank">
-              <img class="social-item" [src]="githubImageSrc" alt="github" (mouseenter)="onMouseEnter('github')"
+              <img class="social-item" [src]="githubImageSrc" alt="{{ 'welcome.github_alt' | translate }}" (mouseenter)="onMouseEnter('github')"
                 (mouseleave)="onMouseLeave('github')" loading="lazy">
             </a>
             <a href="https://t.me/AzatFarmanyan" target="_blank">
-              <img class="social-item" [src]="telegramImageSrc" alt="telegram" (mouseenter)="onMouseEnter('telegram')"
+              <img class="social-item" [src]="telegramImageSrc" alt="{{ 'welcome.telegram_alt' | translate }}" (mouseenter)="onMouseEnter('telegram')"
                 (mouseleave)="onMouseLeave('telegram')" loading="lazy">
             </a>
             <a href="https://discordapp.com/users/908978735020146719/" target="_blank">
-              <img class="social-item" [src]="discordImageSrc" alt="discord" (mouseenter)="onMouseEnter('discord')"
+              <img class="social-item" [src]="discordImageSrc" alt="{{ 'welcome.discord_alt' | translate }}" (mouseenter)="onMouseEnter('discord')"
                 (mouseleave)="onMouseLeave('discord')" loading="lazy">
             </a>
             <a href="https://www.instagram.com/azat_09.5/" target="_blank">
-              <img class="social-item" [src]="instagramImageSrc" alt="instagram"
+              <img class="social-item" [src]="instagramImageSrc" alt="{{ 'welcome.instagram_alt' | translate }}"
                 (mouseenter)="onMouseEnter('instagram')" (mouseleave)="onMouseLeave('instagram')" loading="lazy">
             </a>
             <a href="https://www.facebook.com/profile.php?id=100007929288834" target="_blank">
-              <img class="social-item" [src]="facebookImageSrc" alt="facebook" (mouseenter)="onMouseEnter('facebook')"
+              <img class="social-item" [src]="facebookImageSrc" alt="{{ 'welcome.facebook_alt' | translate }}" (mouseenter)="onMouseEnter('facebook')"
                 (mouseleave)="onMouseLeave('facebook')" loading="lazy">
             </a>
           </div>
         </div>
         <div class="btns uprise-step-four">
-          <button class="btn-orange-v2" (click)="navigateTo('home', 'about')"> About me </button>
+          <button class="btn-orange-v2" (click)="navigateTo('home', 'about')">{{ 'welcome.about_me_button' | translate }}</button>
           <button style="color: #EE6C4D !important;" (click)="downloadCV()">
             <a class="btn-white-v2" href="https://hh.ru/resume/9021fbdaff0bd45c5a0039ed1f7a6177477751"
-              target="_blank">Open
-              Resume</a></button>
+              target="_blank">{{ 'welcome.open_resume_button' | translate }}</a></button>
         </div>
         <a href="../../../assets/cv/Angular Developer - Azat Farmanyan - ENG.pdf"></a>
       </div>

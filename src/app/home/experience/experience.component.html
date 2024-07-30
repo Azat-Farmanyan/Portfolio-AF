@@ -10,7 +10,7 @@
     </div>
     <div class="experience-body">
       <app-experience-item *ngFor="let experienceItem of experience; let i = index" [experience]="experienceItem"
-        [isLast]="i === experience.length - 1">
+        [isLast]="i === experience.length - 1" [currentLang]="currentLang">
       </app-experience-item>
     </div>
   </div>

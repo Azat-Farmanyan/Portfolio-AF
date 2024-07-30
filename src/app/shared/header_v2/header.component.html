@@ -13,25 +13,28 @@
 
       <nav class="nav" *ngIf="!mobileView">
         <a class="nav-item" (click)="navigateTo('home', 'home')" [ngClass]="{ active: activeSection === 'home' }">
-          HOME
+          {{ 'header.home' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'about')" [ngClass]="{ active: activeSection === 'about' }">
-          About
+          {{ 'header.about' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'experience')"
           [ngClass]="{ active: activeSection === 'experience' }">
-          experience
+          {{ 'header.experience' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'projects')"
           [ngClass]="{ active: activeSection === 'projects' }">
-          Projects
+          {{ 'header.projects' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'contact')" [ngClass]="{ active: activeSection === 'contact' }">
-          contact
+          {{ 'header.contact' | translate }}
         </a>
 
-      </nav>
 
+      </nav>
+      <button class="language-switcher" (click)="switchLanguage()">
+        {{ currentLanguage === 'en' ? 'RU' : 'EN' }}
+      </button>
 
       <div (click)="menuToggle()" class="burger">
         <img [@toggleAnimation] *ngIf="!showMenu" src="../../../assets/icons/burger.svg" alt="Open Menu" />
@@ -46,24 +49,24 @@
     <div class="wrapper">
       <div class="menu-body">
         <a class="nav-item" (click)="navigateTo('home', 'home')" [ngClass]="{ active: activeSection === 'home' }">
-          HOME
+          {{ 'header.home' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'about')" [ngClass]="{ active: activeSection === 'about' }">
-          About
+          {{ 'header.about' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'experience')"
           [ngClass]="{ active: activeSection === 'experience' }">
-          experience
+          {{ 'header.experience' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'projects')"
           [ngClass]="{ active: activeSection === 'projects' }">
-          Projects
+          {{ 'header.projects' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'contact')" [ngClass]="{ active: activeSection === 'contact' }">
-          contact
+          {{ 'header.contact' | translate }}
         </a>
         <button class="btn-orange-v2" style="max-width: 300px; margin: 0 auto;" (click)="downloadCV()">
-          <a target="_blank" href="https://hh.ru/resume/9021fbdaff0bd45c5a0039ed1f7a6177477751">Open Resume</a>
+          <a target="_blank" href="https://hh.ru/resume/9021fbdaff0bd45c5a0039ed1f7a6177477751">{{ 'header.open_resume' | translate }}</a>
         </button>
         <div class="social-block" style="margin: 0 auto; width: 100%;">
           <div class="social-items">
@@ -93,11 +96,10 @@
             </a>
           </div>
         </div>
+        <button class="language-switcher" (click)="switchLanguage()">
+          {{ currentLanguage === 'en' ? 'RU' : 'EN' }}
+        </button>
       </div>
     </div>
   </div>
-
 </header>
-
-<!-- <div class="header-underline-btn " [ngClass]="{ goDown: isMouseNearTop || scrolled }"> 
-</div>-->

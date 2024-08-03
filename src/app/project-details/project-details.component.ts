@@ -3,6 +3,7 @@ import { Project, ProjectsService } from '../services/projects.service';
 import { Subscription } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Skill, SkillsService } from '../services/skills.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-project-details',
@@ -13,7 +14,8 @@ export class ProjectDetailsComponent implements OnInit {
   project: Project | null;
   showInstruction: boolean = false;
 
-  routeSub: Subscription;
+  private routeSub: Subscription;
+  private projectSub: Subscription;
   projectID: number;
   screenshots: string[] = [];
 
@@ -24,7 +26,8 @@ export class ProjectDetailsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private projectsService: ProjectsService,
-    private skillsService: SkillsService
+    private skillsService: SkillsService,
+    private translate: TranslateService
   ) {}
   ngOnInit(): void {
     this.getPostIdFromRoute();
@@ -47,37 +50,53 @@ export class ProjectDetailsComponent implements OnInit {
   getPostIdFromRoute() {
     this.routeSub = this.route.params.subscribe((params) => {
       this.projectID = +params['id'];
-      // console.log(this.projectID);
-      this.project = this.projectsService.getProjectById(this.projectID);
-      if (this.project?.screenshots) {
-        this.project.tools.forEach((tool) => {
-          const toolRes = this.skillsService.getSkillByName(tool);
-          if (toolRes) this.tools.push(toolRes);
+
+      const currentLang =
+        this.translate.currentLang || this.translate.getDefaultLang();
+
+      this.projectSub = this.projectsService
+        .getProjectByIndex(currentLang, this.projectID)
+        .subscribe((project) => {
+          console.log(project);
+
+          if (this.project === null) {
+            // this.back();
+          }
+
+          this.project = project;
+          console.log(this.project);
+
+          if (this.project?.screenshots) {
+            this.project.tools.forEach((tool) => {
+              const toolRes = this.skillsService.getSkillByName(tool);
+              if (toolRes) {
+                this.tools.push(toolRes);
+              }
+            });
+            const banner = this.project.banner;
+            this.setActiveImage(banner);
+            this.screenshots = this.project.screenshots;
+
+            if (banner.length === 0) {
+              this.setActiveImage(this.screenshots[0]);
+            }
+          }
         });
-        const banner = this.project.banner;
-        this.setActiveImage(banner);
-        this.screenshots = this.project.screenshots;
-        // console.log(banner);
-
-        if (banner.length === 0) {
-          this.setActiveImage(this.screenshots[0]);
-        }
-      }
-
-      if (this.project === null) this.back();
-      // console.log(this.project);
     });
   }
+
   back() {
     this.router.navigate(['/home'], { fragment: 'projects' });
   }
 
   setActiveImage(imageName: string) {
-    this.imagePath = '../../assets/images/';
+    this.imagePath = '../../assets/screenshots/';
     this.imagePath += imageName;
   }
 
   ngOnDestroy(): void {
     if (this.routeSub) this.routeSub.unsubscribe();
+
+    if (this.projectSub) this.projectSub.unsubscribe();
   }
 }

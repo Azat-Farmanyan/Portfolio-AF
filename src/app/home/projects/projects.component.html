@@ -2,16 +2,14 @@
   <div class="wrapper">
     <div class="projects-body">
       <div class="projects-header">
-        <h2 class="section-title">PROJECTS</h2>
+        <h2 class="section-title">{{ 'projects.section_title' | translate }}</h2>
         <div class="title-underline"></div>
         <p class="text projects-text">
-          Here you will find some of the personal and clients projects that I
-          created with each project containing its own case study
+          {{ 'projects.projects_text' | translate }}
         </p>
       </div>
       <div class="projects-block" #projectsBlock>
-        <div *ngFor="let project of projectsService.projects" class="project-card">
-          <!-- <app-project-card [id]="project.id" [project]="project"></app-project-card> -->
+        <div *ngFor="let project of projects" class="project-card">
           <app-project-card-v2 [id]="project.id" [project]="project"></app-project-card-v2>
         </div>
       </div>

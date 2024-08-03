@@ -10,7 +10,8 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import { ProjectsService } from 'src/app/services/projects.service';
+import { TranslateService } from '@ngx-translate/core';
+import { Project, ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
   selector: 'app-projects',
@@ -20,13 +21,18 @@ import { ProjectsService } from 'src/app/services/projects.service';
 export class ProjectsComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() openedCardId: any;
 
+  projects: Project[];
+
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
-    public projectsService: ProjectsService
+    public projectsService: ProjectsService,
+    private translate: TranslateService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadProjects();
+  }
 
   ngOnChanges(): void {
     // console.log(this.openedCardId);
@@ -34,6 +40,15 @@ export class ProjectsComponent implements OnInit, OnChanges, AfterViewInit {
 
   ngAfterViewInit() {
     // this.scrollToProjects();
+  }
+
+  loadProjects(): void {
+    const currentLang =
+      this.translate.currentLang || this.translate.getDefaultLang();
+    this.projectsService.getProjects(currentLang).subscribe((data) => {
+      this.projects = data;
+      console.log(this.projects);
+    });
   }
 
   scrollToProjects() {

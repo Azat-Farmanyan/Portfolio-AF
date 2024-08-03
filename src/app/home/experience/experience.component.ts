@@ -13,35 +13,35 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   experience: Experience[] = [];
   currentLang: string;
   private langChangeSubscription: Subscription;
-  
 
   constructor(
     private experienceService: ExperienceService,
-    private translate: TranslateService,
+    private translate: TranslateService
   ) {}
-
 
   ngOnInit(): void {
     // this.experience = this.experienceService.getExperience();
     this.loadExperience();
-    console.log(this.experience);
-    
-    this.currentLang = this.translate.currentLang || this.translate.getDefaultLang();
+
+    this.currentLang =
+      this.translate.currentLang || this.translate.getDefaultLang();
 
     // Подписаться на изменения языка
-    this.langChangeSubscription = this.translate.onLangChange.subscribe((event: any) => {
-      this.currentLang = event.lang;
-      this.loadExperience();
-    });
+    this.langChangeSubscription = this.translate.onLangChange.subscribe(
+      (event: any) => {
+        this.currentLang = event.lang;
+        this.loadExperience();
+      }
+    );
   }
 
   loadExperience(): void {
-    const currentLang = this.translate.currentLang || this.translate.getDefaultLang();
-    this.experienceService.getExperience(currentLang).subscribe(data => {
+    const currentLang =
+      this.translate.currentLang || this.translate.getDefaultLang();
+    this.experienceService.getExperience(currentLang).subscribe((data) => {
       this.experience = data;
     });
   }
-
 
   trackByIndex(index: number): number {
     return index;

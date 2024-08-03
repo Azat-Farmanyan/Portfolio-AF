@@ -68,12 +68,11 @@ export class WelcomePageComponent {
   }
 
   downloadCV(): void {
-    return;
     const fileUrl =
-      '../../../assets/cv/Angular Developer - Azat Farmanyan - ENG.pdf';
+      '../../../assets/cv/Azat Farmanyan - CV - Software enginner.pdf';
     const link = document.createElement('a');
     link.href = fileUrl;
-    link.download = 'Angular Developer - Azat Farmanyan';
+    link.download = 'Azat Farmanyan - CV - Software enginner';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

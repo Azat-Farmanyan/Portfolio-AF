@@ -6,6 +6,27 @@
         <p class='footer-text'>A Frontend focused Web Developer building the Frontend of Websites and Web Applications
           that leads to the success of the overall product</p>
       </div>
+
+      <nav class="nav">
+        <h3 class='nav-title'>Navigation</h3>
+
+        <a class="nav-item" (click)="navigateTo('home', 'home')">
+          HOME
+        </a>
+        <a class="nav-item" (click)="navigateTo('home', 'about')">
+          About
+        </a>
+        <a class="nav-item" (click)="navigateTo('home', 'experience')">
+          experience
+        </a>
+        <a class="nav-item" (click)="navigateTo('home', 'projects')">
+          Projects
+        </a>
+        <a class="nav-item" (click)="navigateTo('home', 'contact')">
+          contact
+        </a>
+      </nav>
+
       <div class="footer-social">
         <h3 class='social-title'>Social</h3>
         <ul class="social-links">
@@ -48,11 +69,21 @@
           </li>
 
         </ul>
+
+        <button class="btn-orange-v2" (click)="downloadCV()">
+          <a>Download CV</a>
+        </button>
       </div>
     </div>
+
+
+
     <div class="footer-copiright">
       <div class='line'></div>
       <p class='copyright-text'>© Copyright 2023. Made by <a href='/home#home'>Azat Farmanyan</a></p>
     </div>
+
+
+
   </div>
 </footer>

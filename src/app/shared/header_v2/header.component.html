@@ -56,7 +56,7 @@
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'experience')"
           [ngClass]="{ active: activeSection === 'experience' }">
-
+          {{ 'header.experience' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'projects')"
           [ngClass]="{ active: activeSection === 'projects' }">

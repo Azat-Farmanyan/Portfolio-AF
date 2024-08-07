@@ -7,22 +7,22 @@
       </div>
 
       <nav class="nav">
-        <h3 class='nav-title'>Navigation</h3>
+        <h3 class='nav-title'>{{ 'footer.navigation' | translate }}</h3>
 
         <a class="nav-item" (click)="navigateTo('home', 'home')">
-          HOME
+          {{ 'header.home' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'about')">
-          About
+          {{ 'header.about' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'experience')">
-          experience
+          {{ 'header.experience' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'projects')">
-          Projects
+          {{ 'header.projects' | translate }}
         </a>
         <a class="nav-item" (click)="navigateTo('home', 'contact')">
-          contact
+          {{ 'header.contact' | translate }}
         </a>
       </nav>
 
@@ -62,7 +62,7 @@
         </ul>
 
         <button class="btn-orange-v2" (click)="downloadCV()">
-          <a>Download CV</a>
+          <a>{{ 'header.download_cv' | translate }}</a>
         </button>
       </div>
     </div>

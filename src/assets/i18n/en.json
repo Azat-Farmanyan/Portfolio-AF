@@ -5,7 +5,8 @@
     "experience": "Experience",
     "projects": "Projects",
     "contact": "Contact",
-    "open_resume": "Open Resume"
+    "open_resume": "Open Resume",
+    "download_cv": "Download CV"
   },
   "welcome": {
     "owner_name": "azat farmanyan",
@@ -538,6 +539,7 @@
     "name": "Azat Farmanyan",
     "description": "A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product.",
     "social_title": "Social",
-    "copyright": "© Copyright 2023. Made by <a href='/home#home'>Azat Farmanyan</a>"
+    "copyright": "© Copyright 2023. Made by <a href='/home#home'>Azat Farmanyan</a>",
+    "navigation": "Navigation"
   }
 }

@@ -2,56 +2,62 @@
   <div class="wrapper">
     <div class="contact-body">
       <div class="contact-header">
-        <h2 class="section-title">CONTACT</h2>
+        <h2 class="section-title">{{ "contact.section_title" | translate }}</h2>
         <div class="title-underline"></div>
         <p class="text contact-text">
-          Feel free to Contact me by submitting the form below and I will get
-          back to you as soon as possible
+          {{ "contact.description" | translate }}
         </p>
       </div>
       <form data-netlify="true" method="POST" class="contact-form" [formGroup]="messageForm"
         (ngSubmit)="submit($event)">
         <!-- Name Input -->
         <div class="input-item">
-          <label class="label-text" for="name"><span [@fadeInOut] *ngIf="nameHasError">{{ "* " }}</span>Name</label>
-          <input #nameInput formControlName="name" id="name" name="name" type="text" placeholder="Enter your name"
-            class="error-input" />
+          <label class="label-text" for="name">
+            <span [@fadeInOut] *ngIf="nameHasError">{{ "* " }}</span>{{ "contact.name" | translate }}
+          </label>
+          <input #nameInput formControlName="name" id="name" name="name" type="text"
+            placeholder="{{ 'contact.name_placeholder' | translate }}" class="error-input" />
           <div [@fadeInOut] class="error-block" *ngIf="nameHasError">
-            <small *ngIf="messageForm.get('name')!.hasError('required')" class="error-message">Name is required</small>
+            <small *ngIf="messageForm.get('name')!.hasError('required')" class="error-message">
+              {{ "contact.name_required" | translate }}
+            </small>
           </div>
         </div>
 
         <!-- Email Input -->
         <div class="input-item">
           <label class="label-text" for="email" [@fadeInOut]>
-            <span *ngIf="emailHasError">{{ "* " }}</span>
-            Email
+            <span *ngIf="emailHasError">{{ "* " }}</span>{{ "contact.email" | translate }}
           </label>
           <input #emailInput formControlName="email" id="email" name="email" type="text"
-            placeholder="Enter your email" />
+            placeholder="{{ 'contact.email_placeholder' | translate }}" />
           <div [@fadeInOut] class="error-block" *ngIf="emailHasError">
-            <small *ngIf="messageForm.get('email')!.hasError('required')" class="error-message">Email is
-              required</small>
-            <small *ngIf="messageForm.get('email')!.hasError('email')" class="error-message">Email is invalid</small>
+            <small *ngIf="messageForm.get('email')!.hasError('required')" class="error-message">
+              {{ "contact.email_required" | translate }}
+            </small>
+            <small *ngIf="messageForm.get('email')!.hasError('email')" class="error-message">
+              {{ "contact.email_invalid" | translate }}
+            </small>
           </div>
         </div>
 
         <!-- Message Input -->
         <div class="input-item">
-          <label class="label-text" for="message"><span [@fadeInOut] *ngIf="messageHasError">
-              {{ "* " }}</span>Message</label>
+          <label class="label-text" for="message">
+            <span [@fadeInOut] *ngIf="messageHasError">{{ "* " }}</span>{{ "contact.message" | translate }}
+          </label>
           <textarea #messageInput formControlName="message" class="input-message" id="message" type="text"
-            name="message" placeholder="Enter your message"></textarea>
+            name="message" placeholder="{{ 'contact.message_placeholder' | translate }}"></textarea>
           <div [@fadeInOut] class="error-block" *ngIf="messageHasError">
-            <small *ngIf="messageForm.get('message')!.hasError('required')" class="error-message">Message is
-              required</small>
+            <small *ngIf="messageForm.get('message')!.hasError('required')" class="error-message">
+              {{ "contact.message_required" | translate }}
+            </small>
           </div>
         </div>
 
         <div class="btns">
-          <!-- [disabled]="messageForm.invalid" -->
           <button type="submit" class="btn-orange-v2 contact-submit-btn">
-            Submit
+            {{ "contact.submit_button" | translate }}
           </button>
         </div>
       </form>

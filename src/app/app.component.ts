@@ -15,6 +15,7 @@ import {
   animate,
   style,
 } from '@angular/animations';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -29,8 +30,12 @@ export class AppComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private projectsService: ProjectsService,
-    private routeService: RouteService
-  ) {}
+    private routeService: RouteService,
+    private translate: TranslateService
+  ) {
+    translate.setDefaultLang('en')
+  }
+
   ngOnInit(): void {
     this.routerSubs = this.router.events
       .pipe(

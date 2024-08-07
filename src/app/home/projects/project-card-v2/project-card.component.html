@@ -17,10 +17,11 @@
     <div class="proj-card-text-hovered-block proj-card-text-block" *ngIf="cardHovered">
       <p class="proj-title">{{ project!.title }}</p>
       <p class="proj-description">
-        {{ project.description[0] | textCut : descriptionLength }}
+        {{ project.description[0] | textCut : 25 }}
+        <!-- {{ project.description[0] }} -->
       </p>
       <div class="tools-block">
-        <a [href]="tool.website" target="_blank" class="tool-item" *ngFor="let tool of tools">
+        <a class="tool-item" *ngFor="let tool of tools">
           <div>
             <div class="tool-title">{{tool.name}}</div>
             <img [src]="'../../../../assets/icons/skills/' + tool.img " alt="">
@@ -28,7 +29,7 @@
         </a>
       </div>
       <button (click)="openDetails(project.id)" class="btn-orange-v2" *ngIf="cardHovered">
-        See More
+        {{ "project-card.see_more" | translate }}
       </button>
     </div>
 
@@ -40,7 +41,7 @@
         </div>
       </div>
       <button (click)="openDetails(project.id)" class="btn-orange-v2" *ngIf="cardHovered">
-        See More
+        {{ "project-card.see_more" | translate }}
       </button>
     </div>
 

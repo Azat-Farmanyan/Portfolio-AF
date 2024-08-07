@@ -23,13 +23,18 @@ export class ProjectCardComponentV2 implements OnInit, OnChanges {
   imageHeight: number = 298;
   descriptionLength = 10;
 
+  private screenshotsFolderPath = '../../../../assets/screenshots/';
+
   constructor(private router: Router, private skillsService: SkillsService) {}
 
   ngOnInit(): void {
-    // this.activeSlideImg = this.project.screenshots[activeSlide];
+    this.setImagePaths();
   }
   ngOnChanges(changes: SimpleChanges): void {
-    this.getTools();
+    if (changes['project']) {
+      this.setImagePaths();
+      this.getTools();
+    }
   }
   openDetails(id: number) {
     this.router.navigate([`details/${id}`]);
@@ -53,5 +58,21 @@ export class ProjectCardComponentV2 implements OnInit, OnChanges {
     this.cardHovered = false;
     this.imageHeight = 298;
     this.descriptionLength = 10;
+  }
+
+  private setImagePaths() {
+    if (this.project) {
+      this.project.banner = this.getImagePath(this.project.banner);
+      this.project.bannerSmall = this.project.bannerSmall
+        ? this.getImagePath(this.project.bannerSmall)
+        : undefined;
+      this.project.screenshots = this.project.screenshots
+        ? this.project.screenshots.map((name) => this.getImagePath(name))
+        : [];
+    }
+  }
+
+  private getImagePath(imageName: string): string {
+    return `${this.screenshotsFolderPath}${imageName}`;
   }
 }

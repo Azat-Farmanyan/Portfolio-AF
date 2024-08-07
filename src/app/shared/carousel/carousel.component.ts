@@ -54,14 +54,25 @@ export class CarouselComponent implements OnInit, OnChanges {
   showImage: boolean = true;
   animationTime = 0;
 
+  screenshotsPath = '../../../assets/screenshots/';
+
   isLoading = true;
 
   ngOnInit(): void {}
 
-  ngOnChanges(): void {
-    this.setActiveImg();
-    this.setImgsLength();
-    this.isLoading = false;
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['images']) {
+      this.updateImagePaths();
+      this.setActiveImg();
+      this.setImgsLength();
+      this.isLoading = false;
+    }
+  }
+
+  updateImagePaths() {
+    if (this.images) {
+      this.images = this.images.map((image) => this.screenshotsPath + image);
+    }
   }
 
   toggleImage() {

@@ -2,9 +2,8 @@
   <div class="wrapper">
     <div class="footer-body">
       <div class="footer-info">
-        <h3 class='footer-title'>Azat farmanyan</h3>
-        <p class='footer-text'>A Frontend focused Web Developer building the Frontend of Websites and Web Applications
-          that leads to the success of the overall product</p>
+        <h3 class='footer-title'>{{ "footer.name" | translate }}</h3>
+        <p class='footer-text'>{{ "footer.description" | translate }}</p>
       </div>
 
       <nav class="nav">
@@ -28,46 +27,38 @@
       </nav>
 
       <div class="footer-social">
-        <h3 class='social-title'>Social</h3>
+        <h3 class='social-title'>{{ "footer.social_title" | translate }}</h3>
         <ul class="social-links">
-
           <li class='social-link'>
             <a target='_blank' href="https://www.linkedin.com/in/azat-farmanyan/">
               <img src="../../assets/icons/social-links-white/bi_linkedin.svg" alt="linkedin" />
             </a>
           </li>
-
           <li class='social-link'>
             <a target='_blank' href="https://github.com/Azat-Farmanyan">
               <img src="../../assets/icons/social-links-white/mdi_github.svg" alt="GitHub" />
             </a>
-
-
           </li>
           <li class='social-link'>
             <a target='_blank' href="https://www.instagram.com/azat_09.5/">
               <img src="../../assets/icons/social-links-white/ri_instagram-fill.svg" alt="Instagram" />
             </a>
-
           </li>
           <li class='social-link'>
             <a target='_blank' href="https://t.me/AzatFarmanyan">
               <img src="../../assets/icons/social-links-white/ic_baseline-telegram.svg" alt="Telegram" />
             </a>
           </li>
-
           <li class='social-link'>
             <a target='_blank' href="https://discordapp.com/users/908978735020146719/">
               <img src="../../assets/icons/social-links-white/ic_baseline-discord.svg" alt="Discord" />
             </a>
           </li>
-
           <li class='social-link'>
             <a target='_blank' href="https://www.facebook.com/profile.php?id=100007929288834">
               <img src="../../assets/icons/social-links-white/uiw_facebook.svg" alt="Facebook" />
             </a>
           </li>
-
         </ul>
 
         <button class="btn-orange-v2" (click)="downloadCV()">
@@ -80,7 +71,7 @@
 
     <div class="footer-copiright">
       <div class='line'></div>
-      <p class='copyright-text'>© Copyright 2023. Made by <a href='/home#home'>Azat Farmanyan</a></p>
+      <p class='copyright-text' [innerHTML]=" 'footer.copyright' | translate "></p>
     </div>
 
 

@@ -91,9 +91,6 @@ textarea {
     outline: 1px solid #3d5a80;
   }
 
-  &.ng-invalid.ng-touched {
-    // outline: 1px solid #ff7b7b;
-  }
 
   @media only screen and (max-width: 600px) {
     padding: 8px 20px;
@@ -412,7 +409,7 @@ textarea {
 
 .btn-orange-v2,
 .btn-white-v2 {
-  transition: all 0.1s ease-in;
+  transition: all 0.3s ease-in;
 
   &:hover {
     filter: brightness(1.2);

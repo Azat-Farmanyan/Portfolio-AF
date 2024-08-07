@@ -87,18 +87,21 @@
 
 
     }
+
     .language-switcher {
       cursor: pointer;
       margin-left: auto;
       padding: 22px 10px;
       transition: all 0.5s ease;
+      background-color: #ee6c4d;
+      color: #fff;
 
       @media only screen and (max-width: 600px) {
         display: none;
       }
-      &:hover{
-        background-color: #ee6c4d;
-        color: white;
+
+      &:hover {
+        filter: brightness(1.1);
       }
     }
 
@@ -138,7 +141,8 @@
       // margin-left: auto;
       padding: 22px;
       transition: all 0.5s ease;
-      &:hover{
+
+      &:hover {
         background-color: #ee6c4d;
         color: white;
       }

@@ -66,7 +66,8 @@
           {{ 'header.contact' | translate }}
         </a>
         <button class="btn-orange-v2" style="max-width: 300px; margin: 0 auto;" (click)="downloadCV()">
-          <a target="_blank" href="https://hh.ru/resume/9021fbdaff0bd45c5a0039ed1f7a6177477751">{{ 'header.open_resume' | translate }}</a>
+          <a target="_blank" href="https://hh.ru/resume/9021fbdaff0bd45c5a0039ed1f7a6177477751">{{ 'header.open_resume'
+            | translate }}</a>
         </button>
         <div class="social-block" style="margin: 0 auto; width: 100%;">
           <div class="social-items">
@@ -96,7 +97,7 @@
             </a>
           </div>
         </div>
-        <button class="language-switcher" (click)="switchLanguage()">
+        <button class="language-switcher orange-bg" (click)="switchLanguage()">
           {{ currentLanguage === 'en' ? 'RU' : 'EN' }}
         </button>
       </div>

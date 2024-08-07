@@ -11,6 +11,7 @@ import { StepComponent } from './error-instruction/steps/step/step.component';
 import { Step1Component } from './error-instruction/steps/step/step1/step1.component';
 import { Step2Component } from './error-instruction/steps/step/step2/step2.component';
 import { Step3Component } from './error-instruction/steps/step/step3/step3.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,12 @@ import { Step3Component } from './error-instruction/steps/step/step3/step3.compo
     Step2Component,
     Step3Component,
   ],
-  imports: [CommonModule, ProjectDetailsRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    ProjectDetailsRoutingModule,
+    SharedModule,
+    TranslateModule,
+  ],
 })
 export class ProjectDetailsModule {
   a = 'test';

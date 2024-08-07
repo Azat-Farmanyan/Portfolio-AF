@@ -1,5 +1,5 @@
 <app-header-v2 [opacity]="0.99" [closeFromTopPx]="40"></app-header-v2>
-<!-- <button class="btn-orange-v2 return-btn">Return to projects</button> -->
+<!-- <button class="btn-orange-v2 return-btn">{{ 'project-detail-page.return_to_projects' | translate }}</button> -->
 
 <section class="details">
   <div class="details-block" [style.background]="'rgba(255, 255, 255, 0.5) url(' + imagePath + ') no-repeat top center'"
@@ -20,11 +20,11 @@
   <div class="wrapper">
     <div class="details-body">
       <div class="overview">
-        <h4 class="paragraph-title">Project overview</h4>
+        <h4 class="paragraph-title">{{ 'project-detail-page.overview' | translate }}</h4>
         <p *ngFor="let des of project?.description" class="text">{{ des }}</p>
       </div>
       <div class="tools">
-        <h4 class="paragraph-title">Tools used</h4>
+        <h4 class="paragraph-title">{{ 'project-detail-page.tools' | translate }}</h4>
         <div class="tools-blocks">
           <a [href]="tool.website" target="_blank" *ngFor="let tool of tools" class="skill-box">
             <img [src]="'../../assets/icons/skills/' + tool.img" [alt]="tool.name">
@@ -33,12 +33,14 @@
         </div>
       </div>
       <div *ngIf="project" class="see-live">
-        <h4 class="paragraph-title">See live</h4>
+        <h4 class="paragraph-title">{{ 'project-detail-page.see_live' | translate }}</h4>
         <div class="see-live-btns">
-          <a class="btn-orange-v2" (click)="showInstructionModal()" *ngIf="project.seeLive"> SEE DEMO </a>
-          <a class="btn-white-v2" [href]="project.sourceCodeUrl" target="_blank">Source code</a>
-          <a class="btn-white-v2" *ngIf="project!.designTemplate" [href]="project.designTemplate" target="_blank">See
-            design</a>
+          <a class="btn-orange-v2" (click)="showInstructionModal()" *ngIf="project.seeLive">{{
+            'project-detail-page.see_demo' | translate }}</a>
+          <a class="btn-white-v2" [href]="project.sourceCodeUrl" target="_blank">{{ 'project-detail-page.source_code' |
+            translate }}</a>
+          <a class="btn-white-v2" *ngIf="project!.designTemplate" [href]="project.designTemplate" target="_blank">{{
+            'project-detail-page.see_design' | translate }}</a>
         </div>
       </div>
     </div>
@@ -46,9 +48,9 @@
   <div class="wrapper">
 
     <button (click)="back()" class="btn-orange-v2 return-btn ">
-      <img src="../../assets/icons/go-back.png" alt="go back">
+      <img src="../../assets/icons/go-back.png" alt="{{ 'project-detail-page.go_back' | translate }}">
       <span>
-        Return
+        {{ 'project-detail-page.return' | translate }}
       </span>
     </button>
   </div>

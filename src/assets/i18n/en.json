@@ -31,6 +31,9 @@
     "languages": "I am fluent in Armenian, Georgian, Russian, and English. These language skills enable me to communicate effectively and work in multilingual and international teams. My creativity, technical skills, and ability to quickly adapt to new challenges make me a valuable partner for any project. I always strive for excellence and am ready to use my knowledge to achieve outstanding results.",
     "my_skills": "My Skills"
   },
+  "experience-page": {
+    "work_experience": "Work experience"
+  },
   "experience": [
     {
       "date": {
@@ -501,5 +504,40 @@
         "sourceCodeUrl": "https://github.com/Azat-Farmanyan/BookShop"
       }
     ]
+  },
+  "project-card": {
+    "see_more": "See More"
+  },
+  "project-detail-page": {
+    "overview": "Project Overview",
+    "tools": "Tools Used",
+    "see_live": "See Live",
+    "see_demo": "SEE DEMO",
+    "source_code": "Source Code",
+    "see_design": "See Design",
+    "go_back": "Go Back",
+    "return": "Return",
+    "return_to_projects": "Return to Projects"
+  },
+  "contact": {
+    "section_title": "CONTACT",
+    "description": "Feel free to contact me by submitting the form below and I will get back to you as soon as possible.",
+    "name": "Name",
+    "name_placeholder": "Enter your name",
+    "name_required": "Name is required",
+    "email": "Email",
+    "email_placeholder": "Enter your email",
+    "email_required": "Email is required",
+    "email_invalid": "Email is invalid",
+    "message": "Message",
+    "message_placeholder": "Enter your message",
+    "message_required": "Message is required",
+    "submit_button": "Submit"
+  },
+  "footer": {
+    "name": "Azat Farmanyan",
+    "description": "A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product.",
+    "social_title": "Social",
+    "copyright": "© Copyright 2023. Made by <a href='/home#home'>Azat Farmanyan</a>"
   }
 }

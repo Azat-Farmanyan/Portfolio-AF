@@ -20,6 +20,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-header-v2',
@@ -118,15 +119,17 @@ export class HeaderComponentV2 implements OnInit {
   constructor(
     private router: Router,
     private translateService: TranslateService,
+    private languageService: LanguageService
   ) {
     this.scrolled = window.pageYOffset < 80;
   }
 
-    // Метод для переключения языка
-    switchLanguage() {
-      this.currentLanguage = this.currentLanguage === 'en' ? 'ru' : 'en';
-      this.translateService.use(this.currentLanguage);
-    }
+  // Метод для переключения языка
+  switchLanguage() {
+    this.currentLanguage = this.currentLanguage === 'en' ? 'ru' : 'en';
+    this.translateService.use(this.currentLanguage);
+    this.languageService.activeLanguage.set(this.currentLanguage);
+  }
 
   ngOnInit() {
     this.getScreenWidth = window.innerWidth;
@@ -141,8 +144,6 @@ export class HeaderComponentV2 implements OnInit {
       ? (this.isMouseNearTop = true)
       : (this.isMouseNearTop = false);
   }
-
-
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

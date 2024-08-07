@@ -22,31 +22,50 @@ export interface Project {
 export class ProjectsService {
   screenshotsFolderPath = '../../../../assets/screenshots/';
   private basePath = 'assets/i18n/';
-  private projects: Project[] = [];
+  public projects: Project[] = [];
 
   constructor(private http: HttpClient) {}
 
   getProjects(lang: string): Observable<Project[]> {
+    // console.log(lang);
+
     return this.http.get<any>(`${this.basePath}${lang}.json`).pipe(
       map((data) => {
         this.projects = data.projects.projects_list; // Сохраняем проекты в свойство
+        // console.log(this.projects);
+
         return this.projects;
       })
     );
   }
 
-  getProjectByIndex(lang: string, index: number): Observable<Project | null> {
-    return this.getProjects(lang).pipe(
-      map((projects) => {
-        if (index >= 0 && index < projects.length) {
-          console.log(projects[index]);
+  getProjectById(lang: string, id: number): Observable<Project> {
+    return this.http.get<any>(`${this.basePath}${lang}.json`).pipe(
+      map((data) => {
+        this.projects = data.projects.projects_list; // Сохраняем проекты в свойство
+        const project = this.projects.find((proj: Project) => proj.id === id); // Находим проект по id
 
-          // return projects[index];
+        if (!project) {
+          throw new Error(`Project with id ${id} not found`);
         }
-        return null;
+
+        return project;
       })
     );
   }
+
+  // getProjectByIndex(lang: string, index: number): Observable<Project | null> {
+  //   return this.getProjects(lang).pipe(
+  //     map((projects) => {
+  //       if (index >= 0 && index < projects.length) {
+  //         console.log(projects[index]);
+
+  //         // return projects[index];
+  //       }
+  //       return null;
+  //     })
+  //   );
+  // }
 }
 
 // projects: Project[] = [

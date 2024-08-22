@@ -31,9 +31,9 @@ export class AppComponent implements OnInit {
     private route: ActivatedRoute,
     private projectsService: ProjectsService,
     private routeService: RouteService,
-    private translate: TranslateService
+    private translateService: TranslateService
   ) {
-    translate.setDefaultLang('en')
+    translateService.setDefaultLang('en');
   }
 
   ngOnInit(): void {

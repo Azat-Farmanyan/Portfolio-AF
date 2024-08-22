@@ -1,11 +1,13 @@
 <div class="step-content">
-  <h3 class="section-title" style="text-align: left">
-    Step 1: Accessing the Demo Version
+  <h3 class="paragraph-title" style="text-align: left">
+    {{ 'steps.step1.title' | translate }}
   </h3>
   <p class="text">
-    You're just one click away from exploring our demo version!
+    {{ 'steps.step1.description' | translate }}
   </p>
   <div class="btns">
-    <button (click)="onNext.emit()" class="btn orange-bg">Continue</button>
+    <button (click)="onNext.emit()" class="btn orange-bg">
+      {{ 'steps.step1.button' | translate }}
+    </button>
   </div>
 </div>

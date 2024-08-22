@@ -520,6 +520,26 @@
     "return": "Return",
     "return_to_projects": "Return to Projects"
   },
+  "steps": {
+    "step1": {
+      "title": "Step 1: Accessing the Demo Version",
+      "description": "You're just one click away from exploring our demo version!",
+      "button": "Continue"
+    },
+    "step2": {
+      "title": "Step 2: Error Handling",
+      "description": "If you encounter any issues, don't worry. Simply click the \"Back to Our Site\" button below, and you will be redirected to the project main page.",
+      "button": "Continue",
+      "backButtonText": "\"Back to Our Site\""
+    },
+    "step3": {
+      "title": "Step 3: We're Here to Help",
+      "description": "If you have any questions or need assistance, please don't hesitate to",
+      "spanText": "contact our support team",
+      "additionalText": "We're here to assist you. Thank you for your interest in our project, and we look forward to providing you with an excellent experience.",
+      "button": "See Demo"
+    }
+  },
   "contact": {
     "section_title": "CONTACT",
     "description": "Feel free to contact me by submitting the form below and I will get back to you as soon as possible.",

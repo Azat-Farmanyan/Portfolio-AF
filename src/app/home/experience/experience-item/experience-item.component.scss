@@ -59,6 +59,7 @@
 
         .experience-descreption {
             flex: 0 0 75%;
+            text-wrap: wrap;
 
             @media only screen and (max-width: 600px) {
                 flex: 0 0 85%;
@@ -111,6 +112,7 @@
                 letter-spacing: 0.8px;
                 padding-right: 30px;
 
+
                 // padding-bottom: 100px;
                 @media only screen and (max-width: 700px) {
                     font-size: 16px;
@@ -119,6 +121,11 @@
 
                 @media only screen and (max-width: 600px) {
                     padding-right: 0;
+                    font-size: 16px;
+                }
+
+                @media only screen and (max-width: 500px) {
+                    font-size: 14px;
                 }
             }
         }

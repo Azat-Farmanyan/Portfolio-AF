@@ -52,7 +52,6 @@
         letter-spacing: 3.2px;
         text-transform: uppercase;
         margin-bottom: 20px;
-
       }
 
       .owner-profession {
@@ -177,6 +176,10 @@
       .ellipse-2,
       .ellipse-3 {
         position: absolute;
+
+        filter: opacity(0.9);
+
+        @media only screen and (max-width: 600px) {}
       }
 
       .ellipse-1,

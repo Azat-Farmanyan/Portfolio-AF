@@ -1,29 +1,34 @@
 <div class="experience-item">
-    <div class="experience-item-body">
-      <div class="left-side hide-max600">
-        <p class="date-txt">{{ experience.date.from }} - {{ experience.date.to }}</p>
-        <p class="duration-txt">{{ experienceDuration }}</p>
-      </div>
-  
-      <div class="centerline">
-        <div class="circle active-circle"></div>
-        <div class="circle-line"></div>
-      </div>
-  
-      <div class="experience-descreption">
+  <div class="experience-item-body">
+    <div class="left-side hide-max600">
+      <p class="date-txt">{{ experience.date.from }} - {{ experience.date.to }}</p>
+      <p class="duration-txt">{{ experienceDuration }}</p>
+    </div>
+
+    <div class="centerline">
+      <div class="circle" appIntersectionObserver></div>
+      <div class="circle-line"></div>
+    </div>
+
+    <div class="experience-descreption">
+
+      <div class="experience-header">
         <div class="experience-title">{{ experience.title }}</div>
         <div class="experience-subtitle">
           {{ experience.company }} |
           <a class="cursor: pointer" target="_blank" [href]="experience.page">{{ companyPage }}</a>
         </div>
-  
+
         <div class="hide-min600">
-          <p class="date-txt">{{ experience.date.from }} - {{ experience.date.to }}</p>
-          <p class="duration-txt">{{ experience.date.duration }}</p>
+          <p class="date-txt">{{ experience.date.from }} - {{ experience.date.to }} <span class="duration-txt">| {{
+              experience.date.duration
+              }} </span></p>
+          <!-- <p class="duration-txt">{{ experience.date.duration }}</p> -->
         </div>
-  
-        <div class="experience-txt" [innerHTML]="experienceTxt" [ngStyle]="{'margin-bottom.px': isLast ? 0 : 120}"></div>
       </div>
+
+
+      <div class="experience-txt" [innerHTML]="experienceTxt" [ngStyle]="{'margin-bottom.px': isLast ? 0 : 80}"></div>
     </div>
   </div>
-  
+</div>

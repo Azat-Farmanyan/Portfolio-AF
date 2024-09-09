@@ -1,5 +1,6 @@
 .header {
   background: rgba(255, 255, 255, 0.9);
+
   // backdrop-filter: blur(31.100000381469727px);
 
   position: fixed;
@@ -12,6 +13,13 @@
 
   @media only screen and (max-width: 600px) {
     height: 50px;
+  }
+
+  .section-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
   }
 
   .header-body {
@@ -132,7 +140,7 @@
     padding-top: 46px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 
     .language-switcher {
       cursor: pointer;

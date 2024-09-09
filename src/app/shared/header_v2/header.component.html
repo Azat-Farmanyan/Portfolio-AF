@@ -29,8 +29,6 @@
         <a class="nav-item" (click)="navigateTo('home', 'contact')" [ngClass]="{ active: activeSection === 'contact' }">
           {{ 'header.contact' | translate }}
         </a>
-
-
       </nav>
       <button class="language-switcher" (click)="switchLanguage()">
         {{ currentLanguage === 'en' ? 'EN' : 'RU' }}
@@ -42,6 +40,7 @@
       </div>
     </div>
   </div>
+
 
   <div class="header-underline-btn"></div>
 

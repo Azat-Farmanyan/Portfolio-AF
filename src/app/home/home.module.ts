@@ -14,6 +14,7 @@ import { ExperienceComponent } from './experience/experience.component';
 import { ExperienceItemComponent } from './experience/experience-item/experience-item.component';
 import { ProjectCardComponentV2 } from './projects/project-card-v2/project-card.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { IntersectionObserverDirective } from '../directives/IntersectionObserver.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { TranslateModule } from '@ngx-translate/core';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    TranslateModule
+    TranslateModule,
+    IntersectionObserverDirective,
   ],
 })
 export class HomeModule {}

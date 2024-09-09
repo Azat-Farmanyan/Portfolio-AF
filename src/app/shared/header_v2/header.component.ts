@@ -101,7 +101,7 @@ import { LanguageService } from '../../services/language.service';
     ]),
   ],
 })
-export class HeaderComponentV2 implements OnInit {
+export class HeaderComponentV2 implements OnInit, OnChanges {
   @Input() scrollTop: boolean = false;
   @Input() activeSection: string = '';
   @Input() opacity: number = 0.9;
@@ -122,6 +122,9 @@ export class HeaderComponentV2 implements OnInit {
     private languageService: LanguageService
   ) {
     this.scrolled = window.pageYOffset < 80;
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.activeSection);
   }
 
   // Метод для переключения языка

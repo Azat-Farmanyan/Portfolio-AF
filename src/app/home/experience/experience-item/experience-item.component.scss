@@ -43,11 +43,23 @@
                 margin: 0 auto;
                 transition: all 0.5s ease;
 
+                top: 60px;
+                z-index: 10;
+                background-color: #293241;
+                padding: 10px 0;
+
+                @media only screen and (max-width: 600px) {
+                    position: sticky;
+                    padding: 10px 0; // отступы, чтобы текст заголовка не слипался с границами
+                }
+
             }
 
-            // .active-circle {
-            //     fill: #EE6C4D;
-            // }
+            .active-circle {
+                background-color: #EE6C4D !important;
+                transform: scale(1.2);
+                margin: 10px 0;
+            }
 
             .circle-line {
                 width: 3px;
@@ -58,6 +70,7 @@
         }
 
         .experience-descreption {
+            // position: relative;
             flex: 0 0 75%;
             text-wrap: wrap;
 
@@ -65,67 +78,88 @@
                 flex: 0 0 85%;
             }
 
-            .experience-title {
-                color: #FFF;
-                font-family: Roboto;
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: 135%;
-                /* 32.4px */
-                letter-spacing: 1.2px;
-                margin-bottom: 10px;
 
-            }
-
-            .experience-subtitle,
-            .experience-subtitle a {
-                color: #B0B0B0;
-                font-family: Roboto;
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 135%;
-                /* 21.6px */
-                letter-spacing: 0.8px;
-                margin-bottom: 20px;
-
-            }
-
-            .experience-subtitle a {
-                text-decoration-line: underline;
-                transition: all 0.2s ease;
-
-                &:hover {
-                    color: #fff;
-                }
-            }
-
-            .experience-txt {
-                color: #FFF;
-                font-family: Roboto;
-                font-size: 18px;
-                font-style: normal;
-                font-weight: 300;
-                line-height: 200%;
-                /* 21.6px */
-                letter-spacing: 0.8px;
-                padding-right: 30px;
-
-
-                // padding-bottom: 100px;
-                @media only screen and (max-width: 700px) {
-                    font-size: 16px;
-                    line-height: 170%;
-                }
+            .experience-header {
+                top: 50px;
+                z-index: 10;
+                background-color: #293241;
+                padding: 10px 0;
 
                 @media only screen and (max-width: 600px) {
-                    padding-right: 0;
-                    font-size: 16px;
+                    position: sticky;
+                    padding: 10px 0; // отступы, чтобы текст заголовка не слипался с границами
                 }
 
-                @media only screen and (max-width: 500px) {
-                    font-size: 14px;
+                .experience-title {
+                    color: #FFF;
+                    font-family: Roboto;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 135%;
+                    /* 32.4px */
+                    letter-spacing: 1.2px;
+                    margin-bottom: 10px;
+
+                    @media only screen and (max-width: 600px) {
+                        font-size: 20px;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .experience-subtitle,
+                .experience-subtitle a {
+                    color: #B0B0B0;
+                    font-family: Roboto;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 135%;
+                    /* 21.6px */
+                    letter-spacing: 0.8px;
+                    margin-bottom: 20px;
+
+                    @media only screen and (max-width: 600px) {
+                        margin-bottom: 10px;
+                    }
+
+                }
+
+                .experience-subtitle a {
+                    text-decoration-line: underline;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+
+                .experience-txt {
+                    color: #FFF;
+                    font-family: Roboto;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 200%;
+                    /* 21.6px */
+                    letter-spacing: 0.8px;
+                    padding-right: 30px;
+
+
+                    // padding-bottom: 100px;
+                    @media only screen and (max-width: 700px) {
+                        font-size: 16px;
+                        line-height: 170%;
+                    }
+
+                    @media only screen and (max-width: 600px) {
+                        padding-right: 0;
+                        font-size: 16px;
+                    }
+
+                    @media only screen and (max-width: 500px) {
+                        font-size: 14px;
+                    }
                 }
             }
         }
@@ -141,6 +175,10 @@
     line-height: 135%;
     /* 21.6px */
     letter-spacing: 0.8px;
+
+    @media only screen and (max-width: 500px) {
+        font-size: 14px;
+    }
 
 }
 

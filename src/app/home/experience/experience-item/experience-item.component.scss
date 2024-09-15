@@ -4,6 +4,10 @@
         transform: scale(1.3);
     }
 
+    &:hover .experience-company-logo {
+        transform: scale(1.1);
+    }
+
     .experience-item-body {
         color: #fff;
         display: flex;
@@ -11,7 +15,7 @@
         font-family: "Roboto";
         font-size: 16px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         line-height: 135%;
         /* 21.6px */
         letter-spacing: 0.8px;
@@ -22,7 +26,6 @@
             flex-direction: column;
             gap: 10px;
             // background-color: red;
-
         }
 
         .centerline {
@@ -42,11 +45,13 @@
                 border: 3px solid #fff;
                 margin: 0 auto;
                 transition: all 0.5s ease;
+                margin-top: 10px;
 
                 top: 60px;
                 z-index: 10;
                 background-color: #293241;
                 padding: 10px 0;
+
 
                 @media only screen and (max-width: 600px) {
                     position: sticky;
@@ -78,7 +83,6 @@
                 flex: 0 0 85%;
             }
 
-
             .experience-header {
                 top: 50px;
                 z-index: 10;
@@ -88,6 +92,17 @@
                 @media only screen and (max-width: 600px) {
                     position: sticky;
                     padding: 10px 0; // отступы, чтобы текст заголовка не слипался с границами
+                }
+
+                .experience-company-logo {
+                    max-width: 150px;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+                    transition: transform 0.2s ease-in;
+
+                    @media only screen and (max-width: 600px) {
+                        display: none;
+                    }
                 }
 
                 .experience-title {
@@ -201,6 +216,8 @@
 }
 
 .hide-max600 {
+    padding-top: 20px;
+
     @media only screen and (max-width: 600px) {
         display: none !important;
     }

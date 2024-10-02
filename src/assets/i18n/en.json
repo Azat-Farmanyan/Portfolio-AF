@@ -114,6 +114,34 @@
     "projects_text": "Here you will find some of the personal and clients projects that I created with each project containing its own case study",
     "projects_list": [
       {
+        "id": 19,
+        "title": "User Filter Application",
+        "description": [
+          "This project is a web application built with Angular that allows users to filter a list of users retrieved from a server. For the purpose of this test assignment, I simulated the server using a local JSON file to fetch user data.",
+          "Key features include input validation using regular expressions, client-side filtering based on the received data, and toggling the 'Block/Unblock' status for each user. This status is stored in the browser's local storage, ensuring that the updated value is reflected when the page is reloaded.",
+          "The main objective of this project is to demonstrate working with forms, inputs, and tables, as well as creating services and facilitating interaction between components. The application provides a clean and efficient user interface for filtering, validating, and managing user data."
+        ],
+        "banner": "user-filter-app-screenshot1.png",
+        "bannerSmall": "user-filter-app-banner-small.png",
+        "screenshots": [
+          "user-filter-app-screenshot2.png",
+          "user-filter-app-screenshot1.png"
+        ],
+        "tools": [
+          "Angular",
+          "HTML",
+          "SCSS",
+          "TypeScript",
+          "RxJs",
+          "VS Code",
+          "Figma"
+        ],
+        "seeLive": "https://user-filter-app-angular.netlify.app/user-settings",
+        "sourceCodeUrl": "https://github.com/Azat-Farmanyan/UserFilterApp",
+        "designTemplate": "https://www.figma.com/file/NcDTaAYcLBL6ogy1Nxf5Ey/testcase-rik-angular?node-id=0%3A1&t=ZCRud6nfITOJa0sw-1",
+        "isNewProject": true
+      },
+      {
         "id": 18,
         "title": "Currency Converter",
         "description": [
@@ -151,7 +179,6 @@
         "tools": ["Angular", "HTML", "SCSS", "TypeScript", "VS Code", "Figma"],
         "seeLive": "https://dancing-rolypoly-6860d4.netlify.app/",
         "sourceCodeUrl": "https://github.com/Azat-Farmanyan/compo-product-page",
-        "isNewProject": true,
         "designTemplate": "https://www.figma.com/file/QIdMZetqc6405W0CUam7Fa/Product-Page?type=design&node-id=0%3A1&mode=design&t=fehYwRXnmepOBg3k-1"
       },
 

@@ -6,15 +6,8 @@ import {
   RoutesRecognized,
   RouterOutlet,
 } from '@angular/router';
-import { Subscription, filter, pairwise } from 'rxjs';
+import { Subscription, filter, pairwise, take, tap } from 'rxjs';
 import { ProjectsService } from './services/projects.service';
-import {
-  trigger,
-  transition,
-  useAnimation,
-  animate,
-  style,
-} from '@angular/animations';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({

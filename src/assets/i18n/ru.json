@@ -114,6 +114,34 @@
     "projects_text": "Здесь представлены некоторые из моих личных и клиентских проектов, для каждого из которых подготовлено отдельное исследование.",
     "projects_list": [
       {
+        "id": 19,
+        "title": "User Filter Application",
+        "description": [
+          "Этот проект — веб-приложение на Angular, которое позволяет пользователям фильтровать список пользователей, полученных с сервера. Для целей данного тестового задания я имитировал сервер, используя локальный JSON-файл для получения данных пользователей.",
+          "Основные функции включают валидацию ввода с помощью регулярных выражений, фильтрацию на стороне клиента на основе полученных данных и переключение статуса 'Заблокировать/Разблокировать' для каждого пользователя. Этот статус сохраняется в локальном хранилище браузера, что позволяет отображать обновленное значение при перезагрузке страницы.",
+          "Основная цель проекта — продемонстрировать работу с формами, инпутами и таблицей, а также создание сервисов и взаимодействие между компонентами. Приложение обеспечивает чистый и удобный интерфейс для фильтрации, валидации и управления данными пользователей."
+        ],
+        "banner": "user-filter-app-screenshot1.png",
+        "bannerSmall": "user-filter-app-banner-small.png",
+        "screenshots": [
+          "user-filter-app-screenshot2.png",
+          "user-filter-app-screenshot1.png"
+        ],
+        "tools": [
+          "Angular",
+          "HTML",
+          "SCSS",
+          "TypeScript",
+          "RxJs",
+          "VS Code",
+          "Figma"
+        ],
+        "seeLive": "https://user-filter-app-angular.netlify.app/user-settings",
+        "sourceCodeUrl": "https://github.com/Azat-Farmanyan/UserFilterApp",
+        "designTemplate": "https://www.figma.com/file/NcDTaAYcLBL6ogy1Nxf5Ey/testcase-rik-angular?node-id=0%3A1&t=ZCRud6nfITOJa0sw-1",
+        "isNewProject": true
+      },
+      {
         "id": 18,
         "title": "Currency Converter",
         "description": [
@@ -151,7 +179,6 @@
         "tools": ["Angular", "HTML", "SCSS", "TypeScript", "VS Code", "Figma"],
         "seeLive": "https://dancing-rolypoly-6860d4.netlify.app/",
         "sourceCodeUrl": "https://github.com/Azat-Farmanyan/compo-product-page",
-        "isNewProject": true,
         "designTemplate": "https://www.figma.com/file/QIdMZetqc6405W0CUam7Fa/Product-Page?type=design&node-id=0%3A1&mode=design&t=fehYwRXnmepOBg3k-1"
       },
       {
@@ -557,7 +584,7 @@
     "name": "Азат Фарманян",
     "description": "Frontend-разработчик, сосредоточенный на создании интерфейсов веб-сайтов и веб-приложений, которые способствуют успеху всего продукта.",
     "social_title": "Социальные сети",
-    "copyright": "© Авторские права 2023. Создано <a href='/home#home'>Азатом Фарманяном</a>",
+    "copyright": "© Copyright 2023. Made by <a href='/home#home'>Azat Farmanyan</a>",
     "navigation": "Навигация"
   }
 }

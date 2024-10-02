@@ -150,6 +150,7 @@
       align-items: center;
       justify-content: center;
 
+
       @media only screen and (max-width: 1350px) {
         right: -150px;
       }
@@ -177,7 +178,8 @@
       .ellipse-3 {
         position: absolute;
 
-        filter: opacity(0.9);
+        // filter: opacity(0.9);
+        transition: transform 0.2s ease-out;
 
         @media only screen and (max-width: 600px) {}
       }
@@ -190,6 +192,7 @@
 
       .avatar {
         z-index: 10;
+        transition: all 1s ease;
       }
 
       .ellipse-1 {

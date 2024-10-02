@@ -1,10 +1,18 @@
-import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  OnChanges,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { Project, ProjectsService } from '../services/projects.service';
 import { Subscription } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Skill, SkillsService } from '../services/skills.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
+import { RouteService } from '../services/route.service';
 
 @Component({
   selector: 'app-project-details',
@@ -18,6 +26,7 @@ export class ProjectDetailsComponent implements OnInit {
   private routeSub: Subscription;
   private projectSub: Subscription;
   private languageSubs: Subscription;
+  private previousPathSubs: Subscription;
 
   projectID: number;
   screenshots: string[] = [];
@@ -25,14 +34,15 @@ export class ProjectDetailsComponent implements OnInit {
 
   tools: Skill[] = [];
 
-  imagePath = '../../assets/images/';
+  imagePath = '';
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private projectsService: ProjectsService,
     private skillsService: SkillsService,
     private translate: TranslateService,
-    public languageService: LanguageService
+    public languageService: LanguageService,
+    private routeService: RouteService
   ) {}
 
   ngOnInit(): void {
@@ -69,7 +79,7 @@ export class ProjectDetailsComponent implements OnInit {
     this.projectSub = this.projectsService
       .getProjectById(this.currentLanguage, projectID)
       .subscribe((project) => {
-        console.log(project);
+        // console.log(project);
 
         if (this.project === null) {
           this.back();
@@ -97,7 +107,9 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   back() {
-    this.router.navigate(['/home'], { fragment: 'projects' });
+    this.router.navigate(['/home'], {
+      fragment: 'projects',
+    });
   }
 
   setActiveImage(imageName: string) {
@@ -109,5 +121,6 @@ export class ProjectDetailsComponent implements OnInit {
     if (this.routeSub) this.routeSub.unsubscribe();
     if (this.projectSub) this.projectSub.unsubscribe();
     if (this.languageSubs) this.languageSubs.unsubscribe();
+    if (this.previousPathSubs) this.previousPathSubs.unsubscribe();
   }
 }

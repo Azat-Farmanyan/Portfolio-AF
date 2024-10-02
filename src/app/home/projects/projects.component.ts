@@ -59,13 +59,13 @@ export class ProjectsComponent
   }
 
   loadProjects(): void {
-    console.log('loadProjects()');
+    // console.log('loadProjects()');
 
     this.projectsSubs = this.projectsService
       .getProjects(this.languageService.activeLanguage())
       .subscribe((data) => {
         this.projects = data;
-        console.log(this.projects);
+        // console.log(this.projects);
       });
   }
 

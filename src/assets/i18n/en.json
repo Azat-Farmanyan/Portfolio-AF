@@ -38,6 +38,18 @@
   "experience": [
     {
       "date": {
+        "from": "October  2024",
+        "to": "Till now",
+        "duration": ""
+      },
+      "title": "Angular Developer",
+      "company": "Rick Masters",
+      "page": "https://background.digital/",
+      "description": "- Participated in the design and development of web applications using Angular, TypeScript, and RxJS. - Performed code refactoring to enhance performance and maintainability. - Made architectural decisions and implemented a component-based development approach. - Developed responsive layouts and integrated front-end interfaces with backend systems via REST API. - Collaborated closely with designers (Figma), QA engineers, and developers in an Agile (Scrum) environment. - Actively contributed to product development, proposing innovative solutions to improve user experience.",
+      "companyLogo": "RIK.png"
+    },
+    {
+      "date": {
         "from": "March 2024",
         "to": "Till now",
         "duration": ""

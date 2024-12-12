@@ -1,36 +1,37 @@
 <div class="experience-item">
   <div class="experience-item-body">
-    <div class="left-side hide-max600 animated-block-to-right">
-      <p class="date-txt">{{ experience.date.from }} - {{ experience.date.to }}</p>
-      <p class="duration-txt">{{ experienceDuration }}</p>
+    <div class="left-side hide-max600 ">
+      <p class="date-txt animated-block-to-right">{{ experience.date.from }} - {{ experience.date.to }}</p>
+      <p class="duration-txt animated-block-to-right">{{ experienceDuration }}</p>
     </div>
 
     <div class="centerline">
       <div
-        class="circle"
+        class="circle animated-block-from-top"
         appIntersectionObserver
       ></div>
       <div class="circle-line"></div>
     </div>
 
-    <div class="experience-descreption animated-block">
+    <div class="experience-descreption">
 
       <div class="experience-header">
 
         <a
           [href]="experience.page"
           target="_blank"
+          class="animated-block"
         >
           <img
-            class="experience-company-logo"
+            class="experience-company-logo animated-block"
             [src]=" '../../../../assets/company-logos/' + experience.companyLogo"
             [alt]="experience.company"
           >
         </a>
 
-        <div class="experience-title">{{ experience.title }}</div>
+        <div class="experience-title animated-block">{{ experience.title }}</div>
 
-        <div class="experience-subtitle">
+        <div class="experience-subtitle animated-block">
 
           {{ experience.company }} |
           <a
@@ -54,7 +55,7 @@
       </div>
 
       <div
-        class="experience-txt"
+        class="experience-txt animated-block"
         [innerHTML]="experienceTxt"
         [ngStyle]="{'margin-bottom.px': isLast ? 0 : 80}"
       ></div>

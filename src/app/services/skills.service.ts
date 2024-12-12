@@ -21,6 +21,7 @@ export class SkillsService {
     },
     { name: 'CSS', img: 'css.png', website: 'https://www.w3.org/TR/CSS/#css' },
     { name: 'SCSS', img: 'SCSS.png', website: 'https://sass-lang.com/' },
+    { name: 'LESS', img: 'less.png', website: 'https://lesscss.org/' },
     {
       name: 'JavaScript',
       img: 'javascript.png',
@@ -67,6 +68,11 @@ export class SkillsService {
     },
 
     { name: 'Linux', img: 'lunux.png', website: 'https://ubuntu.com/' },
+    {
+      name: 'Atlassian Jira',
+      img: 'jira.png',
+      website: 'https://www.atlassian.com/software/jira',
+    },
 
     { name: 'Figma', img: 'figma.png', website: 'https://www.figma.com/' },
     {

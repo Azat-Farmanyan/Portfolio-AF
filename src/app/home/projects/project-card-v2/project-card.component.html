@@ -1,46 +1,84 @@
-<div class="project-card" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()"
-  [ngStyle]="{'box-shadow': cardHovered ? '4px 4px 25.4px 0px rgba(0, 0, 0, 0.20)' : '4px 4px 30px 0px rgba(0, 0, 0, 0.10)'}">
+<div
+  class="project-card animated-block"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+  [ngStyle]="{'box-shadow': cardHovered ? '4px 4px 25.4px 0px rgba(0, 0, 0, 0.20)' : '4px 4px 30px 0px rgba(0, 0, 0, 0.10)'}"
+>
 
-  <img *ngIf="project.isNewProject" src="../../../../assets/icons/new-icon.png" alt="NEW" class="new">
+  <img
+    *ngIf="project.isNewProject"
+    src="../../../../assets/icons/new-icon.png"
+    alt="NEW"
+    class="new"
+  >
 
   <div class="project-card-body">
     <div class="project-galeria">
       <!-- <img (click)="openDetails(project.id)" *ngIf="project.screenshots" class="project-img"
         [src]="project.screenshots[0]" alt="Project-Management-System" loading="lazy" /> -->
 
-      <app-advanced-image *ngIf="project.screenshots"
+      <app-advanced-image
+        *ngIf="project.screenshots"
         [imageUrl]="project.banner ? project.banner : project.screenshots[0]"
         [imageUrlSmall]="!!project.bannerSmall ? project.bannerSmall : project.screenshots[0]"
-        [imageHeight]="imageHeight" class="project-img"></app-advanced-image>
+        [imageHeight]="imageHeight"
+        class="project-img"
+      ></app-advanced-image>
     </div>
 
-    <div class="proj-card-text-hovered-block proj-card-text-block" *ngIf="cardHovered">
+    <div
+      class="proj-card-text-hovered-block proj-card-text-block"
+      *ngIf="cardHovered"
+    >
       <p class="proj-title">{{ project!.title }}</p>
       <p class="proj-description">
         {{ project.description[0] | textCut : 25 }}
         <!-- {{ project.description[0] }} -->
       </p>
       <div class="tools-block">
-        <a class="tool-item" *ngFor="let tool of tools">
+        <a
+          class="tool-item"
+          *ngFor="let tool of tools"
+        >
           <div>
             <div class="tool-title">{{tool.name}}</div>
-            <img [src]="'../../../../assets/icons/skills/' + tool.img " alt="">
+            <img
+              [src]="'../../../../assets/icons/skills/' + tool.img "
+              alt=""
+            >
           </div>
         </a>
       </div>
-      <button (click)="openDetails(project.id)" class="btn-orange-v2" *ngIf="cardHovered">
+      <button
+        (click)="openDetails(project.id)"
+        class="btn-orange-v2"
+        *ngIf="cardHovered"
+      >
         {{ "project-card.see_more" | translate }}
       </button>
     </div>
 
-    <div class="proj-card-text-block" *ngIf="!cardHovered">
+    <div
+      class="proj-card-text-block"
+      *ngIf="!cardHovered"
+    >
       <p class="proj-title">{{ project!.title }}</p>
       <div class="tools-block">
-        <div class="tool-item" *ngFor="let tool of tools">
-          <img [src]="'../../../../assets/icons/skills/' + tool.img " alt="">
+        <div
+          class="tool-item"
+          *ngFor="let tool of tools"
+        >
+          <img
+            [src]="'../../../../assets/icons/skills/' + tool.img "
+            alt=""
+          >
         </div>
       </div>
-      <button (click)="openDetails(project.id)" class="btn-orange-v2" *ngIf="cardHovered">
+      <button
+        (click)="openDetails(project.id)"
+        class="btn-orange-v2"
+        *ngIf="cardHovered"
+      >
         {{ "project-card.see_more" | translate }}
       </button>
     </div>

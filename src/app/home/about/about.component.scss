@@ -33,14 +33,20 @@
         flex-direction: column;
       }
 
-
-
       .about-left-side {
         flex: 0 47%;
-        /*lower the % to get more columns*/
+        /* lower the % to get more columns */
         flex-grow: 1;
-        .paragraph{
+
+        column-count: 2;
+        /* Разделить на 2 колонки */
+        column-gap: 20px;
+        /* Расстояние между колонками */
+
+        .paragraph {
           margin-bottom: 20px;
+          break-inside: avoid;
+          /* Избегает разрыва внутри параграфов */
         }
       }
 

@@ -56,51 +56,21 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
   }
 
   getCompanyPage() {
-    if (this.experience.page.includes('https://')) {
-      const shortLinkOfPage = this.experience.page.split('https://').join('');
+    const protocols = ['http://', 'https://'];
 
-      if (shortLinkOfPage.endsWith('/')) {
-        this.companyPage = shortLinkOfPage.slice(0, -1);
+    for (const protocol of protocols) {
+      if (this.experience.page.includes(protocol)) {
+        let shortLinkOfPage = this.experience.page.replace(protocol, '');
+
+        if (shortLinkOfPage.endsWith('/')) {
+          shortLinkOfPage = shortLinkOfPage.slice(0, -1);
+        }
+
+        this.companyPage = shortLinkOfPage;
+        break; // Выходим из цикла, если нашли подходящий протокол
       }
     }
   }
-
-  // calculateDuration(from: string, to: string): string {
-  //   const fromDate = new Date(from);
-  //   let toDate: Date;
-
-  //   if (to.toLowerCase() === 'till now') {
-  //     toDate = new Date(); // Use current date if "till now" is provided
-  //   } else {
-  //     toDate = new Date(to);
-  //   }
-
-  //   const fromYear = fromDate.getFullYear();
-  //   const fromMonth = fromDate.getMonth();
-  //   const toYear = toDate.getFullYear();
-  //   const toMonth = toDate.getMonth();
-
-  //   let yearsDiff = toYear - fromYear;
-  //   let monthsDiff = toMonth - fromMonth;
-
-  //   if (monthsDiff < 0) {
-  //     yearsDiff--;
-  //     monthsDiff += 12;
-  //   }
-
-  //   // Construct the duration string
-  //   let duration = '';
-  //   if (yearsDiff > 0) {
-  //     duration += `${yearsDiff} year${yearsDiff > 1 ? 's' : ''}`;
-  //   }
-  //   if (monthsDiff > 0) {
-  //     duration += `${duration.length > 0 ? ', ' : ''}${monthsDiff} month${
-  //       monthsDiff > 1 ? 's' : ''
-  //     }`;
-  //   }
-
-  //   return duration;
-  // }
 
   calculateDuration(from: string, to: string): string {
     const monthNames: { [key: string]: number } = {

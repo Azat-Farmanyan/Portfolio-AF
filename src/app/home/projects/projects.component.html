@@ -2,15 +2,24 @@
   <div class="wrapper">
     <div class="projects-body">
       <div class="projects-header">
-        <h2 class="section-title">{{ 'projects.section_title' | translate }}</h2>
-        <div class="title-underline"></div>
-        <p class="text projects-text">
+        <h2 class="section-title animated-block">{{ 'projects.section_title' | translate }}</h2>
+        <div class="title-underline animated-block"></div>
+        <p class="text projects-text animated-block">
           {{ 'projects.projects_text' | translate }}
         </p>
       </div>
-      <div class="projects-block" #projectsBlock>
-        <div *ngFor="let project of projects" class="project-card">
-          <app-project-card-v2 [id]="project.id" [project]="project"></app-project-card-v2>
+      <div
+        class="projects-block"
+        #projectsBlock
+      >
+        <div
+          *ngFor="let project of projects"
+          class="project-card"
+        >
+          <app-project-card-v2
+            [id]="project.id"
+            [project]="project"
+          ></app-project-card-v2>
         </div>
       </div>
     </div>

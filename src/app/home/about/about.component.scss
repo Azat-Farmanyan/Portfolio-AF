@@ -43,6 +43,13 @@
         column-gap: 20px;
         /* Расстояние между колонками */
 
+        @media (max-width: 600px) {
+          & {
+            column-count: 1;
+            /* Делает одну колонку */
+          }
+        }
+
         .paragraph {
           margin-bottom: 20px;
           break-inside: avoid;

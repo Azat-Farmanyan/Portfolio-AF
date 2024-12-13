@@ -460,9 +460,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .animated-block {
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 35%;
+  @media only screen and (min-width: 600px) {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+  }
 }
 
 @keyframes appearRight {
@@ -480,9 +482,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .animated-block-to-right {
-  animation: appearRight linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 35%;
+  @media only screen and (min-width: 600px) {
+    animation: appearRight linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+  }
 }
 
 @keyframes appearFromTop {
@@ -500,7 +504,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .animated-block-from-top {
-  animation: appearFromTop linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 35%;
+  @media only screen and (min-width: 600px) {
+    animation: appearFromTop linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+  }
 }

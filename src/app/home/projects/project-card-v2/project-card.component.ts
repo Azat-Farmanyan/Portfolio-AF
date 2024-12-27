@@ -37,6 +37,7 @@ export class ProjectCardComponentV2 implements OnInit, OnChanges {
     }
   }
   openDetails(id: number) {
+    localStorage.setItem('scrollId', String(id));
     this.router.navigate([`details/${id}`]);
   }
 

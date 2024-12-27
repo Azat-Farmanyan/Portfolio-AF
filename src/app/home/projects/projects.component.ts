@@ -31,6 +31,8 @@ export class ProjectsComponent
   languageSubs: Subscription;
   currentLanguage: string = this.languageService.activeLanguage();
 
+  @ViewChild('tableContainer') tableContainer!: ElementRef;
+
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
@@ -56,6 +58,62 @@ export class ProjectsComponent
 
   ngAfterViewInit() {
     // this.scrollToProjects();
+
+    // Получаем сохранённый ID элемента
+    const scrollId = localStorage.getItem('scrollId');
+
+    if (scrollId) {
+      // Максимальное количество попыток
+      const maxAttempts = 50;
+      let attemptCount = 0;
+
+      // Функция для попытки получить элемент и прокрутки
+      const tryScroll = () => {
+        // Если количество попыток превышает лимит, выходим
+        if (attemptCount >= maxAttempts) {
+          return;
+        }
+
+        // Находим элемент в таблице по ID
+        const targetElement = this.tableContainer.nativeElement.querySelector(
+          `[data-id="${scrollId}"]`
+        );
+
+        // Если элемент найден, прокручиваем к нему
+        if (targetElement) {
+          setTimeout(() => {
+            // Прокручиваем к элементу
+            targetElement.scrollIntoView({
+              behavior: 'instant',
+              block: 'center',
+            });
+
+            // Убираем сохранённый ID после прокрутки
+            localStorage.removeItem('scrollId');
+
+            // Добавляем стиль для плавного изменения фона после прокрутки
+            setTimeout(() => {
+              targetElement.style.transition =
+                'background-color 0.5s ease-in-out'; // Плавное изменение фона
+              targetElement.style.backgroundColor = 'rgba(0, 0, 0, 0.1)'; // Полупрозрачный чёрный
+
+              // Убираем затемнение через 1 секунду
+              setTimeout(() => {
+                targetElement.style.backgroundColor = ''; // Убираем фон
+              }, 1000);
+            }, 500); // Задержка перед изменением фона, чтобы прокрутка уже завершилась
+          }, 200);
+        } else {
+          // Если элемент ещё не найден, пробуем снова через 200ms
+          attemptCount++;
+
+          setTimeout(tryScroll, 200);
+        }
+      };
+
+      // Запускаем функцию для первой попытки
+      tryScroll();
+    }
   }
 
   loadProjects(): void {

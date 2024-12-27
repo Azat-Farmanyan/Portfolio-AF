@@ -1,4 +1,7 @@
-<div class="projects">
+<div
+  class="projects"
+  #tableContainer
+>
   <div class="wrapper">
     <div class="projects-body">
       <div class="projects-header">
@@ -17,7 +20,7 @@
           class="project-card"
         >
           <app-project-card-v2
-            [id]="project.id"
+            [attr.data-id]="project.id"
             [project]="project"
           ></app-project-card-v2>
         </div>

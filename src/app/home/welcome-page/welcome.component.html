@@ -2,9 +2,12 @@
   <div class="wrapper">
     <div class="welcome-body">
       <div class="left-side">
-
-        <h1 class="owner-name uprise-step-one">{{ 'welcome.owner_name' | translate }}</h1>
-        <p class="owner-profession uprise-step-two">{{ 'welcome.owner_profession' | translate }}</p>
+        <h1 class="owner-name uprise-step-one">
+          {{ "welcome.owner_name" | translate }}
+        </h1>
+        <p class="owner-profession uprise-step-two">
+          {{ "welcome.owner_profession" | translate }}
+        </p>
         <div class="social-block uprise-step-three">
           <div class="social-items">
             <a
@@ -18,12 +21,9 @@
                 (mouseenter)="onMouseEnter('linkedin')"
                 (mouseleave)="onMouseLeave('linkedin')"
                 loading="lazy"
-              >
+              />
             </a>
-            <a
-              href="https://github.com/Azat-Farmanyan"
-              target="_blank"
-            >
+            <a href="https://github.com/Azat-Farmanyan" target="_blank">
               <img
                 class="social-item"
                 [src]="githubImageSrc"
@@ -31,12 +31,9 @@
                 (mouseenter)="onMouseEnter('github')"
                 (mouseleave)="onMouseLeave('github')"
                 loading="lazy"
-              >
+              />
             </a>
-            <a
-              href="https://t.me/AzatFarmanyan"
-              target="_blank"
-            >
+            <a href="https://t.me/AzatFarmanyan" target="_blank">
               <img
                 class="social-item"
                 [src]="telegramImageSrc"
@@ -44,7 +41,7 @@
                 (mouseenter)="onMouseEnter('telegram')"
                 (mouseleave)="onMouseLeave('telegram')"
                 loading="lazy"
-              >
+              />
             </a>
             <a
               href="https://discordapp.com/users/908978735020146719/"
@@ -57,12 +54,9 @@
                 (mouseenter)="onMouseEnter('discord')"
                 (mouseleave)="onMouseLeave('discord')"
                 loading="lazy"
-              >
+              />
             </a>
-            <a
-              href="https://www.instagram.com/azat_09.5/"
-              target="_blank"
-            >
+            <a href="https://www.instagram.com/azat_09.5/" target="_blank">
               <img
                 class="social-item"
                 [src]="instagramImageSrc"
@@ -70,7 +64,7 @@
                 (mouseenter)="onMouseEnter('instagram')"
                 (mouseleave)="onMouseLeave('instagram')"
                 loading="lazy"
-              >
+              />
             </a>
             <a
               href="https://www.facebook.com/profile.php?id=100007929288834"
@@ -83,55 +77,54 @@
                 (mouseenter)="onMouseEnter('facebook')"
                 (mouseleave)="onMouseLeave('facebook')"
                 loading="lazy"
-              >
+              />
             </a>
           </div>
         </div>
         <div class="btns uprise-step-four">
-          <button
-            class="btn-orange-v2"
-            (click)="navigateTo('home', 'about')"
-          >{{ 'welcome.about_me_button' | translate
-            }}</button>
-          <button
-            style="color: #EE6C4D !important;"
-            (click)="downloadCV()"
-          >
-            <!-- <a class="btn-white-v2" href="https://hh.ru/resume/9021fbdaff0bd45c5a0039ed1f7a6177477751"
-              target="_blank">{{ 'welcome.open_resume_button' | translate }}</a></button> -->
-            <a class="btn-white-v2">{{ 'header.download_cv' | translate }}</a>
+          <!-- <button class="btn-orange-v2" (click)="navigateTo('home', 'about')">
+            {{ "welcome.about_me_button" | translate }}
+          </button> -->
+          <button class="btn-orange-v2" (click)="downloadCV()">
+            <a>{{ "header.download_cv" | translate }}</a>
           </button>
         </div>
-        <a href="../../../assets/cv/Angular Developer - Azat Farmanyan - ENG.pdf"></a>
+        <a
+          href="../../../assets/cv/Angular Developer - Azat Farmanyan - ENG.pdf"
+        ></a>
       </div>
       <div class="right-side">
-
         <img
-          [ngClass]="{'opacity-none': !avatarIsLoaded, 'opacity-full': avatarIsLoaded}"
+          [ngClass]="{
+            'opacity-none': !avatarIsLoaded,
+            'opacity-full': avatarIsLoaded
+          }"
           class="avatar uprise-step-one"
           (load)="imageLoaded($event)"
           src="../../../assets/images/a-f-avatar 3.svg"
-        >
+        />
 
         <img
-          [ngClass]="{'opacity-none': avatarIsLoaded, 'opacity-full': !avatarIsLoaded}"
+          [ngClass]="{
+            'opacity-none': avatarIsLoaded,
+            'opacity-full': !avatarIsLoaded
+          }"
           class="avatar uprise-step-one avatar-small"
           src="../../../assets/images/a-f-avatar 3 small.png"
-        >
+        />
 
         <img
           class="ellipse-1 uprise-step-two"
           src="../../../assets/images/Ellipse 10.svg"
-        >
+        />
         <img
           class="ellipse-2 uprise-step-two"
           src="../../../assets/images/Ellipse 11.svg"
-        >
+        />
         <img
           class="ellipse-3 uprise-step-two"
           src="../../../assets/images/Ellipse 9.svg"
-        >
-
+        />
       </div>
 
       <div class="scroll-icon">
@@ -141,21 +134,26 @@
           viewBox="0 0 247 390"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
-          style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"
+          style="
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 1.5;
+          "
         >
           <path
             id="wheel"
             d="M123.359,79.775l0,72.843"
-            style="fill:none;stroke:#ff4141;stroke-width:20px;"
+            style="fill: none; stroke: #ff4141; stroke-width: 20px"
           />
           <path
             id="mouse"
             d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z"
-            style="fill:none;stroke:#ff4141;stroke-width:20px;"
+            style="fill: none; stroke: #ff4141; stroke-width: 20px"
           />
         </svg>
       </div>
-
     </div>
   </div>
 </div>

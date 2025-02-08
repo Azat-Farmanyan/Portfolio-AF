@@ -97,7 +97,7 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-      gap: 20px;
+      gap: 10px;
 
       .footer-btn {
         padding: 16px 0;
@@ -139,6 +139,10 @@
             transform: translateY(-7px);
           }
         }
+      }
+
+      .tel {
+        color: #fff;
       }
 
       .btn {

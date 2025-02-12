@@ -149,7 +149,7 @@
           "VS Code",
           "Figma"
         ],
-        "seeLive": "https://user-filter-app-angular.netlify.app/user-settings",
+        "seeLive": "https://user-filter-app-angular.netlify.app/",
         "sourceCodeUrl": "https://github.com/Azat-Farmanyan/UserFilterApp",
         "designTemplate": "https://www.figma.com/file/NcDTaAYcLBL6ogy1Nxf5Ey/testcase-rik-angular?node-id=0%3A1&t=ZCRud6nfITOJa0sw-1",
         "isNewProject": true
@@ -174,7 +174,7 @@
           "VS Code",
           "Figma"
         ],
-        "seeLive": "https://currency-converter-ng17.netlify.app/home",
+        "seeLive": "https://currency-converter-ng17.netlify.app/",
         "sourceCodeUrl": "https://github.com/Azat-Farmanyan/currency-converter-app",
         "isNewProject": true
       },
@@ -210,7 +210,7 @@
           "interactive_table-banner_3.png"
         ],
         "tools": ["Angular", "HTML", "SCSS", "TypeScript", "VS Code", "Figma"],
-        "seeLive": "https://funny-pixie-42e682.netlify.app/dataTable",
+        "seeLive": "https://funny-pixie-42e682.netlify.app/",
         "sourceCodeUrl": "https://github.com/Azat-Farmanyan/AngularInteractiveTable"
       },
       {
@@ -237,7 +237,7 @@
           "Figma",
           "Photoshop"
         ],
-        "seeLive": "https://chipper-maamoul-e7653e.netlify.app/dashboard",
+        "seeLive": "https://chipper-maamoul-e7653e.netlify.app/",
         "sourceCodeUrl": "https://github.com/Azat-Farmanyan/CryptoWORLD"
       },
       {
@@ -261,7 +261,7 @@
           "VS Code",
           "Figma"
         ],
-        "seeLive": "https://loquacious-unicorn-9da2c9.netlify.app/player",
+        "seeLive": "https://loquacious-unicorn-9da2c9.netlify.app/",
         "sourceCodeUrl": "https://github.com/Azat-Farmanyan/music-player"
       },
       {
@@ -311,7 +311,7 @@
           "TypeScript",
           "Figma"
         ],
-        "seeLive": "https://mypostsapp.netlify.app/login",
+        "seeLive": "https://mypostsapp.netlify.app/",
         "sourceCodeUrl": "https://github.com/Azat-Farmanyan/postsApp"
       },
 
@@ -335,7 +335,7 @@
           "TypeScript",
           "Figma"
         ],
-        "seeLive": "https://majestic-melomakarona-c93ab4.netlify.app/users-page",
+        "seeLive": "https://majestic-melomakarona-c93ab4.netlify.app/",
         "sourceCodeUrl": "https://github.com/Azat-Farmanyan/UsersApp_Angular"
       },
       {
@@ -358,7 +358,7 @@
           "TypeScript",
           "Figma"
         ],
-        "seeLive": "https://unrivaled-duckanoo-78dd09.netlify.app/home",
+        "seeLive": "https://unrivaled-duckanoo-78dd09.netlify.app/",
         "sourceCodeUrl": "https://github.com/Azat-Farmanyan/world-putting-league"
       },
       {

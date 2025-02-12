@@ -2,15 +2,18 @@
   class="project-card animated-block"
   (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()"
-  [ngStyle]="{'box-shadow': cardHovered ? '4px 4px 25.4px 0px rgba(0, 0, 0, 0.20)' : '4px 4px 30px 0px rgba(0, 0, 0, 0.10)'}"
+  [ngStyle]="{
+    'box-shadow': cardHovered
+      ? '4px 4px 25.4px 0px rgba(0, 0, 0, 0.20)'
+      : '4px 4px 30px 0px rgba(0, 0, 0, 0.10)'
+  }"
 >
-
   <img
     *ngIf="project.isNewProject"
     src="../../../../assets/icons/new-icon.png"
     alt="NEW"
     class="new"
-  >
+  />
 
   <div class="project-card-body">
     <div class="project-galeria">
@@ -20,7 +23,9 @@
       <app-advanced-image
         *ngIf="project.screenshots"
         [imageUrl]="project.banner ? project.banner : project.screenshots[0]"
-        [imageUrlSmall]="!!project.bannerSmall ? project.bannerSmall : project.screenshots[0]"
+        [imageUrlSmall]="
+          !!project.bannerSmall ? project.bannerSmall : project.screenshots[0]
+        "
         [imageHeight]="imageHeight"
         class="project-img"
       ></app-advanced-image>
@@ -32,20 +37,14 @@
     >
       <p class="proj-title">{{ project!.title }}</p>
       <p class="proj-description">
-        {{ project.description[0] | textCut : 25 }}
+        {{ project.description[0] | textCut : 35 }}
         <!-- {{ project.description[0] }} -->
       </p>
       <div class="tools-block">
-        <a
-          class="tool-item"
-          *ngFor="let tool of tools"
-        >
+        <a class="tool-item" *ngFor="let tool of tools">
           <div>
-            <div class="tool-title">{{tool.name}}</div>
-            <img
-              [src]="'../../../../assets/icons/skills/' + tool.img "
-              alt=""
-            >
+            <div class="tool-title">{{ tool.name }}</div>
+            <img [src]="'../../../../assets/icons/skills/' + tool.img" alt="" />
           </div>
         </a>
       </div>
@@ -58,20 +57,11 @@
       </button>
     </div>
 
-    <div
-      class="proj-card-text-block"
-      *ngIf="!cardHovered"
-    >
+    <div class="proj-card-text-block" *ngIf="!cardHovered">
       <p class="proj-title">{{ project!.title }}</p>
       <div class="tools-block">
-        <div
-          class="tool-item"
-          *ngFor="let tool of tools"
-        >
-          <img
-            [src]="'../../../../assets/icons/skills/' + tool.img "
-            alt=""
-          >
+        <div class="tool-item" *ngFor="let tool of tools">
+          <img [src]="'../../../../assets/icons/skills/' + tool.img" alt="" />
         </div>
       </div>
       <button
@@ -82,6 +72,5 @@
         {{ "project-card.see_more" | translate }}
       </button>
     </div>
-
   </div>
 </div>

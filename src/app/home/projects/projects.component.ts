@@ -12,8 +12,12 @@ import {
   ViewChild,
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
-import { Project, ProjectsService } from 'src/app/services/projects.service';
+import { Subject, Subscription, takeUntil } from 'rxjs';
+import {
+  Project,
+  ProjectCommertial,
+  ProjectsService,
+} from 'src/app/services/projects.service';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
@@ -26,7 +30,10 @@ export class ProjectsComponent
 {
   @Input() openedCardId: any;
 
+  private destroy$ = new Subject<void>();
+
   projects: Project[];
+  projectsCommertial: ProjectCommertial[];
   projectsSubs: Subscription;
   languageSubs: Subscription;
   currentLanguage: string = this.languageService.activeLanguage();
@@ -46,10 +53,12 @@ export class ProjectsComponent
 
     // console.log(this.currentLanguage);
 
-    this.languageSubs = this.languageService.language$.subscribe((lang) => {
-      this.currentLanguage = lang;
-      this.loadProjects();
-    });
+    this.languageSubs = this.languageService.language$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((lang) => {
+        this.currentLanguage = lang;
+        this.loadProjects();
+      });
   }
 
   ngOnChanges(): void {
@@ -121,9 +130,18 @@ export class ProjectsComponent
 
     this.projectsSubs = this.projectsService
       .getProjects(this.languageService.activeLanguage())
+      .pipe(takeUntil(this.destroy$))
       .subscribe((data) => {
         this.projects = data;
         // console.log(this.projects);
+      });
+
+    this.projectsService
+      .getCommertialProjects(this.languageService.activeLanguage())
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((data) => {
+        this.projectsCommertial = data;
+        console.log(this.projectsCommertial);
       });
   }
 
@@ -141,8 +159,64 @@ export class ProjectsComponent
     }
   }
 
+  // onWheel(event: WheelEvent): void {
+  //   event.preventDefault();
+
+  //   const scrollAmount = event.deltaX || event.deltaY;
+  //   const container = event.currentTarget as HTMLElement;
+
+  //   window.requestAnimationFrame(() => {
+  //     // container.scrollLeft += scrollAmount;
+  //     console.log(scrollAmount);
+
+  //     if (scrollAmount > 0) {
+  //       container.scrollTo({
+  //         left: container.scrollLeft + 500,
+  //         behavior: 'smooth',
+  //       });
+  //     } else {
+  //       container.scrollTo({
+  //         left: container.scrollLeft - 500,
+  //         behavior: 'smooth',
+  //       });
+  //     }
+  //   });
+  // }
+
+  onWheel(event: WheelEvent): void {
+    const scrollAmount = event.deltaX || event.deltaY;
+    const container = event.currentTarget as HTMLElement;
+
+    // Определяем текущее положение прокрутки
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    const currentScrollLeft = container.scrollLeft;
+
+    // Проверяем, достигнут ли край контейнера
+    const isAtStart = currentScrollLeft === 0;
+    const isAtEnd = currentScrollLeft === maxScrollLeft;
+
+    // Если прокручивать больше некуда, разрешаем дефолтное поведение (прокрутку страницы)
+    if ((scrollAmount > 0 && isAtEnd) || (scrollAmount < 0 && isAtStart)) {
+      return; // Не блокируем событие, и страница будет скроллиться вниз/вверх
+    }
+
+    // Если еще можно скроллить внутри контейнера, то блокируем дефолтное поведение
+    event.preventDefault();
+
+    window.requestAnimationFrame(() => {
+      // Выполняем прокрутку
+      container.scrollTo({
+        left: container.scrollLeft + (scrollAmount > 0 ? 350 : -350),
+        // behavior: 'smooth',
+      });
+    });
+  }
+
   ngOnDestroy(): void {
     if (this.projectsSubs) this.projectsSubs.unsubscribe();
     if (this.languageSubs) this.languageSubs.unsubscribe();
+
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

@@ -16,6 +16,15 @@ export interface Project {
   designTemplate?: string;
 }
 
+export interface ProjectCommertial {
+  id: number;
+  title: string;
+  description: string;
+  seeLive: string;
+  color: string;
+  banner: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -23,6 +32,7 @@ export class ProjectsService {
   screenshotsFolderPath = '../../../../assets/screenshots/';
   private basePath = 'assets/i18n/';
   public projects: Project[] = [];
+  public projectCommertial: ProjectCommertial[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -35,6 +45,17 @@ export class ProjectsService {
         // console.log(this.projects);
 
         return this.projects;
+      })
+    );
+  }
+
+  getCommertialProjects(lang: string): Observable<ProjectCommertial[]> {
+    // console.log(lang);
+
+    return this.http.get<any>(`${this.basePath}${lang}.json`).pipe(
+      map((data) => {
+        this.projectCommertial = data.projects.commertial_projects_list; // Сохраняем проекты в свойство
+        return this.projectCommertial;
       })
     );
   }

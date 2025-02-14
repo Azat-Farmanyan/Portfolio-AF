@@ -1,0 +1,33 @@
+<div class="commertial-project-card">
+  <div class="commertial-project-card__banner">
+    <img
+      class="banner_img"
+      [src]="screenshotsFolderPath + projectData.banner"
+      [alt]="projectData.title"
+    />
+    <div class="commertial-project-card__overlay">
+      <button class="btn-bordered">
+        <a [href]="projectData.seeLive" target="_blank">
+          <span>
+            {{ "project-card.visit_site" | translate }}
+          </span>
+          <img
+            src="../../../../assets/icons/system-uicons_arrow-top-right.svg"
+            alt=""
+          />
+        </a>
+      </button>
+    </div>
+  </div>
+  <div
+    class="commertial-project-card__body"
+    [ngStyle]="{ 'background-color': projectData.color }"
+  >
+    <h3 class="commertial-project-card__title">
+      {{ projectData.title }}
+    </h3>
+    <p class="commertial-project-card__description">
+      {{ projectData.description }}
+    </p>
+  </div>
+</div>

@@ -1,17 +1,19 @@
 <!-- <app-header [activeSection]="currentSection" [scrollTop]="scrollTop"></app-header> -->
-<app-header-v2 [activeSection]="currentSection" [opacity]="0.95"></app-header-v2>
-
+<app-header-v2
+  [activeSection]="currentSection"
+  [opacity]="0.95"
+></app-header-v2>
 
 <section id="home">
   <app-welcome></app-welcome>
 </section>
 
 <section id="about">
-  <app-about [activeSection]="currentSection"></app-about>
+  <!-- <app-about [activeSection]="currentSection"></app-about> -->
 </section>
 
 <section id="experience">
-  <app-experience></app-experience>
+  <!-- <app-experience></app-experience> -->
 </section>
 
 <section id="projects">
@@ -22,7 +24,5 @@
   <app-contact></app-contact>
   <app-footer></app-footer>
 </section>
-
-
 
 <app-section-nav [activeSectionId]="currentSectionId"></app-section-nav>

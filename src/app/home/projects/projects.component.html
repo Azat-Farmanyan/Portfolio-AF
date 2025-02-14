@@ -1,30 +1,58 @@
-<div
-  class="projects"
-  #tableContainer
->
-  <div class="wrapper">
+<div class="projects" #tableContainer>
+  <div class="wrapper_">
     <div class="projects-body">
       <div class="projects-header">
-        <h2 class="section-title animated-block">{{ 'projects.section_title' | translate }}</h2>
+        <h2 class="section-title animated-block">
+          {{ "projects.section_title" | translate }}
+        </h2>
         <div class="title-underline animated-block"></div>
         <p class="text projects-text animated-block">
-          {{ 'projects.projects_text' | translate }}
+          {{ "projects.projects_text" | translate }}
         </p>
       </div>
-      <div
-        class="projects-block"
-        #projectsBlock
-      >
+
+      <!-- Commercial Projects -->
+      <div class="commertial-projects">
+        <div class="commertial-projects__header wrapper animated-block">
+          <div class="title-underline animated-block"></div>
+          <h4 class="paragraph-small-title">Top Commercial Projects</h4>
+        </div>
         <div
-          *ngFor="let project of projects"
-          class="project-card"
+          class="commertial-projects__block wrapper animated-block"
+          (wheel)="onWheel($event)"
         >
+          <app-project-card-commertial-v1
+            *ngFor="let projectCommertial of projectsCommertial"
+            [projectData]="projectCommertial"
+          >
+          </app-project-card-commertial-v1>
+        </div>
+      </div>
+
+      <!-- Personal Projects -->
+      <div class="personal-projects">
+        <div class="personal-projects__header wrapper animated-block">
+          <div class="title-underline animated-block"></div>
+          <h4 class="paragraph-small-title">Personal Projects</h4>
+        </div>
+
+        <div class="personal-projects__block wrapper animated-block">
+          <!-- <app-project-card-commertial-v1
+            *ngFor="let projectCommertial of projectsCommertial"
+            [projectData]="projectCommertial"
+          >
+          </app-project-card-commertial-v1> -->
+        </div>
+      </div>
+
+      <!-- <div class="projects-block" #projectsBlock>
+        <div *ngFor="let project of projects" class="project-card">
           <app-project-card-v2
             [attr.data-id]="project.id"
             [project]="project"
           ></app-project-card-v2>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

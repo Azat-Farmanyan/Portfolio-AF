@@ -1,3 +1,124 @@
 :host {
   display: block;
 }
+
+.commertial-project-card {
+  width: 350px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.5s ease;
+
+  @media only screen and (max-width: 700px) {
+    width: 250px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    // width: 300px;
+  }
+
+  &:hover {
+    -webkit-box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 33px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  &:hover .banner_img {
+    transform: scale(1.1);
+  }
+
+  &__banner {
+    position: relative;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    height: 100%;
+    min-height: 100px;
+    flex-grow: 1;
+    display: flex;
+    transition: all 0.5s ease;
+
+    .banner_img {
+      // height: 100%;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+      flex-grow: 1;
+      transition: all 0.5s ease;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover .commertial-project-card__overlay {
+    opacity: 1;
+  }
+
+  &__body {
+    padding: 25px 20px;
+    background: linear-gradient(165deg, #eaeaea 0%, rgba(234, 234, 234, 0.2) 100%);
+    background: #fff;
+    transition: all 0.5s ease;
+    // margin-top: auto; 
+  }
+
+  &__title {
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 180%;
+    text-transform: capitalize;
+    color: #293241;
+  }
+
+  &__description {
+    font-family: Open Sans;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 160%;
+    text-transform: capitalize;
+    color: #293241;
+  }
+
+  &__btn {
+    width: 100%;
+    height: 34px;
+
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    padding: 7px;
+    margin-top: 10px;
+    // display: none;
+    transition: all 0.5s ease;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: radial-gradient(192.86% 128.3% at 12.17% 6.95%, #FF9379 0%, #EE6C4D 100%);
+
+    & img {
+      margin-top: 3px;
+    }
+  }
+
+  &:hover &__btn {
+    // display: flex;
+  }
+}

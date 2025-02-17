@@ -132,8 +132,7 @@ export class ProjectsComponent
       .getProjects(this.languageService.activeLanguage())
       .pipe(takeUntil(this.destroy$))
       .subscribe((data) => {
-        this.projects = data;
-        // console.log(this.projects);
+        this.projects = this.sortProjectsByIds(data, [18, 15, 6, 9, 3, 2]);
       });
 
     this.projectsService
@@ -143,6 +142,29 @@ export class ProjectsComponent
         this.projectsCommertial = data;
         console.log(this.projectsCommertial);
       });
+  }
+
+  private sortProjectsByIds(projects: any[], ids: number[]): any[] {
+    return projects.sort((a, b) => {
+      const indexA = ids.indexOf(a.id);
+      const indexB = ids.indexOf(b.id);
+
+      // Если оба id в массиве, сортируем их по порядку
+      if (indexA !== -1 && indexB !== -1) {
+        return indexA - indexB;
+      }
+
+      // Если только один из элементов в массиве ids, ставим его выше
+      if (indexA !== -1) {
+        return -1;
+      }
+      if (indexB !== -1) {
+        return 1;
+      }
+
+      // Если ни один id не в массиве, оставляем их в исходном порядке
+      return 0;
+    });
   }
 
   scrollToProjects() {

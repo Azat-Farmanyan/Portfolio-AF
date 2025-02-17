@@ -1,4 +1,4 @@
-import { JsonPipe, NgStyle } from '@angular/common';
+import { NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { ProjectCommertial } from 'src/app/services/projects.service';
@@ -6,7 +6,7 @@ import { ProjectCommertial } from 'src/app/services/projects.service';
 @Component({
   selector: 'app-project-card-commertial-v1',
   standalone: true,
-  imports: [JsonPipe, TranslateModule, NgStyle],
+  imports: [TranslateModule, NgStyle],
   templateUrl: './project-card-commertial-v1.component.html',
   styleUrls: ['./project-card-commertial-v1.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

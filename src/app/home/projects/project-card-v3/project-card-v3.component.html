@@ -1,1 +1,43 @@
-<p>project-card-v3 works!</p>,
+<div class="commertial-project-card">
+  <div class="commertial-project-card__banner">
+    <img
+      class="banner_img"
+      [src]="screenshotsFolderPath + projectData.banner"
+      [alt]="projectData.title"
+    />
+    <div class="commertial-project-card__overlay">
+      <button class="btn-bordered">
+        <a [href]="projectData.seeLive" target="_blank">
+          <span>
+            {{ "project-card.visit_site" | translate }}
+          </span>
+          <img
+            src="../../../../assets/icons/system-uicons_arrow-top-right.svg"
+            alt=""
+          />
+        </a>
+      </button>
+    </div>
+  </div>
+  <div class="commertial-project-card__body">
+    <h3 class="commertial-project-card__title">
+      {{ projectData.title }}
+    </h3>
+    <p class="commertial-project-card__description">
+      {{ projectData.description[0] | textCut : 8 }}
+    </p>
+
+    <!-- (click)="openDetails(project.id)" -->
+    <button
+      (click)="openDetails(projectData.id)"
+      class="btn-bordered commertial-project-card__btn"
+    >
+      <span>{{ "project-card.see_more" | translate }}</span>
+
+      <img
+        src="../../../../assets/icons/fluent_ios-arrow-24-filled.svg"
+        alt="see more"
+      />
+    </button>
+  </div>
+</div>

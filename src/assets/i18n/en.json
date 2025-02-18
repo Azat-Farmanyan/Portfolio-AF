@@ -134,6 +134,8 @@
           "Key features include input validation using regular expressions, client-side filtering based on the received data, and toggling the 'Block/Unblock' status for each user. This status is stored in the browser's local storage, ensuring that the updated value is reflected when the page is reloaded.",
           "The main objective of this project is to demonstrate working with forms, inputs, and tables, as well as creating services and facilitating interaction between components. The application provides a clean and efficient user interface for filtering, validating, and managing user data."
         ],
+        "descriptionShort": "Angular web app for filtering and managing users.",
+
         "banner": "user-filter-app-screenshot1.png",
         "bannerSmall": "user-filter-app-banner-small.png",
         "screenshots": [
@@ -162,6 +164,7 @@
           "List of main features: Currency selection and conversion; Currency switching; Input of amount to convert; Validation of entered data; Display of accurate results considering the current exchange rate.",
           "We fetch currency exchange rate data using the API from App.FreeCurrencyApi.com, which enables us to provide up-to-date and real-time results. The goal of the project is to offer a simple yet effective tool for quick currency conversion. We utilize Angular 17, HTML/SCSS, TypeScript, RxJs, REST API, and input data validation to ensure result accuracy."
         ],
+        "descriptionShort": "User-friendly currency converter on Angular with real-time exchange rates.",
         "banner": "currency-converter-app-banner.png",
         "bannerSmall": "currency-converter-app-banner-small.png",
         "screenshots": ["currency-converter-app-banner.png"],
@@ -186,6 +189,7 @@
           "In addition to this, the page features buttons for toggling notifications and adding the product to favorites, complete with eye-catching animations. Each button dynamically responds to hover, focus, and active states, adding an extra layer of interactivity and user-friendliness to the page.",
           "Finally, I have also implemented a slider scroll functionality on the product page, allowing users to easily browse through additional images and information about the product. All the markup is done using Angular 17.2, with the page divided into small components for easy management and project maintainability."
         ],
+        "descriptionShort": "Interactive product page on Angular with animations and a slider.",
         "banner": "compoProductPage-banner.png",
         "bannerSmall": "compoProductPage-small-banner.png",
         "screenshots": ["compoProductPage-banner.png"],
@@ -202,6 +206,7 @@
           "The Angular project entails the development of a functional table offering an array of features. This includes sorting, filtering, pagination, and customizable column visibility. Leveraging Angular's event binding mechanism, users can sort rows with a simple click on column headers. Additionally, a search input field facilitates quick data filtering and retrieval. Users have the flexibility to define the number of records per page and navigate seamlessly through pages via pagination. To enhance user experience, the interface allows for the hiding or showing of specific columns, ensuring tailored data presentation. The project prioritizes high-quality code standards and user accessibility across various devices through the implementation of responsive design techniques.",
           "In summary, the Angular project delivers a comprehensive solution for efficient data management within a table format. Its advanced functionalities cater to diverse user needs, from sorting and filtering to customizable views, all while upholding superior code quality and ensuring a seamless user experience across different platforms."
         ],
+        "descriptionShort": "Feature-rich table on Angular with sorting, filtering, and column customization.",
         "banner": "interactive_table-banner_1.png",
         "bannerSmall": "interactive_table-banner_small.png",
         "screenshots": [
@@ -220,6 +225,7 @@
           "Embark on a captivating journey into the cryptocurrency realm with Crypto World, a sophisticated web application developed using Angular. This project showcases my expertise in front-end development, offering users a seamlessly integrated experience across various features.",
           "At the heart of Crypto World is a user-friendly dashboard providing real-time insights into portfolios, transactions, and market trends. Explore the extensive market section, engage in live trading on popular exchanges, and stay ahead of trends with the trending module. With responsive design and enhanced security features, Crypto World is a dynamic ecosystem designed to cater to both seasoned cryptocurrency enthusiasts and newcomers, emphasizing a commitment to delivering an exceptional user experience."
         ],
+        "descriptionShort": "Crypto World — powerful Angular app for tracking and trading cryptocurrencies.",
         "banner": "crypto-world-banner.png",
         "bannerSmall": "crypto-world-banner-small.png",
         "screenshots": [
@@ -249,6 +255,7 @@
           "Experience the pure joy of music without the clutter. Whether you are relishing the soothing tunes of a classic or grooving to the rhythms of modern beats, our Angular MP3 Player ensures that you are always in control of your musical journey.",
           "So, why wait? Dive into the music, let the notes carry you away, and rediscover the joy of simple yet delightful soundscapes. It is more than an application; it is a portal to the symphony of life."
         ],
+        "descriptionShort": "Angular MP3 Player — a sleek and simple music player for enjoying your favorite tracks.",
         "banner": "player-1.png",
         "bannerSmall": "mp3-player-banner-small.png",
         "screenshots": ["player-1.png"],
@@ -273,6 +280,7 @@
           "At Pizza Cheff, we are not just about pizza; we are about sharing a passion for the culinary arts. Whether you are a seasoned pro or a novice, this page is your gateway to a world of savory satisfaction. Join us on this delightful pizza journey and discover the secrets to crafting pizza perfection.",
           "With its delectable visuals and comprehensive guides, Pizza Cheff is a testament to the delicious and creative world of pizza-making. Dive into our page, and you will soon be on your way to mastering the art of pizza."
         ],
+        "descriptionShort": "Pizza Cheff website with delicious pizza recipes and step-by-step instructions.",
         "banner": "pizza-cheff.png",
         "bannerSmall": "pizza-cheff-banner-small.jpg",
         "screenshots": ["pizza-cheff.png"],
@@ -296,6 +304,7 @@
           "But the Posts App is not just about reading; it is about connecting. Explore user profiles and about cards to learn more about the writers behind the posts. Discover shared interests, connect with fellow enthusiasts, and engage in meaningful discussions with those who share your passion.",
           "Join the growing community of readers and writers who have made the Posts App their go-to platform for storytelling and connecting. Whether you are here to share your own posts or discover new perspectives, our app is your doorway to a world of stories and connections. Download the Posts App today and start sharing, discovering, and connecting in a new and exciting way!"
         ],
+        "descriptionShort": "Post App: a platform for creating accounts, sharing stories, and connecting with like-minded people.",
         "banner": "posts-app-2.png",
         "bannerSmall": "posts-app-banner-small.jpg",
         "screenshots": [
@@ -324,6 +333,7 @@
           "Need to update a user's information or portrait? No problem. The Users App makes it easy to make changes in real-time, ensuring your records are always up-to-date. And if it is time to bid farewell to a user, our app offers a simple deletion feature, allowing you to remove profiles with ease while maintaining data integrity.",
           "Join the growing community of users who rely on the Users App for efficient and organized user management. Whether you are running a small organization or managing a large user database, our app has you covered. It is time to take control of your user profiles and make user management a breeze. Download the Users App today and experience the convenience of streamlined user management firsthand!"
         ],
+        "descriptionShort": "An app for managing user profiles with creation, editing, and deletion features.",
         "banner": "card-app-1.png",
         "bannerSmall": "card-app-banner-small.jpg",
         "screenshots": ["card-app-1.png", "card-app-2.png"],
@@ -347,6 +357,7 @@
           "Stay updated with the latest scores, rankings, and events as you immerse yourself in the thrilling world of putting. With a community of passionate golfers and enthusiasts, the World Putting League is where dreams are made, records are shattered, and lifelong friendships are forged.",
           "Join us on this journey where every putt counts, and the pursuit of perfection knows no bounds. Whether you are a golfer by heart or just intrigued by the allure of precision, the World Putting League welcomes you to experience golf in a whole new way. Get ready to roll with us and discover the magic of putting like never before."
         ],
+        "descriptionShort": "Platform for golfers to compete, improve, and make friends.",
         "banner": "wpl-banner.jpg",
         "bannerSmall": "wpl-banner-small.jpg",
         "screenshots": ["wpl-1.png", "wpl-2.png"],
@@ -370,6 +381,7 @@
           "As you type, the Speed Typing App provides real-time feedback, tracking your speed, accuracy, and word count. It offers a library of words and phrases to challenge and engage your typing skills continually. With each session, you will find yourself typing faster, more accurately, and with greater confidence.",
           "Join the growing community of typists who have improved their skills with our Speed Typing App. Whether you are preparing for a job that requires lightning-fast typing or simply want to be more efficient with your daily tasks, our app is your ideal companion. Download it today and watch your typing abilities soar to new heights!"
         ],
+        "descriptionShort": "The Speed Typing App boosts your typing speed and accuracy with tailored exercises.",
         "banner": "speen-typing-banner.jpg",
         "bannerSmall": "speen-typing-banner-small.jpg",
         "screenshots": ["speen-typing-1.png", "speen-typing-2.png"],
@@ -393,6 +405,7 @@
           "But we don't stop at functionality; we believe in adding a touch of style to your gaming. Our app offers customizable themes and visually appealing scorecards to enhance your Blot gaming experience. Whether you prefer classic elegance or a more modern look, you can choose a theme that suits your taste.",
           "Join the Blot gaming community and elevate your card-playing sessions with our Note Card Game Blots Score app. It's not just about keeping score; it's about enhancing your gaming moments with ease and sophistication. Download our app today and score your way to victory in style!"
         ],
+        "descriptionShort": "The Card Game Score Counter App simplifies scoring and adds style to your Blot game.",
         "banner": "blot-app-banner.png",
         "bannerSmall": "blot-app-banner-small.png",
         "screenshots": ["blot-app-1.png", "blot-app-2.png"],
@@ -416,6 +429,7 @@
           "Stay informed with real-time weather updates, temperature trends, precipitation forecasts, and more. With an easy-to-navigate interface and customizable features, you can tailor your weather experience to suit your needs. Whether you are a weather enthusiast or just want to know if you will need an umbrella, our Weather App is here to make your day brighter and more predictable.",
           "Join the millions of users who rely on our app for their daily weather updates. Embrace the convenience of knowing the forecast wherever you go, and be prepared for whatever the weather may bring. Download our Weather App today and stay ahead of the elements!"
         ],
+        "descriptionShort": "The Weather App provides accurate forecasts and real-time updates to keep you prepared for any conditions.",
         "banner": "weather-app-banner.jpg",
         "bannerSmall": "weather-app-banner-small.jpg",
         "screenshots": [
@@ -443,6 +457,7 @@
           "For those moments of delightful exploration, the 'Game Mode' awaits. Here, children can put their newfound knowledge to the test in a thrilling game of picture guessing. Imagination and language skills come together as kids identify objects, animals, and more, all while reinforcing their English vocabulary in a fun and interactive way.",
           "'English for Kids' is more than an app; it is an educational companion that fosters a love for language and learning. Join us in this exciting journey, where children can expand their horizons, boost their confidence, and embark on a lifelong adventure of language and discovery. Give your child the gift of English education wrapped in fun and excitement today!"
         ],
+        "descriptionShort": "English for Kids is an engaging app that helps children learn English through interactive lessons and game modes.",
         "banner": "english-banner.jpg",
         "bannerSmall": "english-banner-small.jpg",
         "screenshots": [
@@ -464,6 +479,7 @@
           "In a highly competitive market, we understand that choices abound. Notable competitors like Trello, Jira, Redmine, Bitrix24, Yandex Tracker, Asana, GanttPro, and Github projects have all made their mark. However, our Project Management System stands out as a robust and user-friendly option, tailored to meet the specific needs of modern teams. With an array of features, intuitive interface, and customizable functionality, we aim to empower you to take control of your projects and drive success.",
           "Join the ranks of satisfied users who have discovered the benefits of our Project Management System. Explore the tools, enhance your productivity, and experience the difference for yourself. Whether you are a seasoned project manager or just embarking on your journey, we are here to help you reach your goals efficiently and with confidence. Welcome to the future of project management!"
         ],
+        "descriptionShort": "Our Project Management System helps efficiently organize and coordinate team tasks with an intuitive interface and customizable features.",
         "banner": "proj-man-sys-banner.jpg",
         "bannerSmall": "proj-man-sys-banner-small.jpg",
         "screenshots": [
@@ -490,6 +506,7 @@
           "On our website, you'll find a wealth of detailed information about the wonderful animals residing in shelters, eagerly waiting for their future owners. Each profile tells a unique story, showcasing the personality, history, and individual needs of these lovable companions. Whether you're seeking a loyal canine companion or a charming feline friend, you can explore our comprehensive listings to discover the perfect match for your home and heart.",
           "We believe that every paw deserves a place to call home, and we're here to make that happen. Join us in this heartwarming journey of compassion and adoption, where together, we can transform the lives of shelter dogs and cats, and bring joy and love into your home. Explore our website, meet our furry residents, and start the beautiful journey of pet adoption today."
         ],
+        "descriptionShort": "Dog and Cat Shelter connects shelter animals with loving homes, providing detailed information about each pet.",
         "banner": "shelter-banner.jpg",
         "bannerSmall": "shelter-banner-small.jpg",
         "screenshots": ["shelter-1.png", "shelter-2.png"],
@@ -506,6 +523,7 @@
           "But this is no ordinary Tic Tac Toe; it's the Ultimate version. Multiple boards, dynamic play, and strategic depth await. Every move you make influences the game at large, adding layers of complexity and excitement. Will you seize the opportunity to win on the grand board, or will your opponent outmaneuver you? Only the most skilled players will emerge victorious.",
           "Ultimate Tic Tac Toe is more than just a game; it's an invitation to challenge your mind, test your strategy, and share moments of triumph with friends and rivals alike. Join us in this ultimate gaming adventure and see if you have what it takes to conquer the board!"
         ],
+        "descriptionShort": "An exciting version of the classic Tic Tac Toe game. Compete with friends and develop your strategy in this thrilling game.",
         "banner": "tic-tac-toe-1.png",
         "bannerSmall": "tic-tac-toe-banner-small.jpg",
         "screenshots": [
@@ -524,6 +542,7 @@
           "Introducing the Ultimate Calculator, your versatile and responsive companion for all your mathematical needs, whether you are on your computer or your mobile device. We have taken the humble calculator and transformed it into a sleek, user-friendly tool that adapts to your every calculation, no matter where you are. On your computer or laptop, our web-based calculator offers a seamless and intuitive experience. Whether it is simple arithmetic or complex equations, our calculator's responsive design ensures that you have a powerful calculation tool at your fingertips.",
           "But we did not stop there. The Ultimate Calculator is also your trusted ally on mobile devices. Need to make quick calculations while on the go? No problem! Our mobile-friendly interface adapts effortlessly to your smartphone or tablet, delivering the same precision and ease of use you expect. From basic addition to advanced trigonometry, the Ultimate Calculator is your go-to tool for all your mathematical adventures. It is not just a calculator; it is a flexible and responsive mathematical companion that is ready to assist you anytime, anywhere. Join us and simplify your calculations with style and convenience."
         ],
+        "descriptionShort": "A universal and convenient calculator for all your mathematical needs, available on both desktop and mobile devices with an intuitive design and flexible features.",
         "banner": "calc.png",
         "bannerSmall": "calc-banner-small.jpg",
         "screenshots": ["calc.png"],
@@ -537,6 +556,7 @@
         "description": [
           "Welcome to Bookshop, a digital haven for bibliophiles and bookworms. Immerse yourself in a world where the written word reigns supreme. This virtual bookshop is more than just an online store; it is a sanctuary for all things literary. Explore an extensive collection of books spanning genres, eras, and cultures. Craft your own literary journey by curating your personal library with a simple click. And for those moments when you are on the hunt for a specific title, our search feature serves as your trusty guide. Bookshop transcends mere e-commerce; it is a celebration of the enduring magic of the written word. Join us in this literary adventure and let your love for books flourish."
         ],
+        "descriptionShort": "A digital bookstore with an extensive collection of books, a convenient search feature, and the ability to create a personal collection.",
         "banner": "bookshop-banner.jpg",
         "bannerSmall": "bookshop-banner-small.jpg",
         "screenshots": ["bookshop-1.png", "bookshop-2.png"],
@@ -590,7 +610,8 @@
   },
   "project-card": {
     "see_more": "See More",
-    "visit_site": "Visit Site"
+    "visit_site": "Visit Site",
+    "project_details": "Project Details"
   },
   "project-detail-page": {
     "overview": "Project Overview",

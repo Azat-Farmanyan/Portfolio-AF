@@ -140,7 +140,6 @@ export class ProjectsComponent
       .pipe(takeUntil(this.destroy$))
       .subscribe((data) => {
         this.projectsCommertial = data;
-        console.log(this.projectsCommertial);
       });
   }
 

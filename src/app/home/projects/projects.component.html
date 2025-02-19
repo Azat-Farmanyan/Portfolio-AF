@@ -14,11 +14,29 @@
       <!-- Commercial Projects -->
       <div class="commertial-projects">
         <div class="commertial-projects__header wrapper animated-block">
-          <div class="title-underline animated-block"></div>
-          <h4 class="paragraph-small-title">Top Commercial Projects</h4>
+          <div class="commertial-projects__titles">
+            <div class="title-underline animated-block"></div>
+            <h4 class="paragraph-small-title">Top Commercial Projects</h4>
+          </div>
+
+          <div class="commertial-projects__btns">
+            <button class="btn-orange-v2" (click)="scrollLeft(true)">
+              <img
+                src="../../../assets/icons/fluent_ios-arrow-24-filled-left.svg"
+                alt=""
+              />
+            </button>
+            <button class="btn-orange-v2" (click)="scrollRight(true)">
+              <img
+                src="../../../assets/icons/fluent_ios-arrow-24-filled.svg"
+                alt=""
+              />
+            </button>
+          </div>
         </div>
         <div
           class="commertial-projects__block wrapper animated-block"
+          #commertialProjectsContainer
           (wheel)="onWheel($event)"
         >
           <app-project-card-commertial-v1
@@ -32,12 +50,29 @@
       <!-- Personal Projects -->
       <div class="personal-projects">
         <div class="personal-projects__header wrapper animated-block">
-          <div class="title-underline animated-block"></div>
-          <h4 class="paragraph-small-title">Personal Projects</h4>
+          <div class="personal-projects__titles">
+            <div class="title-underline animated-block"></div>
+            <h4 class="paragraph-small-title">Personal Projects</h4>
+          </div>
+          <div class="personal-projects__btns">
+            <button class="btn-orange-v2" (click)="scrollLeft()">
+              <img
+                src="../../../assets/icons/fluent_ios-arrow-24-filled-left.svg"
+                alt=""
+              />
+            </button>
+            <button class="btn-orange-v2" (click)="scrollRight()">
+              <img
+                src="../../../assets/icons/fluent_ios-arrow-24-filled.svg"
+                alt=""
+              />
+            </button>
+          </div>
         </div>
 
         <div
           class="personal-projects__block wrapper animated-block"
+          #projectsContainer
           (wheel)="onWheel($event)"
         >
           <!-- <app-project-card-commertial-v1

@@ -39,6 +39,10 @@ export class ProjectsComponent
   currentLanguage: string = this.languageService.activeLanguage();
 
   @ViewChild('tableContainer') tableContainer!: ElementRef;
+  @ViewChild('projectsContainer', { static: false })
+  projectsContainer!: ElementRef;
+  @ViewChild('commertialProjectsContainer', { static: false })
+  commertialProjectsContainer!: ElementRef;
 
   constructor(
     private renderer: Renderer2,
@@ -70,6 +74,8 @@ export class ProjectsComponent
 
     // Получаем сохранённый ID элемента
     const scrollId = localStorage.getItem('scrollId');
+
+    return;
 
     if (scrollId) {
       // Максимальное количество попыток
@@ -180,30 +186,6 @@ export class ProjectsComponent
     }
   }
 
-  // onWheel(event: WheelEvent): void {
-  //   event.preventDefault();
-
-  //   const scrollAmount = event.deltaX || event.deltaY;
-  //   const container = event.currentTarget as HTMLElement;
-
-  //   window.requestAnimationFrame(() => {
-  //     // container.scrollLeft += scrollAmount;
-  //     console.log(scrollAmount);
-
-  //     if (scrollAmount > 0) {
-  //       container.scrollTo({
-  //         left: container.scrollLeft + 500,
-  //         behavior: 'smooth',
-  //       });
-  //     } else {
-  //       container.scrollTo({
-  //         left: container.scrollLeft - 500,
-  //         behavior: 'smooth',
-  //       });
-  //     }
-  //   });
-  // }
-
   onWheel(event: WheelEvent): void {
     const scrollAmount = event.deltaX || event.deltaY;
     const container = event.currentTarget as HTMLElement;
@@ -231,6 +213,32 @@ export class ProjectsComponent
         // behavior: 'smooth',
       });
     });
+  }
+
+  scrollLeft(commertial = false): void {
+    const container = commertial
+      ? this.commertialProjectsContainer
+      : this.projectsContainer;
+
+    if (container) {
+      container.nativeElement.scrollBy({
+        left: -350,
+        behavior: 'smooth',
+      });
+    }
+  }
+
+  scrollRight(commertial = false): void {
+    const container = commertial
+      ? this.commertialProjectsContainer
+      : this.projectsContainer;
+
+    if (container) {
+      container.nativeElement.scrollBy({
+        left: 350,
+        behavior: 'smooth',
+      });
+    }
   }
 
   ngOnDestroy(): void {

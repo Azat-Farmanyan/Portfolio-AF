@@ -138,7 +138,7 @@ export class ProjectsComponent
       .getProjects(this.languageService.activeLanguage())
       .pipe(takeUntil(this.destroy$))
       .subscribe((data) => {
-        this.projects = this.sortProjectsByIds(data, [18, 15, 6, 9, 3, 2]);
+        this.projects = this.sortProjectsByIds(data, [20, 18, 15, 6, 9, 3, 2]);
       });
 
     this.projectsService

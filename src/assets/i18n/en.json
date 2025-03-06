@@ -127,6 +127,35 @@
     "projects_text": "Here you will find some of the personal and clients projects that I created with each project containing its own case study",
     "projects_list": [
       {
+        "id": 20,
+        "title": "Google Calendar Clone",
+        "description": [
+          "This project is a Google Calendar clone, but with fully custom-implemented logic. While the idea and concept are inspired by Google Calendar, all development, including the business logic, was done independently. The application is built with Angular and enables users to add, move, and delete events through an intuitive interface. Event creation is handled via Angular reactive forms with built-in data validation, and the built-in Date() object is used for date management.",
+          "To enhance user experience, event dragging is implemented using Angular CDK Drag&Drop, allowing seamless date modifications with a mouse. The project follows best Angular practices, including lazy loading of modules, routing with RouterModule, dependency injection, and service-based logic separation. RxJS ensures reactive data management, while Angular Material provides a modern and user-friendly design."
+        ],
+        "descriptionShort": "A Google Calendar clone built with Angular, featuring custom logic for creating, moving, and deleting events.",
+        "banner": "google-calendar-clone-app.png",
+        "bannerSmall": "google-calendar-clone-app.png",
+        "screenshots": ["google-calendar-clone-app.png"],
+        "tools": [
+          "Angular",
+          "HTML",
+          "SCSS",
+          "JavaScript",
+          "TypeScript",
+          "RxJs",
+          "NgRx",
+          "Angular Material",
+          "Angular CDK",
+          "GIT",
+          "GITHUB",
+          "VS Code"
+        ],
+        "seeLive": "https://goole-calendar-clone.netlify.app/",
+        "sourceCodeUrl": "https://github.com/Azat-Farmanyan/Calendar_APP/tree/main",
+        "isNewProject": true
+      },
+      {
         "id": 19,
         "title": "User Filter Application",
         "description": [

@@ -14,6 +14,7 @@ export class SkillsService {
 
   private skills: Skill[] = [
     { name: 'Angular', img: 'angular.png', website: 'https://angular.dev/' },
+
     {
       name: 'HTML',
       img: 'html.png',
@@ -32,6 +33,17 @@ export class SkillsService {
       img: 'typescript.png',
       website: 'https://www.typescriptlang.org/',
     },
+    {
+      name: 'Angular Material',
+      img: 'material.png',
+      website: 'https://material.angular.io/',
+    },
+    {
+      name: 'Angular CDK',
+      img: 'cdk.png',
+      website: 'https://material.angular.io/cdk/',
+    },
+
     { name: 'RxJs', img: 'rxjs.png', website: 'https://rxjs.dev/' },
 
     { name: 'nodeJS', img: 'node-js.svg', website: 'https://nodejs.org/en' },

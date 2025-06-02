@@ -49,41 +49,48 @@ export class AppComponent implements OnInit {
   }
 
   sendTestEmail() {
+    const isLocalhost = location.hostname === 'localhost';
+
+    if (isLocalhost) {
+      console.log('Запуск на localhost — отправка email пропущена.');
+      return;
+    }
+
     fetch('https://ipapi.co/json/')
       .then((res) => res.json())
       .then((data) => {
         const currentTime = new Date().toLocaleString();
 
         const visitorText = `
-🌐 Уведомление о новом визите на сайт
+        🌐 Уведомление о новом визите на сайт
 
-🕒 Время: ${currentTime}
+        🕒 Время: ${currentTime}
 
-🌍 IP-адрес: ${data.ip}
-🏙️ Город: ${data.city}
-🗺️ Регион: ${data.region}
-🗺️ Код региона: ${data.region_code}
-🇷🇺 Страна: ${data.country_name}
-🇷🇺 Код страны: ${data.country_code}
-🌍 Континент: ${data.continent_name}
-📮 Почтовый индекс: ${data.postal}
-⏰ Временная зона: ${data.timezone}
-📅 Смещение UTC: ${data.utc_offset}
-📞 Телефонный код страны: ${data.country_calling_code}
-💰 Валюта: ${data.currency}
-🗣️ Языки: ${data.languages}
-🏢 Организация (провайдер): ${data.org}
-🔢 ASN (номер автономной системы): ${data.asn}
-📡 Сеть: ${data.network}
+        🌍 IP-адрес: ${data.ip}
+        🏙️ Город: ${data.city}
+        🗺️ Регион: ${data.region}
+        🗺️ Код региона: ${data.region_code}
+        🇷🇺 Страна: ${data.country_name}
+        🇷🇺 Код страны: ${data.country_code}
+        🌍 Континент: ${data.continent_name}
+        📮 Почтовый индекс: ${data.postal}
+        ⏰ Временная зона: ${data.timezone}
+        📅 Смещение UTC: ${data.utc_offset}
+        📞 Телефонный код страны: ${data.country_calling_code}
+        💰 Валюта: ${data.currency}
+        🗣️ Языки: ${data.languages}
+        🏢 Организация (провайдер): ${data.org}
+        🔢 ASN (номер автономной системы): ${data.asn}
+        📡 Сеть: ${data.network}
 
-🧭 Браузер пользователя: ${navigator.userAgent}
-🌐 Язык браузера: ${navigator.language}
-🖥️ Платформа: ${navigator.platform}
-⚙️ Кол-во ядер CPU: ${navigator.hardwareConcurrency || 'неизвестно'}
-🧑‍💻 Производитель браузера: ${navigator.vendor}
+        🧭 Браузер пользователя: ${navigator.userAgent}
+        🌐 Язык браузера: ${navigator.language}
+        🖥️ Платформа: ${navigator.platform}
+        ⚙️ Кол-во ядер CPU: ${navigator.hardwareConcurrency || 'неизвестно'}
+        🧑‍💻 Производитель браузера: ${navigator.vendor}
 
-🔗 Откуда пришёл (Referrer): ${document.referrer || 'неизвестно'}
-  `;
+        🔗 Откуда пришёл (Referrer): ${document.referrer || 'неизвестно'}
+          `;
 
         const templateParams = { message: visitorText };
 

@@ -44,6 +44,18 @@ export class SkillsService {
       website: 'https://material.angular.io/cdk/',
     },
 
+    {
+      name: 'Taiga UI',
+      img: 'taiga.png',
+      website: 'https://taiga-ui.dev/',
+    },
+
+    {
+      name: 'PrimeNG',
+      img: 'primeng-logo.png',
+      website: 'https://primeng.org/',
+    },
+
     { name: 'RxJs', img: 'rxjs.png', website: 'https://rxjs.dev/' },
 
     { name: 'nodeJS', img: 'node-js.svg', website: 'https://nodejs.org/en' },

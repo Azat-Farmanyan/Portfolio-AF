@@ -15,7 +15,11 @@
       gap: 30px;
 
       .about-text {
-        max-width: 763px;
+        max-width: 900px;
+
+        @media only screen and (max-width: 900px) {
+          text-align: left;
+        }
       }
     }
 
@@ -42,6 +46,7 @@
         /* Разделить на 2 колонки */
         column-gap: 20px;
         /* Расстояние между колонками */
+
 
         @media (max-width: 600px) {
           & {
@@ -71,20 +76,17 @@
             // border-radius: 5px;
             flex-grow: 1;
 
-            background: #e2e2e2;
-            padding: 8px 28px;
-            transition: all 0.5s ease;
+            background: #ebebeb;
+            padding: 8px 16px;
+            transition: all 0.3s ease-in-out;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 5px;
+            max-width: 300px;
 
             .skill-txt {
               white-space: nowrap
-            }
-
-            .orange-bg {
-              padding: 8px 35px;
             }
 
             .skill-img {
@@ -93,8 +95,9 @@
 
             &:hover {
               background: radial-gradient(192.86% 128.3% at 12.17% 6.95%, #FF9379 0%, #EE6C4D 100%);
-              padding: 8px 35px;
               color: #fff;
+              transform: scale(1.2);
+              z-index: 500;
             }
           }
         }

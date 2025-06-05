@@ -1,18 +1,25 @@
 <div class="about">
   <div class="wrapper">
     <div class="about-body">
-      <div class="about-header ">
-        <h2 class="section-title animated-block">{{ 'about.section_title' | translate }}</h2>
+      <div class="about-header">
+        <h2 class="section-title animated-block">
+          {{ "about.section_title" | translate }}
+        </h2>
         <div class="title-underline animated-block"></div>
         <p class="text about-text animated-block">
-          {{ 'about.intro_text' | translate }}
+          {{ "about.intro_text" | translate }}
+        </p>
+        <p class="text about-text animated-block">
+          {{ "about.intro_text_2" | translate }}
         </p>
       </div>
-      <div class="about-text-block ">
-        <div class="about-left-side">
-          <h4 class="paragraph-title about-title">{{ 'about.get_to_know_me' | translate }}</h4>
+      <div class="about-text-block">
+        <div class="about-left-side" style="display: none">
+          <h4 class="paragraph-title about-title">
+            {{ "about.get_to_know_me" | translate }}
+          </h4>
           <p class="text paragraph">
-            {{ 'about.introduction' | translate }}
+            {{ "about.introduction" | translate }}
           </p>
           <p
             class="text paragraph"
@@ -35,14 +42,16 @@
             [innerHTML]="'about.current_work' | translate"
           ></p>
           <p class="text paragraph">
-            {{ 'about.languages' | translate }}
+            {{ "about.languages" | translate }}
           </p>
           <!-- <button class="btn-orange-v2" (click)="readMore=!readMore" style="margin-top: 0px;">
             {{readMore? "Read Less" : "Read More"}}
           </button> -->
         </div>
         <div class="about-right-side">
-          <h4 class="paragraph-title about-title animated-block">{{ 'about.my_skills' | translate }}</h4>
+          <h4 class="paragraph-title about-title animated-block">
+            {{ "about.my_skills" | translate }}
+          </h4>
           <div class="skills">
             <a
               [href]="skill.website"

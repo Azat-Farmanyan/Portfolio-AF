@@ -49,7 +49,10 @@
       <div
         class="experience-txt animated-block"
         [innerHTML]="experienceTxt"
-        [ngStyle]="{ 'margin-bottom.px': isLast ? 0 : 80 }"
+        [ngStyle]="{
+          'margin-bottom.px': isLast ? 0 : 80,
+          'line-height.px': 27
+        }"
       ></div>
     </div>
   </div>

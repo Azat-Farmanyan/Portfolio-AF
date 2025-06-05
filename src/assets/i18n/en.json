@@ -22,7 +22,8 @@
   },
   "about": {
     "section_title": "About Me",
-    "intro_text": "Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology.",
+    "intro_text": "I am Azat Farmanyan, a Full Stack developer with a focus on frontend and attention to detail. I specialize in creating user-friendly and high-performance web applications using Angular, TypeScript, SCSS, Node.js, and REST API. I am skilled in designing architecture, optimizing loading and performance, and making interfaces adaptive and intuitive. I care about clean and readable code, using lazy loading, state management, modular structure, and testing. It is important for me that the product is reliable, maintainable, and enjoyable for the end user.",
+    "intro_text_2": "By choosing me, you get a developer who not only writes code but deeply understands business needs and cares about the final result. I am capable of working in a team, proposing solutions, bringing projects to perfection, and taking responsibility. From my side, you can expect stability, engagement, and genuine passion for what I do.",
     "get_to_know_me": "Get to know me!",
     "introduction": "Hello! My name is Azat Farmanyan, and I am a creative and innovative developer and designer with a degree in Information Systems and Technologies, which I obtained in 2023 from Samtskhe-Javakheti State University, Faculty of Engineering, Agriculture, and Life Sciences.",
     "experience_rik": "Since October 2024, I have been working at <a href='http://rikmasters.ru/' target='_blank'><b>Rick Masters</b></a> as an Angular Developer, developing a web application for the company <a href='https://www.novogor.perm.ru/' target='_blank'><b>Novogor Prikamye.</b></a>",
@@ -39,8 +40,20 @@
   "experience": [
     {
       "date": {
-        "from": "October  2024",
+        "from": "April  2024",
         "to": "Till now",
+        "duration": ""
+      },
+      "title": "Full Stack Developer (Angular / Node.js)",
+      "company": "Background Digital",
+      "page": "https://background.digital/",
+      "description": "After a year of collaboration, the company invited me back for temporary support and to implement complex functionality. I support the following websites: vb2.ilike.ru, malahovkahouse.ru, ob2.ilike.ru, river-house.ru, nt.ilike.ru. - I develop new features using Angular 16 and 18 with TypeScript and RxJS. There is an admin panel that helps manage content and residential complexes — I am enhancing it to make it as efficient and user-friendly as possible. - All websites have filtering for apartments and commercial real estate, though it's currently basic. I'm working on improving and optimizing the filtering functionality to make it more user-friendly — including filter state persistence and advanced search options. - I optimize all websites: they are currently fast and functional, but I go through each section to make the code even more efficient — implementing lazy loading for components, reducing image resolution, and so on. In general, I'm polishing the projects to perfection.",
+      "companyLogo": "backgound.png"
+    },
+    {
+      "date": {
+        "from": "October  2024",
+        "to": "April 2025",
         "duration": ""
       },
       "title": "Angular Developer",
@@ -55,7 +68,7 @@
         "to": "December 2024",
         "duration": ""
       },
-      "title": "Full Stack Engineer",
+      "title": "Full Stack Developer (Angular / Node.js)",
       "company": "Background Digital",
       "page": "https://background.digital/",
       "description": "- Developed web applications using Angular 2+ for construction project websites, such as https://river-house.ru/, https://malahovkahouse.ru/, and https://3-red.com. - Utilized HTML-5, CSS-3, SCSS, Jade, Swig, ES-5/6 to create efficient and user-friendly interfaces. - Worked with major Git commands for version control. - Additionally applied knowledge of Angular 2, Node.js, Express, Jest/Karma/Jasmine for testing and ensuring code quality. - Maintained high performance levels using modern tools and development methodologies. - Operated under official employment terms as per the Russian Federation Labor Code, with a flexible schedule and remote work options.",

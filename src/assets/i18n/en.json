@@ -718,7 +718,8 @@
     "message": "Message",
     "message_placeholder": "Enter your message",
     "message_required": "Message is required",
-    "submit_button": "Submit"
+    "submit_button": "Submit",
+    "social_description": "Or reach out to me directly through my social media:"
   },
   "footer": {
     "name": "Azat Farmanyan",

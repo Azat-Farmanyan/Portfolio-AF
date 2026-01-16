@@ -27,127 +27,253 @@
           {{ "contact.description" | translate }}
         </p>
       </div>
-      <form
-        data-netlify="true"
-        method="POST"
-        class="contact-form animated-block"
-        [formGroup]="messageForm"
-        (ngSubmit)="submit($event)"
-      >
-        <!-- Name Input -->
-        <div class="input-item">
-          <label
-            class="label-text"
-            for="name"
+
+      <div class="contact-content">
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper animated-block">
+          <form
+            data-netlify="true"
+            method="POST"
+            class="contact-form"
+            [formGroup]="messageForm"
+            (ngSubmit)="submit($event)"
           >
-            <span
-              [@fadeInOut]
-              *ngIf="nameHasError"
-            >{{ "* " }}</span>{{ "contact.name" | translate }}
-          </label>
-          <input
-            #nameInput
-            formControlName="name"
-            id="name"
-            name="name"
-            type="text"
-            placeholder="{{ 'contact.name_placeholder' | translate }}"
-            class="error-input"
-          />
-          <div
-            [@fadeInOut]
-            class="error-block"
-            *ngIf="nameHasError"
-          >
-            <small
-              *ngIf="messageForm.get('name')!.hasError('required')"
-              class="error-message"
-            >
-              {{ "contact.name_required" | translate }}
-            </small>
-          </div>
+            <!-- Name Input -->
+            <div class="input-item">
+              <div class="input-wrapper">
+                <label
+                  class="input-label"
+                  for="name"
+                >
+                  <span
+                    [@fadeInOut]
+                    *ngIf="nameHasError"
+                    class="required-star"
+                  >*</span>{{ "contact.name" | translate }}
+                </label>
+                <input
+                  #nameInput
+                  formControlName="name"
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="{{ 'contact.name_placeholder' | translate }}"
+                  class="form-input"
+                  [ngClass]="{ 'input-error': nameHasError, 'input-filled': messageForm.get('name')?.value }"
+                />
+              </div>
+              <div
+                [@fadeInOut]
+                class="error-block"
+                *ngIf="nameHasError"
+              >
+                <small
+                  *ngIf="messageForm.get('name')!.hasError('required')"
+                  class="error-message"
+                >
+                  {{ "contact.name_required" | translate }}
+                </small>
+              </div>
+            </div>
+
+            <!-- Email Input -->
+            <div class="input-item">
+              <div class="input-wrapper">
+                <label
+                  class="input-label"
+                  for="email"
+                >
+                  <span
+                    *ngIf="emailHasError"
+                    class="required-star"
+                  >*</span>{{ "contact.email" | translate }}
+                </label>
+                <input
+                  #emailInput
+                  formControlName="email"
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="{{ 'contact.email_placeholder' | translate }}"
+                  class="form-input"
+                  [ngClass]="{ 'input-error': emailHasError, 'input-filled': messageForm.get('email')?.value }"
+                />
+              </div>
+              <div
+                [@fadeInOut]
+                class="error-block"
+                *ngIf="emailHasError"
+              >
+                <small
+                  *ngIf="messageForm.get('email')!.hasError('required')"
+                  class="error-message"
+                >
+                  {{ "contact.email_required" | translate }}
+                </small>
+                <small
+                  *ngIf="messageForm.get('email')!.hasError('email')"
+                  class="error-message"
+                >
+                  {{ "contact.email_invalid" | translate }}
+                </small>
+              </div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="input-item">
+              <div class="input-wrapper">
+                <label
+                  class="input-label"
+                  for="message"
+                >
+                  <span
+                    [@fadeInOut]
+                    *ngIf="messageHasError"
+                    class="required-star"
+                  >*</span>{{ "contact.message" | translate }}
+                </label>
+                <textarea
+                  #messageInput
+                  formControlName="message"
+                  class="form-input form-textarea"
+                  id="message"
+                  name="message"
+                  placeholder="{{ 'contact.message_placeholder' | translate }}"
+                  [ngClass]="{ 'input-error': messageHasError, 'input-filled': messageForm.get('message')?.value }"
+                ></textarea>
+              </div>
+              <div
+                [@fadeInOut]
+                class="error-block"
+                *ngIf="messageHasError"
+              >
+                <small
+                  *ngIf="messageForm.get('message')!.hasError('required')"
+                  class="error-message"
+                >
+                  {{ "contact.message_required" | translate }}
+                </small>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button
+                type="submit"
+                class="btn-submit"
+                [disabled]="messageForm.invalid"
+              >
+                <span class="btn-text">{{ "contact.submit_button" | translate }}</span>
+                <span class="btn-icon">→</span>
+              </button>
+            </div>
+          </form>
         </div>
 
-        <!-- Email Input -->
-        <div class="input-item">
-          <label
-            class="label-text"
-            for="email"
-            [@fadeInOut]
-          >
-            <span *ngIf="emailHasError">{{ "* " }}</span>{{ "contact.email" | translate }}
-          </label>
-          <input
-            #emailInput
-            formControlName="email"
-            id="email"
-            name="email"
-            type="text"
-            placeholder="{{ 'contact.email_placeholder' | translate }}"
-          />
-          <div
-            [@fadeInOut]
-            class="error-block"
-            *ngIf="emailHasError"
-          >
-            <small
-              *ngIf="messageForm.get('email')!.hasError('required')"
-              class="error-message"
+        <!-- Social Links Section -->
+        <div class="contact-social animated-block">
+          <h3 class="social-title">{{ "footer.social_title" | translate }}</h3>
+          <p class="social-description">
+            {{ "contact.social_description" | translate }}
+          </p>
+
+          <div class="social-grid">
+            <a
+              class="social-card social-linkedin"
+              href="https://www.linkedin.com/in/azat-farmanyan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
             >
-              {{ "contact.email_required" | translate }}
-            </small>
-            <small
-              *ngIf="messageForm.get('email')!.hasError('email')"
-              class="error-message"
+              <div class="social-icon">
+                <img src="../../assets/icons/social-links-gray/basil_linkedin-solid.svg" alt="LinkedIn" />
+              </div>
+              <span class="social-name">LinkedIn</span>
+              <span class="social-handle">azat-farmanyan</span>
+            </a>
+
+            <a
+              class="social-card social-github"
+              href="https://github.com/Azat-Farmanyan"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
             >
-              {{ "contact.email_invalid" | translate }}
-            </small>
+              <div class="social-icon">
+                <img src="../../assets/icons/social-links-gray/mdi_github.svg" alt="GitHub" />
+              </div>
+              <span class="social-name">GitHub</span>
+              <span class="social-handle">Azat-Farmanyan</span>
+            </a>
+
+            <a
+              class="social-card social-telegram"
+              href="https://t.me/AzatFarmanyan"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+            >
+              <div class="social-icon">
+                <img src="../../assets/icons/social-links-gray/ic_baseline-telegram.svg" alt="Telegram" />
+              </div>
+              <span class="social-name">Telegram</span>
+              <span class="social-handle">@AzatFarmanyan</span>
+            </a>
+
+            <a
+              class="social-card social-discord"
+              href="https://discordapp.com/users/908978735020146719/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Discord"
+            >
+              <div class="social-icon">
+                <img src="../../assets/icons/social-links-gray/ic_baseline-discord.svg" alt="Discord" />
+              </div>
+              <span class="social-name">Discord</span>
+              <span class="social-handle">azat_farmanyan</span>
+            </a>
+
+            <a
+              class="social-card social-instagram"
+              href="https://www.instagram.com/azat_09.5/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <div class="social-icon">
+                <img src="../../assets/icons/social-links-gray/ri_instagram-fill.svg" alt="Instagram" />
+              </div>
+              <span class="social-name">Instagram</span>
+              <span class="social-handle">@azat_09.5</span>
+            </a>
+
+            <a
+              class="social-card social-facebook"
+              href="https://www.facebook.com/profile.php?id=100007929288834"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <div class="social-icon">
+                <img src="../../assets/icons/social-links-gray/gg_facebook.svg" alt="Facebook" />
+              </div>
+              <span class="social-name">Facebook</span>
+              <span class="social-handle">Azat Farmanyan</span>
+            </a>
+          </div>
+
+          <div class="contact-info">
+            <div class="info-item">
+              <span class="info-label">Email:</span>
+              <a href="mailto:azat.farmanyan905@gmail.com" class="info-link">azat.farmanyan905@gmail.com</a>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Tel:</span>
+              <a href="tel:+995592477775" class="info-link">+995 592 47 77 75</a>
+            </div>
           </div>
         </div>
-
-        <!-- Message Input -->
-        <div class="input-item">
-          <label
-            class="label-text"
-            for="message"
-          >
-            <span
-              [@fadeInOut]
-              *ngIf="messageHasError"
-            >{{ "* " }}</span>{{ "contact.message" | translate }}
-          </label>
-          <textarea
-            #messageInput
-            formControlName="message"
-            class="input-message"
-            id="message"
-            type="text"
-            name="message"
-            placeholder="{{ 'contact.message_placeholder' | translate }}"
-          ></textarea>
-          <div
-            [@fadeInOut]
-            class="error-block"
-            *ngIf="messageHasError"
-          >
-            <small
-              *ngIf="messageForm.get('message')!.hasError('required')"
-              class="error-message"
-            >
-              {{ "contact.message_required" | translate }}
-            </small>
-          </div>
-        </div>
-
-        <div class="btns">
-          <button
-            type="submit"
-            class="btn-orange-v2 contact-submit-btn"
-          >
-            {{ "contact.submit_button" | translate }}
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>

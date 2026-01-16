@@ -716,7 +716,8 @@
     "message": "Сообщение",
     "message_placeholder": "Введите ваше сообщение",
     "message_required": "Сообщение обязательно для заполнения",
-    "submit_button": "Отправить"
+    "submit_button": "Отправить",
+    "social_description": "Или свяжитесь со мной напрямую через социальные сети:"
   },
   "footer": {
     "name": "Азат Фарманян",

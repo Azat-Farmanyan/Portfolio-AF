@@ -56,6 +56,8 @@ export class SkillsService {
       website: 'https://primeng.org/',
     },
 
+    { name: 'GraphQL', img: 'graphql.png', website: 'https://graphql.org/' },
+
     { name: 'RxJs', img: 'rxjs.png', website: 'https://rxjs.dev/' },
 
     { name: 'nodeJS', img: 'node-js.svg', website: 'https://nodejs.org/en' },

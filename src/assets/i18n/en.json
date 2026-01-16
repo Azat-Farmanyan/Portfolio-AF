@@ -9,8 +9,9 @@
     "download_cv": "Download CV"
   },
   "welcome": {
-    "owner_name": "azat farmanyan",
+    "owner_name": "Azat Farmanyan",
     "owner_profession": "Software Engineer",
+    "description_text": "Creating exceptional digital experiences with modern web technologies",
     "about_me_button": "About me",
     "open_resume_button": "Open Resume",
     "linkedin_alt": "linkedin",
@@ -22,8 +23,10 @@
   },
   "about": {
     "section_title": "About Me",
-    "intro_text": "I am Azat Farmanyan, a Full Stack developer with a focus on frontend and attention to detail. I specialize in creating user-friendly and high-performance web applications using Angular, TypeScript, SCSS, Node.js, and REST API. I am skilled in designing architecture, optimizing loading and performance, and making interfaces adaptive and intuitive. I care about clean and readable code, using lazy loading, state management, modular structure, and testing. It is important for me that the product is reliable, maintainable, and enjoyable for the end user.",
-    "intro_text_2": "By choosing me, you get a developer who not only writes code but deeply understands business needs and cares about the final result. I am capable of working in a team, proposing solutions, bringing projects to perfection, and taking responsibility. From my side, you can expect stability, engagement, and genuine passion for what I do.",
+    "intro_text_1": "I am Azat Farmanyan, a Full Stack developer with a focus on frontend and attention to detail. I specialize in creating user-friendly and high-performance web applications using Angular, TypeScript, SCSS, Node.js, and REST API.",
+    "intro_text_2": "I am skilled in designing architecture, optimizing loading and performance, and making interfaces adaptive and intuitive.",
+    "intro_text_3": "I care about clean and readable code, using lazy loading, state management, modular structure, and testing. It is important for me that the product is reliable, maintainable, and enjoyable for the end user.",
+    "intro_text_4": "By choosing me, you get a developer who not only writes code but deeply understands business needs and cares about the final result. I am capable of working in a team, proposing solutions, bringing projects to perfection, and taking responsibility. From my side, you can expect stability, engagement, and genuine passion for what I do.",
     "get_to_know_me": "Get to know me!",
     "introduction": "Hello! My name is Azat Farmanyan, and I am a creative and innovative developer and designer with a degree in Information Systems and Technologies, which I obtained in 2023 from Samtskhe-Javakheti State University, Faculty of Engineering, Agriculture, and Life Sciences.",
     "experience_rik": "Since October 2024, I have been working at <a href='http://rikmasters.ru/' target='_blank'><b>Rick Masters</b></a> as an Angular Developer, developing a web application for the company <a href='https://www.novogor.perm.ru/' target='_blank'><b>Novogor Prikamye.</b></a>",

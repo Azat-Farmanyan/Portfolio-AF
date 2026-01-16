@@ -1,17 +1,69 @@
 <div class="about">
+  <div class="floating-elements">
+    <!-- Floating particles -->
+    <div class="floating-particles">
+      <div class="particle particle-1"></div>
+      <div class="particle particle-2"></div>
+      <div class="particle particle-3"></div>
+      <div class="particle particle-4"></div>
+      <div class="particle particle-5"></div>
+      <div class="particle particle-6"></div>
+    </div>
+
+    <!-- Floating geometric shapes -->
+    <div class="floating-shapes-bg">
+      <div class="shape-bg shape-bg-1"></div>
+      <div class="shape-bg shape-bg-2"></div>
+      <div class="shape-bg shape-bg-3"></div>
+    </div>
+
+    <!-- Floating lines -->
+    <div class="floating-lines">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+    </div>
+  </div>
   <div class="wrapper">
     <div class="about-body">
       <div class="about-header">
-        <h2 class="section-title animated-block">
-          {{ "about.section_title" | translate }}
-        </h2>
-        <div class="title-underline animated-block"></div>
-        <p class="text about-text animated-block">
-          {{ "about.intro_text" | translate }}
-        </p>
-        <p class="text about-text animated-block">
-          {{ "about.intro_text_2" | translate }}
-        </p>
+        <div class="header-container">
+          <div class="title-wrapper">
+            <h2 class="section-title animated-block">
+              {{ "about.section_title" | translate }}
+            </h2>
+            <div class="title-underline animated-block"></div>
+          </div>
+
+          <div class="content-wrapper">
+            <div class="text-card">
+              <div class="text-icon">👨‍💻</div>
+              <p class="about-text animated-block">
+                {{ "about.intro_text_1" | translate }}
+              </p>
+            </div>
+
+            <div class="text-card">
+              <div class="text-icon">⚡</div>
+              <p class="about-text animated-block">
+                {{ "about.intro_text_2" | translate }}
+              </p>
+            </div>
+
+            <div class="text-card">
+              <div class="text-icon">✨</div>
+              <p class="about-text animated-block">
+                {{ "about.intro_text_3" | translate }}
+              </p>
+            </div>
+
+            <div class="text-card">
+              <div class="text-icon">🤝</div>
+              <p class="about-text animated-block">
+                {{ "about.intro_text_4" | translate }}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="about-text-block">
         <div class="about-left-side" style="display: none">
@@ -56,13 +108,12 @@
             <div class="title-underline-skills animated-block"></div>
           </div>
           <div class="skills-scroll-wrapper" (mouseenter)="pauseScroll()" (mouseleave)="resumeScroll()">
-            <div class="skills-container" [class.paused]="isPaused">
+            <div class="skills-container" #skillsContainer [class.paused]="isPaused">
               <!-- First set of skills -->
               <a
                 [href]="skill.website"
                 target="_blank"
                 class="skill-card"
-                [ngClass]="{ 'highlighted': randomSkillNumber === i }"
                 *ngFor="let skill of skills; let i = index"
               >
                 <div class="skill-icon-wrapper">
@@ -81,7 +132,6 @@
                 [href]="skill.website"
                 target="_blank"
                 class="skill-card"
-                [ngClass]="{ 'highlighted': randomSkillNumber === i }"
                 *ngFor="let skill of skills; let i = index"
               >
                 <div class="skill-icon-wrapper">

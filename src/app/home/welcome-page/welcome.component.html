@@ -1,130 +1,177 @@
 <div class="welcome">
+  <div class="welcome-background">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+
+    <!-- Floating particles -->
+    <div class="floating-particles">
+      <div class="particle particle-1"></div>
+      <div class="particle particle-2"></div>
+      <div class="particle particle-3"></div>
+      <div class="particle particle-4"></div>
+      <div class="particle particle-5"></div>
+      <div class="particle particle-6"></div>
+      <div class="particle particle-7"></div>
+      <div class="particle particle-8"></div>
+    </div>
+
+    <!-- Floating geometric shapes -->
+    <div class="floating-shapes-bg">
+      <div class="shape-bg shape-bg-1"></div>
+      <div class="shape-bg shape-bg-2"></div>
+      <div class="shape-bg shape-bg-3"></div>
+      <div class="shape-bg shape-bg-4"></div>
+      <div class="shape-bg shape-bg-5"></div>
+    </div>
+
+    <!-- Floating lines -->
+    <div class="floating-lines">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+    </div>
+  </div>
+
   <div class="wrapper">
     <div class="welcome-body">
       <div class="left-side">
-        <h1 class="owner-name uprise-step-one">
-          {{ "welcome.owner_name" | translate }}
+        <div class="greeting-text animated-fade-in">
+          <span class="greeting-label">Hello, I'm</span>
+        </div>
+
+        <h1 class="owner-name animated-slide-up">
+          <span class="name-gradient">{{ "welcome.owner_name" | translate }}</span>
         </h1>
-        <p class="owner-profession uprise-step-two">
-          {{ "welcome.owner_profession" | translate }}
-        </p>
-        <div class="social-block uprise-step-three">
+
+        <div class="profession-wrapper animated-slide-up-delay">
+          <p class="owner-profession">
+            {{ "welcome.owner_profession" | translate }}
+          </p>
+          <div class="profession-underline"></div>
+        </div>
+
+        <div class="description-text animated-fade-in-delay">
+          <p>{{ "welcome.description_text" | translate }}</p>
+        </div>
+
+        <div class="social-block animated-fade-in-delay-2">
           <div class="social-items">
             <a
               href="https://www.linkedin.com/in/azat-farmanyan/"
               target="_blank"
+              class="social-link"
             >
-              <img
-                class="social-item"
-                [src]="linkedinImageSrc"
-                alt="{{ 'welcome.linkedin_alt' | translate }}"
-                (mouseenter)="onMouseEnter('linkedin')"
-                (mouseleave)="onMouseLeave('linkedin')"
-                loading="lazy"
-              />
+              <div class="social-icon-wrapper">
+                <img
+                  class="social-item"
+                  [src]="linkedinImageSrc"
+                  alt="{{ 'welcome.linkedin_alt' | translate }}"
+                  (mouseenter)="onMouseEnter('linkedin')"
+                  (mouseleave)="onMouseLeave('linkedin')"
+                  loading="lazy"
+                />
+              </div>
             </a>
-            <a href="https://github.com/Azat-Farmanyan" target="_blank">
-              <img
-                class="social-item"
-                [src]="githubImageSrc"
-                alt="{{ 'welcome.github_alt' | translate }}"
-                (mouseenter)="onMouseEnter('github')"
-                (mouseleave)="onMouseLeave('github')"
-                loading="lazy"
-              />
+            <a href="https://github.com/Azat-Farmanyan" target="_blank" class="social-link">
+              <div class="social-icon-wrapper">
+                <img
+                  class="social-item"
+                  [src]="githubImageSrc"
+                  alt="{{ 'welcome.github_alt' | translate }}"
+                  (mouseenter)="onMouseEnter('github')"
+                  (mouseleave)="onMouseLeave('github')"
+                  loading="lazy"
+                />
+              </div>
             </a>
-            <a href="https://t.me/AzatFarmanyan" target="_blank">
-              <img
-                class="social-item"
-                [src]="telegramImageSrc"
-                alt="{{ 'welcome.telegram_alt' | translate }}"
-                (mouseenter)="onMouseEnter('telegram')"
-                (mouseleave)="onMouseLeave('telegram')"
-                loading="lazy"
-              />
+            <a href="https://t.me/AzatFarmanyan" target="_blank" class="social-link">
+              <div class="social-icon-wrapper">
+                <img
+                  class="social-item"
+                  [src]="telegramImageSrc"
+                  alt="{{ 'welcome.telegram_alt' | translate }}"
+                  (mouseenter)="onMouseEnter('telegram')"
+                  (mouseleave)="onMouseLeave('telegram')"
+                  loading="lazy"
+                />
+              </div>
             </a>
             <a
               href="https://discordapp.com/users/908978735020146719/"
               target="_blank"
+              class="social-link"
             >
-              <img
-                class="social-item"
-                [src]="discordImageSrc"
-                alt="{{ 'welcome.discord_alt' | translate }}"
-                (mouseenter)="onMouseEnter('discord')"
-                (mouseleave)="onMouseLeave('discord')"
-                loading="lazy"
-              />
+              <div class="social-icon-wrapper">
+                <img
+                  class="social-item"
+                  [src]="discordImageSrc"
+                  alt="{{ 'welcome.discord_alt' | translate }}"
+                  (mouseenter)="onMouseEnter('discord')"
+                  (mouseleave)="onMouseLeave('discord')"
+                  loading="lazy"
+                />
+              </div>
             </a>
-            <a href="https://www.instagram.com/azat_09.5/" target="_blank">
-              <img
-                class="social-item"
-                [src]="instagramImageSrc"
-                alt="{{ 'welcome.instagram_alt' | translate }}"
-                (mouseenter)="onMouseEnter('instagram')"
-                (mouseleave)="onMouseLeave('instagram')"
-                loading="lazy"
-              />
+            <a href="https://www.instagram.com/azat_09.5/" target="_blank" class="social-link">
+              <div class="social-icon-wrapper">
+                <img
+                  class="social-item"
+                  [src]="instagramImageSrc"
+                  alt="{{ 'welcome.instagram_alt' | translate }}"
+                  (mouseenter)="onMouseEnter('instagram')"
+                  (mouseleave)="onMouseLeave('instagram')"
+                  loading="lazy"
+                />
+              </div>
             </a>
             <a
               href="https://www.facebook.com/profile.php?id=100007929288834"
               target="_blank"
+              class="social-link"
             >
-              <img
-                class="social-item"
-                [src]="facebookImageSrc"
-                alt="{{ 'welcome.facebook_alt' | translate }}"
-                (mouseenter)="onMouseEnter('facebook')"
-                (mouseleave)="onMouseLeave('facebook')"
-                loading="lazy"
-              />
+              <div class="social-icon-wrapper">
+                <img
+                  class="social-item"
+                  [src]="facebookImageSrc"
+                  alt="{{ 'welcome.facebook_alt' | translate }}"
+                  (mouseenter)="onMouseEnter('facebook')"
+                  (mouseleave)="onMouseLeave('facebook')"
+                  loading="lazy"
+                />
+              </div>
             </a>
           </div>
         </div>
-        <div class="btns uprise-step-four">
-          <!-- <button class="btn-orange-v2" (click)="navigateTo('home', 'about')">
-            {{ "welcome.about_me_button" | translate }}
-          </button> -->
-          <button class="btn-orange-v2" (click)="downloadCV()">
-            <a>{{ "header.download_cv" | translate }}</a>
+
+        <div class="btns animated-fade-in-delay-3">
+          <button class="btn-download-cv" (click)="downloadCV()">
+            <span class="btn-text">{{ "header.download_cv" | translate }}</span>
+            <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M10 13V3M10 13L6 9M10 13L14 9M3 16H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="btn-shine"></div>
           </button>
         </div>
-        <a
-          href="../../../assets/cv/Angular Developer - Azat Farmanyan - ENG.pdf"
-        ></a>
       </div>
+
       <div class="right-side">
-        <img
-          [ngClass]="{
-            'opacity-none': !avatarIsLoaded,
-            'opacity-full': avatarIsLoaded
-          }"
-          class="avatar uprise-step-one"
-          (load)="imageLoaded($event)"
-          src="../../../assets/images/a-f-avatar 3.svg"
-        />
+        <div class="avatar-container">
+          <div class="avatar-glow"></div>
+          <div class="avatar-wrapper">
+            <img
+              class="avatar animated-avatar"
+              src="../../../assets/images/a-f-avatar-3 (1).png"
+              alt="Azat Farmanyan"
+            />
+          </div>
+        </div>
 
-        <img
-          [ngClass]="{
-            'opacity-none': avatarIsLoaded,
-            'opacity-full': !avatarIsLoaded
-          }"
-          class="avatar uprise-step-one avatar-small"
-          src="../../../assets/images/a-f-avatar 3 small.png"
-        />
-
-        <img
-          class="ellipse-1 uprise-step-two"
-          src="../../../assets/images/Ellipse 10.svg"
-        />
-        <img
-          class="ellipse-2 uprise-step-two"
-          src="../../../assets/images/Ellipse 11.svg"
-        />
-        <img
-          class="ellipse-3 uprise-step-two"
-          src="../../../assets/images/Ellipse 9.svg"
-        />
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
       </div>
 
       <div class="scroll-icon">
@@ -133,24 +180,16 @@
           height="100%"
           viewBox="0 0 247 390"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          style="
-            fill-rule: evenodd;
-            clip-rule: evenodd;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 1.5;
-          "
         >
           <path
             id="wheel"
             d="M123.359,79.775l0,72.843"
-            style="fill: none; stroke: #ff4141; stroke-width: 20px"
+            style="fill: none; stroke: #EE6C4D; stroke-width: 20px"
           />
           <path
             id="mouse"
             d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z"
-            style="fill: none; stroke: #ff4141; stroke-width: 20px"
+            style="fill: none; stroke: #EE6C4D; stroke-width: 20px"
           />
         </svg>
       </div>

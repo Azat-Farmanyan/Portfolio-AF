@@ -40,34 +40,43 @@ import { LanguageService } from '../../services/language.service';
 
     trigger('dropDownMenu', [
       transition(':enter', [
-        style({ height: 0, overflow: 'hidden' }),
-        query('.menu-item', [
-          style({ opacity: 0, transform: 'translateY(-50px)' }),
-        ]),
-        sequence([
-          animate('200ms', style({ height: '*' })),
-          query('.menu-item', [
-            stagger(-50, [
-              animate('400ms ease', style({ opacity: 1, transform: 'none' })),
+        style({ opacity: 0, transform: 'translateY(-20px)' }),
+        animate(
+          '300ms cubic-bezier(0.4, 0, 0.2, 1)',
+          style({ opacity: 1, transform: 'translateY(0)' })
+        ),
+        query(
+          '.menu-item',
+          [
+            style({ opacity: 0, transform: 'translateX(-30px)' }),
+            stagger(100, [
+              animate(
+                '400ms cubic-bezier(0.4, 0, 0.2, 1)',
+                style({ opacity: 1, transform: 'translateX(0)' })
+              ),
             ]),
-          ]),
-        ]),
+          ],
+          { optional: true }
+        ),
       ]),
 
       transition(':leave', [
-        style({ height: '*', overflow: 'hidden' }),
-        query('.menu-item', [style({ opacity: 1, transform: 'none' })]),
-        sequence([
-          query('.menu-item', [
-            stagger(50, [
+        query(
+          '.menu-item',
+          [
+            stagger(-50, [
               animate(
-                '400ms ease',
-                style({ opacity: 0, transform: 'translateY(-50px)' })
+                '250ms cubic-bezier(0.4, 0, 0.2, 1)',
+                style({ opacity: 0, transform: 'translateX(-30px)' })
               ),
             ]),
-          ]),
-          animate('200ms', style({ height: 0 })),
-        ]),
+          ],
+          { optional: true }
+        ),
+        animate(
+          '200ms cubic-bezier(0.4, 0, 0.2, 1)',
+          style({ opacity: 0, transform: 'translateY(-20px)' })
+        ),
       ]),
     ]),
 
@@ -92,11 +101,11 @@ import { LanguageService } from '../../services/language.service';
 
     trigger('fadeOutUpAndFadeInDown', [
       transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(-80px)' }),
-        animate('400ms', style({ opacity: 1, transform: 'translateY(0)' })),
-      ]),
-      transition(':leave', [
-        animate('400ms', style({ opacity: 0, transform: 'translateY(-80px)' })),
+        style({ opacity: 0, transform: 'translateY(-65px) scale(0.95)' }),
+        animate(
+          '400ms cubic-bezier(0.4, 0, 0.2, 1)',
+          style({ opacity: 1, transform: 'translateY(0) scale(1)' })
+        ),
       ]),
     ]),
   ],
@@ -108,7 +117,6 @@ export class HeaderComponentV2 implements OnInit {
   @Input() closeFromTopPx: number = 80;
 
   showMenu = false;
-  isMouseNearTop = true;
   scrolled = false;
   mobileView = false;
   currentLanguage: string = 'en';
@@ -134,42 +142,58 @@ export class HeaderComponentV2 implements OnInit {
   ngOnInit() {
     this.getScreenWidth = window.innerWidth;
     this.getScreenHeight = window.innerHeight;
+    this.mobileView = window.innerWidth <= 675;
+    this.checkScrollPosition();
+    
+    // Инициализация текущего языка
+    this.currentLanguage = this.translateService.currentLang || this.translateService.defaultLang || 'en';
   }
 
-  @HostListener('window:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent): void {
-    const mouseY = event.clientY;
-
-    mouseY <= 120
-      ? (this.isMouseNearTop = true)
-      : (this.isMouseNearTop = false);
+  private checkScrollPosition(): void {
+    this.scrolled = window.pageYOffset < this.closeFromTopPx;
   }
 
   @HostListener('window:scroll', [])
-  onWindowScroll() {
+  onWindowScroll(): void {
+    // Определяем, находится ли пользователь в верхней части страницы
     this.scrolled = window.pageYOffset < this.closeFromTopPx;
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    if (event.target.innerWidth > 600) {
+  onResize(event: any): void {
+    const newWidth = event.target.innerWidth;
+    this.getScreenWidth = newWidth;
+    this.getScreenHeight = event.target.innerHeight;
+    
+    const wasMobile = this.mobileView;
+    this.mobileView = newWidth <= 675;
+    
+    // Закрываем меню при переходе с мобильного на десктоп
+    if (wasMobile && !this.mobileView && this.showMenu) {
       this.closeMenu();
-      this.mobileView = false;
-    } else {
-      this.mobileView = true;
     }
   }
 
-  menuToggle() {
+  menuToggle(): void {
     this.showMenu = !this.showMenu;
-  }
-  closeMenu() {
-    this.showMenu = false;
+    // Блокируем скролл когда меню открыто
+    if (this.showMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
-  navigateTo(path: string, fragment: string) {
+  closeMenu(): void {
+    this.showMenu = false;
+    document.body.style.overflow = '';
+  }
+
+  navigateTo(path: string, fragment: string): void {
     this.router.navigate([`/${path}`], { fragment: `${fragment}` });
-    if (this.showMenu) this.closeMenu();
+    if (this.showMenu) {
+      this.closeMenu();
+    }
   }
 
   downloadCV(): void {

@@ -1,20 +1,23 @@
 <div (click)="closeMenu()" [@fadeInOut] *ngIf="showMenu" class="black-bg"></div>
 
 <header
-  class="header disable-text-select"
+  class="header disable-text-select header-visible"
   [@fadeOutUpAndFadeInDown]
   [ngClass]="{
-    goDown: isMouseNearTop || scrolled,
-    goUp: !(isMouseNearTop || scrolled)
+    'header-scrolled': scrolled,
+    'lang-ru': currentLanguage === 'ru',
+    'lang-en': currentLanguage === 'en'
   }"
-  [style.background]="'rgba(255, 255, 255, ' + opacity + ')'"
 >
-  <!-- *ngIf="isMouseNearTop || scrolled" -->
+  <div class="header-background" [style.opacity]="opacity"></div>
+  
   <div class="wrapper">
     <div class="header-body">
-      <div class="logo-char-block" (click)="navigateTo('home', 'home')">
-        <p class="logo-char char-a">A</p>
-        <p class="logo-char char-f">F</p>
+      <div class="logo-container" (click)="navigateTo('home', 'home')">
+        <div class="logo-char-block">
+          <span class="logo-char char-a">A</span>
+          <span class="logo-char char-f">F</span>
+        </div>
       </div>
 
       <nav class="nav" *ngIf="!mobileView">
@@ -23,183 +26,234 @@
           (click)="navigateTo('home', 'home')"
           [ngClass]="{ active: activeSection === 'home' }"
         >
-          {{ "header.home" | translate }}
+          <span class="nav-text">{{ "header.home" | translate }}</span>
+          <span class="nav-indicator" *ngIf="activeSection === 'home'"></span>
         </a>
         <a
           class="nav-item"
           (click)="navigateTo('home', 'about')"
           [ngClass]="{ active: activeSection === 'about' }"
         >
-          {{ "header.about" | translate }}
+          <span class="nav-text">{{ "header.about" | translate }}</span>
+          <span class="nav-indicator" *ngIf="activeSection === 'about'"></span>
         </a>
         <a
           class="nav-item"
           (click)="navigateTo('home', 'experience')"
           [ngClass]="{ active: activeSection === 'experience' }"
         >
-          {{ "header.experience" | translate }}
+          <span class="nav-text">{{ "header.experience" | translate }}</span>
+          <span class="nav-indicator" *ngIf="activeSection === 'experience'"></span>
         </a>
         <a
           class="nav-item"
           (click)="navigateTo('home', 'projects')"
           [ngClass]="{ active: activeSection === 'projects' }"
         >
-          {{ "header.projects" | translate }}
+          <span class="nav-text">{{ "header.projects" | translate }}</span>
+          <span class="nav-indicator" *ngIf="activeSection === 'projects'"></span>
         </a>
         <a
           class="nav-item"
           (click)="navigateTo('home', 'contact')"
           [ngClass]="{ active: activeSection === 'contact' }"
         >
-          {{ "header.contact" | translate }}
+          <span class="nav-text">{{ "header.contact" | translate }}</span>
+          <span class="nav-indicator" *ngIf="activeSection === 'contact'"></span>
         </a>
       </nav>
 
-      <button class="language-switcher" (click)="switchLanguage()">
-        {{ currentLanguage === "en" ? "RU" : "EN" }}
-      </button>
+      <div class="header-actions">
+        <div 
+          class="language-switcher" 
+          (click)="switchLanguage()"
+          [attr.aria-label]="'Switch language to ' + (currentLanguage === 'en' ? 'Russian' : 'English')"
+          [ngClass]="{
+            'lang-active-en': currentLanguage === 'en',
+            'lang-active-ru': currentLanguage === 'ru'
+          }"
+        >
+          <span class="lang-option" [ngClass]="{ 'active': currentLanguage === 'en' }">EN</span>
+          <span class="lang-option" [ngClass]="{ 'active': currentLanguage === 'ru' }">RU</span>
+          <span class="lang-slider"></span>
+        </div>
 
-      <div (click)="menuToggle()" class="burger">
-        <img
-          [@toggleAnimation]
-          *ngIf="!showMenu"
-          src="../../../assets/icons/burger.svg"
-          alt="Open Menu"
-        />
-        <img
-          [@toggleAnimation]
-          *ngIf="showMenu"
-          src="../../../assets/icons/close-cross.svg"
-          alt="Close Menu"
-        />
+        <button 
+          (click)="menuToggle()" 
+          class="burger-menu"
+          [attr.aria-label]="showMenu ? 'Close menu' : 'Open menu'"
+          [attr.aria-expanded]="showMenu"
+        >
+          <span class="burger-line" [ngClass]="{ 'open': showMenu }"></span>
+          <span class="burger-line" [ngClass]="{ 'open': showMenu }"></span>
+          <span class="burger-line" [ngClass]="{ 'open': showMenu }"></span>
+        </button>
       </div>
     </div>
   </div>
 
-  <div class="header-underline-btn"></div>
-
-  <div class="menu" [@fadeInOut] *ngIf="showMenu">
+  <div class="mobile-menu" [@dropDownMenu] *ngIf="showMenu">
+    <div class="menu-background"></div>
     <div class="wrapper">
       <div class="menu-body">
-        <a
-          class="nav-item"
-          (click)="navigateTo('home', 'home')"
-          [ngClass]="{ active: activeSection === 'home' }"
-        >
-          {{ "header.home" | translate }}
-        </a>
-        <a
-          class="nav-item"
-          (click)="navigateTo('home', 'about')"
-          [ngClass]="{ active: activeSection === 'about' }"
-        >
-          {{ "header.about" | translate }}
-        </a>
-        <a
-          class="nav-item"
-          (click)="navigateTo('home', 'experience')"
-          [ngClass]="{ active: activeSection === 'experience' }"
-        >
-          {{ "header.experience" | translate }}
-        </a>
-        <a
-          class="nav-item"
-          (click)="navigateTo('home', 'projects')"
-          [ngClass]="{ active: activeSection === 'projects' }"
-        >
-          {{ "header.projects" | translate }}
-        </a>
-        <a
-          class="nav-item"
-          (click)="navigateTo('home', 'contact')"
-          [ngClass]="{ active: activeSection === 'contact' }"
-        >
-          {{ "header.contact" | translate }}
-        </a>
-        <button
-          class="btn-orange-v2"
-          style="max-width: 300px; margin: 0 auto"
-          (click)="downloadCV()"
-        >
-          <span>{{ "header.download_cv" | translate }}</span>
-        </button>
+        <nav class="menu-nav">
+          <a
+            class="menu-item"
+            (click)="navigateTo('home', 'home')"
+            [ngClass]="{ active: activeSection === 'home' }"
+          >
+            <span class="menu-item-text">{{ "header.home" | translate }}</span>
+            <span class="menu-item-indicator" *ngIf="activeSection === 'home'"></span>
+          </a>
+          <a
+            class="menu-item"
+            (click)="navigateTo('home', 'about')"
+            [ngClass]="{ active: activeSection === 'about' }"
+          >
+            <span class="menu-item-text">{{ "header.about" | translate }}</span>
+            <span class="menu-item-indicator" *ngIf="activeSection === 'about'"></span>
+          </a>
+          <a
+            class="menu-item"
+            (click)="navigateTo('home', 'experience')"
+            [ngClass]="{ active: activeSection === 'experience' }"
+          >
+            <span class="menu-item-text">{{ "header.experience" | translate }}</span>
+            <span class="menu-item-indicator" *ngIf="activeSection === 'experience'"></span>
+          </a>
+          <a
+            class="menu-item"
+            (click)="navigateTo('home', 'projects')"
+            [ngClass]="{ active: activeSection === 'projects' }"
+          >
+            <span class="menu-item-text">{{ "header.projects" | translate }}</span>
+            <span class="menu-item-indicator" *ngIf="activeSection === 'projects'"></span>
+          </a>
+          <a
+            class="menu-item"
+            (click)="navigateTo('home', 'contact')"
+            [ngClass]="{ active: activeSection === 'contact' }"
+          >
+            <span class="menu-item-text">{{ "header.contact" | translate }}</span>
+            <span class="menu-item-indicator" *ngIf="activeSection === 'contact'"></span>
+          </a>
+        </nav>
 
-        <div class="social-block" style="margin: 0 auto; width: 100%">
-          <div class="social-items">
-            <a
-              href="https://www.linkedin.com/in/azat-farmanyan/"
-              target="_blank"
-            >
-              <img
-                class="social-item"
-                [src]="linkedinImageSrc"
-                alt="linkedin"
-                (mouseenter)="onMouseEnter('linkedin')"
-                (mouseleave)="onMouseLeave('linkedin')"
-              />
-            </a>
-            <a href="https://github.com/Azat-Farmanyan" target="_blank">
-              <img
-                class="social-item"
-                [src]="githubImageSrc"
-                alt="github"
-                (mouseenter)="onMouseEnter('github')"
-                (mouseleave)="onMouseLeave('github')"
-              />
-            </a>
-            <a href="https://t.me/AzatFarmanyan" target="_blank">
-              <img
-                class="social-item"
-                [src]="telegramImageSrc"
-                alt="telegram"
-                (mouseenter)="onMouseEnter('telegram')"
-                (mouseleave)="onMouseLeave('telegram')"
-              />
-            </a>
-            <a
-              href="https://discordapp.com/users/908978735020146719/"
-              target="_blank"
-            >
-              <img
-                class="social-item"
-                [src]="discordImageSrc"
-                alt="discord"
-                (mouseenter)="onMouseEnter('discord')"
-                (mouseleave)="onMouseLeave('discord')"
-              />
-            </a>
-            <a href="https://www.instagram.com/azat_09.5/" target="_blank">
-              <img
-                class="social-item"
-                [src]="instagramImageSrc"
-                alt="instagram"
-                (mouseenter)="onMouseEnter('instagram')"
-                (mouseleave)="onMouseLeave('instagram')"
-              />
-            </a>
-            <a
-              href="https://www.facebook.com/profile.php?id=100007929288834"
-              target="_blank"
-            >
-              <img
-                class="social-item"
-                [src]="facebookImageSrc"
-                alt="facebook"
-                (mouseenter)="onMouseEnter('facebook')"
-                (mouseleave)="onMouseLeave('facebook')"
-              />
-            </a>
+        <div class="menu-actions">
+          <button
+            class="btn-orange-v2 menu-download-btn"
+            (click)="downloadCV()"
+          >
+            <span>{{ "header.download_cv" | translate }}</span>
+          </button>
+
+          <div class="social-block">
+            <div class="social-items">
+              <a
+                href="https://www.linkedin.com/in/azat-farmanyan/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <img
+                  class="social-item"
+                  [src]="linkedinImageSrc"
+                  alt="linkedin"
+                  (mouseenter)="onMouseEnter('linkedin')"
+                  (mouseleave)="onMouseLeave('linkedin')"
+                />
+              </a>
+              <a 
+                href="https://github.com/Azat-Farmanyan" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <img
+                  class="social-item"
+                  [src]="githubImageSrc"
+                  alt="github"
+                  (mouseenter)="onMouseEnter('github')"
+                  (mouseleave)="onMouseLeave('github')"
+                />
+              </a>
+              <a 
+                href="https://t.me/AzatFarmanyan" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+              >
+                <img
+                  class="social-item"
+                  [src]="telegramImageSrc"
+                  alt="telegram"
+                  (mouseenter)="onMouseEnter('telegram')"
+                  (mouseleave)="onMouseLeave('telegram')"
+                />
+              </a>
+              <a
+                href="https://discordapp.com/users/908978735020146719/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Discord"
+              >
+                <img
+                  class="social-item"
+                  [src]="discordImageSrc"
+                  alt="discord"
+                  (mouseenter)="onMouseEnter('discord')"
+                  (mouseleave)="onMouseLeave('discord')"
+                />
+              </a>
+              <a 
+                href="https://www.instagram.com/azat_09.5/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <img
+                  class="social-item"
+                  [src]="instagramImageSrc"
+                  alt="instagram"
+                  (mouseenter)="onMouseEnter('instagram')"
+                  (mouseleave)="onMouseLeave('instagram')"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100007929288834"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <img
+                  class="social-item"
+                  [src]="facebookImageSrc"
+                  alt="facebook"
+                  (mouseenter)="onMouseEnter('facebook')"
+                  (mouseleave)="onMouseLeave('facebook')"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="menu-contact">
+            <span class="contact-label">Tel:</span>
+            <a href="tel:+995592477775" class="contact-link">+995 592 47 77 75</a>
+          </div>
+
+          <div 
+            class="language-switcher menu-lang-switcher" 
+            (click)="switchLanguage()"
+            [ngClass]="{
+              'lang-active-en': currentLanguage === 'en',
+              'lang-active-ru': currentLanguage === 'ru'
+            }"
+          >
+            <span class="lang-option" [ngClass]="{ 'active': currentLanguage === 'en' }">EN</span>
+            <span class="lang-option" [ngClass]="{ 'active': currentLanguage === 'ru' }">RU</span>
+            <span class="lang-slider"></span>
           </div>
         </div>
-
-        <div class="tel" style="text-align: center; font-weight: 600">
-          <span>Tel: </span>
-          <a href="tel:+995592477775">+995 592 47 77 75</a>
-        </div>
-
-        <button class="language-switcher orange-bg" (click)="switchLanguage()">
-          {{ currentLanguage === "en" ? "EN" : "RU" }}
-        </button>
       </div>
     </div>
   </div>

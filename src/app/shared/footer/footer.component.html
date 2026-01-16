@@ -1,112 +1,160 @@
 <footer class="footer">
+  <div class="footer-background"></div>
   <div class="wrapper">
     <div class="footer-body">
+      <!-- Footer Info Section -->
       <div class="footer-info">
-        <h3 class="footer-title">{{ "footer.name" | translate }}</h3>
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-char">A</span>
+            <span class="logo-char">F</span>
+          </div>
+          <h3 class="footer-title">{{ "footer.name" | translate }}</h3>
+        </div>
         <p class="footer-text footer-description">
           {{ "footer.description" | translate }}
         </p>
       </div>
 
-      <nav class="nav">
-        <h3 class="nav-title">{{ "footer.navigation" | translate }}</h3>
-
-        <a class="nav-item" (click)="navigateTo('home', 'home')">
-          {{ "header.home" | translate }}
-        </a>
-        <a class="nav-item" (click)="navigateTo('home', 'about')">
-          {{ "header.about" | translate }}
-        </a>
-        <a class="nav-item" (click)="navigateTo('home', 'experience')">
-          {{ "header.experience" | translate }}
-        </a>
-        <a class="nav-item" (click)="navigateTo('home', 'projects')">
-          {{ "header.projects" | translate }}
-        </a>
-        <a class="nav-item" (click)="navigateTo('home', 'contact')">
-          {{ "header.contact" | translate }}
-        </a>
-      </nav>
-
-      <div class="footer-social">
-        <h3 class="social-title">{{ "footer.social_title" | translate }}</h3>
-        <ul class="social-links">
-          <li class="social-link">
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/azat-farmanyan/"
-            >
-              <img
-                src="../../assets/icons/social-links-white/bi_linkedin.svg"
-                alt="linkedin"
-              />
+      <!-- Navigation Section -->
+      <nav class="footer-nav">
+        <h3 class="section-title">{{ "footer.navigation" | translate }}</h3>
+        <ul class="nav-list">
+          <li>
+            <a class="nav-item" (click)="navigateTo('home', 'home')">
+              <span class="nav-text">{{ "header.home" | translate }}</span>
+              <span class="nav-indicator"></span>
             </a>
           </li>
-          <li class="social-link">
-            <a target="_blank" href="https://github.com/Azat-Farmanyan">
-              <img
-                src="../../assets/icons/social-links-white/mdi_github.svg"
-                alt="GitHub"
-              />
+          <li>
+            <a class="nav-item" (click)="navigateTo('home', 'about')">
+              <span class="nav-text">{{ "header.about" | translate }}</span>
+              <span class="nav-indicator"></span>
             </a>
           </li>
-          <li class="social-link">
-            <a target="_blank" href="https://www.instagram.com/azat_09.5/">
-              <img
-                src="../../assets/icons/social-links-white/ri_instagram-fill.svg"
-                alt="Instagram"
-              />
+          <li>
+            <a class="nav-item" (click)="navigateTo('home', 'experience')">
+              <span class="nav-text">{{ "header.experience" | translate }}</span>
+              <span class="nav-indicator"></span>
             </a>
           </li>
-          <li class="social-link">
-            <a target="_blank" href="https://t.me/AzatFarmanyan">
-              <img
-                src="../../assets/icons/social-links-white/ic_baseline-telegram.svg"
-                alt="Telegram"
-              />
+          <li>
+            <a class="nav-item" (click)="navigateTo('home', 'projects')">
+              <span class="nav-text">{{ "header.projects" | translate }}</span>
+              <span class="nav-indicator"></span>
             </a>
           </li>
-          <li class="social-link">
-            <a
-              target="_blank"
-              href="https://discordapp.com/users/908978735020146719/"
-            >
-              <img
-                src="../../assets/icons/social-links-white/ic_baseline-discord.svg"
-                alt="Discord"
-              />
-            </a>
-          </li>
-          <li class="social-link">
-            <a
-              target="_blank"
-              href="https://www.facebook.com/profile.php?id=100007929288834"
-            >
-              <img
-                src="../../assets/icons/social-links-white/uiw_facebook.svg"
-                alt="Facebook"
-              />
+          <li>
+            <a class="nav-item" (click)="navigateTo('home', 'contact')">
+              <span class="nav-text">{{ "header.contact" | translate }}</span>
+              <span class="nav-indicator"></span>
             </a>
           </li>
         </ul>
+      </nav>
 
-        <div class="tel">
-          <span>Tel: </span>
-          <a href="tel:+995592477775">+995 592 47 77 75</a>
+      <!-- Social & Contact Section -->
+      <div class="footer-social">
+        <h3 class="section-title">{{ "footer.social_title" | translate }}</h3>
+        
+        <div class="social-grid">
+          <a
+            class="social-item"
+            href="https://www.linkedin.com/in/azat-farmanyan/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <div class="social-icon">
+              <img src="../../assets/icons/social-links-white/bi_linkedin.svg" alt="LinkedIn" />
+            </div>
+            <span class="social-name">LinkedIn</span>
+          </a>
+          
+          <a
+            class="social-item"
+            href="https://github.com/Azat-Farmanyan"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <div class="social-icon">
+              <img src="../../assets/icons/social-links-white/mdi_github.svg" alt="GitHub" />
+            </div>
+            <span class="social-name">GitHub</span>
+          </a>
+          
+          <a
+            class="social-item"
+            href="https://t.me/AzatFarmanyan"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Telegram"
+          >
+            <div class="social-icon">
+              <img src="../../assets/icons/social-links-white/ic_baseline-telegram.svg" alt="Telegram" />
+            </div>
+            <span class="social-name">Telegram</span>
+          </a>
+          
+          <a
+            class="social-item"
+            href="https://discordapp.com/users/908978735020146719/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Discord"
+          >
+            <div class="social-icon">
+              <img src="../../assets/icons/social-links-white/ic_baseline-discord.svg" alt="Discord" />
+            </div>
+            <span class="social-name">Discord</span>
+          </a>
+          
+          <a
+            class="social-item"
+            href="https://www.instagram.com/azat_09.5/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <div class="social-icon">
+              <img src="../../assets/icons/social-links-white/ri_instagram-fill.svg" alt="Instagram" />
+            </div>
+            <span class="social-name">Instagram</span>
+          </a>
+          
+          <a
+            class="social-item"
+            href="https://www.facebook.com/profile.php?id=100007929288834"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <div class="social-icon">
+              <img src="../../assets/icons/social-links-white/uiw_facebook.svg" alt="Facebook" />
+            </div>
+            <span class="social-name">Facebook</span>
+          </a>
         </div>
 
-        <button class="btn-orange-v2 footer-btn" (click)="downloadCV()">
-          <a>{{ "header.download_cv" | translate }}</a>
+        <div class="footer-contact">
+          <div class="contact-item">
+            <span class="contact-label">Tel:</span>
+            <a href="tel:+995592477775" class="contact-link">+995 592 47 77 75</a>
+          </div>
+        </div>
+
+        <button class="btn-download-cv" (click)="downloadCV()">
+          <span class="btn-text">{{ "header.download_cv" | translate }}</span>
+          <span class="btn-icon">↓</span>
         </button>
       </div>
     </div>
 
-    <div class="footer-copiright">
-      <div class="line"></div>
-      <p
-        class="copyright-text"
-        [innerHTML]="'footer.copyright' | translate"
-      ></p>
+    <!-- Footer Copyright -->
+    <div class="footer-copyright">
+      <div class="copyright-divider"></div>
+      <p class="copyright-text" [innerHTML]="'footer.copyright' | translate"></p>
     </div>
   </div>
 </footer>

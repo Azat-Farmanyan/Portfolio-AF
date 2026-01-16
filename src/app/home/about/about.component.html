@@ -49,24 +49,53 @@
           </button> -->
         </div>
         <div class="about-right-side">
-          <h4 class="paragraph-title about-title animated-block">
-            {{ "about.my_skills" | translate }}
-          </h4>
-          <div class="skills">
-            <a
-              [href]="skill.website"
-              target="_blank"
-              [ngClass]="{ 'orange-bg': randomSkillNumber === i }"
-              class="skill-box text animated-block"
-              *ngFor="let skill of skills; let i = index"
-            >
-              <img
-                class="skill-img"
-                loading="lazy"
-                [src]="'../../../assets/icons/skills/' + skill.img"
-              />
-              <span class="skill-txt">{{ skill.name }}</span>
-            </a>
+          <div class="skills-header">
+            <h4 class="skills-title animated-block">
+              {{ "about.my_skills" | translate }}
+            </h4>
+            <div class="title-underline-skills animated-block"></div>
+          </div>
+          <div class="skills-scroll-wrapper" (mouseenter)="pauseScroll()" (mouseleave)="resumeScroll()">
+            <div class="skills-container" [class.paused]="isPaused">
+              <!-- First set of skills -->
+              <a
+                [href]="skill.website"
+                target="_blank"
+                class="skill-card"
+                [ngClass]="{ 'highlighted': randomSkillNumber === i }"
+                *ngFor="let skill of skills; let i = index"
+              >
+                <div class="skill-icon-wrapper">
+                  <img
+                    class="skill-icon"
+                    loading="lazy"
+                    [src]="'../../../assets/icons/skills/' + skill.img"
+                    [alt]="skill.name"
+                  />
+                </div>
+                <span class="skill-name">{{ skill.name }}</span>
+                <div class="skill-hover-effect"></div>
+              </a>
+              <!-- Duplicated set for seamless loop -->
+              <a
+                [href]="skill.website"
+                target="_blank"
+                class="skill-card"
+                [ngClass]="{ 'highlighted': randomSkillNumber === i }"
+                *ngFor="let skill of skills; let i = index"
+              >
+                <div class="skill-icon-wrapper">
+                  <img
+                    class="skill-icon"
+                    loading="lazy"
+                    [src]="'../../../assets/icons/skills/' + skill.img"
+                    [alt]="skill.name"
+                  />
+                </div>
+                <span class="skill-name">{{ skill.name }}</span>
+                <div class="skill-hover-effect"></div>
+              </a>
+            </div>
           </div>
         </div>
       </div>

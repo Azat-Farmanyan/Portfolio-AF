@@ -11,6 +11,7 @@ export class AboutComponent implements OnInit {
   skills: Skill[] = [];
   randomSkillNumber = 0;
   readMore = false;
+  isPaused = false;
 
   constructor(private skillsService: SkillsService) {
     this.skills = this.skillsService.getSkills();
@@ -21,6 +22,14 @@ export class AboutComponent implements OnInit {
     setInterval(() => {
       this.randomSkillNumber = this.getRandomNumber(this.skills.length);
     }, 2000);
+  }
+
+  pauseScroll() {
+    this.isPaused = true;
+  }
+
+  resumeScroll() {
+    this.isPaused = false;
   }
 
   getRandomNumber(max: number) {

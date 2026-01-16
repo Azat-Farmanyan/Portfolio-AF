@@ -35,31 +35,45 @@
     "my_skills": "My Skills"
   },
   "experience-page": {
-    "work_experience": "Work experience"
+    "work_experience": "Work experience",
+    "read_more": "Read more",
+    "read_less": "Read less"
   },
   "experience": [
     {
       "date": {
-        "from": "April  2024",
+        "from": "August 2025",
         "to": "Till now",
+        "duration": ""
+      },
+      "title": "Angular Developer",
+      "company": "True Gamers - IZI.IS",
+      "page": "https://truegamers.ru/",
+      "description": "- I develop and maintain a corporate CRM system for managing computer gaming clubs located in Russia and the UAE. - I work with Angular 18, TypeScript, GraphQL, and PrimeNG, building a modular architecture with support for multiple languages (RU/EN/AR) and real-time updates via WebSocket. - I participate in the development of modules for client management, staff management, terminal management, analytics and reporting. - Our system automates gaming club operations by combining a web CRM and mobile interfaces with features for booking and managing gaming sessions, payments and bar services, analytics and reporting. - The product streamlines club processes, provides a convenient UX for administrators and players, and offers tools for business control.",
+      "companyLogo": "true-gamers.jpg"
+    },
+    {
+      "date": {
+        "from": "April 2025",
+        "to": "September 2025",
         "duration": ""
       },
       "title": "Full Stack Developer (Angular / Node.js)",
       "company": "Background Digital",
       "page": "https://background.digital/",
-      "description": "After a year of collaboration, the company invited me back for temporary support and to implement complex functionality. I support the following websites: vb2.ilike.ru, malahovkahouse.ru, ob2.ilike.ru, river-house.ru, nt.ilike.ru. - I develop new features using Angular 16 and 18 with TypeScript and RxJS. There is an admin panel that helps manage content and residential complexes — I am enhancing it to make it as efficient and user-friendly as possible. - All websites have filtering for apartments and commercial real estate, though it's currently basic. I'm working on improving and optimizing the filtering functionality to make it more user-friendly — including filter state persistence and advanced search options. - I optimize all websites: they are currently fast and functional, but I go through each section to make the code even more efficient — implementing lazy loading for components, reducing image resolution, and so on. In general, I'm polishing the projects to perfection.",
+      "description": "- Developed and enhanced an admin panel for residential complex management (e.g., vb2.ilike.ru, malahovkahouse.ru, etc.), reducing the time required to add new properties by 30%. - Optimized real estate filtering with state preservation — improved user experience and reduced property search time by 25%. - Implemented component lazy loading, decreasing page load times to 1.2–1.5 seconds and improving Lighthouse performance scores. - Coordinated tasks via Yandex Tracker, participating in daily meetings for updates and issue resolution. - Reduced image sizes by 40% without quality loss, increasing overall performance. - Refactored and maintained the codebase to improve readability and maintainability.",
       "companyLogo": "backgound.png"
     },
     {
       "date": {
-        "from": "October  2024",
-        "to": "April 2025",
+        "from": "October 2024",
+        "to": "September 2025",
         "duration": ""
       },
       "title": "Angular Developer",
       "company": "Rick Masters",
       "page": "http://rikmasters.ru/",
-      "description": "- Participated in the design and development of web applications using Angular, TypeScript, and RxJS. - Performed code refactoring to enhance performance and maintainability. - Made architectural decisions and implemented a component-based development approach. - Developed responsive layouts and integrated front-end interfaces with backend systems via REST API. - Collaborated closely with designers (Figma), QA engineers, and developers in an Agile (Scrum) environment. - Actively contributed to product development, proposing innovative solutions to improve user experience.",
+      "description": "- Developed a scalable admin panel (web + mobile version) for handling client requests and managing employee data. - Implemented an Angular 18 architecture using design patterns (Facade, state management with RxJS), improving code clarity and accelerating feature delivery by 40%. - Optimized large data tables by introducing debounce/throttle mechanisms, reducing CPU load by ~25% during search and filtering. - Refactored modules with lazy loading and zoned change detection, cutting page load times by 30%. - Built responsive layout with virtual scroll support for tables, ensuring smooth operation on mobile devices. - Integrated REST APIs and WebSockets for real-time updates of requests and notifications — improved data relevance and reduced manual refreshes. - Decreased support requests by 20% through UX improvements: progressive loading, interactive filters, and contextual hints. - Collaborated in an Agile (Scrum) team: contributed to planning, code reviews, bug fixing, and UX testing alongside designers and QA engineers.",
       "companyLogo": "rik-masters.png"
     },
     {
@@ -71,43 +85,43 @@
       "title": "Full Stack Developer (Angular / Node.js)",
       "company": "Background Digital",
       "page": "https://background.digital/",
-      "description": "- Developed web applications using Angular 2+ for construction project websites, such as https://river-house.ru/, https://malahovkahouse.ru/, and https://3-red.com. - Utilized HTML-5, CSS-3, SCSS, Jade, Swig, ES-5/6 to create efficient and user-friendly interfaces. - Worked with major Git commands for version control. - Additionally applied knowledge of Angular 2, Node.js, Express, Jest/Karma/Jasmine for testing and ensuring code quality. - Maintained high performance levels using modern tools and development methodologies. - Operated under official employment terms as per the Russian Federation Labor Code, with a flexible schedule and remote work options.",
+      "description": "- Developed a Single Page Application (SPA) for residential complexes (River House, Malahovka House, 3 Red) using Angular 18, ensuring fast and responsive user interactions. - Built interfaces from Figma designs with pixel-perfect UI/UX alignment, improving visual consistency and reducing designer revision cycles. - Set up CI/CD pipelines in GitLab, automating build and deployment processes to minimize manual errors and accelerate releases. - Developed REST APIs with Node.js and Express to connect frontend and backend, enabling stable and efficient data loading. - Optimized UI performance using RxJS and responsive layouts, improving speed and cross-browser compatibility. - Participated in Agile workflows using Yandex Tracker, planning tasks daily and synchronizing with the team.",
       "companyLogo": "backgound.png"
     },
     {
       "date": {
         "from": "January 2023",
         "to": "March 2024",
-        "duration": "1 year 3 months"
+        "duration": ""
       },
       "title": "Angular Developer",
       "company": "CyberiaSoft",
       "page": "https://www.cyberiasoft.com/",
-      "description": "- Proficient in HTML, CSS, SCSS, JavaScript, TypeScript, and Angular, responsible for developing and enhancing web-based store management systems. - Collaborated with cross-functional teams to ensure compliance with business requirements, utilizing GitLab for version control and integrating REST APIs for data exchange. - Employed DevExtreme and Frontend JS from DevExtreme to create an interactive and visually appealing user interface, applying RxJS and JSON for efficient data processing. - Implemented responsive design methods to ensure optimal performance on various devices, enhancing user satisfaction. - Followed Agile methodology for efficient feature delivery, using VS Code as the development environment and DevExpress for additional tools and libraries. - Conducted testing and optimization to ensure the quality and performance of systems. - Provided technical support and training to end users, ensuring their effective utilization of web-based store management systems. - Stayed abreast of industry trends for continuous system improvement and maintaining an innovative approach.",
+      "description": "- Migrated a legacy application from .NET MVC + DevExpress to a modern Angular + DevExtreme stack — improved UX and accelerated development speed. - Rebuilt product editing forms with client-side validation and dynamic fields — reduced data entry time by 40%. - Integrated REST APIs with real-time updates using RxJS — orders were refreshed live without page reloads. - Implemented filters by status, date, and text using DevExtreme DataGrid, improving search and sorting convenience. - Ensured responsive UI with CSS Grid and Flexbox, making the system accessible across mobile and desktop devices. - Optimized data loading: implemented lazy loading and reduced redundant requests, cutting catalog load time from 5 to 2 seconds. - Trained the team to work with the new system by preparing documentation and instructional videos.",
       "companyLogo": "cyberiasoft.png"
     },
     {
       "date": {
         "from": "June 2022",
         "to": "May 2023",
-        "duration": "1 year"
+        "duration": ""
       },
       "title": "Angular Developer",
       "company": "GeoAlphaSolution",
       "page": "https://geoalphasolutions.com/",
-      "description": "- Contributed significantly to the development of two distinct projects: 1) FairContent.media: Played a key role in creating the online marketplace FairContent.media, enabling users to buy and sell various goods, including books, videos, music, and documents. [Website: https://www.faircontent.media/home] 2) Swiftness: Led efforts in developing Swiftness, a digital platform revolutionizing the pension savings market. [Website: http://www.swiftness.co.il/] - Utilized skills in HTML, CSS, SCSS, JavaScript, TypeScript, and Angular to create user-friendly and responsive interfaces for both projects, significantly enhancing the overall user experience. - Collaborated closely with interdisciplinary teams, ensuring alignment with project goals and business requirements. Used GitHub for version control and REST API integration for efficient data exchange, harnessing the power of RxJS and JSON for seamless data processing. - Demonstrated adaptability, successfully working on diverse projects in various industries, showcasing a flexible skill set and the ability to learn and adapt quickly to changing conditions. - Maintained a high level of innovation and efficiency, staying abreast of the latest trends in Angular development. Used development tools such as VS Code for smooth and productive workflows. Applied object-oriented programming (OOP) principles and ES6 functionality to create robust and maintainable code. - Additionally, used Figma for collaborative design work and integrated VisualStudio and VS Code into the development process to ensure code quality and consistency.",
+      "description": "- Built user interfaces for FairContent.media and Swiftness using Angular, delivering intuitive UX for e-commerce and fintech products. - Applied TypeScript, RxJS, and REST APIs for dynamic data rendering and stable frontend-backend communication. - Integrated Figma designs and implemented responsive layouts with HTML, SCSS, and CSS, ensuring cross-browser compatibility. - Collaborated using GitHub: managed pull requests, participated in code reviews, and synchronized tasks with the team. - Used ES6 and OOP principles to produce structured, extensible, and maintainable code. - Adapted quickly to evolving requirements, shifting features, and distributed team workflows.",
       "companyLogo": "GeoAlpha-Solutions.png"
     },
     {
       "date": {
         "from": "February 2022",
         "to": "October 2022",
-        "duration": "9 months"
+        "duration": ""
       },
       "title": "Angular Developer",
-      "company": "Emap - RsSchool",
+      "company": "Epam - RsSchool",
       "page": "https://www.epam.com/",
-      "description": "- Participated in an intensive Front-End development program at Emap - RsSchool, initiating my immersion into the world of web development. Mastered a comprehensive skill set, including HTML, CSS, JavaScript, TypeScript, and Angular, laying a solid foundation for modern web development. Thrived in a demanding and rigorous educational environment with a high attrition rate, where only 46 out of 600 participants demonstrated commitment, perseverance, and completed the program. Proud to be among the dedicated individuals who achieved this significant milestone. Effectively applied acquired knowledge and skills in real-world projects, gaining practical experience in designing and developing user-friendly web interfaces. Attained significant success, receiving a completion certificate confirming my expertise in Front-End development and validating my commitment to excellence in this field. Kept abreast of the latest trends and best practices in web development, ensuring my stay at the forefront of this constantly evolving field. Utilized tools such as Figma for web design, Git and Github for version control, REST API for data integration, and RxJS for efficient data processing. Applied JSON for data exchange and optimized code using VS Code and VisualStudio. Proficiently used Chrome DevTools for debugging and enhancing web applications.",
+      "description": "- Completed Intensive Frontend Development Course — ranked in the top 46 out of 600 participants. - Covered HTML, CSS, JavaScript, TypeScript, and Angular with a strong focus on practical skills. - Developed 4 training projects: BookShop, Shelter, Project Management System, English for Kids. - Gained hands-on experience working with Figma designs, Git/GitHub, REST APIs, and RxJS in a team setting. - Used Chrome DevTools for debugging and applied modern tools and best practices for code optimization. - Earned a certificate confirming successful completion and proficiency in acquired technologies.",
       "companyLogo": "epam.png"
     },
     {
@@ -138,6 +152,8 @@
   "projects": {
     "section_title": "PROJECTS",
     "projects_text": "Here you will find some of the personal and clients projects that I created with each project containing its own case study",
+    "top_commercial_projects": "Top Commercial Projects",
+    "personal_projects": "Personal Projects",
     "projects_list": [
       {
         "id": 20,

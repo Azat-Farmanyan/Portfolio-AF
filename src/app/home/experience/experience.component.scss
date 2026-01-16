@@ -1,27 +1,128 @@
 .experience {
+  padding: 120px 0;
+  background: linear-gradient(180deg, #293241 0%, #1a2332 100%);
+  position: relative;
+  overflow: hidden;
 
-  padding: 100px 0;
-  background: #293241;
+  // Decorative background elements
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(238, 108, 77, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(61, 90, 128, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+  }
 
   .projects-header {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 30px;
+    gap: 25px;
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 60px;
+      gap: 20px;
+    }
 
     .section-title {
       color: #FFF;
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.9) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0 0 20px 0;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 36px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        font-size: 28px;
+      }
+    }
+
+    .title-underline {
+      width: 100px;
+      height: 5px;
+      background: linear-gradient(90deg, #EE6C4D 0%, #ff8c69 100%);
+      border-radius: 3px;
+      margin: 0 auto;
+      position: relative;
+      box-shadow: 0 2px 10px rgba(238, 108, 77, 0.3);
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        background: #EE6C4D;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(238, 108, 77, 0.5);
+      }
+
+      @media only screen and (max-width: 600px) {
+        width: 80px;
+        height: 4px;
+
+        &::before {
+          width: 10px;
+          height: 10px;
+        }
+      }
     }
 
     .about-text {
       max-width: 763px;
+      color: rgba(255, 255, 255, 0.7);
     }
   }
 
   .experience-body {
     display: flex;
     flex-direction: column;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media only screen and (max-width: 768px) {
+      padding: 0 15px;
+    }
+
+    // Add spacing between experience items
+    app-experience-item {
+      display: block;
+      margin-bottom: 50px;
+
+      @media only screen and (max-width: 768px) {
+        margin-bottom: 40px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        margin-bottom: 30px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }

@@ -1,10 +1,32 @@
 .about {
-  background-color: #fafafa;
+  background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
+  position: relative;
+  overflow: hidden;
+
+  // Decorative background elements
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(circle at 10% 20%, rgba(238, 108, 77, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(41, 50, 65, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+  }
 
   .about-body {
-    padding: 100px 0;
+    padding: 120px 0;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (max-width: 768px) {
+      padding: 80px 0;
+    }
 
     .about-header {
       margin-bottom: 60px;
@@ -64,40 +86,287 @@
 
       .about-right-side {
         flex: 0 47%;
-        /*lower the % to get more columns*/
         flex-grow: 1;
+        width: 100%;
 
-        .skills {
+        .skills-header {
+          margin-bottom: 50px;
+          text-align: center;
+
+          @media only screen and (max-width: 768px) {
+            margin-bottom: 40px;
+          }
+
+          .skills-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #293241;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #293241 0%, #3d5a80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+            @media only screen and (max-width: 768px) {
+              font-size: 28px;
+            }
+
+            @media only screen and (max-width: 600px) {
+              font-size: 24px;
+            }
+          }
+
+          .title-underline-skills {
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, #EE6C4D 0%, #ff8c69 100%);
+            border-radius: 3px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(238, 108, 77, 0.3);
+
+            &::before {
+              content: '';
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              width: 12px;
+              height: 12px;
+              background: #EE6C4D;
+              border-radius: 50%;
+              box-shadow: 0 0 15px rgba(238, 108, 77, 0.5);
+            }
+
+            @media only screen and (max-width: 600px) {
+              width: 80px;
+              height: 4px;
+
+              &::before {
+                width: 10px;
+                height: 10px;
+              }
+            }
+          }
+        }
+
+        .skills-scroll-wrapper {
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+          padding: 20px 0;
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+          }
+
+          &::before {
+            left: 0;
+            background: linear-gradient(to right,
+              #fafafa 0%,
+              #f5f5f5 50%,
+              rgba(245, 245, 245, 0.8) 70%,
+              transparent 100%);
+          }
+
+          &::after {
+            right: 0;
+            background: linear-gradient(to left,
+              #fafafa 0%,
+              #f5f5f5 50%,
+              rgba(245, 245, 245, 0.8) 70%,
+              transparent 100%);
+          }
+
+          @media only screen and (max-width: 768px) {
+            &::before,
+            &::after {
+              width: 50px;
+            }
+          }
+        }
+
+        .skills-container {
           display: flex;
-          gap: 15px;
-          flex-wrap: wrap;
+          gap: 20px;
+          width: fit-content;
+          animation: scroll 30s linear infinite;
+          padding: 0 20px;
 
-          .skill-box {
-            // border-radius: 5px;
-            flex-grow: 1;
+          @media only screen and (max-width: 768px) {
+            gap: 15px;
+            padding: 0 15px;
+            animation-duration: 25s;
+          }
 
-            background: #ebebeb;
-            padding: 8px 16px;
-            transition: all 0.3s ease-in-out;
+          @media only screen and (max-width: 600px) {
+            gap: 12px;
+            padding: 0 12px;
+            animation-duration: 20s;
+          }
+
+          &.paused {
+            animation-play-state: paused;
+          }
+
+          .skill-card {
+            position: relative;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 5px;
-            max-width: 300px;
+            gap: 12px;
+            padding: 25px 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 2px solid rgba(238, 108, 77, 0.1);
+            border-radius: 20px;
+            text-decoration: none;
+            color: #293241;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            cursor: pointer;
+            flex-shrink: 0;
+            min-width: 140px;
 
-            .skill-txt {
-              white-space: nowrap
+            @media only screen and (max-width: 768px) {
+              padding: 20px 15px;
+              gap: 10px;
+              border-radius: 16px;
+              min-width: 120px;
             }
 
-            .skill-img {
-              width: 30px;
+            @media only screen and (max-width: 600px) {
+              padding: 18px 12px;
+              gap: 8px;
+              border-radius: 14px;
+              min-width: 100px;
             }
 
+            // Hover effect background
+            .skill-hover-effect {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: linear-gradient(135deg, #EE6C4D 0%, #ff8c69 100%);
+              opacity: 0;
+              transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+              z-index: 0;
+            }
+
+            .skill-icon-wrapper {
+              position: relative;
+              z-index: 1;
+              width: 60px;
+              height: 60px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: linear-gradient(135deg, rgba(238, 108, 77, 0.1) 0%, rgba(238, 108, 77, 0.05) 100%);
+              border-radius: 16px;
+              transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+              @media only screen and (max-width: 768px) {
+                width: 50px;
+                height: 50px;
+                border-radius: 12px;
+              }
+
+              @media only screen and (max-width: 600px) {
+                width: 45px;
+                height: 45px;
+                border-radius: 10px;
+              }
+
+              .skill-icon {
+                width: 35px;
+                height: 35px;
+                object-fit: contain;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+                @media only screen and (max-width: 768px) {
+                  width: 30px;
+                  height: 30px;
+                }
+
+                @media only screen and (max-width: 600px) {
+                  width: 28px;
+                  height: 28px;
+                }
+              }
+            }
+
+            .skill-name {
+              position: relative;
+              z-index: 1;
+              font-size: 15px;
+              font-weight: 600;
+              text-align: center;
+              white-space: nowrap;
+              transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+              color: #293241;
+
+              @media only screen and (max-width: 768px) {
+                font-size: 14px;
+              }
+
+              @media only screen and (max-width: 600px) {
+                font-size: 12px;
+              }
+            }
+
+            // Hover state
             &:hover {
-              background: radial-gradient(192.86% 128.3% at 12.17% 6.95%, #FF9379 0%, #EE6C4D 100%);
-              color: #fff;
-              transform: scale(1.2);
-              z-index: 500;
+              transform: translateY(-8px) scale(1.05);
+              border-color: rgba(238, 108, 77, 0.5);
+              box-shadow: 0 20px 40px rgba(238, 108, 77, 0.2),
+                          0 0 30px rgba(238, 108, 77, 0.1);
+
+              .skill-hover-effect {
+                opacity: 1;
+              }
+
+              .skill-icon-wrapper {
+                background: rgba(255, 255, 255, 0.2);
+                transform: scale(1.1) rotate(5deg);
+
+                .skill-icon {
+                  filter: brightness(1.1);
+                  transform: scale(1.15);
+                }
+              }
+
+              .skill-name {
+                color: #ffffff;
+                font-weight: 700;
+              }
+            }
+
+            // Highlighted state (random animation)
+            &.highlighted {
+              animation: pulse-glow 2s ease-in-out infinite;
+              border-color: rgba(238, 108, 77, 0.6);
+              box-shadow: 0 0 25px rgba(238, 108, 77, 0.3);
+
+              .skill-icon-wrapper {
+                background: linear-gradient(135deg, rgba(238, 108, 77, 0.2) 0%, rgba(238, 108, 77, 0.1) 100%);
+              }
+            }
+
+            // Active state
+            &:active {
+              transform: translateY(-4px) scale(1.02);
             }
           }
         }
@@ -144,4 +413,28 @@
 
 .about-title {
   margin-bottom: 40px;
+}
+
+// Animation for highlighted skill
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(238, 108, 77, 0.3),
+                0 10px 30px rgba(238, 108, 77, 0.15);
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(238, 108, 77, 0.5),
+                0 15px 40px rgba(238, 108, 77, 0.25);
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+// Infinite scroll animation
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

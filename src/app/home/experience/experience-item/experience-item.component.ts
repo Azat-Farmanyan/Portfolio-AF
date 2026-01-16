@@ -5,6 +5,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { ExperienceService } from 'src/app/services/experience.service';
 import { Experience } from '../../../services/experience.service';
 
@@ -21,12 +22,38 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
   experienceTxt = '';
   companyPage = '';
   experienceDuration = '';
+  hasLogo = false;
+  isExpanded = false;
+  showReadMore = false;
+  descriptionHeight = 0;
+  readMoreText = '';
+  readLessText = '';
 
-  ngOnInit(): void {}
+  constructor(private translate: TranslateService) {}
+
+  ngOnInit(): void {
+    // Check if description needs "read more" after view init
+    setTimeout(() => {
+      this.checkDescriptionHeight();
+    }, 100);
+    this.loadTranslations();
+  }
+
+  loadTranslations() {
+    this.translate.get('experience-page.read_more').subscribe((res: string) => {
+      this.readMoreText = res;
+    });
+    this.translate.get('experience-page.read_less').subscribe((res: string) => {
+      this.readLessText = res;
+    });
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['experience']) {
       this.updateExperienceDetails();
+    }
+    if (changes['currentLang']) {
+      this.loadTranslations();
     }
   }
 
@@ -37,6 +64,7 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
       this.experience.date.from,
       this.experience.date.to
     );
+    this.hasLogo = !!(this.experience.companyLogo && this.experience.companyLogo.trim() !== '');
   }
 
   getexperienceDescription() {
@@ -174,5 +202,14 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
     }
 
     return duration;
+  }
+
+  toggleDescription() {
+    this.isExpanded = !this.isExpanded;
+  }
+
+  checkDescriptionHeight() {
+    // Always show read more button to allow expanding/collapsing
+    this.showReadMore = true;
   }
 }

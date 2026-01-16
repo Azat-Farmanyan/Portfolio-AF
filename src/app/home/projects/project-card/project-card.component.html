@@ -6,7 +6,7 @@
         {{ project.description[0] | textCut : 30 }}
       </div>
       <button (click)="openDetails(project.id)" class="btn-orange-v2">
-        See More
+        {{ seeMoreText }}
       </button>
     </div>
     <div class="project-galeria">

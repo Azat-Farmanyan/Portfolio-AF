@@ -1,229 +1,483 @@
 .experience-item {
-    &:hover .circle {
-        background-color: #EE6C4D !important;
-        transform: scale(1.3);
+  position: relative;
+  margin-bottom: 50px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 30px;
+  }
+
+  .experience-card {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media only screen and (max-width: 768px) {
+      gap: 20px;
     }
-
-    &:hover .experience-company-logo {
-        transform: scale(1.1);
-    }
-
-    .experience-item-body {
-        color: #fff;
-        display: flex;
-        color: #FFF;
-        font-family: "Roboto";
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 135%;
-        /* 21.6px */
-        letter-spacing: 0.8px;
-
-        .left-side {
-            flex: 0 0 15%;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            // background-color: red;
-        }
-
-        .centerline {
-            width: 25px;
-            flex: 0 0 10%;
-
-            @media only screen and (max-width: 600px) {
-                flex: 0 0 5%;
-                margin-right: 20px;
-            }
-
-            .circle {
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                background: #293241;
-                border: 3px solid #fff;
-                margin: 0 auto;
-                transition: all 0.5s ease;
-                margin-top: 10px;
-
-                top: 60px;
-                z-index: 10;
-                background-color: #293241;
-                padding: 10px 0;
-
-
-                @media only screen and (max-width: 600px) {
-                    position: sticky;
-                    padding: 10px 0; // отступы, чтобы текст заголовка не слипался с границами
-                }
-
-            }
-
-            .active-circle {
-                background-color: #EE6C4D !important;
-                transform: scale(1.2);
-                margin: 10px 0;
-            }
-
-            .circle-line {
-                width: 3px;
-                background-color: #fff;
-                height: 100%;
-                margin: 0 auto;
-            }
-        }
-
-        .experience-descreption {
-            // position: relative;
-            flex: 0 0 75%;
-            text-wrap: wrap;
-
-            @media only screen and (max-width: 600px) {
-                flex: 0 0 85%;
-            }
-
-            .experience-header {
-                top: 50px;
-                z-index: 10;
-                background-color: #293241;
-                padding: 10px 0;
-
-                @media only screen and (max-width: 600px) {
-                    position: sticky;
-                    padding: 10px 0; // отступы, чтобы текст заголовка не слипался с границами
-                }
-
-                .experience-company-logo {
-                    max-width: 150px;
-                    margin-bottom: 20px;
-                    cursor: pointer;
-                    transition: transform 0.2s ease-in;
-
-                    @media only screen and (max-width: 600px) {
-                        display: none;
-                    }
-                }
-
-                .experience-title {
-                    color: #FFF;
-                    font-family: Roboto;
-                    font-size: 24px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: 135%;
-                    /* 32.4px */
-                    letter-spacing: 1.2px;
-                    margin-bottom: 10px;
-
-                    @media only screen and (max-width: 600px) {
-                        font-size: 20px;
-                        margin-bottom: 0;
-                    }
-                }
-
-                .experience-subtitle,
-                .experience-subtitle a {
-                    color: #B0B0B0;
-                    font-family: Roboto;
-                    font-size: 16px;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 135%;
-                    /* 21.6px */
-                    letter-spacing: 0.8px;
-                    margin-bottom: 20px;
-
-                    @media only screen and (max-width: 600px) {
-                        margin-bottom: 10px;
-                    }
-
-                }
-
-                .experience-subtitle a {
-                    text-decoration-line: underline;
-                    transition: all 0.2s ease;
-
-                    &:hover {
-                        color: #fff;
-                    }
-                }
-
-                .experience-txt {
-                    color: #FFF;
-                    font-family: Roboto;
-                    font-size: 18px;
-                    font-style: normal;
-                    font-weight: 300;
-                    line-height: 200%;
-                    /* 21.6px */
-                    letter-spacing: 0.8px;
-                    padding-right: 30px;
-
-                    @media only screen and (max-width: 700px) {
-                        font-size: 16px;
-                        line-height: 170%;
-                    }
-
-                    @media only screen and (max-width: 600px) {
-                        padding-right: 0;
-                        font-size: 16px;
-                    }
-
-                    @media only screen and (max-width: 500px) {
-                        font-size: 14px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.date-txt {
-    color: #FFF;
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 135%;
-    /* 21.6px */
-    letter-spacing: 0.8px;
-
-    @media only screen and (max-width: 500px) {
-        font-size: 14px;
-    }
-
-}
-
-.duration-txt {
-    color: #B0B0B0;
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 135%;
-    /* 21.6px */
-    letter-spacing: 0.8px;
-
-}
-
-.hide-min600 {
-    @media only screen and (min-width: 600px) {
-        display: none !important;
-    }
-}
-
-.hide-max600 {
-    padding-top: 20px;
 
     @media only screen and (max-width: 600px) {
-        display: none !important;
+      gap: 15px;
     }
+
+    // Timeline indicator
+    .timeline-indicator {
+      position: relative;
+      flex-shrink: 0;
+      width: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media only screen and (max-width: 600px) {
+        width: 30px;
+      }
+
+      .timeline-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #293241 0%, #3d5a80 100%);
+        border: 4px solid #fff;
+        box-shadow: 0 4px 12px rgba(238, 108, 77, 0.3);
+        z-index: 2;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+
+        @media only screen and (max-width: 600px) {
+          width: 16px;
+          height: 16px;
+          border-width: 3px;
+        }
+
+        &.active {
+          background: linear-gradient(135deg, #EE6C4D 0%, #ff8c69 100%);
+          transform: scale(1.3);
+          box-shadow: 0 6px 20px rgba(238, 108, 77, 0.5);
+        }
+      }
+
+      .timeline-line {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        height: calc(100% + 40px);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.3) 0%,
+          rgba(255, 255, 255, 0.1) 100%
+        );
+        z-index: 1;
+
+        @media only screen and (max-width: 600px) {
+          width: 2px;
+        }
+
+        &.last {
+          display: none;
+        }
+      }
+    }
+
+    // Card content
+    .card-content {
+      flex: 1;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 35px;
+      backdrop-filter: blur(10px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+
+      @media only screen and (max-width: 768px) {
+        padding: 25px;
+        border-radius: 16px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      // Hover effect
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #EE6C4D 0%, #ff8c69 50%, #EE6C4D 100%);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        border-color: rgba(238, 108, 77, 0.3);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                    0 0 40px rgba(238, 108, 77, 0.1);
+
+        &::before {
+          transform: scaleX(1);
+        }
+
+        .company-logo {
+          transform: scale(1.05);
+        }
+
+        .timeline-dot {
+          background: linear-gradient(135deg, #EE6C4D 0%, #ff8c69 100%);
+          transform: scale(1.2);
+          box-shadow: 0 6px 20px rgba(238, 108, 77, 0.5);
+        }
+      }
+    }
+
+    // Card header
+    .card-header {
+      margin-bottom: 25px;
+
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 25px;
+        flex-wrap: wrap;
+
+        @media only screen and (max-width: 768px) {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+          .company-info {
+          display: flex;
+          align-items: flex-start;
+          gap: 20px;
+          flex: 1;
+
+          @media only screen and (max-width: 600px) {
+            gap: 15px;
+          }
+
+          // When no logo, adjust title section
+          &:has(.company-logo-wrapper:not(*)) {
+            .title-section {
+              margin-left: 0;
+            }
+          }
+
+          .company-logo-wrapper {
+            flex-shrink: 0;
+            display: block;
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            @media only screen and (max-width: 600px) {
+              width: 60px;
+              height: 60px;
+              padding: 8px;
+              border-radius: 12px;
+            }
+
+            &:hover {
+              background: rgba(255, 255, 255, 0.1);
+              border-color: rgba(238, 108, 77, 0.3);
+              transform: translateY(-2px);
+              box-shadow: 0 8px 20px rgba(238, 108, 77, 0.2);
+            }
+
+            .company-logo {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              transition: transform 0.3s ease;
+            }
+          }
+
+          .title-section {
+            flex: 1;
+
+            .job-title {
+              color: #fff;
+              font-family: 'Roboto', sans-serif;
+              font-size: 28px;
+              font-weight: 700;
+              line-height: 1.3;
+              letter-spacing: 0.5px;
+              margin: 0 0 12px 0;
+              background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.9) 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+
+              @media only screen and (max-width: 768px) {
+                font-size: 24px;
+              }
+
+              @media only screen and (max-width: 600px) {
+                font-size: 20px;
+                margin-bottom: 8px;
+              }
+            }
+
+            .company-name {
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              flex-wrap: wrap;
+
+              .company-text {
+                color: #B0B0B0;
+                font-family: 'Roboto', sans-serif;
+                font-size: 18px;
+                font-weight: 500;
+                letter-spacing: 0.3px;
+
+                @media only screen and (max-width: 600px) {
+                  font-size: 16px;
+                }
+              }
+
+              .company-link {
+                color: #EE6C4D;
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                position: relative;
+                padding-bottom: 2px;
+
+                @media only screen and (max-width: 600px) {
+                  font-size: 14px;
+                }
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 0;
+                  height: 2px;
+                  background: linear-gradient(90deg, #EE6C4D 0%, #ff8c69 100%);
+                  transition: width 0.3s ease;
+                }
+
+                &:hover {
+                  color: #ff8c69;
+
+                  &::after {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .date-badge {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 8px;
+          flex-shrink: 0;
+
+          @media only screen and (max-width: 768px) {
+            align-items: flex-start;
+            width: 100%;
+          }
+
+          .date-range {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            white-space: nowrap;
+
+            @media only screen and (max-width: 600px) {
+              font-size: 14px;
+              flex-wrap: wrap;
+            }
+
+            .date-separator {
+              color: #B0B0B0;
+              font-weight: 300;
+            }
+          }
+
+          .duration-badge {
+            background: linear-gradient(135deg, rgba(238, 108, 77, 0.2) 0%, rgba(238, 108, 77, 0.1) 100%);
+            border: 1px solid rgba(238, 108, 77, 0.3);
+            border-radius: 12px;
+            padding: 6px 14px;
+            color: #EE6C4D;
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+
+            @media only screen and (max-width: 600px) {
+              font-size: 12px;
+              padding: 5px 12px;
+            }
+          }
+        }
+      }
+    }
+
+    // Description section
+    .card-description {
+      .description-content {
+        color: rgba(255, 255, 255, 0.9);
+        font-family: 'Roboto', sans-serif;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 1.8;
+        letter-spacing: 0.3px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 16px;
+          line-height: 1.7;
+        }
+
+        @media only screen and (max-width: 600px) {
+          font-size: 15px;
+          line-height: 1.6;
+        }
+
+        // Collapsed state - show only first 3 lines
+        &.collapsed {
+          max-height: 5.4em; // ~3 lines (1.8 line-height * 3)
+          mask-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 1) 70%,
+            rgba(0, 0, 0, 0) 100%
+          );
+          -webkit-mask-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 1) 70%,
+            rgba(0, 0, 0, 0) 100%
+          );
+        }
+
+        // Expanded state
+        &.expanded {
+          max-height: 2000px;
+          mask-image: none;
+          -webkit-mask-image: none;
+        }
+
+        // Style for list items
+        ::ng-deep {
+          a {
+            color: #EE6C4D;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+
+            &:hover {
+              color: #ff8c69;
+              text-decoration: underline;
+            }
+          }
+
+          b, u {
+            color: #fff;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .read-more-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+        padding: 12px 20px;
+        background: linear-gradient(135deg, rgba(238, 108, 77, 0.15) 0%, rgba(238, 108, 77, 0.1) 100%);
+        border: 1px solid rgba(238, 108, 77, 0.3);
+        border-radius: 12px;
+        color: #EE6C4D;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        outline: none;
+
+        @media only screen and (max-width: 600px) {
+          padding: 10px 16px;
+          font-size: 14px;
+          margin-top: 15px;
+        }
+
+        &:hover {
+          background: linear-gradient(135deg, rgba(238, 108, 77, 0.25) 0%, rgba(238, 108, 77, 0.15) 100%);
+          border-color: rgba(238, 108, 77, 0.5);
+          color: #ff8c69;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(238, 108, 77, 0.2);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+
+        .arrow-icon {
+          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          stroke: currentColor;
+
+          &.rotated {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
 }
 
+// Animation for timeline dot
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
 
-
-.slide-right {
-    -webkit-animation: slide-right .5s cubic-bezier(.25, .46, .45, .94) both;
-    animation: slide-right .5s cubic-bezier(.25, .46, .45, .94) both
+.experience-item:hover .timeline-dot {
+  animation: pulse 2s ease-in-out infinite;
 }

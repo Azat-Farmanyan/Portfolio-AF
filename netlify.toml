@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist/portfolio-af"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Для обновления build image зайдите в Netlify UI:
+  # Site settings > Build & deploy > Environment > Build image
+  # Выберите "Ubuntu 22.04" или "Ubuntu 24.04" вместо Focal
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

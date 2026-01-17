@@ -3,6 +3,8 @@ import {
   Component,
   inject,
   Input,
+  ElementRef,
+  ViewChild,
 } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Project } from 'src/app/services/projects.service';
@@ -28,7 +30,21 @@ export class ProjectCardV3Component {
   public screenshotsFolderPath = '../../../../assets/screenshots/';
 
   openDetails(id: number) {
+    // Сохраняем ID проекта
     localStorage.setItem('scrollId', String(id));
+
+    // Сохраняем позицию скролла контейнера личных проектов
+    const personalProjectsContainer = document.querySelector('.personal-projects__block');
+    if (personalProjectsContainer) {
+      localStorage.setItem('personalProjectsScrollLeft', String(personalProjectsContainer.scrollLeft));
+    }
+
+    // Сохраняем информацию о том, что это личный проект
+    localStorage.setItem('projectType', 'personal');
+
+    // Сохраняем позицию скролла страницы
+    localStorage.setItem('pageScrollTop', String(window.pageYOffset || document.documentElement.scrollTop));
+
     this.router.navigate([`details/${id}`]);
   }
 }

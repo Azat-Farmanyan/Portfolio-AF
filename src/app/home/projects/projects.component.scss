@@ -213,39 +213,97 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 5px;
-        // margin-left: auto;
+        gap: 10px;
+        flex-shrink: 0;
 
         .btn-orange-v2 {
-          padding: 12px 42px;
+          padding: 12px 16px;
+          min-width: 48px;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 8px;
+
+          &:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(238, 108, 77, 0.3);
+          }
+
+          &:active:not(:disabled) {
+            transform: translateY(0);
+          }
+
+          &:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+          }
 
           img {
             padding-top: 2px;
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+          }
+
+          &:hover:not(:disabled) img {
+            transform: scale(1.1);
           }
         }
-
       }
 
       &__block {
         display: flex;
         flex-direction: row;
-        gap: 20px;
+        gap: 30px;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-        scroll-snap-align: center;
+        scroll-snap-type: x mandatory;
         margin-bottom: 80px;
+        padding: 20px 0 40px 0;
+        scroll-padding: 0 20px;
 
-        /* Убираем полосы прокрутки */
+        /* Плавный скролл с улучшенной видимостью */
         &::-webkit-scrollbar {
-          display: none;
+          height: 6px;
+          background: rgba(238, 108, 77, 0.1);
+          border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: linear-gradient(90deg, #EE6C4D 0%, #ff8c69 100%);
+          border-radius: 10px;
+          transition: background 0.3s ease;
+
+          &:hover {
+            background: linear-gradient(90deg, #ff8c69 0%, #EE6C4D 100%);
+          }
+        }
+
+        &::-webkit-scrollbar-track {
+          background: rgba(238, 108, 77, 0.05);
+          border-radius: 10px;
+        }
+
+        // Скрываем скроллбар на мобильных
+        @media only screen and (max-width: 768px) {
+          &::-webkit-scrollbar {
+            display: none;
+          }
         }
       }
 
       app-project-card-commertial-v1 {
         flex-shrink: 0;
-        // width: 500px;
-        scroll-behavior: smooth;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+
+        &:first-child {
+          margin-left: 20px;
+        }
+
+        &:last-child {
+          margin-right: 20px;
+        }
       }
     }
 
@@ -272,33 +330,173 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 5px;
-        // margin-left: auto;
+        gap: 10px;
+        flex-shrink: 0;
 
         .btn-orange-v2 {
-          padding: 12px 42px;
+          padding: 12px 16px;
+          min-width: 48px;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 8px;
+
+          &:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(238, 108, 77, 0.3);
+          }
+
+          &:active:not(:disabled) {
+            transform: translateY(0);
+          }
+
+          &:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+          }
 
           img {
             padding-top: 2px;
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+          }
+
+          &:hover:not(:disabled) img {
+            transform: scale(1.1);
           }
         }
-
       }
 
       &__block {
         display: flex;
         flex-direction: row;
-        gap: 20px;
+        gap: 30px;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-        scroll-snap-align: center;
+        scroll-snap-type: x mandatory;
+        padding: 20px 0 40px 0;
+        scroll-padding: 20px 20px; // Отступы при скролле для начала и конца
 
-        /* Убираем полосы прокрутки */
+        /* Плавный скролл с улучшенной видимостью */
         &::-webkit-scrollbar {
-          display: none;
+          height: 6px;
+          background: rgba(238, 108, 77, 0.1);
+          border-radius: 10px;
         }
 
+        &::-webkit-scrollbar-thumb {
+          background: linear-gradient(90deg, #EE6C4D 0%, #ff8c69 100%);
+          border-radius: 10px;
+          transition: background 0.3s ease;
+
+          &:hover {
+            background: linear-gradient(90deg, #ff8c69 0%, #EE6C4D 100%);
+          }
+        }
+
+        &::-webkit-scrollbar-track {
+          background: rgba(238, 108, 77, 0.05);
+          border-radius: 10px;
+        }
+
+        // Скрываем скроллбар на мобильных
+        @media only screen and (max-width: 768px) {
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+
+        // Эффектная анимация блока
+        &.animated-projects-block {
+          opacity: 0;
+          transform: perspective(1000px) rotateX(15deg) rotateY(-10deg) scale(0.9);
+          transform-origin: center center;
+          transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+          will-change: transform, opacity;
+          backface-visibility: hidden;
+
+          // Параллакс эффект при скролле
+          @supports (animation-timeline: scroll()) {
+            animation: projects-block-reveal linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+          }
+
+          &.is-visible {
+            opacity: 1;
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+
+            // Интерактивный эффект на десктопе
+            @media only screen and (min-width: 769px) {
+              transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+              &:hover {
+                transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.01);
+              }
+            }
+          }
+
+          // Эффект свечения при появлении
+          &::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: radial-gradient(
+              ellipse at center,
+              rgba(238, 108, 77, 0.15) 0%,
+              transparent 70%
+            );
+            opacity: 0;
+            transition: opacity 1s ease;
+            pointer-events: none;
+            z-index: -1;
+          }
+
+          &.is-visible::before {
+            opacity: 1;
+            animation: glow-pulse 3s ease-in-out infinite;
+          }
+        }
+      }
+
+      app-project-card-v3 {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+                    opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+                    filter 0.3s ease;
+
+        &:last-child {
+          margin-right: 20px;
+        }
+
+        // Каскадная анимация карточек
+        &:not(.card-visible) {
+          opacity: 0;
+          transform: translateY(50px) scale(0.85) rotateY(-15deg);
+          filter: blur(10px);
+        }
+
+        &.card-visible {
+          opacity: 1;
+          transform: translateY(0) scale(1) rotateY(0deg);
+          filter: blur(0);
+          animation: card-reveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        // Эффект при наведении на карточку
+        @media only screen and (min-width: 769px) {
+          &:hover {
+            transform: translateY(-8px) scale(1.03) rotateY(2deg);
+            z-index: 10;
+            filter: drop-shadow(0 20px 40px rgba(238, 108, 77, 0.3));
+          }
+        }
       }
     }
   }
@@ -308,6 +506,7 @@
   max-width: 1400px;
   margin: 0 auto;
 }
+
 
 @keyframes particle-float {
   0%, 100% {
@@ -351,5 +550,45 @@
   50% {
     transform: translate(50px, -50px) rotate(10deg);
     opacity: 0.4;
+  }
+}
+
+// Анимации для блока персональных проектов
+@keyframes projects-block-reveal {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(15deg) rotateY(-10deg) scale(0.9) translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1) translateY(0);
+  }
+}
+
+@keyframes card-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.85) rotateY(-15deg);
+    filter: blur(10px);
+  }
+  60% {
+    transform: translateY(-10px) scale(1.05) rotateY(5deg);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateY(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
   }
 }

@@ -70,12 +70,52 @@ export class ProjectsComponent
   }
 
   ngAfterViewInit() {
-    // this.scrollToProjects();
+    // Позиция будет восстановлена после загрузки проектов
+  }
 
-    // Получаем сохранённый ID элемента
+  private restoreScrollPosition() {
+    const projectType = localStorage.getItem('projectType');
     const scrollId = localStorage.getItem('scrollId');
 
-    return;
+    if (!projectType || !scrollId) {
+      return;
+    }
+
+    // Восстанавливаем позицию скролла страницы
+    const pageScrollTop = localStorage.getItem('pageScrollTop');
+    if (pageScrollTop) {
+      window.scrollTo({
+        top: parseInt(pageScrollTop, 10),
+        behavior: 'instant'
+      });
+    }
+
+    // Восстанавливаем позицию скролла контейнера проектов
+    if (projectType === 'personal' && this.projectsContainer) {
+      const scrollLeft = localStorage.getItem('personalProjectsScrollLeft');
+      if (scrollLeft) {
+        this.projectsContainer.nativeElement.scrollLeft = parseInt(scrollLeft, 10);
+      }
+    } else if (projectType === 'commercial' && this.commertialProjectsContainer) {
+      const scrollLeft = localStorage.getItem('commertialProjectsScrollLeft');
+      if (scrollLeft) {
+        this.commertialProjectsContainer.nativeElement.scrollLeft = parseInt(scrollLeft, 10);
+      }
+    }
+
+    // Очищаем сохранённые данные после восстановления
+    setTimeout(() => {
+      localStorage.removeItem('projectType');
+      localStorage.removeItem('scrollId');
+      localStorage.removeItem('personalProjectsScrollLeft');
+      localStorage.removeItem('commertialProjectsScrollLeft');
+      localStorage.removeItem('pageScrollTop');
+    }, 500);
+  }
+
+  oldScrollCode() {
+    // Старый код (не используется)
+    const scrollId = localStorage.getItem('scrollId');
 
     if (scrollId) {
       // Максимальное количество попыток
@@ -139,6 +179,8 @@ export class ProjectsComponent
       .pipe(takeUntil(this.destroy$))
       .subscribe((data) => {
         this.projects = this.sortProjectsByIds(data, [20, 18, 15, 6, 9, 3, 2]);
+        // Восстанавливаем позицию после загрузки проектов
+        setTimeout(() => this.restoreScrollPosition(), 300);
       });
 
     this.projectsService
@@ -187,31 +229,47 @@ export class ProjectsComponent
   }
 
   onWheel(event: WheelEvent): void {
-    const scrollAmount = event.deltaX || event.deltaY;
     const container = event.currentTarget as HTMLElement;
+
+    // Определяем, может ли контейнер скроллиться горизонтально
+    const canScrollHorizontally = container.scrollWidth > container.clientWidth;
+
+    if (!canScrollHorizontally) {
+      // Контейнер не может скроллиться - пропускаем событие
+      return;
+    }
+
+    // Преобразуем вертикальный скролл в горизонтальный для этого контейнера
+    // Также учитываем, если пользователь скроллит горизонтально напрямую
+    let scrollAmount = event.deltaX;
+
+    // Если deltaX отсутствует или мал, используем deltaY для горизонтального скролла
+    if (Math.abs(event.deltaX) < Math.abs(event.deltaY)) {
+      scrollAmount = event.deltaY;
+    }
 
     // Определяем текущее положение прокрутки
     const maxScrollLeft = container.scrollWidth - container.clientWidth;
     const currentScrollLeft = container.scrollLeft;
 
-    // Проверяем, достигнут ли край контейнера
-    const isAtStart = currentScrollLeft === 0;
-    const isAtEnd = currentScrollLeft === maxScrollLeft;
+    // Проверяем, достигнут ли край контейнера (с небольшой погрешностью)
+    const threshold = 5;
+    const isAtStart = currentScrollLeft <= threshold;
+    const isAtEnd = currentScrollLeft >= maxScrollLeft - threshold;
 
-    // Если прокручивать больше некуда, разрешаем дефолтное поведение (прокрутку страницы)
+    // Если прокручивать больше некуда в направлении скролла, разрешаем дефолтное поведение
     if ((scrollAmount > 0 && isAtEnd) || (scrollAmount < 0 && isAtStart)) {
-      return; // Не блокируем событие, и страница будет скроллиться вниз/вверх
+      return; // Не блокируем событие, страница будет скроллиться вертикально
     }
 
-    // Если еще можно скроллить внутри контейнера, то блокируем дефолтное поведение
+    // Если еще можно скроллить внутри контейнера, блокируем дефолтное поведение
     event.preventDefault();
+    event.stopPropagation();
 
-    window.requestAnimationFrame(() => {
-      // Выполняем прокрутку
-      container.scrollTo({
-        left: container.scrollLeft + (scrollAmount > 0 ? 350 : -350),
-        // behavior: 'smooth',
-      });
+    // Плавная прокрутка с использованием smooth behavior
+    container.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
     });
   }
 
@@ -221,8 +279,11 @@ export class ProjectsComponent
       : this.projectsContainer;
 
     if (container) {
-      container.nativeElement.scrollBy({
-        left: -350,
+      const element = container.nativeElement;
+      const cardWidth = commertial ? 530 : 430; // 500px карточка + 30px gap
+
+      element.scrollBy({
+        left: -cardWidth,
         behavior: 'smooth',
       });
     }
@@ -234,8 +295,11 @@ export class ProjectsComponent
       : this.projectsContainer;
 
     if (container) {
-      container.nativeElement.scrollBy({
-        left: 350,
+      const element = container.nativeElement;
+      const cardWidth = commertial ? 530 : 430; // 500px карточка + 30px gap
+
+      element.scrollBy({
+        left: cardWidth,
         behavior: 'smooth',
       });
     }

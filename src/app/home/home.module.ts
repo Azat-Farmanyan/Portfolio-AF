@@ -15,6 +15,7 @@ import { ExperienceItemComponent } from './experience/experience-item/experience
 import { ProjectCardComponentV2 } from './projects/project-card-v2/project-card.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { IntersectionObserverDirective } from '../directives/IntersectionObserver.directive';
+import { ProjectsBlockAnimationDirective } from '../directives/ProjectsBlockAnimation.directive';
 import { ProjectCardCommertialV1Component } from './projects/project-card-commertial-v1/project-card-commertial-v1.component';
 import { ProjectCardV3Component } from './projects/project-card-v3/project-card-v3.component';
 
@@ -38,6 +39,7 @@ import { ProjectCardV3Component } from './projects/project-card-v3/project-card-
     ReactiveFormsModule,
     TranslateModule,
     IntersectionObserverDirective,
+    ProjectsBlockAnimationDirective,
     ProjectCardCommertialV1Component,
     ProjectCardV3Component,
   ],

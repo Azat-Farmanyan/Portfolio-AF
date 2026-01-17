@@ -90,18 +90,18 @@
         </div>
 
         <div
-          class="personal-projects__block wrapper animated-block"
+          class="personal-projects__block wrapper"
           #projectsContainer
           (wheel)="onWheel($event)"
+          appProjectsBlockAnimation
         >
           <!-- <app-project-card-commertial-v1
-            
+
             [projectData]="projectCommertial"
           >
           </app-project-card-commertial-v1> -->
 
           <app-project-card-v3
-            class="animated-block"
             *ngFor="let project of projects"
             [projectData]="project"
           ></app-project-card-v3>

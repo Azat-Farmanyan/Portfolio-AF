@@ -1,9 +1,20 @@
 <div class="experience-item">
   <div class="experience-card">
     <!-- Timeline indicator -->
-    <div class="timeline-indicator">
-      <div class="timeline-dot" appIntersectionObserver></div>
-      <div class="timeline-line" [class.last]="isLast"></div>
+    <div class="timeline-indicator" appIntersectionObserver>
+      <div class="timeline-line-wrapper">
+        <div class="timeline-line" [class.last]="isLast">
+          <div class="timeline-line-progress"></div>
+          <div class="timeline-line-glow"></div>
+        </div>
+      </div>
+      <div class="timeline-dot-wrapper">
+        <div class="timeline-dot">
+          <div class="timeline-dot-core"></div>
+          <div class="timeline-dot-ring"></div>
+          <div class="timeline-dot-pulse"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Card content -->
@@ -12,9 +23,9 @@
       <div class="card-header">
         <div class="header-top">
           <div class="company-info">
-            <a 
-              [href]="experience.page" 
-              target="_blank" 
+            <a
+              [href]="experience.page"
+              target="_blank"
               class="company-logo-wrapper"
               *ngIf="hasLogo"
             >
@@ -34,7 +45,7 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Date badge -->
           <div class="date-badge">
             <div class="date-range">
@@ -51,14 +62,14 @@
 
       <!-- Description section -->
       <div class="card-description">
-        <div 
-          class="description-content" 
+        <div
+          class="description-content"
           [class.expanded]="isExpanded"
           [class.collapsed]="!isExpanded"
           [innerHTML]="experienceTxt"
         ></div>
-        <button 
-          class="read-more-btn" 
+        <button
+          class="read-more-btn"
           *ngIf="showReadMore"
           (click)="toggleDescription()"
           [attr.aria-expanded]="isExpanded"
@@ -69,19 +80,19 @@
           <span *ngIf="isExpanded">
             {{ readLessText }}
           </span>
-          <svg 
-            class="arrow-icon" 
+          <svg
+            class="arrow-icon"
             [class.rotated]="isExpanded"
-            width="16" 
-            height="16" 
-            viewBox="0 0 16 16" 
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
             fill="none"
           >
-            <path 
-              d="M4 6L8 10L12 6" 
-              stroke="currentColor" 
-              stroke-width="2" 
-              stroke-linecap="round" 
+            <path
+              d="M4 6L8 10L12 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
               stroke-linejoin="round"
             />
           </svg>

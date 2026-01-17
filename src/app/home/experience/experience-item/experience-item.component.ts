@@ -20,6 +20,7 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
   @Input({ required: true }) currentLang: string = '';
 
   experienceTxt = '';
+  experienceItems: string[] = [];
   companyPage = '';
   experienceDuration = '';
   hasLogo = false;
@@ -37,6 +38,7 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
       this.checkDescriptionHeight();
     }, 100);
     this.loadTranslations();
+    this.updateExperienceDetails();
   }
 
   loadTranslations() {
@@ -68,19 +70,29 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
   }
 
   getexperienceDescription() {
+    // Разбиваем описание на отдельные пункты
+    const items = this.experience.description
+      .split('- ')
+      .filter(item => item.trim() !== '')
+      .map(item => item.trim());
+
+    // Обрабатываем каждый пункт: конвертируем URL в теги <a>
+    this.experienceItems = items.map(item => {
+      return item.replace(
+        /(https?:\/\/[^\s]+)/g,
+        '<a href="$1" target="_blank" style="text-decoration: underline;"> <b><u>$1</u></b>  </a>'
+      );
+    });
+
+    // Для обратной совместимости оставляем старый формат
     this.experienceTxt = this.experience.description
       .split('- ')
       .join('</br>- ');
 
-    // Добавляем конвертацию URL в теги <a>
-    //  this.experienceTxt = this.experienceTxt.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
     this.experienceTxt = this.experienceTxt.replace(
       /(https?:\/\/[^\s]+)/g,
       '<a href="$1" target="_blank" style="text-decoration: underline;"> <b><u>$1</u></b>  </a>'
     );
-
-    // return this.experience.description.split('- ').join('</br>' + '-');
-    // this.experience.description.split('');
   }
 
   getCompanyPage() {
@@ -209,7 +221,7 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
   }
 
   checkDescriptionHeight() {
-    // Always show read more button to allow expanding/collapsing
-    this.showReadMore = true;
+    // Показываем кнопку, если пунктов больше 3
+    this.showReadMore = this.experienceItems.length > 3;
   }
 }

@@ -66,11 +66,31 @@
           class="description-content"
           [class.expanded]="isExpanded"
           [class.collapsed]="!isExpanded"
-          [innerHTML]="experienceTxt"
-        ></div>
+        >
+          <div class="description-items">
+            <div
+              *ngFor="let item of experienceItems; let i = index"
+              class="description-item"
+              [class.visible]="isExpanded || i < 3"
+            >
+              <div class="item-icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M6 8L7.5 9.5L10 7"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="item-text" [innerHTML]="item"></div>
+            </div>
+          </div>
+        </div>
         <button
           class="read-more-btn"
-          *ngIf="showReadMore"
+          *ngIf="showReadMore && experienceItems.length > 3"
           (click)="toggleDescription()"
           [attr.aria-expanded]="isExpanded"
         >

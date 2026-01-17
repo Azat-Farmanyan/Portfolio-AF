@@ -725,7 +725,7 @@
     "name": "Azat Farmanyan",
     "description": "A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product.",
     "social_title": "Social",
-    "copyright": "© Copyright 2025. Made by <a href='/home#home'>Azat Farmanyan</a>",
+    "copyright": "© Copyright {{year}}. Made by <a href='/home#home'>Azat Farmanyan</a>",
     "navigation": "Navigation"
   }
 }

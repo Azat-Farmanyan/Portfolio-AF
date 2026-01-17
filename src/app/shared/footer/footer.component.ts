@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
+  currentYear: number = new Date().getFullYear();
+
   constructor(private router: Router) {}
 
   navigateTo(path: string, fragment: string) {

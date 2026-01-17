@@ -56,7 +56,7 @@
       <!-- Social & Contact Section -->
       <div class="footer-social">
         <h3 class="section-title">{{ "footer.social_title" | translate }}</h3>
-        
+
         <div class="social-grid">
           <a
             class="social-item"
@@ -70,7 +70,7 @@
             </div>
             <span class="social-name">LinkedIn</span>
           </a>
-          
+
           <a
             class="social-item"
             href="https://github.com/Azat-Farmanyan"
@@ -83,7 +83,7 @@
             </div>
             <span class="social-name">GitHub</span>
           </a>
-          
+
           <a
             class="social-item"
             href="https://t.me/AzatFarmanyan"
@@ -96,7 +96,7 @@
             </div>
             <span class="social-name">Telegram</span>
           </a>
-          
+
           <a
             class="social-item"
             href="https://discordapp.com/users/908978735020146719/"
@@ -109,7 +109,7 @@
             </div>
             <span class="social-name">Discord</span>
           </a>
-          
+
           <a
             class="social-item"
             href="https://www.instagram.com/azat_09.5/"
@@ -122,7 +122,7 @@
             </div>
             <span class="social-name">Instagram</span>
           </a>
-          
+
           <a
             class="social-item"
             href="https://www.facebook.com/profile.php?id=100007929288834"
@@ -154,7 +154,7 @@
     <!-- Footer Copyright -->
     <div class="footer-copyright">
       <div class="copyright-divider"></div>
-      <p class="copyright-text" [innerHTML]="'footer.copyright' | translate"></p>
+      <p class="copyright-text" [innerHTML]="('footer.copyright' | translate).replace('{{year}}', currentYear.toString())"></p>
     </div>
   </div>
 </footer>

@@ -723,7 +723,7 @@
     "name": "Азат Фарманян",
     "description": "Frontend-разработчик, сосредоточенный на создании интерфейсов веб-сайтов и веб-приложений, которые способствуют успеху всего продукта.",
     "social_title": "Социальные сети",
-    "copyright": "© Copyright 2025. Made by <a href='/home#home'>Azat Farmanyan</a>",
+    "copyright": "© Copyright {{year}}. Made by <a href='/home#home'>Azat Farmanyan</a>",
     "navigation": "Навигация"
   }
 }

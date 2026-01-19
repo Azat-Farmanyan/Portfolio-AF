@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="wrapper">
-    <div class="contact-body">
+    <div class="contact-body" #contactBody>
       <div class="contact-header">
         <h2 class="section-title animated-block">{{ "contact.section_title" | translate }}</h2>
         <div class="title-underline animated-block"></div>
@@ -30,7 +30,7 @@
 
       <div class="contact-content">
         <!-- Contact Form -->
-        <div class="contact-form-wrapper animated-block">
+        <div class="contact-form-wrapper scroll-animate" #contactFormWrapper>
           <form
             data-netlify="true"
             method="POST"
@@ -170,7 +170,7 @@
         </div>
 
         <!-- Social Links Section -->
-        <div class="contact-social animated-block">
+        <div class="contact-social scroll-animate" #contactSocial>
           <h3 class="social-title">{{ "footer.social_title" | translate }}</h3>
           <p class="social-description">
             {{ "contact.social_description" | translate }}

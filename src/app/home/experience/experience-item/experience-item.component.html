@@ -1,5 +1,5 @@
 <div class="experience-item">
-  <div class="experience-card">
+  <div class="experience-card scroll-animate" #experienceCard>
     <!-- Timeline indicator -->
     <div class="timeline-indicator" appIntersectionObserver>
       <div class="timeline-line-wrapper">
@@ -75,12 +75,11 @@
             >
               <div class="item-icon">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M6 8L7.5 9.5L10 7"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                  <circle
+                    cx="8"
+                    cy="8"
+                    r="4"
+                    fill="currentColor"
                   />
                 </svg>
               </div>

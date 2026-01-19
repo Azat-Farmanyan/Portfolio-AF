@@ -271,6 +271,37 @@
         gap: 18px;
         overflow: hidden;
 
+        // Анимация появления при скролле
+        &.scroll-animate {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                      transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+          // Задержка для каждой карточки
+          &:nth-child(1) {
+            transition-delay: 0.1s;
+          }
+
+          &:nth-child(2) {
+            transition-delay: 0.2s;
+          }
+
+          &:nth-child(3) {
+            transition-delay: 0.3s;
+          }
+
+          &:nth-child(4) {
+            transition-delay: 0.4s;
+          }
+
+          // Состояние видимости
+          &.visible {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         @media only screen and (max-width: 768px) {
           padding: 25px 28px;
           border-radius: 18px;

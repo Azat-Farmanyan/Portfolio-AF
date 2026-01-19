@@ -9,6 +9,7 @@
     "download_cv": "Download CV"
   },
   "welcome": {
+    "greeting_label": "Hello, I'm",
     "owner_name": "Azat Farmanyan",
     "owner_profession": "Software Engineer",
     "description_text": "Creating exceptional digital experiences with modern web technologies",

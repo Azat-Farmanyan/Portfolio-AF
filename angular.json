@@ -26,7 +26,9 @@
             "assets": [
               "src/azat-favicon-v3.ico",
               "src/assets",
-              "src/_redirects"
+              "src/_redirects",
+              "src/robots.txt",
+              "src/sitemap.xml"
             ],
             "styles": ["src/styles.scss"],
             "scripts": []

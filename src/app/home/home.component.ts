@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-home',
@@ -31,10 +32,18 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private renderer: Renderer2,
     private el: ElementRef,
     private router: Router,
-    private routeService: RouteService
+    private routeService: RouteService,
+    private seoService: SeoService
   ) {}
 
   ngOnInit(): void {
+    // SEO для главной страницы
+    this.seoService.updateSEO({
+      title: 'Azat Farmanyan - Frontend Developer | Портфолио',
+      description: 'Портфолио Azat Farmanyan - Frontend разработчик. Опыт в Angular, React, TypeScript. Проекты, навыки и контакты.',
+      keywords: 'Azat Farmanyan, Frontend Developer, Angular, React, TypeScript, JavaScript, Web Developer, Портфолио, Разработчик',
+      url: 'https://azatfarmanyan.netlify.app/home'
+    });
     this.prevPathSubs = this.routeService.previousPath.subscribe((prevPath) => {
       this.prevPath = prevPath;
 

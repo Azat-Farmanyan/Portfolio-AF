@@ -1,0 +1,11 @@
+# robots.txt для портфолио Azat Farmanyan
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://azatfarmanyan.netlify.app/sitemap.xml
+
+# Disallow для служебных путей (если нужно)
+# Disallow: /admin/
+# Disallow: /api/

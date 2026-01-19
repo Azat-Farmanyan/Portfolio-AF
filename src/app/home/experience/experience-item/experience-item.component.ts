@@ -4,6 +4,10 @@ import {
   OnChanges,
   OnInit,
   SimpleChanges,
+  AfterViewInit,
+  OnDestroy,
+  ElementRef,
+  ViewChild,
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ExperienceService } from 'src/app/services/experience.service';
@@ -14,10 +18,11 @@ import { Experience } from '../../../services/experience.service';
   styleUrls: ['./experience-item.component.scss'],
   templateUrl: './experience-item.component.html',
 })
-export class ExperienceItemComponent implements OnInit, OnChanges {
+export class ExperienceItemComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
   @Input({ required: true }) experience: Experience;
   @Input({ required: true }) isLast: boolean = false;
   @Input({ required: true }) currentLang: string = '';
+  @ViewChild('experienceCard', { static: false }) experienceCard!: ElementRef;
 
   experienceTxt = '';
   experienceItems: string[] = [];
@@ -29,6 +34,7 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
   descriptionHeight = 0;
   readMoreText = '';
   readLessText = '';
+  private intersectionObserver?: IntersectionObserver;
 
   constructor(private translate: TranslateService) {}
 
@@ -39,6 +45,16 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
     }, 100);
     this.loadTranslations();
     this.updateExperienceDetails();
+  }
+
+  ngAfterViewInit(): void {
+    this.setupScrollAnimation();
+  }
+
+  ngOnDestroy(): void {
+    if (this.intersectionObserver) {
+      this.intersectionObserver.disconnect();
+    }
   }
 
   loadTranslations() {
@@ -223,5 +239,53 @@ export class ExperienceItemComponent implements OnInit, OnChanges {
   checkDescriptionHeight() {
     // Показываем кнопку, если пунктов больше 3
     this.showReadMore = this.experienceItems.length > 3;
+  }
+
+  private setupScrollAnimation(): void {
+    if (typeof IntersectionObserver === 'undefined') {
+      // Fallback для браузеров без поддержки IntersectionObserver
+      setTimeout(() => {
+        if (this.experienceCard) {
+          this.experienceCard.nativeElement.classList.add('visible');
+        }
+      }, 100);
+      return;
+    }
+
+    const options: IntersectionObserverInit = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15 // Срабатывает, когда 15% элемента видно
+    };
+
+    this.intersectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Отключаем наблюдение после появления, чтобы анимация не повторялась
+          this.intersectionObserver?.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    // Наблюдаем за карточкой после небольшой задержки, чтобы DOM был готов
+    setTimeout(() => {
+      if (this.experienceCard) {
+        const card = this.experienceCard.nativeElement;
+        // Проверяем, видна ли карточка уже при загрузке
+        const rect = card.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+        if (isVisible) {
+          // Если карточка уже видна, добавляем класс с небольшой задержкой
+          setTimeout(() => {
+            card.classList.add('visible');
+          }, 100);
+        } else {
+          // Иначе начинаем наблюдение
+          this.intersectionObserver?.observe(card);
+        }
+      }
+    }, 100);
   }
 }

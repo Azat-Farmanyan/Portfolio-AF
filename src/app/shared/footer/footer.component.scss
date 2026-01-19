@@ -409,6 +409,9 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     .footer-contact {
       padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
 
       .contact-item {
         display: flex;

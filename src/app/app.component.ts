@@ -10,6 +10,7 @@ import { Subscription, filter, pairwise, take, tap } from 'rxjs';
 import { ProjectsService } from './services/projects.service';
 import { TranslateService } from '@ngx-translate/core';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { SeoService } from './services/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -25,12 +26,20 @@ export class AppComponent implements OnInit {
     private route: ActivatedRoute,
     private projectsService: ProjectsService,
     private routeService: RouteService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private seoService: SeoService
   ) {
     translateService.setDefaultLang('en');
   }
 
   ngOnInit(): void {
+    // Инициализация SEO
+    this.seoService.init();
+
+    // Добавление структурированных данных
+    this.seoService.addStructuredData(this.seoService.getPersonStructuredData(), 'structured-data-person');
+    this.seoService.addStructuredData(this.seoService.getPortfolioStructuredData(), 'structured-data-portfolio');
+
     this.routerSubs = this.router.events
       .pipe(
         filter((e: any) => e instanceof RoutesRecognized),

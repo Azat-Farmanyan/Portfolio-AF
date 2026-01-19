@@ -10,7 +10,7 @@
   }"
 >
   <div class="header-background" [style.opacity]="opacity"></div>
-  
+
   <div class="wrapper">
     <div class="header-body">
       <div class="logo-container" (click)="navigateTo('home', 'home')">
@@ -27,7 +27,6 @@
           [ngClass]="{ active: activeSection === 'home' }"
         >
           <span class="nav-text">{{ "header.home" | translate }}</span>
-          <span class="nav-indicator" *ngIf="activeSection === 'home'"></span>
         </a>
         <a
           class="nav-item"
@@ -35,7 +34,6 @@
           [ngClass]="{ active: activeSection === 'about' }"
         >
           <span class="nav-text">{{ "header.about" | translate }}</span>
-          <span class="nav-indicator" *ngIf="activeSection === 'about'"></span>
         </a>
         <a
           class="nav-item"
@@ -43,7 +41,6 @@
           [ngClass]="{ active: activeSection === 'experience' }"
         >
           <span class="nav-text">{{ "header.experience" | translate }}</span>
-          <span class="nav-indicator" *ngIf="activeSection === 'experience'"></span>
         </a>
         <a
           class="nav-item"
@@ -51,7 +48,6 @@
           [ngClass]="{ active: activeSection === 'projects' }"
         >
           <span class="nav-text">{{ "header.projects" | translate }}</span>
-          <span class="nav-indicator" *ngIf="activeSection === 'projects'"></span>
         </a>
         <a
           class="nav-item"
@@ -59,13 +55,12 @@
           [ngClass]="{ active: activeSection === 'contact' }"
         >
           <span class="nav-text">{{ "header.contact" | translate }}</span>
-          <span class="nav-indicator" *ngIf="activeSection === 'contact'"></span>
         </a>
       </nav>
 
       <div class="header-actions">
-        <div 
-          class="language-switcher" 
+        <div
+          class="language-switcher"
           (click)="switchLanguage()"
           [attr.aria-label]="'Switch language to ' + (currentLanguage === 'en' ? 'Russian' : 'English')"
           [ngClass]="{
@@ -78,8 +73,8 @@
           <span class="lang-slider"></span>
         </div>
 
-        <button 
-          (click)="menuToggle()" 
+        <button
+          (click)="menuToggle()"
           class="burger-menu"
           [attr.aria-label]="showMenu ? 'Close menu' : 'Open menu'"
           [attr.aria-expanded]="showMenu"
@@ -89,6 +84,11 @@
           <span class="burger-line" [ngClass]="{ 'open': showMenu }"></span>
         </button>
       </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+      <div class="progress-bar" [style.width.%]="scrollProgress"></div>
     </div>
   </div>
 
@@ -140,6 +140,20 @@
         </nav>
 
         <div class="menu-actions">
+          <div
+            class="language-switcher menu-lang-switcher"
+            (click)="switchLanguage()"
+            [attr.aria-label]="'Switch language to ' + (currentLanguage === 'en' ? 'Russian' : 'English')"
+            [ngClass]="{
+              'lang-active-en': currentLanguage === 'en',
+              'lang-active-ru': currentLanguage === 'ru'
+            }"
+          >
+            <span class="lang-option" [ngClass]="{ 'active': currentLanguage === 'en' }">EN</span>
+            <span class="lang-option" [ngClass]="{ 'active': currentLanguage === 'ru' }">RU</span>
+            <span class="lang-slider"></span>
+          </div>
+
           <button
             class="btn-orange-v2 menu-download-btn"
             (click)="downloadCV()"
@@ -163,8 +177,8 @@
                   (mouseleave)="onMouseLeave('linkedin')"
                 />
               </a>
-              <a 
-                href="https://github.com/Azat-Farmanyan" 
+              <a
+                href="https://github.com/Azat-Farmanyan"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -177,8 +191,8 @@
                   (mouseleave)="onMouseLeave('github')"
                 />
               </a>
-              <a 
-                href="https://t.me/AzatFarmanyan" 
+              <a
+                href="https://t.me/AzatFarmanyan"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Telegram"
@@ -205,8 +219,8 @@
                   (mouseleave)="onMouseLeave('discord')"
                 />
               </a>
-              <a 
-                href="https://www.instagram.com/azat_09.5/" 
+              <a
+                href="https://www.instagram.com/azat_09.5/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -237,21 +251,14 @@
           </div>
 
           <div class="menu-contact">
-            <span class="contact-label">Tel:</span>
-            <a href="tel:+995592477775" class="contact-link">+995 592 47 77 75</a>
-          </div>
-
-          <div 
-            class="language-switcher menu-lang-switcher" 
-            (click)="switchLanguage()"
-            [ngClass]="{
-              'lang-active-en': currentLanguage === 'en',
-              'lang-active-ru': currentLanguage === 'ru'
-            }"
-          >
-            <span class="lang-option" [ngClass]="{ 'active': currentLanguage === 'en' }">EN</span>
-            <span class="lang-option" [ngClass]="{ 'active': currentLanguage === 'ru' }">RU</span>
-            <span class="lang-slider"></span>
+            <div class="contact-item">
+              <span class="contact-label">Tel:</span>
+              <a href="tel:+995592477775" class="contact-link">+995 592 47 77 75</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Email:</span>
+              <a href="mailto:azat.farmanyan905@gmail.com" class="contact-link">azat.farmanyan905@gmail.com</a>
+            </div>
           </div>
         </div>
       </div>

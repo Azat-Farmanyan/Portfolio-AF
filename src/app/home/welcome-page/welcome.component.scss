@@ -434,6 +434,26 @@
           .social-link {
             text-decoration: none;
             display: block;
+
+            // Добавляем задержку для каждой иконки для волнового эффекта
+            &:nth-child(1) .social-icon-wrapper {
+              animation-delay: 0s;
+            }
+            &:nth-child(2) .social-icon-wrapper {
+              animation-delay: 0.2s;
+            }
+            &:nth-child(3) .social-icon-wrapper {
+              animation-delay: 0.4s;
+            }
+            &:nth-child(4) .social-icon-wrapper {
+              animation-delay: 0.6s;
+            }
+            &:nth-child(5) .social-icon-wrapper {
+              animation-delay: 0.8s;
+            }
+            &:nth-child(6) .social-icon-wrapper {
+              animation-delay: 1s;
+            }
           }
 
           .social-icon-wrapper {
@@ -449,6 +469,7 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            animation: brand-border-pulse 3s ease-in-out infinite;
 
             @media only screen and (max-width: 768px) {
               width: 50px;
@@ -466,15 +487,19 @@
               background: linear-gradient(135deg, #EE6C4D 0%, #ff8c69 100%);
               opacity: 0;
               transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+              animation: brand-pulse 3s ease-in-out infinite;
+              animation-delay: inherit; // Наследуем задержку от родителя
             }
 
             &:hover {
               transform: translateY(-5px) scale(1.05);
               border-color: rgba(238, 108, 77, 0.5);
               box-shadow: 0 10px 30px rgba(238, 108, 77, 0.3);
+              animation: none; // Отключаем пульсацию при hover
 
               &::before {
                 opacity: 1;
+                animation: none; // Отключаем пульсацию при hover
               }
 
               .social-item {
@@ -911,4 +936,47 @@ svg #wheel {
 
 .opacity-full {
   opacity: 1 !important;
+}
+
+// Пульсирующая анимация для цветов брендов
+@keyframes brand-pulse {
+  0%, 100% {
+    background: linear-gradient(135deg, #EE6C4D 0%, #ff8c69 100%);
+    opacity: 0;
+    transform: scale(1);
+  }
+  25% {
+    background: linear-gradient(135deg, #ff8c69 0%, #EE6C4D 50%, #ff8c69 100%);
+    opacity: 0.12;
+    transform: scale(1.02);
+  }
+  50% {
+    background: linear-gradient(135deg, #EE6C4D 0%, #ff8c69 50%, #EE6C4D 100%);
+    opacity: 0.18;
+    transform: scale(1.03);
+  }
+  75% {
+    background: linear-gradient(135deg, #ff8c69 0%, #EE6C4D 50%, #ff8c69 100%);
+    opacity: 0.12;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes brand-border-pulse {
+  0%, 100% {
+    border-color: rgba(238, 108, 77, 0.1);
+    box-shadow: 0 0 0 rgba(238, 108, 77, 0);
+  }
+  25% {
+    border-color: rgba(238, 108, 77, 0.25);
+    box-shadow: 0 0 10px rgba(238, 108, 77, 0.15);
+  }
+  50% {
+    border-color: rgba(238, 108, 77, 0.35);
+    box-shadow: 0 0 20px rgba(238, 108, 77, 0.25);
+  }
+  75% {
+    border-color: rgba(238, 108, 77, 0.25);
+    box-shadow: 0 0 10px rgba(238, 108, 77, 0.15);
+  }
 }

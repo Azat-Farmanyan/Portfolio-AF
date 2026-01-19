@@ -40,18 +40,18 @@ import { LanguageService } from '../../services/language.service';
 
     trigger('dropDownMenu', [
       transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(-20px)' }),
+        style({ opacity: 0 }),
         animate(
-          '300ms cubic-bezier(0.4, 0, 0.2, 1)',
-          style({ opacity: 1, transform: 'translateY(0)' })
+          '200ms cubic-bezier(0.4, 0, 0.2, 1)',
+          style({ opacity: 1 })
         ),
         query(
           '.menu-item',
           [
             style({ opacity: 0, transform: 'translateX(-30px)' }),
-            stagger(100, [
+            stagger(80, [
               animate(
-                '400ms cubic-bezier(0.4, 0, 0.2, 1)',
+                '300ms cubic-bezier(0.4, 0, 0.2, 1)',
                 style({ opacity: 1, transform: 'translateX(0)' })
               ),
             ]),
@@ -64,9 +64,9 @@ import { LanguageService } from '../../services/language.service';
         query(
           '.menu-item',
           [
-            stagger(-50, [
+            stagger(-40, [
               animate(
-                '250ms cubic-bezier(0.4, 0, 0.2, 1)',
+                '200ms cubic-bezier(0.4, 0, 0.2, 1)',
                 style({ opacity: 0, transform: 'translateX(-30px)' })
               ),
             ]),
@@ -74,8 +74,8 @@ import { LanguageService } from '../../services/language.service';
           { optional: true }
         ),
         animate(
-          '200ms cubic-bezier(0.4, 0, 0.2, 1)',
-          style({ opacity: 0, transform: 'translateY(-20px)' })
+          '150ms cubic-bezier(0.4, 0, 0.2, 1)',
+          style({ opacity: 0 })
         ),
       ]),
     ]),
@@ -120,6 +120,7 @@ export class HeaderComponentV2 implements OnInit {
   scrolled = false;
   mobileView = false;
   currentLanguage: string = 'en';
+  scrollProgress: number = 0;
 
   public getScreenWidth!: number;
   public getScreenHeight!: number;
@@ -144,7 +145,8 @@ export class HeaderComponentV2 implements OnInit {
     this.getScreenHeight = window.innerHeight;
     this.mobileView = window.innerWidth <= 675;
     this.checkScrollPosition();
-    
+    this.updateScrollProgress();
+
     // Инициализация текущего языка
     this.currentLanguage = this.translateService.currentLang || this.translateService.defaultLang || 'en';
   }
@@ -153,10 +155,26 @@ export class HeaderComponentV2 implements OnInit {
     this.scrolled = window.pageYOffset < this.closeFromTopPx;
   }
 
+  private updateScrollProgress(): void {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollableHeight = documentHeight - windowHeight;
+
+    if (scrollableHeight > 0) {
+      this.scrollProgress = (scrollTop / scrollableHeight) * 100;
+    } else {
+      this.scrollProgress = 0;
+    }
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     // Определяем, находится ли пользователь в верхней части страницы
     this.scrolled = window.pageYOffset < this.closeFromTopPx;
+
+    // Обновляем прогресс-бар
+    this.updateScrollProgress();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -164,10 +182,10 @@ export class HeaderComponentV2 implements OnInit {
     const newWidth = event.target.innerWidth;
     this.getScreenWidth = newWidth;
     this.getScreenHeight = event.target.innerHeight;
-    
+
     const wasMobile = this.mobileView;
     this.mobileView = newWidth <= 675;
-    
+
     // Закрываем меню при переходе с мобильного на десктоп
     if (wasMobile && !this.mobileView && this.showMenu) {
       this.closeMenu();

@@ -1,6 +1,12 @@
+<div align="center">
+
 # 🚀 Портфолио Азата Фарманяна
 
 > Современный веб-сайт-портфолио Full Stack разработчика, созданный с использованием Angular
+
+[![English](https://img.shields.io/badge/English-🇬🇧-blue)](README.en.md) [![Русский](https://img.shields.io/badge/Русский-🇷🇺-red)](README.md)
+
+</div>
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Portfolio-brightgreen)](https://azatfarmanyan.netlify.app)
 [![Angular](https://img.shields.io/badge/Angular-16.1-red)](https://angular.io/)

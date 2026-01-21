@@ -632,6 +632,14 @@
     "commertial_projects_list": [
       {
         "id": 1,
+        "title": "IZI IS",
+        "description": "Corporate CRM system for managing computer gaming clubs in Russia and the UAE.",
+        "seeLive": "https://izi.is/ru/",
+        "color": "#FF6B35",
+        "banner": "iziis.png"
+      },
+      {
+        "id": 2,
         "title": "river house",
         "description": "Residential complex website. Built responsive UI and interactive apartment map.",
         "seeLive": "https://river-house.ru/",
@@ -639,7 +647,7 @@
         "banner": "river_house.png"
       },
       {
-        "id": 2,
+        "id": 3,
         "title": "malahovka house",
         "description": "Showcase website for a housing project with a modern, responsive design and smooth animations.",
         "seeLive": "http://malahovkahouse.ru",
@@ -647,7 +655,7 @@
         "banner": "malahovka_house.png"
       },
       {
-        "id": 3,
+        "id": 4,
         "title": "3 red",
         "description": "Website for a residential complex with a sleek design and interactive elements.",
         "seeLive": "https://3-red.com/",
@@ -655,7 +663,7 @@
         "banner": "3_red.png"
       },
       {
-        "id": 4,
+        "id": 5,
         "title": "faircontent media",
         "description": "An online marketplace for digital goods like books, videos, and music.",
         "seeLive": "https://www.faircontent.media/home",
@@ -663,7 +671,7 @@
         "banner": "faircontent_media.png"
       },
       {
-        "id": 5,
+        "id": 6,
         "title": "swiftness",
         "description": "Swiftness is a digital platform transforming the pension savings market.",
         "seeLive": "http://www.swiftness.co.il/",

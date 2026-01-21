@@ -630,6 +630,14 @@
     "commertial_projects_list": [
       {
         "id": 1,
+        "title": "IZI IS",
+        "description": "Корпоративная CRM-система для управления компьютерными игровыми клубами в России и ОАЭ.",
+        "seeLive": "https://izi.is/ru/",
+        "color": "#FF6B35",
+        "banner": "iziis.png"
+      },
+      {
+        "id": 2,
         "title": "river house",
         "description": "Вебсайт жилого комплекса. Разработан адаптивный интерфейс и интерактивная карта квартир.",
         "seeLive": "https://river-house.ru/",
@@ -637,7 +645,7 @@
         "banner": "river_house.png"
       },
       {
-        "id": 2,
+        "id": 3,
         "title": "malahovka house",
         "description": "Витрина вебсайта для жилищного проекта с современным адаптивным дизайном и плавными анимациями.",
         "seeLive": "http://malahovkahouse.ru",
@@ -645,7 +653,7 @@
         "banner": "malahovka_house.png"
       },
       {
-        "id": 3,
+        "id": 4,
         "title": "3 red",
         "description": "Вебсайт для жилого комплекса с элегантным дизайном и интерактивными элементами.",
         "seeLive": "https://3-red.com/",
@@ -653,7 +661,7 @@
         "banner": "3_red.png"
       },
       {
-        "id": 4,
+        "id": 5,
         "title": "faircontent media",
         "description": "Онлайн-рынок для цифровых товаров, таких как книги, видео и музыка.",
         "seeLive": "https://www.faircontent.media/home",
@@ -661,7 +669,7 @@
         "banner": "faircontent_media.png"
       },
       {
-        "id": 5,
+        "id": 6,
         "title": "swiftness",
         "description": "Swiftness — это цифровая платформа, преобразующая рынок пенсионных накоплений.",
         "seeLive": "http://www.swiftness.co.il/",

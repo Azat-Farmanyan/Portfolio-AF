@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s ease;
 
   .welcome-background {
     position: absolute;
@@ -369,6 +370,7 @@
           font-family: 'Roboto', sans-serif;
           position: relative;
           z-index: 1;
+          transition: color 0.3s ease;
 
           @media only screen and (max-width: 768px) {
             font-size: 22px;
@@ -407,6 +409,7 @@
           color: #64748b;
           font-weight: 400;
           margin: 0;
+          transition: color 0.3s ease;
 
           @media only screen and (max-width: 768px) {
             font-size: 16px;
@@ -462,14 +465,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            border: 2px solid rgba(238, 108, 77, 0.1);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 16px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             position: relative;
             overflow: hidden;
             animation: brand-border-pulse 3s ease-in-out infinite;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.5);
 
             @media only screen and (max-width: 768px) {
               width: 50px;
@@ -493,8 +500,10 @@
 
             &:hover {
               transform: translateY(-5px) scale(1.05);
-              border-color: rgba(238, 108, 77, 0.5);
-              box-shadow: 0 10px 30px rgba(238, 108, 77, 0.3);
+              background: rgba(255, 255, 255, 0.85);
+              border-color: rgba(238, 108, 77, 0.6);
+              box-shadow: 0 10px 30px rgba(238, 108, 77, 0.4),
+                          inset 0 1px 0 rgba(255, 255, 255, 0.7);
               animation: none; // Отключаем пульсацию при hover
 
               &::before {
@@ -978,5 +987,39 @@ svg #wheel {
   75% {
     border-color: rgba(238, 108, 77, 0.25);
     box-shadow: 0 0 10px rgba(238, 108, 77, 0.15);
+  }
+}
+
+// Dark theme styles
+:host-context(.dark-theme) .welcome {
+  background: linear-gradient(135deg, #1a2535 0%, #293241 50%, #1a2535 100%);
+
+  .owner-name {
+    .name-gradient {
+      color: rgba(255, 255, 255, 1) !important;
+      background: none !important;
+      -webkit-background-clip: unset !important;
+      -webkit-text-fill-color: rgba(255, 255, 255, 1) !important;
+      background-clip: unset !important;
+    }
+  }
+
+  .owner-profession {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  .description-text p {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  .greeting-label {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  .social-icon-wrapper {
+    background: rgba(41, 50, 65, 0.5);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-color: rgba(255, 255, 255, 0.15);
   }
 }

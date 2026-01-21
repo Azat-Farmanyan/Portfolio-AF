@@ -11,6 +11,7 @@ import { ProjectsService } from './services/projects.service';
 import { TranslateService } from '@ngx-translate/core';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { SeoService } from './services/seo.service';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -27,9 +28,11 @@ export class AppComponent implements OnInit {
     private projectsService: ProjectsService,
     private routeService: RouteService,
     private translateService: TranslateService,
-    private seoService: SeoService
+    private seoService: SeoService,
+    private themeService: ThemeService
   ) {
     translateService.setDefaultLang('en');
+    // Тема инициализируется автоматически в ThemeService
   }
 
   ngOnInit(): void {

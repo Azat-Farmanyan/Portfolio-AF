@@ -592,3 +592,13 @@
     transform: scale(1.05);
   }
 }
+
+// Dark theme styles
+:host-context(.dark-theme) .projects {
+  background: linear-gradient(284deg, #1a2535 -10.73%, rgba(26, 37, 53, 0.00) 118.83%);
+  background-color: #1a2535;
+
+  .projects-text {
+    color: rgba(255, 255, 255, 0.85);
+  }
+}

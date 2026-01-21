@@ -35,3 +35,9 @@
   align-items: center;
   justify-content: center;
 }
+
+// Dark theme styles
+:host-context(.dark-theme) .modal-card {
+  background-color: rgba(41, 50, 65, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

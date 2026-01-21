@@ -252,14 +252,16 @@ $transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       }
 
       .contact-form {
-        background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
         border-radius: 20px;
         box-shadow:
-          0 20px 60px rgba(0, 0, 0, 0.08),
-          0 8px 24px rgba(0, 0, 0, 0.04),
-          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+          0 20px 60px rgba(0, 0, 0, 0.12),
+          0 8px 24px rgba(0, 0, 0, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6);
         padding: 40px 35px;
-        border: 2px solid rgba(238, 108, 77, 0.08);
+        border: 2px solid rgba(255, 255, 255, 0.3);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         overflow: hidden;
@@ -288,12 +290,13 @@ $transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
         &:hover {
+          background: rgba(255, 255, 255, 0.85);
           box-shadow:
-            0 30px 80px rgba(238, 108, 77, 0.15),
-            0 12px 36px rgba(0, 0, 0, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            0 30px 80px rgba(238, 108, 77, 0.2),
+            0 12px 36px rgba(0, 0, 0, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
           transform: translateY(-4px);
-          border-color: rgba(238, 108, 77, 0.2);
+          border-color: rgba(238, 108, 77, 0.4);
 
           &::before {
             opacity: 1;
@@ -338,9 +341,11 @@ $transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           .form-input {
             width: 100%;
             padding: 14px 18px;
-            border: 2px solid $border-color;
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 12px;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             color: $text-dark;
             font-family: "Roboto", sans-serif;
             font-size: 15px;
@@ -348,7 +353,8 @@ $transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             line-height: 1.5;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             outline: none;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.4);
 
             &::placeholder {
               color: rgba(108, 117, 125, 0.4);
@@ -357,22 +363,26 @@ $transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
             &:focus {
               border-color: $border-focus;
-              background: #ffffff;
+              background: rgba(255, 255, 255, 0.8);
               box-shadow:
-                0 0 0 4px rgba(238, 108, 77, 0.12),
-                0 4px 16px rgba(238, 108, 77, 0.15);
+                0 0 0 4px rgba(238, 108, 77, 0.15),
+                0 4px 16px rgba(238, 108, 77, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
               transform: translateY(-2px);
             }
 
             &:hover:not(:focus) {
-              border-color: rgba(238, 108, 77, 0.3);
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+              border-color: rgba(238, 108, 77, 0.4);
+              background: rgba(255, 255, 255, 0.6);
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08),
+                          inset 0 1px 0 rgba(255, 255, 255, 0.5);
             }
 
             &.input-filled {
-              border-color: rgba(238, 108, 77, 0.4);
-              background: #ffffff;
-              box-shadow: 0 2px 8px rgba(238, 108, 77, 0.08);
+              border-color: rgba(238, 108, 77, 0.5);
+              background: rgba(255, 255, 255, 0.7);
+              box-shadow: 0 2px 8px rgba(238, 108, 77, 0.12),
+                          inset 0 1px 0 rgba(255, 255, 255, 0.5);
             }
 
             &.input-error {
@@ -607,15 +617,18 @@ $transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         align-items: center;
         gap: 14px;
         padding: 28px 24px;
-        background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-        border: 2px solid $border-color;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 2px solid rgba(255, 255, 255, 0.3);
         border-radius: 18px;
         text-decoration: none;
         cursor: pointer;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         overflow: hidden;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 
         &::before {
           content: '';
@@ -902,8 +915,10 @@ $transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         // Общий hover эффект
         &:hover {
           transform: translateY(-6px);
-          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-          border-color: rgba(238, 108, 77, 0.3);
+          background: rgba(255, 255, 255, 0.85);
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15),
+                      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+          border-color: rgba(238, 108, 77, 0.5);
 
           &::before {
             opacity: 1;
@@ -929,15 +944,20 @@ $transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         flex-direction: column;
         gap: 14px;
         padding: 22px;
-        background: linear-gradient(135deg, rgba(238, 108, 77, 0.06) 0%, rgba(255, 140, 105, 0.04) 100%);
+        background: rgba(238, 108, 77, 0.1);
+        backdrop-filter: blur(15px) saturate(180%);
+        -webkit-backdrop-filter: blur(15px) saturate(180%);
         border-radius: 16px;
-        border: 2px solid rgba(238, 108, 77, 0.12);
-        box-shadow: 0 4px 16px rgba(238, 108, 77, 0.08);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 16px rgba(238, 108, 77, 0.15),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.4);
         transition: all 0.3s ease;
 
         &:hover {
-          box-shadow: 0 8px 24px rgba(238, 108, 77, 0.12);
-          border-color: rgba(238, 108, 77, 0.2);
+          background: rgba(238, 108, 77, 0.15);
+          box-shadow: 0 8px 24px rgba(238, 108, 77, 0.2),
+                      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+          border-color: rgba(238, 108, 77, 0.4);
           transform: translateY(-2px);
         }
 
@@ -1068,5 +1088,86 @@ $transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   50% {
     opacity: 0.7;
     transform: scale(1.2);
+  }
+}
+
+// Dark theme styles
+:host-context(.dark-theme) .contact {
+  background: linear-gradient(135deg, #1a2535 0%, #293241 50%, #1a2535 100%);
+
+  .contact-form {
+    background: rgba(41, 50, 65, 0.6);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+    .input-label {
+      color: rgba(255, 255, 255, 0.98);
+    }
+
+    .form-input {
+      background: rgba(26, 37, 53, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      &:focus {
+        background: rgba(26, 37, 53, 0.7);
+        border-color: #EE6C4D;
+        box-shadow: 0 0 0 4px rgba(238, 108, 77, 0.2),
+                    0 4px 16px rgba(238, 108, 77, 0.3),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+
+  .social-title {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, #EE6C4D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .social-card {
+    background: rgba(41, 50, 65, 0.5);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-color: rgba(255, 255, 255, 0.15);
+
+    .social-name {
+      color: rgba(255, 255, 255, 0.98);
+    }
+
+    .social-handle {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  .contact-info {
+    background: rgba(238, 108, 77, 0.15);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-color: rgba(255, 255, 255, 0.2);
+
+    .info-label {
+      color: rgba(255, 255, 255, 0.98);
+    }
+  }
+
+  .contact-text {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  .social-description {
+    color: rgba(255, 255, 255, 1) !important;
   }
 }

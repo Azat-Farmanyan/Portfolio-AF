@@ -6,7 +6,9 @@
     "projects": "Проекты",
     "contact": "Контакты",
     "open_resume": "Открыть Резюме",
-    "download_cv": "Скачать Резюме"
+    "download_cv": "Скачать Резюме",
+    "dark_mode": "Темная тема",
+    "light_mode": "Светлая тема"
   },
   "welcome": {
     "greeting_label": "Привет, я",

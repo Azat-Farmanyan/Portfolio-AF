@@ -34,12 +34,60 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-    transition: opacity $transition-smooth, box-shadow $transition-smooth;
+    transition: opacity $transition-smooth, box-shadow $transition-smooth, background $transition-smooth;
   }
 
   &.header-scrolled .header-background {
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
     background: rgba(255, 255, 255, 0.98);
+  }
+
+  // Dark theme styles
+  :host-context(.dark-theme) & {
+    .header-background {
+      background: rgba(26, 37, 53, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    &.header-scrolled .header-background {
+      background: rgba(26, 37, 53, 0.98);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .burger-line {
+      background: rgba(255, 255, 255, 0.9);
+
+      &:hover {
+        background: $primary-orange;
+      }
+    }
+
+    .language-switcher {
+      background: rgba(41, 50, 65, 0.9);
+      border-color: rgba(238, 108, 77, 0.4);
+
+      .lang-option {
+        color: rgba(255, 255, 255, 0.98);
+
+        &.active {
+          color: $text-light;
+        }
+      }
+    }
+
+    .theme-toggle {
+      background: rgba(41, 50, 65, 0.9);
+      border-color: rgba(238, 108, 77, 0.4);
+
+      .theme-icon {
+        stroke: rgba(255, 255, 255, 0.98);
+      }
+
+      &:hover {
+        border-color: rgba(238, 108, 77, 0.6);
+      }
+    }
   }
 
   &.header-visible {
@@ -326,14 +374,14 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       }
     }
 
-    @media only screen and (max-width: 768px) {
-      .lang-ru & {
-        gap: 2px;
-        padding: 0 50px;
+      @media only screen and (max-width: 768px) {
+        .lang-ru & {
+          gap: 2px;
+          padding: 0 50px;
+        }
       }
-    }
 
-    @media only screen and (max-width: 675px) {
+    @media only screen and (max-width: 777px) {
       display: none;
     }
 
@@ -407,7 +455,7 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         font-weight: 600;
         background: linear-gradient(135deg, $primary-orange-light 0%, $primary-orange 50%, $primary-orange-light 100%);
         background-size: 200% 100%;
-        box-shadow: 
+        box-shadow:
           0 4px 15px rgba(238, 108, 77, 0.4),
           0 0 20px rgba(238, 108, 77, 0.3),
           inset 0 1px 0 rgba(255, 255, 255, 0.2),
@@ -447,6 +495,33 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         transition: all $transition-smooth;
       }
     }
+
+    // Dark theme styles for navigation (placed after base styles for priority)
+    :host-context(.dark-theme) & {
+      .nav-item {
+        color: rgba(255, 255, 255, 0.98);
+
+        &:hover {
+          color: $primary-orange;
+        }
+
+        &.active {
+          color: $text-light;
+        }
+
+        .nav-text {
+          color: rgba(255, 255, 255, 0.98);
+        }
+
+        &:hover .nav-text {
+          color: $primary-orange;
+        }
+
+        &.active .nav-text {
+          color: $text-light;
+        }
+      }
+    }
   }
 
   // Header Actions
@@ -459,8 +534,71 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     z-index: 3;
     height: 100%;
 
-    @media only screen and (max-width: 675px) {
+    @media only screen and (max-width: 777px) {
       gap: 8px;
+    }
+  }
+
+  // Theme Toggle
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(238, 108, 77, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all $transition-smooth;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    color: $text-dark; // Устанавливаем темный цвет для currentColor в светлой теме
+    margin-left: 12px; // Левый отступ
+
+    &:hover {
+      border-color: rgba(238, 108, 77, 0.5);
+      box-shadow: 0 4px 12px rgba(238, 108, 77, 0.2);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    .theme-icon {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor; // Используем currentColor вместо фиксированного цвета
+      fill: none;
+      transition: all $transition-smooth;
+    }
+
+    // Dark theme для theme-toggle
+    :host-context(.dark-theme) & {
+      background: rgba(41, 50, 65, 0.9);
+      border-color: rgba(238, 108, 77, 0.4);
+      color: rgba(255, 255, 255, 0.98); // Устанавливаем светлый цвет для currentColor в темной теме
+
+      .theme-icon {
+        stroke: currentColor; // Используем currentColor
+      }
+
+      &:hover {
+        border-color: rgba(238, 108, 77, 0.6);
+      }
+    }
+
+    @media only screen and (max-width: 777px) {
+      width: 32px;
+      height: 32px;
+
+      .theme-icon {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 
@@ -533,7 +671,7 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       transform: translateX(calc(100% + 2px));
     }
 
-    @media only screen and (max-width: 675px) {
+    @media only screen and (max-width: 777px) {
       display: none;
     }
   }
@@ -555,7 +693,7 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     margin: 0;
     vertical-align: middle;
 
-    @media only screen and (max-width: 675px) {
+    @media only screen and (max-width: 777px) {
       display: flex;
     }
 
@@ -611,6 +749,21 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     &:hover .burger-line {
       background: $primary-orange;
     }
+
+    // Dark theme styles for burger menu (placed after base styles for priority)
+    :host-context(.dark-theme) & {
+      .burger-line {
+        background: rgba(255, 255, 255, 0.9);
+
+        &:hover {
+          background: $primary-orange;
+        }
+      }
+
+      &:hover .burger-line {
+        background: $primary-orange;
+      }
+    }
   }
 
 }
@@ -644,6 +797,76 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     opacity: 0.98;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    transition: background $transition-smooth;
+  }
+
+  :host-context(.dark-theme) & {
+    .menu-background {
+      background: linear-gradient(135deg, #1a2535 0%, #293241 100%);
+    }
+
+    .menu-item {
+      background: rgba(41, 50, 65, 0.6);
+      color: rgba(255, 255, 255, 0.98);
+
+      &:hover {
+        border-color: $primary-orange;
+        background: rgba(41, 50, 65, 0.8);
+      }
+
+      &.active {
+        background: linear-gradient(90deg, $primary-orange-light 0%, $primary-orange 100%);
+        color: $text-light;
+      }
+
+      .menu-item-text {
+        color: rgba(255, 255, 255, 0.98);
+      }
+
+      &:hover .menu-item-text,
+      &.active .menu-item-text {
+        color: $text-light;
+      }
+    }
+
+    .menu-lang-switcher {
+      background: rgba(41, 50, 65, 0.9);
+      border-color: rgba(238, 108, 77, 0.4);
+
+      .lang-option {
+        color: rgba(255, 255, 255, 0.98);
+
+        &.active {
+          color: $text-light;
+        }
+      }
+    }
+
+    .social-block {
+      background: rgba(41, 50, 65, 0.6);
+      border-color: rgba(238, 108, 77, 0.2);
+
+      a {
+        background: rgba(41, 50, 65, 0.9);
+        border-color: rgba(238, 108, 77, 0.3);
+      }
+    }
+
+    .menu-contact {
+      background: rgba(41, 50, 65, 0.6);
+
+      .contact-label {
+        color: rgba(255, 255, 255, 0.98);
+      }
+
+      .contact-link {
+        color: $primary-orange;
+
+        &:hover {
+          color: $primary-orange-light;
+        }
+      }
+    }
   }
 
   .wrapper {
@@ -737,6 +960,7 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         position: relative;
         z-index: 1;
         transition: color $transition-smooth;
+        color: $text-dark;
       }
 
       .menu-item-indicator {
@@ -892,7 +1116,56 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     max-width: 120px;
     margin: 0 auto 8px auto; // Добавляем отступ снизу для лучшей видимости
     height: 42px;
+    order: 0; // Размещаем после переключателя темы
+  }
+
+  .menu-theme-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 16px auto;
+    height: 42px;
     order: -1; // Размещаем в начале меню
+    border-radius: 12px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: $text-dark;
+    transition: all $transition-smooth;
+
+    .theme-toggle-text {
+      transition: color $transition-smooth;
+    }
+
+    @media only screen and (max-width: 777px) {
+      max-width: 180px;
+      height: 40px;
+      font-size: 13px;
+    }
+  }
+
+  :host-context(.dark-theme) & {
+    .menu-theme-toggle {
+      color: rgba(255, 255, 255, 0.98);
+      background: rgba(41, 50, 65, 0.9);
+      border-color: rgba(238, 108, 77, 0.4);
+
+      .theme-icon {
+        stroke: rgba(255, 255, 255, 0.98);
+      }
+
+      .theme-toggle-text {
+        color: rgba(255, 255, 255, 0.98);
+      }
+
+      &:hover {
+        border-color: rgba(238, 108, 77, 0.6);
+        background: rgba(41, 50, 65, 0.95);
+      }
+    }
   }
 }
 

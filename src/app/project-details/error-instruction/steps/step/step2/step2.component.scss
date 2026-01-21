@@ -3,3 +3,11 @@
   flex-direction: column;
   gap: 30px;
 }
+
+// Dark theme styles
+:host-context(.dark-theme) .step-content {
+  span[style*="color: #293241"],
+  span[style*="color:#293241"] {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+}

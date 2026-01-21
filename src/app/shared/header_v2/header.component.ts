@@ -21,6 +21,7 @@ import {
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../../services/language.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-header-v2',
@@ -128,7 +129,8 @@ export class HeaderComponentV2 implements OnInit {
   constructor(
     private router: Router,
     private translateService: TranslateService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    public themeService: ThemeService
   ) {
     this.scrolled = window.pageYOffset < 80;
   }

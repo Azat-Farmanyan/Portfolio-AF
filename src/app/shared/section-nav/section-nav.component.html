@@ -1,12 +1,22 @@
 <div class="sections-nav-block">
   <div class="section" [style.border]="activeSectionId===0 ? '2px solid #FFF' : ' 1px solid #EE6C4D'"
-    (click)="navigateTo('home', 'home')" [ngClass]="{ active: activeSectionId === 0}"></div>
+    (click)="navigateTo('home', 'home')" [ngClass]="{ active: activeSectionId === 0}">
+    <span class="section-label">{{ "header.home" | translate }}</span>
+  </div>
   <div class="section" (click)="navigateTo('home', 'about')"
-    [ngClass]="{ active: activeSectionId === 1, whitenotactive:  activeSectionId===0  }"></div>
+    [ngClass]="{ active: activeSectionId === 1, whitenotactive:  activeSectionId===0  }">
+    <span class="section-label">{{ "header.about" | translate }}</span>
+  </div>
   <div class="section" (click)="navigateTo('home', 'experience')"
-    [ngClass]="{ active: activeSectionId === 2, whitenotactive:  activeSectionId===0}"></div>
+    [ngClass]="{ active: activeSectionId === 2, whitenotactive:  activeSectionId===0}">
+    <span class="section-label">{{ "header.experience" | translate }}</span>
+  </div>
   <div class="section" (click)="navigateTo('home', 'projects')"
-    [ngClass]="{ active: activeSectionId === 3, whitenotactive:  activeSectionId===0 }"></div>
+    [ngClass]="{ active: activeSectionId === 3, whitenotactive:  activeSectionId===0 }">
+    <span class="section-label">{{ "header.projects" | translate }}</span>
+  </div>
   <div class="section" (click)="navigateTo('home', 'contact')"
-    [ngClass]="{ active: activeSectionId === 4, whitenotactive:  activeSectionId===0 }"></div>
+    [ngClass]="{ active: activeSectionId === 4, whitenotactive:  activeSectionId===0 }">
+    <span class="section-label">{{ "header.contact" | translate }}</span>
+  </div>
 </div>

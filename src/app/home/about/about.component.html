@@ -107,8 +107,8 @@
             </h4>
             <div class="title-underline-skills animated-block"></div>
           </div>
-          <div class="skills-scroll-wrapper" (mouseenter)="pauseScroll()" (mouseleave)="resumeScroll()">
-            <div class="skills-container" #skillsContainer [class.paused]="isPaused">
+          <div class="skills-scroll-wrapper">
+            <div class="skills-container" #skillsContainer>
               <!-- First set of skills -->
               <a
                 [href]="skill.website"

@@ -12,7 +12,6 @@ export class AboutComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('contentWrapper', { static: false }) contentWrapper!: ElementRef;
   skills: Skill[] = [];
   readMore = false;
-  isPaused = false;
   private scaleInterval: any;
   private intersectionObserver?: IntersectionObserver;
 
@@ -67,14 +66,6 @@ export class AboutComponent implements OnInit, AfterViewInit, OnDestroy {
       card.style.transform = `scale(${Math.max(0.75, Math.min(1.0, scaleFactor))})`;
       card.style.opacity = `${Math.max(0.2, Math.min(1.0, opacityFactor))}`;
     });
-  }
-
-  pauseScroll() {
-    this.isPaused = true;
-  }
-
-  resumeScroll() {
-    this.isPaused = false;
   }
 
   private setupScrollAnimation(): void {

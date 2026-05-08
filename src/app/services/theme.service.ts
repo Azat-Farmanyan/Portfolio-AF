@@ -21,19 +21,14 @@ export class ThemeService {
   }
 
   /**
-   * Получает начальную тему из localStorage или системных настроек
+   * Получает начальную тему из localStorage или использует светлую по умолчанию
    */
   private getInitialTheme(): boolean {
     const savedTheme = localStorage.getItem(this.THEME_KEY);
     if (savedTheme !== null) {
       return savedTheme === 'dark';
     }
-
-    // Проверяем системные настройки
-    if (window.matchMedia) {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-
+    
     return false;
   }
 

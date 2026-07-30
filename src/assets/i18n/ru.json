@@ -162,6 +162,61 @@
     "personal_projects": "Личные проекты",
     "projects_list": [
       {
+        "id": 22,
+        "title": "Lovely Invite",
+        "description": [
+          "Lovely Invite — fullstack-студия цифровых приглашений для свадеб, дней рождения и baby / gender reveal. Гости открывают красивую страницу по уникальной ссылке, а клиенты и админ управляют дизайнами, RSVP и контентом события через портал. Продукт многоязычный (грузинский, русский, английский) и ориентирован на премиум-приглашения с анимациями.",
+          "Фронтенд на Angular 21, SCSS, GSAP, QR-кодах и ngx-translate. Бэкенд — Express + MongoDB Atlas, деплой фронта и API на Vercel. Среди возможностей: каталог дизайнов (~17 шаблонов с музыкой, countdown, картой и галереей), публичные ссылки приглашений, RSVP гостей и голосование gender reveal, админка клиентов и тарифов, а также QR-коды для шаринга."
+        ],
+        "descriptionShort": "Fullstack-студия цифровых приглашений с анимированными дизайнами, RSVP и многоязычным порталом.",
+        "banner": "lovely-invite-banner.png",
+        "bannerSmall": "lovely-invite-banner.png",
+        "screenshots": ["lovely-invite-banner.png"],
+        "tools": [
+          "Angular",
+          "HTML",
+          "SCSS",
+          "TypeScript",
+          "RxJs",
+          "nodeJS",
+          "GIT",
+          "GITHUB",
+          "VS Code",
+          "Figma"
+        ],
+        "seeLive": "https://lovely-invite.vercel.app",
+        "sourceCodeUrl": "https://github.com/Azat-Farmanyan/lovely_invite",
+        "designTemplate": "https://www.figma.com/design/yCgyFG1stWFC1xHAcRdfWW/Memoria-Invite-Design",
+        "isNewProject": true
+      },
+      {
+        "id": 21,
+        "title": "My Garage",
+        "description": [
+          "My Garage — fullstack-приложение для учёта личного или семейного гаража: машины, владельцы и история замен масла и фильтров. Есть авторизация с ролями user/admin, управление профилем и админка для аккаунтов и передачи машин между владельцами. Интерфейс многоязычный (русский, английский, грузинский).",
+          "Стек: Angular 21, PrimeNG, RxJS и Signals на фронте; Express + TypeScript и MongoDB Atlas на бэке. Дополнительно — поиск по гаражу, логотипы марок, экспорт PDF-архива и share-карточки машин. Фронт задеплоен на Vercel, API — на Render."
+        ],
+        "descriptionShort": "Fullstack-приложение для учёта машин и истории ТО с авторизацией, админкой и экспортом PDF.",
+        "banner": "my-garage-banner.png",
+        "bannerSmall": "my-garage-banner.png",
+        "screenshots": ["my-garage-banner.png"],
+        "tools": [
+          "Angular",
+          "HTML",
+          "SCSS",
+          "TypeScript",
+          "RxJs",
+          "PrimeNG",
+          "nodeJS",
+          "GIT",
+          "GITHUB",
+          "VS Code"
+        ],
+        "seeLive": "https://my-garage-front-gamma.vercel.app",
+        "sourceCodeUrl": "https://github.com/Azat-Farmanyan/MyGarage_Front",
+        "isNewProject": true
+      },
+      {
         "id": 20,
         "title": "Клон Гугл Календаря",
         "description": [

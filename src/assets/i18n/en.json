@@ -162,6 +162,61 @@
     "personal_projects": "Personal Projects",
     "projects_list": [
       {
+        "id": 22,
+        "title": "Lovely Invite",
+        "description": [
+          "Lovely Invite is a full-stack digital invitation studio for weddings, birthdays, and baby / gender reveal events. Guests open a polished invite page via a unique link, while clients and admins manage designs, RSVP responses, and event content through a dedicated portal. The product is multilingual (Georgian, Russian, English) and oriented toward premium animated invitation experiences.",
+          "The frontend is built with Angular 21, custom SCSS, GSAP animations, QR codes, and ngx-translate. The backend runs on Express with MongoDB Atlas and is deployed on Vercel alongside the frontend. Key features include a design catalog (~17 templates with music, countdown, map, and gallery), public invite routes, guest RSVP and gender-reveal voting, admin tools for clients and pricing tiers, and shareable QR codes."
+        ],
+        "descriptionShort": "Full-stack digital invitation studio with animated designs, RSVP, and a multilingual admin/client portal.",
+        "banner": "lovely-invite-banner.png",
+        "bannerSmall": "lovely-invite-banner.png",
+        "screenshots": ["lovely-invite-banner.png"],
+        "tools": [
+          "Angular",
+          "HTML",
+          "SCSS",
+          "TypeScript",
+          "RxJs",
+          "nodeJS",
+          "GIT",
+          "GITHUB",
+          "VS Code",
+          "Figma"
+        ],
+        "seeLive": "https://lovely-invite.vercel.app",
+        "sourceCodeUrl": "https://github.com/Azat-Farmanyan/lovely_invite",
+        "designTemplate": "https://www.figma.com/design/yCgyFG1stWFC1xHAcRdfWW/Memoria-Invite-Design",
+        "isNewProject": true
+      },
+      {
+        "id": 21,
+        "title": "My Garage",
+        "description": [
+          "My Garage is a full-stack app for managing a personal or family garage: cars, owners, and service history for oil and filter changes. It includes authentication with user/admin roles, profile management, and an admin panel for accounts and transferring cars between owners. The UI is multilingual (Russian, English, Georgian).",
+          "Built with Angular 21, PrimeNG, RxJS and Signals on the frontend, and Express + TypeScript with MongoDB Atlas on the backend. Extra features include garage search, brand logos, PDF archive export, and shareable car cards as images. Frontend is deployed on Vercel, API on Render."
+        ],
+        "descriptionShort": "Full-stack garage manager for cars and maintenance history, with auth, admin tools, and PDF export.",
+        "banner": "my-garage-banner.png",
+        "bannerSmall": "my-garage-banner.png",
+        "screenshots": ["my-garage-banner.png"],
+        "tools": [
+          "Angular",
+          "HTML",
+          "SCSS",
+          "TypeScript",
+          "RxJs",
+          "PrimeNG",
+          "nodeJS",
+          "GIT",
+          "GITHUB",
+          "VS Code"
+        ],
+        "seeLive": "https://my-garage-front-gamma.vercel.app",
+        "sourceCodeUrl": "https://github.com/Azat-Farmanyan/MyGarage_Front",
+        "isNewProject": true
+      },
+      {
         "id": 20,
         "title": "Google Calendar Clone",
         "description": [
